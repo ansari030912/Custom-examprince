@@ -185,11 +185,6 @@ const NavbarList = () => {
                       tabindex="-1"
                     >
                       <div>
-                        <Icon
-                          icon="ic:twotone-home"
-                          width="1.2rem"
-                          height="1.2rem"
-                        />
                         <Link
                           href="#"
                           class="block px-4 py-2 text-sm text-gray-700"
