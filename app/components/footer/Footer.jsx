@@ -23,6 +23,53 @@ const Footer = () => {
             src="/safe_checkout_optimized.png"
             alt="safe_checkout_optimized"
           />
+          <div className="mt-4">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+              className="sm:text-right"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.7rem"
+                height="1.7rem"
+                viewBox="0 0 36 36"
+              >
+                <path
+                  fill="currentColor"
+                  d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z"
+                  class="clr-i-outline clr-i-outline-path-1"
+                />
+                <path fill="none" d="M0 0h36v36H0z" />
+              </svg>
+              <div style={{ marginBottom: "10px" }}> sales@dumpsarena.com</div>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+              className="text-left"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1.5rem"
+                height="1.5rem"
+                viewBox="0 0 256 256"
+              >
+                <g fill="currentColor">
+                  <path
+                    d="M223.94 174.08A48.33 48.33 0 0 1 176 216A136 136 0 0 1 40 80a48.33 48.33 0 0 1 41.92-47.94a8 8 0 0 1 8.3 4.8l21.13 47.2a8 8 0 0 1-.66 7.53L89.32 117a7.93 7.93 0 0 0-.54 7.81c8.27 16.93 25.77 34.22 42.75 42.41a7.92 7.92 0 0 0 7.83-.59l25-21.3a8 8 0 0 1 7.59-.69l47.16 21.13a8 8 0 0 1 4.83 8.31"
+                    opacity=".2"
+                  />
+                  <path d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62M176 208A128.14 128.14 0 0 1 48 80a40.2 40.2 0 0 1 34.87-40a.61.61 0 0 0 0 .12l21 47l-20.67 24.74a6.13 6.13 0 0 0-.57.77a16 16 0 0 0-1 15.7c9.06 18.53 27.73 37.06 46.46 46.11a16 16 0 0 0 15.75-1.14a8.44 8.44 0 0 0 .74-.56L168.89 152l47 21.05h.11A40.21 40.21 0 0 1 176 208" />
+                </g>
+              </svg>
+              <div style={{ marginBottom: "10px" }}>+447380890921</div>
+            </div>
+          </div>
         </div>
         <div class="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
           <div class="lg:w-1/1 w-full px-4 text-justify">
@@ -74,48 +121,10 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <Box className="md:flex md:justify-between p-2 ">
+        <Box className="md:flex md:justify-center p-2 ">
           <p class="text-white text-sm text-center sm:text-center">
             © 2024 DumpsArena.com - All Rights Reserved
           </p>
-          <span class="flex justify-center">
-            <div style={{ display: "flex" }} className="sm:text-left">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1.7rem"
-                height="1.7rem"
-                viewBox="0 0 36 36"
-              >
-                <path
-                  fill="currentColor"
-                  d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z"
-                  class="clr-i-outline clr-i-outline-path-1"
-                />
-                <path fill="none" d="M0 0h36v36H0z" />
-              </svg>
-              <div style={{ marginBottom: "10px" }}> sales@dumpsarena.com</div>
-            </div>
-            <div
-              style={{ display: "flex", marginLeft: "10px" }}
-              className="sm:text-right"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1.5rem"
-                height="1.5rem"
-                viewBox="0 0 256 256"
-              >
-                <g fill="currentColor">
-                  <path
-                    d="M223.94 174.08A48.33 48.33 0 0 1 176 216A136 136 0 0 1 40 80a48.33 48.33 0 0 1 41.92-47.94a8 8 0 0 1 8.3 4.8l21.13 47.2a8 8 0 0 1-.66 7.53L89.32 117a7.93 7.93 0 0 0-.54 7.81c8.27 16.93 25.77 34.22 42.75 42.41a7.92 7.92 0 0 0 7.83-.59l25-21.3a8 8 0 0 1 7.59-.69l47.16 21.13a8 8 0 0 1 4.83 8.31"
-                    opacity=".2"
-                  />
-                  <path d="m222.37 158.46l-47.11-21.11l-.13-.06a16 16 0 0 0-15.17 1.4a8.12 8.12 0 0 0-.75.56L134.87 160c-15.42-7.49-31.34-23.29-38.83-38.51l20.78-24.71c.2-.25.39-.5.57-.77a16 16 0 0 0 1.32-15.06v-.12L97.54 33.64a16 16 0 0 0-16.62-9.52A56.26 56.26 0 0 0 32 80c0 79.4 64.6 144 144 144a56.26 56.26 0 0 0 55.88-48.92a16 16 0 0 0-9.51-16.62M176 208A128.14 128.14 0 0 1 48 80a40.2 40.2 0 0 1 34.87-40a.61.61 0 0 0 0 .12l21 47l-20.67 24.74a6.13 6.13 0 0 0-.57.77a16 16 0 0 0-1 15.7c9.06 18.53 27.73 37.06 46.46 46.11a16 16 0 0 0 15.75-1.14a8.44 8.44 0 0 0 .74-.56L168.89 152l47 21.05h.11A40.21 40.21 0 0 1 176 208" />
-                </g>
-              </svg>
-              <div style={{ marginBottom: "10px" }}>+447380890921</div>
-            </div>
-          </span>
         </Box>
       </div>
     </footer>
