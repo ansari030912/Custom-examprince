@@ -1,22 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import {
-  Box,
   Card,
-  CardContent,
-  CardMedia,
   Container,
   Grid,
-  Typography,
+  Typography
 } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
-import PrivacyPolicyCard from "./components/Cards/PrivacyPolicyCard";
+import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsMW from "./components/Tables/HotExamsMW";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import Navbar from "./components/navbar/NavBar";
-import Link from "next/link";
 import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/NavBar";
 const Home = () => {
   return (
     <>
@@ -186,7 +183,7 @@ const Home = () => {
                 borderRadius: "0px",
               }}
             >
-              <PrivacyPolicyCard />
+              <WindowsCard />
             </Card>
           </Grid>
           <Grid item sm={12} lg={4}>

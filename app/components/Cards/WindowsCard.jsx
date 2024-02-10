@@ -3,7 +3,7 @@
 import { Button, Card, Grid, Typography } from "@mui/material";
 import React from "react";
 
-const PrivacyPolicyCard = () => {
+const WindowsCard = () => {
   return (
     <Card sx={{ bgcolor: "#111827", padding: "10px", borderRadius: "0px" }}>
       <Grid container>
@@ -47,7 +47,7 @@ const PrivacyPolicyCard = () => {
         <Grid item xs={12}>
           <Button
             variant="contained"
-            className="bg-blue-500 mt-2"
+            className="bg-blue-500 mt-2 sm:mt-4"
             sx={{
               width: "100%",
               bgcolor: "linear-gradient(to bottom right, #6b46c1, #0075ff)",
@@ -88,4 +88,4 @@ const PrivacyPolicyCard = () => {
   );
 };
 
-export default PrivacyPolicyCard;
+export default WindowsCard;
