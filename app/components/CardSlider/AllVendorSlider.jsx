@@ -45,8 +45,8 @@ const CardComponent = ({ data }) => {
               <CardContent sx={{ bgcolor: "#1F2937" }}>
                 <Typography
                   variant="h6"
-                  fontSize={17}
-                  fontWeight={900}
+                  fontSize={13}
+                  fontWeight={700}
                   color="white"
                   sx={{
                     textAlign: "center",
@@ -79,7 +79,6 @@ const CardComponent = ({ data }) => {
     if (currentPage > 1) {
       pagination.push(
         <button
-          style={{ boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)" }}
           key="first"
           onClick={() => handlePageChange(1)}
           type="button"
@@ -93,7 +92,6 @@ const CardComponent = ({ data }) => {
     for (let i = startPage; i <= endPage; i++) {
       pagination.push(
         <button
-          style={{ boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)" }}
           key={i}
           onClick={() => handlePageChange(i)}
           type="button"
@@ -110,7 +108,6 @@ const CardComponent = ({ data }) => {
       pagination.push(
         <button
           style={{
-            boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)",
             textAlign: "center",
           }}
           key="last"

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NavbarList = () => {
-  const [userLogin, setUserLogin] = useState("login");
+  const [userLogin, setUserLogin] = useState("notLogin");
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
 
@@ -58,11 +58,11 @@ const NavbarList = () => {
                 )}
               </button>
             </div>
-            <div class="flex flex-1 items-center justify-center lg:items-stretch lg:justify-start">
-              <div class=" flex flex-shrink-0 items-center">
+            <div class="flex flex-1 items-center  ms-12 lg:-m-5 justify-start  lg:items-stretch lg:justify-start">
+              <div class="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
-                    class="h-4 w-auto"
+                    class="h-3 w-auto"
                     src="dumpsarena_white.svg"
                     alt="Your Company"
                   />
@@ -137,14 +137,14 @@ const NavbarList = () => {
                 class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-3"
               >
                 <Card class="bg-white">
-                  <span class="absolute -inset-1.2 pl-3 text-white">0</span>
+                  {/* <span class="absolute pl-3 text-white">0</span> */}
                 </Card>
                 <span class="sr-only">Add to Cart</span>
                 <div className="flex space-x-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="1.5rem"
-                    height="1.5rem"
+                    width="1.1rem"
+                    height="1.1rem"
                     viewBox="0 0 24 24"
                   >
                     <path
@@ -225,8 +225,8 @@ const NavbarList = () => {
                 </div>
               ) : (
                 <button
-                  className="hover:text-white  hover:bg-gray-700 text-gray-300 px-1 py-1 text-base font-medium rounded-md"
-                  style={{ fontSize: "12px" }}
+                  className="hover:text-white  hover:bg-gray-700 text-gray-300 px-1 lg:py-1 text-xs  lg:text-xl font-medium rounded-md"
+                  // style={{ fontSize: "8px" }}
                 >
                   Login / SignUp
                 </button>

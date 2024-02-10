@@ -1,11 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import {
-  Card,
-  Container,
-  Grid,
-  Typography
-} from "@mui/material";
+import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
@@ -18,7 +13,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Container>
+      <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <div class="mx-auto max-w-8xl flex justify-center">
