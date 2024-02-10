@@ -18,7 +18,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
