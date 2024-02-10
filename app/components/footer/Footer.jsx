@@ -78,7 +78,7 @@ const Footer = () => {
           <p class="text-white text-sm text-center sm:text-center">
             © 2024 DumpsArena.com - All Rights Reserved
           </p>
-          <span class="flex justify-between">
+          <span class="flex justify-center">
             <div style={{ display: "flex" }} className="sm:text-left">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
