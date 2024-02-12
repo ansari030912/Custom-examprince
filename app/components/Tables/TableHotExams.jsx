@@ -45,9 +45,9 @@ const TableHotExams = ({ data }) => {
       <Card sx={{ borderRadius: "0px" }}>
         <Grid
           container
-          spacing={3}
+          spacing={1}
           sx={{
-            padding: "10px",
+            padding: "5px",
           }}
         >
           <Grid item xs={6}>

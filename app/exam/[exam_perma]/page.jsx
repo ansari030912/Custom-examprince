@@ -1,6 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import { baseURL } from "@/app/baseUrl";
+import ContentCard from "@/app/components/Cards/ContentCard";
+import ExamPricePageCard from "@/app/components/Cards/ExamPricePageCard";
 import HotExamsMW from "@/app/components/Tables/HotExamsMW";
 import SingleVendorExamTable from "@/app/components/Tables/SingleVendorsExmasTable";
 import Footer from "@/app/components/footer/Footer";
@@ -10,11 +12,14 @@ import Link from "next/link";
 import React from "react";
 
 const AllVendorsPerma = async ({ params }) => {
-  const response = await fetch(`${baseURL}/v1/vendor/${params.vendor_perma}`, {
-    headers: {
-      "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-    },
-  });
+  const response = await fetch(
+    `${baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
 
   const data = await response.json();
   return (
@@ -35,10 +40,11 @@ const AllVendorsPerma = async ({ params }) => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={8}>
-            <SingleVendorExamTable data={data} />
+          <Grid item xs={12} md={8.5}>
+            <ExamPricePageCard data={data} />
+            <ContentCard data={data} />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} md={3.5}>
             <HotExamsMW />
             <Grid
               container

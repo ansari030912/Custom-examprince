@@ -49,7 +49,7 @@ const AllVendorsTable = ({ data }) => {
       </Card>
       <Card>
         <TableContainer component={Paper}>
-          <Table sx={{ p: "10px" }} size="small">
+          <Table sx={{ p: "10px" }} size="medium">
             <TableBody sx={{ padding: 2 }}>
               {Array.isArray(data) &&
                 data
@@ -68,7 +68,7 @@ const AllVendorsTable = ({ data }) => {
                             <Typography
                               className="flex justify-between"
                               fontSize={16}
-                              fontWeight={600}
+                              fontWeight={500}
                             >
                               <b style={{ color: "blue" }}>{vendor_title}</b>
                               <Typography fontSize={14} fontWeight={400}>

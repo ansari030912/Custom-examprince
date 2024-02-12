@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import moment from "moment";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const TableContentRecentlyUpdated = ({ data }) => {
@@ -75,14 +76,16 @@ const TableContentRecentlyUpdated = ({ data }) => {
                   return (
                     <TableRow hover key={exam_code}>
                       <TableCell style={{ m: "-4px" }}>
-                        <Typography className="flex justify-between">
-                          <b style={{ color: "blue" }}>{exam_vendor_title}</b>
-                          <Typography variant="caption">
-                            <b>Updated Date: </b>
-                            <em>{moment(exam_update_date).format("LL")}</em>
+                        <Link href={`/exam/${exam_perma}`}>
+                          <Typography className="flex justify-between">
+                            <b style={{ color: "blue" }}>{exam_vendor_title}</b>
+                            <Typography variant="caption">
+                              <b>Updated Date: </b>
+                              <em>{moment(exam_update_date).format("LL")}</em>
+                            </Typography>
                           </Typography>
-                        </Typography>
-                        <Typography>{exam_title}</Typography>
+                          <Typography>{exam_title}</Typography>
+                        </Link>
                       </TableCell>
                     </TableRow>
                   );

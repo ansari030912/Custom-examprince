@@ -49,31 +49,40 @@ const SingleVendorExamTable = ({ data }) => {
       </Card>
       <Card>
         <TableContainer component={Paper}>
-          <Table sx={{ p: "10px" }} size="small">
+          <Table sx={{ p: "10px" }} size="medium">
             <TableBody sx={{ padding: 2 }}>
-              {/* // .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) */}
-              {data.vendor_exams.map((item) => {
-                const { vendor_title, vendor_exams, vendor_id, vendor_perma } =
-                  item;
-                return (
-                  <TableRow hover key={vendor_id}>
-                    <TableCell style={{ m: "-4px" }}>
-                      <Link href={`/vendor/${vendor_perma}`}>
-                        <Typography
-                          className="flex justify-between"
-                          fontSize={16}
-                          fontWeight={600}
-                        >
-                          <b style={{ color: "blue" }}>{vendor_title}</b>
-                          <Typography fontSize={14} fontWeight={400}>
-                            <b>Total Exams:</b> <i>{vendor_exams}</i>
-                          </Typography>
-                        </Typography>
-                      </Link>
-                    </TableCell>
-                  </TableRow>
-                );
-              })}
+              {Array.isArray(data.vendor_exams) &&
+                data.vendor_exams
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((item) => {
+                    const {
+                      exam_code,
+                      exam_perma,
+                      exam_title,
+                      exam_questions,
+                    } = item;
+                    return (
+                      <TableRow hover key={exam_code}>
+                        <TableCell style={{ }}>
+                          <Link
+                            href={`/exam/${exam_perma}`}
+                            className="flex justify-between"
+                          >
+                            <Typography fontSize={14} fontWeight={600}>
+                              <b style={{ color: "blue" }}>{exam_title}</b>
+                            </Typography>
+                            <Typography
+                              sx={{ textAlign: "right" }}
+                              fontSize={14}
+                              fontWeight={500}
+                            >
+                              <b>Total Exams:</b> <i>{exam_questions}</i>
+                            </Typography>
+                          </Link>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
             </TableBody>
           </Table>
         </TableContainer>
@@ -83,7 +92,7 @@ const SingleVendorExamTable = ({ data }) => {
           }}
           rowsPerPageOptions={[rowsPerPage]}
           component="div"
-          count={data.length}
+          count={data.vendor_exams.length} // Corrected count
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
