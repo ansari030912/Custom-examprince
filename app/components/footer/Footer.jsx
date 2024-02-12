@@ -14,6 +14,7 @@ const Footer = () => {
         backgroundSize: "cover",
       }}
     >
+      
       <div class="container px-4 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <div style={{ fontSize: 30, fontWeight: 800 }}>Dumps Boss</div>
