@@ -7,8 +7,8 @@ import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsMW from "./components/Tables/HotExamsMW";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/NavBar";
+import Footer from "./components/footer/Footer";
 const Home = () => {
   return (
     <>

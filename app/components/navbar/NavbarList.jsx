@@ -63,7 +63,7 @@ const NavbarList = () => {
                 <Link href="/">
                   <img
                     class="h-3 lg:h-4 w-auto"
-                    src="dumpsarena_white.svg"
+                    src="/dumpsarena_white.svg"
                     alt="Your Company"
                   />
                 </Link>
@@ -219,10 +219,7 @@ const NavbarList = () => {
                   )}
                 </div>
               ) : (
-                <button
-                  className="hover:text-white  hover:bg-gray-700 text-gray-300 px-1 lg:py-1 text-xs  lg:text-xl font-medium rounded-md"
-                  // style={{ fontSize: "8px" }}
-                >
+                <button className="hover:text-white  hover:bg-gray-700 text-gray-300 px-1 lg:py-1 text-xs  lg:text-xl font-medium rounded-md">
                   Login / SignUp
                 </button>
               )}
