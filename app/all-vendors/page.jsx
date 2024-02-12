@@ -30,7 +30,6 @@ const AllVendorsPage = () => {
             <AllVendors />
           </Grid>
           <Grid item sm={12} lg={4}>
-            {/* <HotExamsMW /> */}
             <Grid
               container
               className="bg-gray-900"

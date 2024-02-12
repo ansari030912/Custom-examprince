@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" >
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <div class="mx-auto max-w-8xl flex justify-center">

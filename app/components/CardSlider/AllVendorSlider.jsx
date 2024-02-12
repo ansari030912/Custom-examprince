@@ -14,7 +14,8 @@ import { useState } from "react";
 
 const CardComponent = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = window.innerWidth < 768 ? 6 : 12;
+
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   const renderCards = () => {

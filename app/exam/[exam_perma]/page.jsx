@@ -4,7 +4,6 @@ import { baseURL } from "@/app/baseUrl";
 import ContentCard from "@/app/components/Cards/ContentCard";
 import ExamPricePageCard from "@/app/components/Cards/ExamPricePageCard";
 import HotExamsMW from "@/app/components/Tables/HotExamsMW";
-import SingleVendorExamTable from "@/app/components/Tables/SingleVendorsExmasTable";
 import Footer from "@/app/components/footer/Footer";
 import Navbar from "@/app/components/navbar/NavBar";
 import { Container, Grid, Typography } from "@mui/material";
@@ -50,6 +49,7 @@ const AllVendorsPerma = async ({ params }) => {
               container
               className="bg-gray-900"
               sx={{
+                marginTop:'10px',
                 display: "flex",
                 width: "100%",
               }}

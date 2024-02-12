@@ -44,6 +44,7 @@ const AllVendorsPerma = async ({ params }) => {
               container
               className="bg-gray-900"
               sx={{
+                mt: "15px",
                 display: "flex",
                 width: "100%",
               }}

@@ -1,6 +1,6 @@
+import { baseURL } from "@/app/baseUrl";
 import React from "react";
 import AllVendorSlider from "./AllVendorSlider";
-import { baseURL } from "@/app/baseUrl";
 
 const CardSliderVendor = async () => {
   const response = await fetch(`${baseURL}/v1/vendors`, {
