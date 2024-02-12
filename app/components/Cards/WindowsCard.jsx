@@ -20,7 +20,7 @@ const WindowsCard = () => {
             <Typography
               fontSize={20}
               variant="body1"
-              className="text-white sm:text-center lg:text-left"
+              className="text-white sm:text-center lg:text-left text-justify"
               s
             >
               Use FREE DumpsArena Test Engine player to open .dumpsarena files
