@@ -1,9 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Icon } from "@iconify/react";
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardMedia,
@@ -15,8 +13,7 @@ import { useState } from "react";
 
 const CardComponent = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
-  // const maxPagesToShow = 6; // Adjust this value according to your requirement
+  const itemsPerPage = window.innerWidth < 768 ? 6 : 12;
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
