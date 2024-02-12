@@ -62,7 +62,7 @@ const NavbarList = () => {
               <div class="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
-                    class="h-3 w-auto"
+                    class="h-4 w-auto"
                     src="dumpsarena_white.svg"
                     alt="Your Company"
                   />
