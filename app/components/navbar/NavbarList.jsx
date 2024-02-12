@@ -58,7 +58,7 @@ const NavbarList = () => {
                 )}
               </button>
             </div>
-            <div class="flex flex-1 items-center  ms-12 lg:-m-5 justify-start  lg:items-stretch lg:justify-start">
+            <div class="flex flex-1 items-center  ms-11 lg:-m-5 justify-start  lg:items-stretch lg:justify-start">
               <div class="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
