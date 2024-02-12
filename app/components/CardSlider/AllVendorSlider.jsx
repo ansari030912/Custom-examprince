@@ -14,7 +14,10 @@ import { useState } from "react";
 
 const CardComponent = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = window.innerWidth < 768 ? 6 : 12;
+  if (typeof window !== "undefined") {
+    // Your window-dependent code here
+    const itemsPerPage = window.innerWidth < 768 ? 6 : 12;
+  }
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
