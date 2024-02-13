@@ -2,11 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
-import AllVendors from "../components/Tables/AllVendors";
+import AllCertificates from "../components/Tables/AllCertificates";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/NavBar";
-import AllCertificates from "../components/Tables/AllCertificates";
 
 const AllCertificaesPage = () => {
   return (
