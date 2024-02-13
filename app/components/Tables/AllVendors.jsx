@@ -1,8 +1,7 @@
-import { baseURL } from "@/app/baseUrl";
 import AllVendorsTable from "./AllVendorsTable";
 
 const AllVendors = async () => {
-  const response = await fetch(`${baseURL}/v1/vendors`, {
+  const response = await fetch(`${process.env.baseURL}/v1/vendors`, {
     headers: {
       "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
     },
