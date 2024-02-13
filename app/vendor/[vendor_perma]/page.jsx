@@ -7,7 +7,6 @@ import Footer from "@/app/components/footer/Footer";
 import Navbar from "@/app/components/navbar/NavBar";
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(`${baseURL}/v1/vendor/${params.vendor_perma}`, {

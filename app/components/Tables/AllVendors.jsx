@@ -1,6 +1,5 @@
-import React from "react";
-import AllVendorsTable from "./AllVendorsTable";
 import { baseURL } from "@/app/baseUrl";
+import AllVendorsTable from "./AllVendorsTable";
 
 const AllVendors = async () => {
   const response = await fetch(`${baseURL}/v1/vendors`, {

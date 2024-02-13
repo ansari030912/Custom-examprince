@@ -1,6 +1,5 @@
-import React from "react";
-import TableContentRecentlyUpdated from "./TableContentRecentlyUpdated";
 import { baseURL } from "@/app/baseUrl";
+import TableContentRecentlyUpdated from "./TableContentRecentlyUpdated";
 
 const RecentlyUpdatedTable = async () => {
   const response = await fetch(`${baseURL}/v1/recently-updated`, {

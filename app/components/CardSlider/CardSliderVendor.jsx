@@ -1,5 +1,4 @@
 import { baseURL } from "@/app/baseUrl";
-import React from "react";
 import AllVendorSlider from "./AllVendorSlider";
 
 const CardSliderVendor = async () => {

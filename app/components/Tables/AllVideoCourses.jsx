@@ -1,5 +1,4 @@
 import { baseURL } from "@/app/baseUrl";
-import React from "react";
 import AllVideoCoursesTable from "./AllVideoCoursesTable";
 
 const AllVideoCourses = async () => {

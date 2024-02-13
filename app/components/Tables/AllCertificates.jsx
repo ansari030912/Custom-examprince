@@ -1,5 +1,3 @@
-import React from "react";
-import AllVendorsTable from "./AllVendorsTable";
 import { baseURL } from "@/app/baseUrl";
 import AllCertificatesTable from "./AllCertificatesTable";
 
