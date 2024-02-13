@@ -19,8 +19,8 @@ import { useState } from "react";
 const TableHotExams = ({ data }) => {
   const [selectedView, setSelectedView] = useState("week");
   return (
-    <Card sx={{ boxShadow: "2px 4px 8px rgba(225, 255, 255, 100)" }}>
-      <Card sx={{ bgcolor: "#1F2937" }}>
+    <>
+      <Card sx={{ bgcolor: "#1F2937", mb: 1 }}>
         <Typography
           color={"white"}
           fontSize={24}
@@ -42,114 +42,116 @@ const TableHotExams = ({ data }) => {
           <b>Hot Exams</b>
         </Typography>
       </Card>
-      <Card sx={{ borderRadius: "0px" }}>
-        <Grid
-          container
-          spacing={1}
-          sx={{
-            padding: "5px",
-          }}
-        >
-          <Grid item xs={6}>
-            <Button
-              className="bg-gray-600 text-white"
-              fullWidth
-              variant="contained"
-              onClick={() => setSelectedView("week")}
-            >
-              {selectedView === "week" ? <b>This Week</b> : "This Week"}
-            </Button>
+      <Card >
+        <Card sx={{ borderRadius: "0px" }}>
+          <Grid
+            container
+            spacing={1}
+            sx={{
+              padding: "5px",
+            }}
+          >
+            <Grid item xs={6}>
+              <Button
+                className="bg-gray-600 text-white"
+                fullWidth
+                variant="contained"
+                onClick={() => setSelectedView("week")}
+              >
+                {selectedView === "week" ? <b>This Week</b> : "This Week"}
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                fullWidth
+                variant="contained"
+                className="bg-gray-600 text-white"
+                onClick={() => setSelectedView("month")}
+              >
+                {selectedView === "month" ? <b>This Month</b> : "This Month"}
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Button
-              fullWidth
-              variant="contained"
-              className="bg-gray-600 text-white"
-              onClick={() => setSelectedView("month")}
-            >
-              {selectedView === "month" ? <b>This Month</b> : "This Month"}
-            </Button>
-          </Grid>
-        </Grid>
-      </Card>
+        </Card>
 
-      <TableContainer
-        component={Paper}
-        sx={{ borderRadius: "0px" }}
-        size="small"
-      >
-        <Table sx={{ p: "10px" }} size="small">
-          <TableBody sx={{ padding: 2 }}>
-            {selectedView === "week" &&
-              data?.week?.map((item) => {
-                const {
-                  exam_vendor_title,
-                  exam_title,
-                  vendor_title,
-                  exam_perma,
-                } = item;
-                return (
-                  <>
-                    <TableRow hover key={exam_perma}>
-                      <TableCell>
-                        <Link href={`/exam/${exam_perma}`}>
-                          <Typography className="flex">
-                            <Icon
-                              icon="fa-solid:arrow-circle-right"
-                              width="1rem"
-                              height="1rem"
-                              sx={{ color: "blue", marginRight: "10px" }}
-                            />
-                            <b
-                              className="text-gray-700"
-                              style={{ fontSize: 12, marginLeft: 4 }}
-                            >
-                              {exam_title}
-                            </b>
-                          </Typography>
-                        </Link>
-                      </TableCell>
-                    </TableRow>
-                  </>
-                );
-              })}
-            {selectedView === "month" &&
-              data?.month?.map((item) => {
-                const {
-                  exam_vendor_title,
-                  exam_title,
-                  vendor_title,
-                  exam_perma,
-                } = item;
-                return (
-                  <>
-                    <TableRow hover key={exam_perma}>
-                      <TableCell>
-                        <Link href={`/exam/${exam_perma}`}>
-                          <Typography className="flex">
-                            <Icon
-                              icon="fa-solid:arrow-circle-right"
-                              width="1rem"
-                              height="1rem"
-                              sx={{ color: "blue", marginRight: "10px" }}
-                            />
-                            <b
-                              className="text-gray-700"
-                              style={{ fontSize: 12, marginLeft: 4 }}
-                            >
-                              {exam_title}
-                            </b>
-                          </Typography>
-                        </Link>
-                      </TableCell>
-                    </TableRow>
-                  </>
-                );
-              })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Card>
+        <TableContainer
+          component={Paper}
+          sx={{ borderRadius: "0px" }}
+          size="small"
+        >
+          <Table sx={{ p: "10px" }} size="small">
+            <TableBody sx={{ padding: 2 }}>
+              {selectedView === "week" &&
+                data?.week?.map((item) => {
+                  const {
+                    exam_vendor_title,
+                    exam_title,
+                    vendor_title,
+                    exam_perma,
+                  } = item;
+                  return (
+                    <>
+                      <TableRow hover key={exam_perma}>
+                        <TableCell>
+                          <Link href={`/exam/${exam_perma}`}>
+                            <Typography className="flex">
+                              <Icon
+                                icon="fa-solid:arrow-circle-right"
+                                width="1rem"
+                                height="1rem"
+                                sx={{ color: "blue", marginRight: "10px" }}
+                              />
+                              <b
+                                className="text-gray-700"
+                                style={{ fontSize: 12, marginLeft: 4 }}
+                              >
+                                {exam_title}
+                              </b>
+                            </Typography>
+                          </Link>
+                        </TableCell>
+                      </TableRow>
+                    </>
+                  );
+                })}
+              {selectedView === "month" &&
+                data?.month?.map((item) => {
+                  const {
+                    exam_vendor_title,
+                    exam_title,
+                    vendor_title,
+                    exam_perma,
+                  } = item;
+                  return (
+                    <>
+                      <TableRow hover key={exam_perma}>
+                        <TableCell>
+                          <Link href={`/exam/${exam_perma}`}>
+                            <Typography className="flex">
+                              <Icon
+                                icon="fa-solid:arrow-circle-right"
+                                width="1rem"
+                                height="1rem"
+                                sx={{ color: "blue", marginRight: "10px" }}
+                              />
+                              <b
+                                className="text-gray-700"
+                                style={{ fontSize: 12, marginLeft: 4 }}
+                              >
+                                {exam_title}
+                              </b>
+                            </Typography>
+                          </Link>
+                        </TableCell>
+                      </TableRow>
+                    </>
+                  );
+                })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Card>
+    </>
   );
 };
 export default TableHotExams;

@@ -27,6 +27,7 @@ const AllVendorsTable = ({ data }) => {
         sx={{
           bgcolor: "#1F2937",
           padding: 1,
+          mb:1
         }}
       >
         <Typography

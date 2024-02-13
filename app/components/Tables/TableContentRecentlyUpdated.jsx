@@ -16,7 +16,7 @@ import React, { useState } from "react";
 
 const TableContentRecentlyUpdated = ({ data }) => {
   const [page, setPage] = useState(0);
-  const rowsPerPage = 7;
+  const rowsPerPage = 8;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);

@@ -10,11 +10,10 @@ import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/NavBar";
 const Home = () => {
-
   return (
     <>
       <Navbar />
-      <Container maxWidth="lg" >
+      <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <div class="mx-auto max-w-8xl flex justify-center">
@@ -29,9 +28,7 @@ const Home = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12}>
-            <CardSliderVendor />
-          </Grid>
+
           <Grid item xs={12} lg={8}>
             <Card
               sx={{
@@ -167,7 +164,7 @@ const Home = () => {
             <Card
               sx={{
                 marginTop: "10px",
-                boxShadow: "2px 2px 4px rgba(255, 255, 255, 255)",
+                // boxShadow: "2px 2px 4px rgba(255, 255, 255, 255)",
               }}
             >
               <RecentlyUpdatedTable />
@@ -306,6 +303,9 @@ const Home = () => {
                 </Link>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <CardSliderVendor />
           </Grid>
         </Grid>
       </Container>

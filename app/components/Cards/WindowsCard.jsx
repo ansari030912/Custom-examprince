@@ -5,7 +5,7 @@ import React from "react";
 
 const WindowsCard = () => {
   return (
-    <Card sx={{ bgcolor: "#111827", padding: "10px", borderRadius: "0px" }}>
+    <Card sx={{ bgcolor: "#111827", padding: "18px", borderRadius: "0px" }}>
       <Grid container>
         <Grid item xs={12} lg={9}>
           <div>
