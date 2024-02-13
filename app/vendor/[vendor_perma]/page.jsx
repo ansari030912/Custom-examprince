@@ -16,6 +16,7 @@ const AllVendorsPerma = async ({ params }) => {
 
   const data = await response.json();
   return (
+    
     <>
       <Navbar />
       <Container maxWidth="lg">
