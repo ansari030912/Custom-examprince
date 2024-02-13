@@ -78,7 +78,7 @@ const TableContentRecentlyUpdated = ({ data }) => {
                       <TableCell style={{ m: "-4px" }}>
                         <Link href={`/exam/${exam_perma}`}>
                           <Typography className="flex justify-between">
-                            <b style={{ color: "blue" }}>{exam_vendor_title}</b>
+                            <b>{exam_vendor_title}</b>
                             <Typography variant="caption">
                               <b>Updated Date: </b>
                               <em>{moment(exam_update_date).format("LL")}</em>

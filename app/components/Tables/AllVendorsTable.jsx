@@ -68,9 +68,9 @@ const AllVendorsTable = ({ data }) => {
                             <Typography
                               className="flex justify-between"
                               fontSize={16}
-                              fontWeight={500}
+                              fontWeight={600}
                             >
-                              <b style={{ color: "blue" }}>{vendor_title}</b>
+                              <b >{vendor_title}</b>
                               <Typography fontSize={14} fontWeight={400}>
                                 <b>Total Exams:</b> <i>{vendor_exams}</i>
                               </Typography>

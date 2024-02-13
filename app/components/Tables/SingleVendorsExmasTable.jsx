@@ -68,8 +68,8 @@ const SingleVendorExamTable = ({ data }) => {
                             href={`/exam/${exam_perma}`}
                             className="flex justify-between"
                           >
-                            <Typography fontSize={14} fontWeight={600}>
-                              <b style={{ color: "blue" }}>{exam_title}</b>
+                            <Typography fontSize={16} fontWeight={600}>
+                              <b>{exam_title}</b>
                             </Typography>
                             <Typography
                               sx={{ textAlign: "right" }}

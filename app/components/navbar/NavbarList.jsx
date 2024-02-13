@@ -95,7 +95,7 @@ const NavbarList = () => {
                     Vendors
                   </Link>
                   <Link
-                    href="#"
+                    href="/all-certificates"
                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
@@ -230,14 +230,14 @@ const NavbarList = () => {
           <div class="lg:hidden" id="mobile-menu">
             <div class="space-y-1 px-2 pb-3 pt-2">
               <Link
-                href="#"
+                href="/"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon icon="ic:twotone-home" width="1.2rem" height="1.2rem" />
                 Home
               </Link>
               <Link
-                href="#"
+                href="/all-vendors"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
@@ -248,7 +248,7 @@ const NavbarList = () => {
                 Vendors
               </Link>
               <Link
-                href="#"
+                href="/all-certificates"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
