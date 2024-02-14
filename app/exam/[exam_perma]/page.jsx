@@ -4,7 +4,7 @@
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { Content, ExamPriceCard } from "../../components/Cards";
-import HotExamsData from "../../components/Tables/HotExamsData";
+import { HotExam } from "../../components/Tables";
 import { Footer } from "../../components/footer";
 import { Navbar } from "../../navbar";
 
@@ -41,7 +41,7 @@ const AllVendorsPerma = async ({ params }) => {
             <Content data={data} />
           </Grid>
           <Grid item sm={12} md={3.5}>
-            <HotExamsData />
+            <HotExam />
             <Grid
               container
               className="bg-gray-900"

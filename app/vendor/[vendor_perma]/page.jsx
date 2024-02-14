@@ -2,21 +2,23 @@
 /* eslint-disable @next/next/no-img-element */
 import HotExamsMW from "@/app/components/Tables/HotExamsMW";
 import SingleVendorExamTable from "@/app/components/Tables/SingleVendorsExmasTable";
-import Footer from "@/app/components/footer/Footer";
-import Navbar from "@/app/components/navbar/NavBar";
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import { Navbar } from "../../navbar";
+import { Footer } from "../../components/footer";
 
 const AllVendorsPerma = async ({ params }) => {
-  const response = await fetch(`${process.env.baseURL}/v1/vendor/${params.vendor_perma}`, {
-    headers: {
-      "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-    },
-  });
+  const response = await fetch(
+    `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
 
   const data = await response.json();
   return (
-    
     <>
       <Navbar />
       <Container maxWidth="lg">
