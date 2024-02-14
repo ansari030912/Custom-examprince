@@ -3,9 +3,10 @@
 import { Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import AllVendors from "../components/Tables/AllVendors";
+// import AllVendors from "../components/Tables/AllVendors";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/NavBar";
+import AllVendors from "../components/Tables/AllVendors";
 
 const AllVendorsPage = () => {
   return (
