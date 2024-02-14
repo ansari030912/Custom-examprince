@@ -12,9 +12,9 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 
-const CardComponent = ({ data }) => {
+const AllVendorSlider = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  
+
   const itemsPerPage = 12;
 
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -149,4 +149,4 @@ const CardComponent = ({ data }) => {
   );
 };
 
-export default CardComponent;
+export default AllVendorSlider;

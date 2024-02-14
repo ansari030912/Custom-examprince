@@ -1,15 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-// import ContentCard from "@/app/components/Cards/ContentCard";
-// import ExamPricePageCard from "@/app/components/Cards/ExamPricePageCard";
-// import HotExamsMW from "@/app/components/Tables/HotExamsMW";
-import ContentCard from "@/app/components/Cards/ContentCard";
-import ExamPricePageCard from "@/app/components/Cards/ExamPricePageCard";
-import HotExamsMW from "@/app/components/Tables/HotExamsMW";
+
 import Footer from "@/app/components/footer/Footer";
 import Navbar from "@/app/components/navbar/NavBar";
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import { Content, ExamPriceCard } from "../../components/Cards";
+import HotExamsData from "../../components/Tables/HotExamsData";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -40,16 +37,16 @@ const AllVendorsPerma = async ({ params }) => {
             </div>
           </Grid>
           <Grid item xs={12} md={8.5}>
-            <ExamPricePageCard data={data} />
-            <ContentCard data={data} />
+            <ExamPriceCard data={data} />
+            <Content data={data} />
           </Grid>
           <Grid item sm={12} md={3.5}>
-            <HotExamsMW />
+            <HotExamsData />
             <Grid
               container
               className="bg-gray-900"
               sx={{
-                marginTop:'10px',
+                marginTop: "10px",
                 display: "flex",
                 width: "100%",
               }}

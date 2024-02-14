@@ -2,10 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import WindowsCard from "./components/Cards/WindowsCard";
-import HotExamsMW from "./components/Tables/HotExamsMW";
+import HotExamsMW from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/NavBar";

@@ -6,7 +6,7 @@ import React from "react";
 import Footer from "../components/footer/Footer";
 import Navbar from "../components/navbar/NavBar";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
-import HotExamsMW from "../components/Tables/HotExamsMW";
+import HotExamsMW from "../components/Tables/HotExamsData";
 const AllVideoCoursesPage = () => {
   return (
     <>
