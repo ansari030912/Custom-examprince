@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import HotExamsMW from "@/app/components/Tables/HotExamsMW";
-import SingleVendorExamTable from "@/app/components/Tables/SingleVendorsExmasTable";
+
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import HotExamsData from "../../components/Tables/HotExamsData";
+import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -37,7 +38,7 @@ const AllVendorsPerma = async ({ params }) => {
             <SingleVendorExamTable data={data} />
           </Grid>
           <Grid item sm={12} lg={4}>
-            <HotExamsMW />
+            <HotExamsData />
             <Grid
               container
               className="bg-gray-900"
