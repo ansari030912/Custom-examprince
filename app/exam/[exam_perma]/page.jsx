@@ -5,8 +5,6 @@ import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam } from "../../components/Tables";
-import { Footer } from "../../components/footer";
-import { Navbar } from "../../navbar";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -20,7 +18,6 @@ const AllVendorsPerma = async ({ params }) => {
   const data = await response.json();
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -168,7 +165,6 @@ const AllVendorsPerma = async ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

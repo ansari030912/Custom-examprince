@@ -6,8 +6,6 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/NavBar";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -21,7 +19,6 @@ export default function SignIn() {
 
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -299,8 +296,6 @@ export default function SignIn() {
           </Grid>
         </Grid>
       </Container>
-
-      <Footer />
     </>
   );
 }

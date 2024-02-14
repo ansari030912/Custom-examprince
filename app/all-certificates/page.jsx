@@ -9,7 +9,6 @@ import Navbar from "../components/navbar/NavBar";
 const AllCertificaesPage = () => {
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -154,7 +153,6 @@ const AllCertificaesPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };
