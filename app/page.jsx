@@ -6,8 +6,11 @@ import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsMW from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/NavBar";
+import FooterList from "./components/footer/FooterList";
+import NavbarList from "./navbar/NavbarList";
+import { Navbar } from "./navbar";
+import { Footer } from "./components/footer";
+
 const Home = () => {
   return (
     <>

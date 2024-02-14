@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import Footer from "@/app/components/footer/Footer";
-import Navbar from "@/app/components/navbar/NavBar";
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { Content, ExamPriceCard } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
+import { Footer } from "../../components/footer";
+import { Navbar } from "../../navbar";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(

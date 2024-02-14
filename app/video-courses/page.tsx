@@ -3,8 +3,8 @@
 import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/NavBar";
+import Footer from "../components/footer/FooterList";
+import Navbar from "../navbar/NavBar";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
 const AllVideoCoursesPage = () => {

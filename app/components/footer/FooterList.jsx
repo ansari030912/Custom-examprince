@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
-const Footer = () => {
+const FooterList = () => {
   return (
     <footer
       className="text-white body-font mt-4"
@@ -146,4 +146,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterList;
