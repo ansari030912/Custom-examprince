@@ -3,8 +3,6 @@
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import AllCertificates from "../components/Tables/AllCertificates";
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/NavBar";
 
 const AllCertificaesPage = () => {
   return (
