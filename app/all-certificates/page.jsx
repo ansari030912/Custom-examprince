@@ -3,10 +3,13 @@
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import AllCertificates from "../components/Tables/AllCertificates";
+import { Navbar } from "../navbar";
+import { Footer } from "../components/footer";
 
 const AllCertificaesPage = () => {
   return (
     <>
+      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -151,6 +154,7 @@ const AllCertificaesPage = () => {
           </Grid>
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 };

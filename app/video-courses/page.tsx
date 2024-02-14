@@ -4,9 +4,12 @@ import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
+import { Navbar } from "../navbar";
+import { Footer } from "../components/footer";
 const AllVideoCoursesPage = () => {
   return (
     <>
+      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -245,6 +248,7 @@ const AllVideoCoursesPage = () => {
           </Grid>
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 };
