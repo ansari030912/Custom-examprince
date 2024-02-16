@@ -42,7 +42,7 @@ const TableHotExams = ({ data }) => {
           <b>Hot Exams</b>
         </Typography>
       </Card>
-      <Card >
+      <Card>
         <Card sx={{ borderRadius: "0px" }}>
           <Grid
             container
@@ -93,22 +93,26 @@ const TableHotExams = ({ data }) => {
                     <>
                       <TableRow hover key={exam_perma}>
                         <TableCell>
-                          <Link href={`/exam/${exam_perma}`}>
-                            <Typography className="flex">
+                          <div className="flex">
+                            <div>
                               <Icon
                                 icon="fa-solid:arrow-circle-right"
-                                width="1rem"
+                                minWidth="1rem"
                                 height="1rem"
                                 sx={{ color: "blue", marginRight: "10px" }}
                               />
-                              <b
-                                className="text-gray-700"
-                                style={{ fontSize: 12, marginLeft: 4 }}
-                              >
-                                {exam_title}
-                              </b>
-                            </Typography>
-                          </Link>
+                            </div>
+                            <Link href={`/exam/${exam_perma}`}>
+                              <Typography className="flex">
+                                <b
+                                  className="text-gray-700"
+                                  style={{ fontSize: 12, marginLeft: 4 }}
+                                >
+                                  {exam_title}
+                                </b>
+                              </Typography>
+                            </Link>
+                          </div>
                         </TableCell>
                       </TableRow>
                     </>
@@ -126,22 +130,26 @@ const TableHotExams = ({ data }) => {
                     <>
                       <TableRow hover key={exam_perma}>
                         <TableCell>
-                          <Link href={`/exam/${exam_perma}`}>
-                            <Typography className="flex">
+                          <div className="flex">
+                            <div>
                               <Icon
                                 icon="fa-solid:arrow-circle-right"
-                                width="1rem"
+                                minWidth="1rem"
                                 height="1rem"
                                 sx={{ color: "blue", marginRight: "10px" }}
                               />
-                              <b
-                                className="text-gray-700"
-                                style={{ fontSize: 12, marginLeft: 4 }}
-                              >
-                                {exam_title}
-                              </b>
-                            </Typography>
-                          </Link>
+                            </div>
+                            <Link href={`/exam/${exam_perma}`}>
+                              <Typography className="flex">
+                                <b
+                                  className="text-gray-700"
+                                  style={{ fontSize: 12, marginLeft: 4 }}
+                                >
+                                  {exam_title}
+                                </b>
+                              </Typography>
+                            </Link>
+                          </div>
                         </TableCell>
                       </TableRow>
                     </>

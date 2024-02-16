@@ -1,27 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
-import { Container, Grid, Typography } from "@mui/material";
+import { Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-
-import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
-import { HotExam } from "../components/Tables";
+import React from "react";
+// import AllVendors from "../components/Tables/AllVendors";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
+import { Cart } from "../components/Cards";
 
-const UnlimitedAccessPage = async () => {
-  const response = await fetch(
-    `${process.env.baseURL}/v1/unlimited_access/?coupon=MEGASALE-30`,
-    {
-      headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-      },
-    }
-  );
-
-  const data = await response.json();
-  console.log("🚀 ~ UnlimitedAccessPage ~ data:", data);
-
+const CheckOut = () => {
   return (
     <>
       <Navbar />
@@ -32,7 +19,7 @@ const UnlimitedAccessPage = async () => {
               <div class="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
-                  alt="Banner"
+                  alt="SASSA_Status_Check"
                   loading="lazy"
                   width="100%"
                   height="100%"
@@ -40,17 +27,15 @@ const UnlimitedAccessPage = async () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={8.5}>
-            <UnlimitedAccess data={data} />
-            <WindowsDataCard />
+          <Grid item xs={12} md={12}>
+            <Cart />
           </Grid>
-          <Grid item sm={12} md={3.5}>
-            <HotExam />
+          <Grid item sm={0} lg={8} />
+          <Grid item sm={12} lg={4}>
             <Grid
               container
               className="bg-gray-900"
               sx={{
-                marginTop: "10px",
                 display: "flex",
                 width: "100%",
               }}
@@ -110,6 +95,97 @@ const UnlimitedAccessPage = async () => {
                 />
               </Grid>
             </Grid>
+            {/*  */}
+            <Card
+              sx={{
+                bgcolor: "#111827",
+                padding: "10px",
+                borderRadius: "0px",
+                mb: "10px",
+                mt: "10px",
+              }}
+            >
+              <Grid container>
+                <Grid item xs={12}>
+                  <div>
+                    <Typography
+                      fontSize={25}
+                      fontWeight={"bold"}
+                      sx={{ textAlign: "center" }}
+                      className="text-white hover:text-yellow-200 hover:underline text-center"
+                    >
+                      How to Open Test Engine .dumpsarena Files
+                    </Typography>
+                    <Typography
+                      fontSize={20}
+                      variant="body1"
+                      className="text-white text-center mb-2"
+                    >
+                      Use FREE DumpsArena Test Engine player to open .dumpsarena
+                      files
+                    </Typography>
+                  </div>
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    paddingRight: "10px",
+                  }}
+                >
+                  <img
+                    src="/dumpsarena-test-engine_optimized.png"
+                    alt="dumpsboss"
+                    style={{ maxHeight: "400px", maxWidth: "100%" }}
+                  />
+                </Grid>
+
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    className="bg-blue-500 mt-2 sm:mt-4"
+                    sx={{
+                      width: "100%",
+                      bgcolor:
+                        "linear-gradient(to bottom right, #6b46c1, #0075ff)",
+                      "&:hover": {
+                        bgcolor:
+                          "linear-gradient(to bottom left, #6b46c1, #0075ff)",
+                      },
+                      "&:focus": {
+                        ring: 4,
+                        outline: "none",
+                        ringColor: "blue.300",
+                      },
+                      "&:focus-visible": {
+                        ring: 4,
+                        outline: "none",
+                        ringColor: "blue.800",
+                      },
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="2rem"
+                      height="2rem"
+                      viewBox="0 0 72 72"
+                    >
+                      <path
+                        fill="#61b2e4"
+                        fillRule="evenodd"
+                        d="m34 16.163-19 3.093V34h19zM15 38v14.744l19 3.093V38zm23 18.488 22 3.582V38H38zM60 34H38V15.512l22-3.582z"
+                        clipRule="evenodd"
+                      />
+                      <path d="M34 16.163h1a1 1 0 0 0-1.16-.987zm-19 3.093l-.16-.987a1 1 0 0 0-.84.987zM15 34h-1a1 1 0 0 0 1 1zm19 0v1a1 1 0 0 0 1-1zm-19 4v-1a1 1 0 0 0-1 1zm0 14.744h-1a1 1 0 0 0 .84.987zm19 3.093l-.16.987a1 1 0 0 0 1.16-.987zM34 38h1a1 1 0 0 0-1-1zm4 18.488h-1a1 1 0 0 0 .84.987zm22 3.582l-.16.987A1 1 0 0 0 61 60.07zM60 38h1a1 1 0 0 0-1-1zm-22 0v-1a1 1 0 0 0-1 1zm22-4v1a1 1 0 0 0 1-1zm-22 0h-1a1 1 0 0 0 1 1zm0-18.488l-.16-.987a1 1 0 0 0-.84.987zm22-3.582h1a1 1 0 0 0-1.16-.987zm-26.16 3.246l-19 3.093l.32 1.974l19-3.093zM14 19.256V34h2V19.256zM34 33H15v2h19zm-1-16.837V34h2V16.163zM14 38v14.744h2V38zm.84 15.731l19 3.093l.32-1.974l-19-3.093zM33 38v17.837h2V38zm-18 1h19v-2H15zm22.84 18.475l22 3.582l.32-1.974l-22-3.582zM61 60.07V38h-2v22.07zM38 39h22v-2H38zm1 17.488V38h-2v18.488zM60 33H38v2h22zm-21 1V15.512h-2V34zm20.84-23.057l-22 3.582l.32 1.974l22-3.582zM61 34V11.93h-2V34z" />
+                    </svg>
+                    <span style={{ marginTop: "5px" }}>Windows</span>
+                  </Button>
+                </Grid>
+              </Grid>
+            </Card>
+            {/*  */}
             <Grid
               container
               className="bg-gray-800"
@@ -130,7 +206,7 @@ const UnlimitedAccessPage = async () => {
               >
                 <img
                   width="100%"
-                  src="/safe_checkout_optimized.png"
+                  src="safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>
@@ -177,4 +253,4 @@ const UnlimitedAccessPage = async () => {
   );
 };
 
-export default UnlimitedAccessPage;
+export default CheckOut;
