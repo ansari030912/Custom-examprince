@@ -3,7 +3,7 @@
 
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { Content, ExamPriceCard } from "../../components/Cards";
+import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam } from "../../components/Tables";
 import { Footer } from "../../components/footer";
 import NavbarList from "../../navbar/NavbarList";
@@ -165,6 +165,9 @@ const AllVendorsPerma = async ({ params }) => {
                 </Link>
               </Grid>
             </Grid>
+          </Grid>
+          <Grid item xs={12} md={8.5}>
+            <CommentsCard data={data} />
           </Grid>
         </Grid>
       </Container>

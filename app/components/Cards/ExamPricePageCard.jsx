@@ -8,7 +8,28 @@ import React from "react";
 const ExamPricePageCard = ({ data }) => {
   return (
     <>
-      <Card class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center  mb-2">
+      <Card
+        sx={{
+          color: "white",
+          backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
+          borderRadius: "0.375rem",
+          fontSize: "0.875rem",
+          textAlign: "center",
+          cursor: "pointer",
+          padding: "0.625rem 1.25rem",
+          marginBottom: "0.5rem",
+          "&:hover": {
+            backgroundImage:
+              "linear-gradient(to bottom left, #805ad5, #4dabf7)",
+            boxShadow:
+              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          },
+          "&:focus": {
+            boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+            outline: "none",
+          },
+        }}
+      >
         <Typography
           fontSize={20}
           fontWeight={700}
@@ -86,7 +107,7 @@ const ExamPricePageCard = ({ data }) => {
                             transform: "scale(1.05)",
                           },
                           borderRadius: "0px",
-                          borderTopLeftRadius: "15px", // Adjust the value as needed for the desired curvature
+                          borderTopLeftRadius: "15px",
                           borderTopRightRadius: "0px",
                           borderBottomRightRadius: "15px",
                           borderBottomLeftRadius: "0px",
@@ -194,15 +215,29 @@ const ExamPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card
-        style={{
+        sx={{
+          mt: 2,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           fontSize: 20,
           padding: "15px",
+          color: "white",
+          backgroundImage: "linear-gradient(to right, #805ad5, #d67ade)",
+          borderRadius: "0.375rem",
+          textAlign: "center",
+          cursor: "pointer",
+          "&:hover": {
+            backgroundImage: "linear-gradient(to left, #805ad5, #d67ade)",
+            boxShadow:
+              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          },
+          "&:focus": {
+            boxShadow: "0 0 0 3px rgba(103, 58, 183, 0.5)",
+            outline: "none",
+          },
         }}
-        class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mt-2"
       >
-        What is in the Premium File?
+        <b>What is in the Premium File?</b>
       </Card>
       <Card sx={{ bgcolor: "#111827", color: "white", padding: "10px" }}>
         {Array.isArray(data.question_types) &&
@@ -231,15 +266,30 @@ const ExamPricePageCard = ({ data }) => {
           })}
       </Card>
       <Card
-        style={{
+        sx={{
+          mt: 2,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           fontSize: 20,
           padding: "15px",
+          color: "white",
+          backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
+          borderRadius: "0.375rem",
+          textAlign: "center",
+          cursor: "pointer",
+          "&:hover": {
+            backgroundImage:
+              "linear-gradient(to bottom left, #805ad5, #4dabf7)",
+            boxShadow:
+              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          },
+          "&:focus": {
+            boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+            outline: "none",
+          },
         }}
-        class="mt-3 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
       >
-        Last Week Results
+        <b>Last Week Results</b>
       </Card>
       <Card sx={{ bgcolor: "#111827", color: "white", padding: "20px" }}>
         <Typography fontSize={22} fontWeight={700}>
