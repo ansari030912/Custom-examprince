@@ -3,24 +3,28 @@
 
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
-import { HotExam, ReleatedExam } from "../../components/Tables";
-import { Footer } from "../../components/footer";
-import NavbarList from "../../navbar/NavbarList";
 
-const AllVendorsPerma = async ({ params }) => {
+import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
+import { Footer } from "../components/footer";
+import HotExamCard from "./HotExamCard";
+import { Navbar } from "../navbar";
+
+const UnlimitedAccessPage = async () => {
   const response = await fetch(
-    `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
+    `${process.env.baseURL}/v1/unlimited_access/?coupon=MEGASALE-30`,
     {
       headers: {
         "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
       },
     }
   );
+
   const data = await response.json();
+  console.log("🚀 ~ UnlimitedAccessPage ~ data:", data);
+
   return (
     <>
-      <NavbarList />
+      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -37,12 +41,11 @@ const AllVendorsPerma = async ({ params }) => {
             </div>
           </Grid>
           <Grid item xs={12} md={8.5}>
-            <ExamPriceCard data={data} />
-            <Content data={data} />
+            <UnlimitedAccess data={data} />
+            <WindowsDataCard />
           </Grid>
           <Grid item sm={12} md={3.5}>
-            <HotExam />
-            <ReleatedExam examData={data} />
+            <HotExamCard />
             <Grid
               container
               className="bg-gray-900"
@@ -167,9 +170,6 @@ const AllVendorsPerma = async ({ params }) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={8.5}>
-            <CommentsCard data={data} />
-          </Grid>
         </Grid>
       </Container>
       <Footer />
@@ -177,4 +177,4 @@ const AllVendorsPerma = async ({ params }) => {
   );
 };
 
-export default AllVendorsPerma;
+export default UnlimitedAccessPage;
