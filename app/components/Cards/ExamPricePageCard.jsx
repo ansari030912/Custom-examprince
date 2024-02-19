@@ -267,8 +267,12 @@ const ExamPricePageCard = ({ data }) => {
                   }}
                   className="bg-white text-gray-800"
                 >
-                  <div>{question_type}</div>
-                  <div>{question_type_count}</div>
+                  <div className="color-gray-800 dark:color-white">
+                    {question_type}
+                  </div>
+                  <div className="color-gray-800 dark:color-white">
+                    {question_type_count}
+                  </div>
                 </Card>
               </>
             );
