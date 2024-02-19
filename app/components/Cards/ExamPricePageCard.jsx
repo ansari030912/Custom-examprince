@@ -239,9 +239,9 @@ const ExamPricePageCard = ({ data }) => {
         <b>What is in the Premium File?</b>
       </Card>
       <Card
-        className="bg-white"
+        className="bg-white dark:bg-gray-800"
         sx={{
-          color: "white",
+          // color: "white",
           padding: "10px",
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
@@ -258,13 +258,12 @@ const ExamPricePageCard = ({ data }) => {
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "10px",
-                    // backgroundColor: "#111827",
-                    color: "white",
+                    // color: "white",
                     border: "1px solid white",
                     borderRadius: "0px",
                     mb: "4px",
                   }}
-                  className="bg-white text-gray-800"
+                  className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
                 >
                   <div className="color-gray-800 dark:color-white">
                     {question_type}
