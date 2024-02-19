@@ -17,14 +17,16 @@ const WindowsCard = () => {
       <Grid container spacing={1}>
         <Grid item xs={12} lg={9}>
           <div>
-            <Typography
-              fontSize={25}
-              fontWeight={"bold"}
-              sx={{ textAlign: "center" }}
-              className="text-white hover:text-yellow-200 hover:underline sm:text-center lg:text-left"
-            >
-              How to Open Test Engine .dumpsarena Files
-            </Typography>
+            <Link href={"/test-engine-simulator"}>
+              <Typography
+                fontSize={25}
+                fontWeight={"bold"}
+                sx={{ textAlign: "center" }}
+                className="text-white hover:text-yellow-200 hover:underline text-center"
+              >
+                How to Open Test Engine .dumpsarena Files
+              </Typography>
+            </Link>
             <Typography
               fontSize={20}
               variant="body1"
