@@ -86,7 +86,6 @@ const ExamPricePageCard = ({ data }) => {
           </Grid>
         </Grid>
       </Card>
-
       <Card sx={{ backgroundColor: "#a7cbf9", padding: "10px" }}>
         <Grid container spacing={2}>
           {Array.isArray(data.exam_prices) &&
