@@ -5,11 +5,13 @@ import Link from "next/link";
 import AllCertificates from "../components/Tables/AllCertificates";
 import { Navbar } from "../navbar";
 import { Footer } from "../components/footer";
+import { Search } from "../components/Search";
 
 const AllCertificaesPage = () => {
   return (
     <>
       <Navbar />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>

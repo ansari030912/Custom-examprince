@@ -7,11 +7,13 @@ import React from "react";
 import AllVendors from "../components/Tables/AllVendors";
 import { Navbar } from "../navbar";
 import { Footer } from "../components/footer";
+import { Search } from "../components/Search";
 
 const AllVendorsPage = () => {
   return (
     <>
       <Navbar />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>

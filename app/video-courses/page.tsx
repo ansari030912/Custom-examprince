@@ -6,10 +6,12 @@ import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
 import { Navbar } from "../navbar";
 import { Footer } from "../components/footer";
+import { Search } from "../components/Search";
 const AllVideoCoursesPage = () => {
   return (
     <>
       <Navbar />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>

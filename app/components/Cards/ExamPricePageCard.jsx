@@ -197,7 +197,7 @@ const ExamPricePageCard = ({ data }) => {
                             }}
                           >
                             <div>
-                              <span className="text-xl font-bold text-gray-900 dark:text-white">
+                              <span className="text-xl font-bold text-white dark:text-white">
                                 ${price}
                               </span>
                               <span className="text-lg font-bold text-red-500 line-through ml-1">
@@ -223,7 +223,7 @@ const ExamPricePageCard = ({ data }) => {
           padding: "15px",
           color: "white",
           backgroundImage: "linear-gradient(to right, #805ad5, #d67ade)",
-          borderRadius: "0.375rem",
+          // borderRadius: "0.375rem",
           textAlign: "center",
           cursor: "pointer",
           "&:hover": {
@@ -239,7 +239,15 @@ const ExamPricePageCard = ({ data }) => {
       >
         <b>What is in the Premium File?</b>
       </Card>
-      <Card sx={{ bgcolor: "#111827", color: "white", padding: "10px" }}>
+      <Card
+        className="bg-white"
+        sx={{
+          color: "white",
+          padding: "10px",
+          borderTopLeftRadius: "0px",
+          borderTopRightRadius: "0px",
+        }}
+      >
         {Array.isArray(data.question_types) &&
           data.question_types.map((item, i) => {
             const { question_type, question_type_count } = item;
@@ -251,12 +259,13 @@ const ExamPricePageCard = ({ data }) => {
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "10px",
-                    backgroundColor: "#111827",
+                    // backgroundColor: "#111827",
                     color: "white",
                     border: "1px solid white",
                     borderRadius: "0px",
                     mb: "4px",
                   }}
+                  className="bg-white text-gray-800"
                 >
                   <div>{question_type}</div>
                   <div>{question_type_count}</div>
@@ -274,7 +283,7 @@ const ExamPricePageCard = ({ data }) => {
           padding: "15px",
           color: "white",
           backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
-          borderRadius: "0.375rem",
+          // borderRadius: "0.375rem",
           textAlign: "center",
           cursor: "pointer",
           "&:hover": {
@@ -291,58 +300,52 @@ const ExamPricePageCard = ({ data }) => {
       >
         <b>Last Week Results</b>
       </Card>
-      <Card sx={{ bgcolor: "#111827", color: "white", padding: "20px" }}>
+      <Card
+        sx={{
+          // bgcolor: "#111827",
+          // color: "white",
+          padding: "20px",
+          borderTopLeftRadius: "0px",
+          borderBottomRightRadius: "0px",
+        }}
+        className="text-gray-700 dark:text-white bg-white dark:bg-gray-800"
+      >
         <Typography fontSize={22} fontWeight={700}>
           Customer Pass {data.exam_title} Exam
         </Typography>
         <Card
           sx={{
             mt: 2,
-            padding: "10px",
-            bgcolor: "#111827",
+            padding: "5px",
+            // bgcolor: "#111827",
             borderRadius: "4px",
             boxShadow:
               "0 0 0 2px transparent, 0 0 0 3px #8B5CF6, 0 0 0 3px #3B82F6",
           }}
+          className="bg-white dark:bg-gray-800"
         >
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-large text-blue-700 dark:text-white">
-              Average Score In Real Exam
-            </span>
-            <span class="text-sm font-large text-blue-700 dark:text-white">
-              {data.exam_last_week_average_score}%
-            </span>
-          </div>
           <div>
             <div
-              class="text-white h-2.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 py-1.5 text-center"
+              class="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_average_score}%` }}
-            ></div>
+            >
+              <div className="flex justify-between">
+                <div>Average Score In Real Exam</div>{" "}
+                <div>{data.exam_last_week_average_score}% </div>
+              </div>
+            </div>
           </div>
-        </Card>
-        <Card
-          sx={{
-            mt: 2,
-            padding: "10px",
-            bgcolor: "#111827",
-            borderRadius: "4px",
-            boxShadow:
-              "0 0 0 2px transparent, 0 0 0 3px #8B5CF6, 0 0 0 3px #3B82F6",
-          }}
-        >
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-lg text-blue-700 dark:text-white">
-              Questions came word for word from this dump
-            </span>
-            <span class="text-sm font-lg text-blue-700 dark:text-white">
-              {data.exam_last_week_word_to_word}%
-            </span>
-          </div>
+
           <div>
             <div
-              class="text-white h-2.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 py-1.5 text-center"
+              class="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_word_to_word}%` }}
-            ></div>
+            >
+              <div className="flex justify-between">
+                <div>Questions came word for word from this dump</div>
+                <div>{data.exam_last_week_word_to_word}%</div>
+              </div>
+            </div>
           </div>
         </Card>
       </Card>

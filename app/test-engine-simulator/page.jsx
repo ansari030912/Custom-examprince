@@ -2,15 +2,12 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
-import WindowsCard from "./components/Cards/WindowsCard";
-import { Search } from "./components/Search";
-import HotExamsData from "./components/Tables/HotExamsData";
-import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import { Footer } from "./components/footer";
-import { Navbar } from "./navbar";
+import { Search } from "../components/Search";
+import { Footer } from "../components/footer";
+import { Navbar } from "../navbar";
+import HotExamsData from "../components/Tables/HotExamsData";
 
-const Home = () => {
+const TestEngineSimulator = () => {
   return (
     <>
       <Navbar />
@@ -45,7 +42,7 @@ const Home = () => {
                 color="#1F2937"
                 fontWeight={400}
               >
-                <b>Pass Your Next Certification Exam Fast!</b>
+                <b>Download FREE DumpsArena Exam Test Engine Simulator</b>
               </Typography>
               <Typography
                 lineHeight={"30px"}
@@ -55,13 +52,12 @@ const Home = () => {
                 fontWeight={300}
               >
                 <b>
-                  Everything you need to prepare, learn & pass your
-                  certification exam easily. 90 days free updates. First attempt
-                  100% success.
+                  An exam testing engine for certification exam preparation.
+                  Take exams that are just like the real thing.
                 </b>
               </Typography>
               <Typography lineHeight={"30px"} variant="body2" fontSize={16}>
-                <b>Why Choose DumpsArena?</b>
+                <b>Use DumpsArena Test Engine to open .dumpsarena files</b>
               </Typography>
 
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
@@ -78,7 +74,7 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                Latest Exam Questions & Answers from certification exams.
+                Realistic exam simulation
               </Typography>
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
                 <svg
@@ -94,7 +90,7 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                High Success Rate supported by our 99.5% pass history.
+                Several different question types
               </Typography>
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
                 <svg
@@ -110,7 +106,7 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                Hassle Free Refund if you failed your exam.
+                Customizable exam taking mode
               </Typography>
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
                 <svg
@@ -126,7 +122,7 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                Instant Downloads as soon as you complete your purchase.
+                Whole exam in a single file
               </Typography>
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
                 <svg
@@ -142,8 +138,7 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                Free Quick Updates available within 2 weeks of any change to the
-                actual exam.
+                Open unlimited exam files
               </Typography>
               <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
                 <svg
@@ -159,14 +154,11 @@ const Home = () => {
                     d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
                   />
                 </svg>
-                Secure Shopping Experience Your information will never be shared
-                with 3rd parties.
+                No extra charges to use Test Engine (Totally FREE)
               </Typography>
             </Card>
 
-            <RecentlyUpdatedTable />
-
-            <WindowsCard />
+            {/* <RecentlyUpdatedTable /> */}
           </Grid>
           <Grid item sm={12} lg={4}>
             <HotExamsData />
@@ -294,9 +286,6 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <CardSliderVendor />
-          </Grid>
         </Grid>
       </Container>
       <Footer />
@@ -304,4 +293,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default TestEngineSimulator;

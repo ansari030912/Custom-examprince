@@ -7,6 +7,7 @@ import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
 import { Navbar } from "../../navbar";
 import { Footer } from "../../components/footer";
+import { Search } from "../../components/Search";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -22,6 +23,7 @@ const AllVendorsPerma = async ({ params }) => {
   return (
     <>
       <Navbar />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>

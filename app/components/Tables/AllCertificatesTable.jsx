@@ -25,9 +25,9 @@ const AllCertificatesTable = ({ data }) => {
     <>
       <Card
         sx={{
-          bgcolor: "#1F2937",
+          bgcolor: "#111827",
           padding: 1,
-          mb: 1
+          mb: 1,
         }}
       >
         <Typography
@@ -68,7 +68,8 @@ const AllCertificatesTable = ({ data }) => {
                           <Link href={`/vendor/${vendor_perma}?certifates`}>
                             <Typography
                               className="flex justify-between"
-                              fontSize={16}
+                              fontSize={14}
+                              color={"#3D4049"}
                               fontWeight={600}
                             >
                               <b>{vendor_title}</b>

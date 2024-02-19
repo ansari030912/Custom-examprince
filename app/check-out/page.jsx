@@ -7,11 +7,13 @@ import React from "react";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 import { Cart } from "../components/Cards";
+import { Search } from "../components/Search";
 
 const CheckOut = () => {
   return (
     <>
       <Navbar />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>

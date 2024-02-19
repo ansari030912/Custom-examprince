@@ -232,7 +232,7 @@ const CommentCard = ({ data }) => {
                   <input
                     type="text"
                     id="name"
-                    className="mt-1 block p-3 w-full border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                    className="mt-1 block p-3 w-full border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
@@ -241,14 +241,14 @@ const CommentCard = ({ data }) => {
                 <div className="mb-4">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 dark:text-white"
+                    className="block text-sm font-medium text-gray-700  dark:text-white"
                   >
                     Email
                   </label>
                   <input
                     type="email"
                     id="email"
-                    className="mt-1 p-3 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                    className="mt-1 p-3 block w-full border-gray-300 bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:text-white rounded-md shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -261,7 +261,7 @@ const CommentCard = ({ data }) => {
                   <textarea
                     id="comment"
                     rows="6"
-                    className=" p-3 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
+                    className=" p-3 w-full text-sm text-gray-900 border-0 bg-gray-100 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800"
                     placeholder="Write a comment..."
                     value={commentText}
                     onChange={(e) => setCommentText(e.target.value)}
@@ -298,19 +298,23 @@ const CommentCard = ({ data }) => {
                     <footer className="mb-2">
                       <div className="flex justify-between">
                         <p>
-                          <p className="text-md text-white font-bold">{name}</p>
-                          <p className="text-sm text-white">-- {country}</p>
+                          <p className="text-md text-black dark:text-white font-bold">
+                            {name}
+                          </p>
+                          <p className="text-sm text-black dark:text-white">
+                            -- {country}
+                          </p>
                         </p>
-                        <p className="text-sm text-white">
+                        <p className="text-sm text-black dark:text-white">
                           <time pubdate={date}>
                             {moment(date).format("LL")}
                           </time>
                         </p>
                       </div>
                     </footer>
-                    <p className="text-white text-sm">{decodedComment}</p>
+                    <p className=" text-black dark:text-white text-sm">{decodedComment}</p>
                     {country && (
-                      <p className="text-sm text-white text-right"></p>
+                      <p className="text-sm text-black dark:text-white text-right"></p>
                     )}
                   </article>
                 </>
@@ -320,7 +324,7 @@ const CommentCard = ({ data }) => {
             <div className="p-4">
               <button
                 onClick={toggleShowMore}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-500 hover:bg-blue-700 text-white dark:text-white font-bold py-2 px-4 rounded"
               >
                 {showMore ? "Show Less" : "Show More"}
               </button>

@@ -11,7 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 const SingleVendorExamTable = ({ data }) => {
   const [page, setPage] = useState(0);
@@ -50,7 +50,7 @@ const SingleVendorExamTable = ({ data }) => {
       </Card>
       <Card>
         <TableContainer component={Paper}>
-          <Table sx={{ p: "10px" }} size="medium">
+          <Table sx={{ p: "10px" }} size="small">
             <TableBody sx={{ padding: 2 }}>
               {Array.isArray(data.vendor_exams) &&
                 data.vendor_exams
@@ -64,11 +64,8 @@ const SingleVendorExamTable = ({ data }) => {
                     } = item;
                     return (
                       <TableRow hover key={exam_code}>
-                        <TableCell style={{}}>
-                          <Link
-                            href={`/exam/${exam_perma}`}
-                            className="flex justify-between"
-                          >
+                        <TableCell>
+                          <Link href={`/exam/${exam_perma}`}>
                             <Typography fontSize={14} fontWeight={600}>
                               <b>{exam_title}</b>
                             </Typography>
@@ -93,7 +90,7 @@ const SingleVendorExamTable = ({ data }) => {
           }}
           rowsPerPageOptions={[rowsPerPage]}
           component="div"
-          count={data.vendor_exams.length} // Corrected count
+          count={data.vendor_exams?.length} // Corrected count
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

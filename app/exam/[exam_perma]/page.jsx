@@ -7,6 +7,7 @@ import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
 import { Footer } from "../../components/footer";
 import NavbarList from "../../navbar/NavbarList";
+import { Search } from "../../components/Search";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -21,6 +22,7 @@ const AllVendorsPerma = async ({ params }) => {
   return (
     <>
       <NavbarList />
+      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
