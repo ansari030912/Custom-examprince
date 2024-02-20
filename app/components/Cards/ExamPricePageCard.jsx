@@ -185,7 +185,8 @@ const ExamPricePageCard = ({ data }) => {
                           <Typography
                             fontWeight={700}
                             color={"white"}
-                            className="text-left text-xl md:text-xs"
+                            fontSize={12}
+                            className="text-left"
                           >
                             {title}
                           </Typography>
