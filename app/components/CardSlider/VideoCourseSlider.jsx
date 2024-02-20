@@ -29,7 +29,7 @@ const VideoCourseSlider = ({ data }) => {
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
           <Grid item xs={6} sm={4} md={4} key={index}>
-            <Link href={`/vendor/${vendor.vendor_perma}`}>
+            <Link key={vendor.vendor_title} href={`/training-course/${vendor.perma}`}>
               <Card
                 className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
                 sx={{
