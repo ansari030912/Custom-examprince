@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Card, Container, Grid, Typography } from "@mui/material";
+import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import WindowsCard from "./components/Cards/WindowsCard";
@@ -9,6 +9,7 @@ import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 import { Footer } from "./components/footer";
 import { Navbar } from "./navbar";
+import MainPageCard from "./components/Cards/MainPageCard";
 
 const Home = () => {
   return (
@@ -32,140 +33,8 @@ const Home = () => {
           </Grid>
 
           <Grid item xs={12} lg={8}>
-            <Card
-              sx={{
-                p: "20px",
-                bgcolor: "#E9ECEF",
-              }}
-            >
-              <Typography
-                lineHeight={"30px"}
-                variant="h1"
-                fontSize={30}
-                color="#1F2937"
-                fontWeight={400}
-              >
-                <b>Pass Your Next Certification Exam Fast!</b>
-              </Typography>
-              <Typography
-                lineHeight={"30px"}
-                variant="h2"
-                fontSize={18}
-                color="primary"
-                fontWeight={300}
-              >
-                <b>
-                  Everything you need to prepare, learn & pass your
-                  certification exam easily. 90 days free updates. First attempt
-                  100% success.
-                </b>
-              </Typography>
-              <Typography lineHeight={"30px"} variant="body2" fontSize={16}>
-                <b>Why Choose DumpsArena?</b>
-              </Typography>
-
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                Latest Exam Questions & Answers from certification exams.
-              </Typography>
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                High Success Rate supported by our 99.5% pass history.
-              </Typography>
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                Hassle Free Refund if you failed your exam.
-              </Typography>
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                Instant Downloads as soon as you complete your purchase.
-              </Typography>
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                Free Quick Updates available within 2 weeks of any change to the
-                actual exam.
-              </Typography>
-              <Typography lineHeight={"30px"} sx={{ display: "flex" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5rem"
-                  height="1.5rem"
-                  viewBox="0 0 22 22"
-                  color="green"
-                  style={{ marginRight: 6 }}
-                >
-                  <path
-                    fill="currentColor"
-                    d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59z"
-                  />
-                </svg>
-                Secure Shopping Experience Your information will never be shared
-                with 3rd parties.
-              </Typography>
-            </Card>
-
+            <MainPageCard />
             <RecentlyUpdatedTable />
-
             <WindowsCard />
           </Grid>
           <Grid item sm={12} lg={4}>
