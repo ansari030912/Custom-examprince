@@ -16,7 +16,7 @@ import React, { useState } from "react";
 
 const TableContentRecentlyUpdated = ({ data }) => {
   const [page, setPage] = useState(0);
-  const rowsPerPage = 8;
+  const rowsPerPage = 10;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -25,8 +25,8 @@ const TableContentRecentlyUpdated = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-r from-gray-800 to-blue-400"
         sx={{
-          bgcolor: "#111827",
           borderRadius: "0px",
           marginTop: 1,
         }}

@@ -43,7 +43,7 @@ const AllVendorSlider = ({ data }) => {
                   />
                 </CardMedia>
                 <Divider />
-                <CardContent sx={{ bgcolor: "#1F2937" }}>
+                <CardContent className="text-white bg-gradient-to-r from-gray-800 to-blue-400">
                   <Typography
                     variant="h6"
                     fontSize={13}
@@ -130,13 +130,12 @@ const AllVendorSlider = ({ data }) => {
       sx={{
         padding: "15px",
         borderRadius: "0px",
-        bgcolor: "#1F2937",
       }}
     >
       <Box sx={{ textAlign: "right", mb: 1 }}>
         <Link href="/all-vendors">
-          <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+          <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-700 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white  rounded-md group-hover:bg-opacity-0">
               View All Vendors
             </span>
           </button>

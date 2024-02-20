@@ -7,8 +7,8 @@ import React from "react";
 const WindowsCard = () => {
   return (
     <Card
+    className="bg-white text-gray-800"
       sx={{
-        bgcolor: "#111827",
         padding: "12px",
         borderRadius: "0px",
         marginTop: 1,
@@ -22,7 +22,7 @@ const WindowsCard = () => {
                 fontSize={25}
                 fontWeight={"bold"}
                 sx={{ textAlign: "center" }}
-                className="text-white hover:text-yellow-200 hover:underline text-center"
+                className="text-gray-800 hover:text-blue-600 hover:underline text-center"
               >
                 How to Open Test Engine .dumpsarena Files
               </Typography>
@@ -30,8 +30,8 @@ const WindowsCard = () => {
             <Typography
               fontSize={20}
               variant="body1"
-              className="text-white sm:text-center lg:text-left text-justify"
-              s
+              className="text-gray-800 sm:text-center lg:text-left text-justify ml-2"
+              
             >
               Use FREE DumpsArena Test Engine player to open .dumpsarena files
             </Typography>

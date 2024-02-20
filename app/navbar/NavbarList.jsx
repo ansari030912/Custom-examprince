@@ -11,14 +11,14 @@ const NavbarList = () => {
   const [profileToggles, setProfileToggles] = useState(false);
 
   return (
-    <nav class="bg-gray-800">
+    <nav class="text-white bg-gradient-to-t from-blue-300 to-gray-900">
       <Container maxWidth="lg">
         <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
           <div class="relative flex h-12 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
               <button
                 type="button"
-                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
                 onClick={() => setToggleMenu(!toggleMenu)}
@@ -73,19 +73,20 @@ const NavbarList = () => {
                   <div>
                     <Link
                       href="/"
-                      class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
+                      class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 hover:text-gray-200 rounded-md px-3 py-2 text-sm font-medium flex"
                     >
                       <Icon
                         icon="ic:twotone-home"
                         width="1.2rem"
                         height="1.2rem"
+                        color="white"
                       />
                       Home
                     </Link>
                   </div>
                   <Link
                     href="/all-vendors"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
+                    class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="icon-park-twotone:necktie"
@@ -96,7 +97,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/all-certificates"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
+                    class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="game-icons:tied-scroll"
@@ -107,7 +108,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/video-courses"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
+                    class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="icon-park-solid:video-two"
@@ -118,7 +119,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/unlimited-access"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium flex"
+                    class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="game-icons:over-infinity"
@@ -134,7 +135,7 @@ const NavbarList = () => {
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-3"
+                class="relative rounded-full hover:bg-gray-400 bg-purple-550 p-2 text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
               >
                 <Card class="bg-white">
                   {/* <span class="absolute pl-3 text-white">0</span> */}
@@ -162,7 +163,7 @@ const NavbarList = () => {
                   <div>
                     <button
                       type="button"
-                      class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2  hover:bg-gray-700 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2  hover:bg-gray-400 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                       id="user-menu-button"
                       aria-expanded="false"
                       onClick={() => setProfileToggles(!profileToggles)}
@@ -221,7 +222,7 @@ const NavbarList = () => {
                   )}
                 </div>
               ) : (
-                <button className="hover:text-white  hover:bg-gray-700 text-gray-300 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md">
+                <button className="hover:text-gray-200  hover:bg-gray-400 text-gray-300 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md">
                   Login / SignUp
                 </button>
               )}
@@ -233,14 +234,14 @@ const NavbarList = () => {
             <div class="space-y-1 px-2 pb-3 pt-2">
               <Link
                 href="/"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
+                class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon icon="ic:twotone-home" width="1.2rem" height="1.2rem" />
                 Home
               </Link>
               <Link
                 href="/all-vendors"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
+                class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="icon-park-twotone:necktie"
@@ -251,7 +252,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/all-certificates"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
+                class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="game-icons:tied-scroll"
@@ -262,7 +263,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/video-courses"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
+                class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="icon-park-solid:video-two"
@@ -273,7 +274,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/unlimited-access"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-base font-medium flex"
+                class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="game-icons:over-infinity"

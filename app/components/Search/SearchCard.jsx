@@ -89,8 +89,7 @@ const SearchCard = () => {
         style={{
           padding: "10px",
           borderRadius: "5px",
-          backgroundColor: "#374151",
-          color: "white",
+
           width: "100%",
           outline: "none",
           paddingLeft: "30px",
@@ -108,7 +107,7 @@ const SearchCard = () => {
           top: "50%",
           left: "10px",
           transform: "translateY(-50%)",
-          fill: "white",
+          fill: "#1F2937",
         }}
         xmlns="http://www.w3.org/2000/svg"
         width="18"

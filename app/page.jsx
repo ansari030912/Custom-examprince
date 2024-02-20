@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Box, Card, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
+import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import { Search } from "./components/Search";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 import { Footer } from "./components/footer";
 import { Navbar } from "./navbar";
-import MainPageCard from "./components/Cards/MainPageCard";
 
 const Home = () => {
   return (
@@ -41,7 +41,7 @@ const Home = () => {
             <HotExamsData />
             <Grid
               container
-              className="bg-gray-900"
+              className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
               sx={{
                 display: "flex",
                 mt: "10px",
@@ -105,7 +105,7 @@ const Home = () => {
             </Grid>
             <Grid
               container
-              className="bg-gray-800"
+              className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
               sx={{
                 display: "flex",
                 mt: "10px",
@@ -155,7 +155,7 @@ const Home = () => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    class="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>
