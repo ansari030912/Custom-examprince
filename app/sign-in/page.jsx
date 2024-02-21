@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { Card } from "@mui/material";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
+import { Footer } from "../components/footer";
+import { Navbar } from "../navbar";
+import style from "./style.module.css";
 
 export default function SignIn() {
   const handleSubmit = (event) => {
@@ -19,283 +19,118 @@ export default function SignIn() {
 
   return (
     <>
+      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div class="mx-auto max-w-8xl flex justify-center">
-              <div class="md:mx-150px lg:mt-2 rounded-2">
-                <img
-                  src="/banner.png"
-                  alt="SASSA_Status_Check"
-                  loading="lazy"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </div>
-          </Grid>
+            {/* <div className={style.container}> */}
+              <div className="flex min-h-screen">
+                <div className="flex flex-row w-full">
+                  <div className="hidden lg:flex flex-col justify-between bg-[#ffe85c] lg:p-8 xl:p-12 lg:max-w-sm xl:max-w-lg">
+                    <div className="flex items-center justify-start space-x-3">
+                      <span className="bg-black rounded-full w-8 h-8"></span>
+                      <a href="#" className="font-medium text-xl">
+                        Brand
+                      </a>
+                    </div>
+                    <div className="space-y-5">
+                      <h1 className="lg:text-3xl xl:text-5xl xl:leading-snug font-extrabold">
+                        Enter your account and discover new experiences
+                      </h1>
+                      <p className="text-lg">You do not have an account?</p>
+                      <button className="inline-block flex-none px-4 py-3 border-2 rounded-lg font-medium border-black bg-black text-white">
+                        Create account here
+                      </button>
+                    </div>
+                    <p className="font-medium">© 2022 Company</p>
+                  </div>
 
-          <Grid item xs={12} lg={8}>
-            <Card
-              sx={{
-                padding: "10px",
-                paddingY: "50px",
-              }}
-            >
-              <form class="max-w-md mx-auto border-gray-100">
-                <div class="w-full mb-5 group">
-                  <input
-                    type="email"
-                    name="floating_email"
-                    id="floating_email"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder="Name"
-                    required
-                  />
-                  <label
-                    for="floating_email"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Email address
-                  </label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                  <input
-                    type="password"
-                    name="floating_password"
-                    id="floating_password"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="floating_password"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Password
-                  </label>
-                </div>
-                <div class="relative z-0 w-full mb-5 group">
-                  <input
-                    type="password"
-                    name="repeat_password"
-                    id="floating_repeat_password"
-                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    for="floating_repeat_password"
-                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Confirm password
-                  </label>
-                </div>
-                <div class="grid md:grid-cols-2 md:gap-6">
-                  <div class="relative z-0 w-full mb-5 group">
-                    <input
-                      type="text"
-                      name="floating_first_name"
-                      id="floating_first_name"
-                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label
-                      for="floating_first_name"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >
-                      First name
-                    </label>
-                  </div>
-                  <div class="relative z-0 w-full mb-5 group">
-                    <input
-                      type="text"
-                      name="floating_last_name"
-                      id="floating_last_name"
-                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label
-                      for="floating_last_name"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >
-                      Last name
-                    </label>
+                  <div className="flex flex-1 flex-col items-center justify-center px-10 relative">
+                    <div className="flex lg:hidden justify-between items-center w-full py-4">
+                      <div className="flex items-center justify-start space-x-3">
+                        <span className="bg-black rounded-full w-6 h-6"></span>
+                        <a href="#" className="font-medium text-lg">
+                          Brand
+                        </a>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <span>Not a member? </span>
+                        <a
+                          href="#"
+                          className="underline font-medium text-[#070eff]"
+                        >
+                          Sign up now
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex flex-1 flex-col  justify-center space-y-5 max-w-md">
+                      <div className="flex flex-col space-y-2 text-center">
+                        <h2 className="text-3xl md:text-4xl font-bold">
+                          Sign in to account
+                        </h2>
+                        <p className="text-md md:text-xl">
+                          Sign up or log in to place the order, no password
+                          required!
+                        </p>
+                      </div>
+                      <div className="flex flex-col max-w-md space-y-5">
+                        <input
+                          type="text"
+                          placeholder="Username"
+                          className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
+                        />
+                        <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white">
+                          Confirm with email
+                        </button>
+                        <div className="flex justify-center items-center">
+                          <span className="w-full border border-black"></span>
+                          <span className="px-4">Or</span>
+                          <span className="w-full border border-black"></span>
+                        </div>
+                        <button className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black relative">
+                          <span className="absolute left-4">
+                            <svg
+                              width="24px"
+                              height="24px"
+                              viewBox="0 0 24 24"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlnsXlink="http://www.w3.org/1999/xlink"
+                            >
+                              <path
+                                fill="#EA4335 "
+                                d="M5.26620003,9.76452941 C6.19878754,6.93863203 8.85444915,4.90909091 12,4.90909091 C13.6909091,4.90909091 15.2218182,5.67878754 16.3696696,6.88173552 L20.2131818,3.03822329 C18.0261595,1.32926454 15.3031982,0 12,0 C6.47727273,0 1.88909091,4.58818182 1.88909091,10.1109091 C1.88909091,15.6336364 6.47727273,20.2218182 12,20.2218182 C16.1093182,20.2218182 19.7339432,17.6884783 20.8901729,13.9296197 L5.26620003,9.76452941 Z"
+                                id="Shape"
+                              ></path>
+                              <path
+                                fill="#4285F4"
+                                d="M20.8901729,13.9296197 L16.3696696,17.6751309 C14.796132,16.4820675 13.0020622,15.6818182 12,15.6818182 C10.5629816,15.6818182 9.26202157,16.3493453 8.36689526,17.2861656 L5.31582118,14.4271423 C6.48148777,12.8355899 8.42467532,11.6818182 10.7272727,11.6818182 C11.7322295,11.6818182 12.6646922,11.9634553 13.4723983,12.4665377 L16.3199338,9.72629765 C15.1370238,8.78947729 13.5972406,8.18181818 12,8.18181818 C9.03272727,8.18181818 6.59209091,10.4981818 5.31582118,13.073387 L20.8901729,13.9296197 Z"
+                                id="Shape"
+                              ></path>
+                              <path
+                                fill="#FBBC05"
+                                d="M12,19.6622727 C14.3848922,19.6622727 16.4581818,18.7013636 17.969937,17.1540435 L14.098,14.3717153 C13.3839082,14.8285092 12.5150364,15.0890909 11.5733333,15.0890909 C10.4894518,15.0890909 9.55698915,14.5990944 8.97166991,13.7572128 L5.31880475,16.6736225 C6.40772516,18.6756383 8.45411014,19.6622727 12,19.6622727 Z"
+                                id="Shape"
+                              ></path>
+                              <path
+                                fill="#34A853"
+                                d="M8.96969697,13.7272727 C8.59976065,13.1860931 8.37636364,12.5272727 8.37636364,11.8181818 C8.37636364,11.1090909 8.59976065,10.4502705 8.97166991,9.90909091 L5.31880475,6.99268116 C4.4189011,8.50140909 3.80909091,10.2386779 3.80909091,11.8181818 C3.80909091,13.3976857 4.4189011,15.1349545 5.31880475,16.6436824 L8.96969697,13.7272727 Z"
+                                id="Shape"
+                              ></path>
+                            </svg>
+                          </span>
+                          <span>Sign in with Google</span>
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="grid md:grid-cols-2 md:gap-6">
-                  <div class="relative z-0 w-full mb-5 group">
-                    <input
-                      type="tel"
-                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                      name="floating_phone"
-                      id="floating_phone"
-                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label
-                      for="floating_phone"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >
-                      Phone number (123-456-7890)
-                    </label>
-                  </div>
-                  <div class="relative z-0 w-full mb-5 group">
-                    <input
-                      type="text"
-                      name="floating_company"
-                      id="floating_company"
-                      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                      placeholder=" "
-                      required
-                    />
-                    <label
-                      for="floating_company"
-                      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                    >
-                      Company (Ex. Google)
-                    </label>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Submit
-                </button>
-              </form>
-            </Card>
-          </Grid>
-          <Grid item sm={12} lg={4}>
-            <Grid
-              container
-              className="bg-gray-900"
-              sx={{
-                display: "flex",
-                // mt: "10px",
-                width: "100%",
-              }}
-            >
-              <Grid item xs={12} sx={{ padding: "10px" }}>
-                <Typography
-                  component="div"
-                  variant="h5"
-                  color={"white"}
-                  sx={{ borderBottom: "1px solid white" }}
-                >
-                  Refund Policy
-                </Typography>
-              </Grid>
-              <Grid
-                item
-                xs={8}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "10px",
-                  mt: "-12px",
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  color={"white"}
-                  component="div"
-                  fontSize={12}
-                >
-                  DumpsArena.com has a remarkable success record. We're
-                  confident of our products and provide a no hassle refund
-                  policy.
-                </Typography>
-                <Link
-                  href="/"
-                  className="text-white underline  hover:text-blue-400"
-                >
-                  How our refund policy works?
-                </Link>
-              </Grid>
-              <Grid
-                item
-                xs={4}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  mt: "-12px",
-                }}
-              >
-                <img
-                  width="200px"
-                  height="200px"
-                  src="/money_back.png"
-                  alt="Live from space album cover"
-                />
-              </Grid>
-            </Grid>
-            <Grid
-              container
-              className="bg-gray-800"
-              sx={{
-                display: "flex",
-                mt: "10px",
-                width: "100%",
-              }}
-            >
-              <Grid
-                item
-                xs={12}
-                sx={{
-                  padding: "10px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <img
-                  width="100%"
-                  src="safe_checkout_optimized.png"
-                  alt="safe_checkout_optimized"
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "10px",
-                  mt: "-12px",
-                }}
-              >
-                <Typography
-                  variant="subtitle1"
-                  color={"white"}
-                  component="div"
-                  fontSize={12}
-                  style={{ textAlign: "justify" }}
-                >
-                  Your purchase with DumpsArena.com is safe and fast. The
-                  DumpsArena.com website is protected by 256-bit SSL from
-                  Cloudflare, the leader in online security.
-                </Typography>
-                <Link
-                  type="button"
-                  href="/"
-                  className="text-white underline  hover:text-blue-400 mt-2"
-                >
-                  <button
-                    type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                  >
-                    Customer Support
-                  </button>
-                </Link>
-              </Grid>
-            </Grid>
+              </div>
+            {/* </div> */}
           </Grid>
         </Grid>
       </Container>
+      <Footer />
     </>
   );
 }

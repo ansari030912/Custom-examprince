@@ -95,7 +95,7 @@ const NavbarList = () => {
                   <div>
                     <Link
                       href="/"
-                      class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 hover:text-gray-200 rounded-md px-3 py-2 text-sm font-medium flex"
+                      class="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:to-blue-300 hover:text-gray-200 rounded-md px-3 py-2 text-sm font-medium flex"
                     >
                       <Icon
                         icon="ic:twotone-home"
