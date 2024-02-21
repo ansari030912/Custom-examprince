@@ -268,7 +268,7 @@ const ExamPricePageCard = ({ data }) => {
           })}
       </Card>
       <Card
-        className="text-white bg-gradient-to-b from-gray-400 to-gray-900"
+        className="bg-gradient-to-b from-gray-400 to-gray-900"
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
@@ -276,6 +276,7 @@ const ExamPricePageCard = ({ data }) => {
           fontSize: 20,
           padding: "15px",
           textAlign: "center",
+          color:'white'
         }}
       >
         <b>Last Week Results</b>
