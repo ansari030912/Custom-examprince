@@ -256,8 +256,8 @@ const ExamPricePageCard = ({ data }) => {
                     mb: "4px",
                   }}
                 >
-                  <div className="color-white">{question_type}</div>
-                  <div className="color-white">{question_type_count}</div>
+                  <div className="text-white">{question_type}</div>
+                  <div className="text-white">{question_type_count}</div>
                 </Card>
               </>
             );
