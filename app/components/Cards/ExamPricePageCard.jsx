@@ -256,19 +256,15 @@ const ExamPricePageCard = ({ data }) => {
                     mb: "4px",
                   }}
                 >
-                  <div className="color-gray-800 dark:color-white">
-                    {question_type}
-                  </div>
-                  <div className="color-gray-800 dark:color-white">
-                    {question_type_count}
-                  </div>
+                  <div className="color-wite ">{question_type}</div>
+                  <div className="color-wite ">{question_type_count}</div>
                 </Card>
               </>
             );
           })}
       </Card>
       <Card
-        className="bg-gradient-to-b from-gray-400 to-gray-900"
+        className="bg-gradient-to-l from-gray-400 to-gray-900"
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
@@ -276,7 +272,7 @@ const ExamPricePageCard = ({ data }) => {
           fontSize: 20,
           padding: "15px",
           textAlign: "center",
-          color:'white'
+          color: "white",
         }}
       >
         <b>Last Week Results</b>
