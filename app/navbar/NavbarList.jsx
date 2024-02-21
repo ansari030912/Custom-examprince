@@ -2,16 +2,38 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { Card, Container } from "@mui/material";
+import axios from "axios";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const NavbarList = () => {
   const [userLogin, setUserLogin] = useState("login");
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
+  useEffect(() => {
+    const fetchData = async () => {
+      const config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://api.dumpsboss.com/v1/coupons",
+        headers: {
+          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        },
+      };
+      try {
+        const response = await axios.request(config);
+        const data = response.data;
+        console.log("🚀 ~ Home ~ data:", data);
+        localStorage.setItem("coupons", JSON.stringify(data));
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
-    <nav class="text-white bg-gradient-to-t from-blue-300 to-gray-900">
+    <nav class="text-white bg-gradient-to-t from-blue-400 to-gray-900">
       <Container maxWidth="lg">
         <div class="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
           <div class="relative flex h-12 items-center justify-between">
@@ -135,7 +157,7 @@ const NavbarList = () => {
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                class="relative rounded-full hover:bg-gray-400 bg-purple-550 p-2 text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
+                class="relative rounded-full text-white bg-gradient-to-t hover:from-gray-800 hover:to-blue-400 p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
               >
                 <Card class="bg-white">
                   {/* <span class="absolute pl-3 text-white">0</span> */}

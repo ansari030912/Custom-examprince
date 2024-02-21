@@ -24,8 +24,8 @@ const SingleVendorExamTable = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
-          bgcolor: "#1F2937",
           padding: 1,
           mb: 1,
         }}

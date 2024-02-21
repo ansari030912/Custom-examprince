@@ -9,25 +9,26 @@ const ExamPricePageCard = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-b from-blue-400 to-gray-900"
         sx={{
           color: "white",
-          backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
+          // backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
           borderRadius: "0.375rem",
           fontSize: "0.875rem",
           textAlign: "center",
           cursor: "pointer",
           padding: "0.625rem 1.25rem",
           marginBottom: "0.5rem",
-          "&:hover": {
-            backgroundImage:
-              "linear-gradient(to bottom left, #805ad5, #4dabf7)",
-            boxShadow:
-              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-          },
-          "&:focus": {
-            boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-            outline: "none",
-          },
+          // "&:hover": {
+          //   backgroundImage:
+          //     "linear-gradient(to bottom left, #805ad5, #4dabf7)",
+          //   boxShadow:
+          //     "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+          // },
+          // "&:focus": {
+          //   boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+          //   outline: "none",
+          // },
         }}
       >
         <Typography
@@ -96,6 +97,7 @@ const ExamPricePageCard = ({ data }) => {
                   <Grid item xs={12} md={4}>
                     <Link href="#">
                       <Card
+                        className="text-white bg-gradient-to-t from-blue-400 to-gray-900"
                         key={index}
                         sx={{
                           backgroundColor: "#1F2937",
@@ -215,6 +217,7 @@ const ExamPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card
+        className="text-white bg-gradient-to-l from-gray-400 to-gray-900"
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
@@ -222,27 +225,14 @@ const ExamPricePageCard = ({ data }) => {
           fontSize: 20,
           padding: "15px",
           color: "white",
-          backgroundImage: "linear-gradient(to right, #805ad5, #d67ade)",
-          // borderRadius: "0.375rem",
+
           textAlign: "center",
-          cursor: "pointer",
-          "&:hover": {
-            backgroundImage: "linear-gradient(to left, #805ad5, #d67ade)",
-            boxShadow:
-              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-          },
-          "&:focus": {
-            boxShadow: "0 0 0 3px rgba(103, 58, 183, 0.5)",
-            outline: "none",
-          },
         }}
       >
         <b>What is in the Premium File?</b>
       </Card>
       <Card
-        className="bg-white dark:bg-gray-800"
         sx={{
-          // color: "white",
           padding: "10px",
           borderTopLeftRadius: "0px",
           borderTopRightRadius: "0px",
@@ -254,17 +244,17 @@ const ExamPricePageCard = ({ data }) => {
             return (
               <>
                 <Card
+                  className="text-white bg-gradient-to-l from-blue-400 to-gray-900"
                   key={i}
                   sx={{
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "10px",
-                    // color: "white",
+
                     border: "1px solid white",
                     borderRadius: "0px",
                     mb: "4px",
                   }}
-                  className="bg-white dark:bg-gray-800 text-gray-800 dark:text-white"
                 >
                   <div className="color-gray-800 dark:color-white">
                     {question_type}
@@ -278,62 +268,38 @@ const ExamPricePageCard = ({ data }) => {
           })}
       </Card>
       <Card
+        className="text-white bg-gradient-to-b from-gray-400 to-gray-900"
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           fontSize: 20,
           padding: "15px",
-          color: "white",
-          backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
-          // borderRadius: "0.375rem",
           textAlign: "center",
-          cursor: "pointer",
-          "&:hover": {
-            backgroundImage:
-              "linear-gradient(to bottom left, #805ad5, #4dabf7)",
-            boxShadow:
-              "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-          },
-          "&:focus": {
-            boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-            outline: "none",
-          },
         }}
       >
         <b>Last Week Results</b>
       </Card>
       <Card
         sx={{
-          // bgcolor: "#111827",
-          // color: "white",
-          padding: "20px",
-          borderTopLeftRadius: "0px",
-          borderBottomRightRadius: "0px",
+          padding: "4px",
+          borderRadius: "0px",
         }}
-        className="text-gray-700 dark:text-white bg-white dark:bg-gray-800"
       >
-        <Typography fontSize={22} fontWeight={700}>
-          Customer Pass {data.exam_title} Exam
-        </Typography>
-        <Card
+        <Box
           sx={{
-            mt: 2,
             padding: "5px",
-            // bgcolor: "#111827",
+            bgcolor: "white",
             borderRadius: "4px",
-            boxShadow:
-              "0 0 0 2px transparent, 0 0 0 3px #8B5CF6, 0 0 0 3px #3B82F6",
           }}
-          className="bg-white dark:bg-gray-800"
         >
           <div>
             <div
-              class="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              class="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_average_score}%` }}
             >
               <div className="flex justify-between">
-                <div>Average Score In Real Exam</div>{" "}
+                <div>Average Score In Real Exam</div>
                 <div>{data.exam_last_week_average_score}% </div>
               </div>
             </div>
@@ -341,7 +307,7 @@ const ExamPricePageCard = ({ data }) => {
 
           <div>
             <div
-              class="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              class="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_word_to_word}%` }}
             >
               <div className="flex justify-between">
@@ -350,7 +316,7 @@ const ExamPricePageCard = ({ data }) => {
               </div>
             </div>
           </div>
-        </Card>
+        </Box>
       </Card>
     </>
   );

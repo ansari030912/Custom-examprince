@@ -1,13 +1,10 @@
-import { Card, Grid, Typography } from "@mui/material";
-import React from "react";
+import { Card } from "@mui/material";
 
 const MainPageCard = () => {
   return (
     <Card
-      // className='text-white bg-gradient-to-bl from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl'
       sx={{
         p: "20px",
-
         borderRadius: "0px",
       }}
     >

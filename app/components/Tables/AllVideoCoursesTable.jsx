@@ -26,9 +26,8 @@ const AllVideoCoursesTable = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
-          color: "white",
-          bgcolor: "#111827",
           padding: "10px",
         }}
       >
@@ -49,7 +48,11 @@ const AllVideoCoursesTable = ({ data }) => {
             const { vendor_title, training_courses, vendor_id, vendor_perma } =
               item;
             return (
-              <Card key={vendor_title} sx={{ my: "10px", bgcolor: "#1F2937" }}>
+              <Card
+                key={vendor_title}
+                sx={{ my: "10px" }}
+                className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
+              >
                 <Box
                   sx={{
                     m: "10px",

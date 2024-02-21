@@ -24,8 +24,8 @@ const AllCertificatesTable = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
-          bgcolor: "#111827",
           padding: 1,
           mb: 1,
         }}

@@ -24,8 +24,8 @@ const AllVendorsTable = ({ data }) => {
   return (
     <>
       <Card
+        className="text-white bg-gradient-to-l to-gray-800 from-blue-400"
         sx={{
-          bgcolor: "#111827",
           padding: 1,
           mb: 1,
         }}

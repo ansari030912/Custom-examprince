@@ -89,7 +89,7 @@ const SearchCard = () => {
         style={{
           padding: "10px",
           borderRadius: "5px",
-
+          color: "black",
           width: "100%",
           outline: "none",
           paddingLeft: "30px",

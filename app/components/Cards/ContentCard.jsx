@@ -47,8 +47,8 @@ export default function ContentCard({ data }) {
       </Card>
       {value === "faqs" && (
         <Card
+          className="text-white bg-gradient-to-b to-gray-300 from-gray-900"
           sx={{
-            bgcolor: "#111827",
             padding: "15px",
           }}
         >

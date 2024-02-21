@@ -41,6 +41,7 @@ const AllVendorsPerma = async ({ params }) => {
           <Grid item xs={12} md={8.5}>
             <ExamPriceCard data={data} />
             <Content data={data} />
+            <CommentsCard data={data} />
           </Grid>
           <Grid item sm={12} md={3.5}>
             <HotExam />
@@ -169,9 +170,7 @@ const AllVendorsPerma = async ({ params }) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} md={8.5}>
-            <CommentsCard data={data} />
-          </Grid>
+          <Grid item xs={12} md={8.5}></Grid>
         </Grid>
       </Container>
       <Footer />

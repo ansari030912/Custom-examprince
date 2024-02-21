@@ -11,7 +11,7 @@ import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 import { Footer } from "./components/footer";
 import { Navbar } from "./navbar";
 
-const Home = () => {
+const Home = async () => {
   return (
     <>
       <Navbar />

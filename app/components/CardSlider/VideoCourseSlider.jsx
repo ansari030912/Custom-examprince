@@ -29,7 +29,10 @@ const VideoCourseSlider = ({ data }) => {
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
           <Grid item xs={6} sm={4} md={4} key={index}>
-            <Link key={vendor.vendor_title} href={`/training-course/${vendor.perma}`}>
+            <Link
+              key={vendor.vendor_title}
+              href={`/training-course/${vendor.perma}`}
+            >
               <Card
                 className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
                 sx={{
@@ -235,10 +238,11 @@ const VideoCourseSlider = ({ data }) => {
     if (currentPage > 1) {
       pagination.push(
         <button
+          style={{}}
           key="first"
           onClick={() => handlePageChange(1)}
           type="button"
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="  focus:outline-none text-white bg-gradient-to-br hover:bg-gradient-to-l from-purple-800 to-purple-600 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         >
           First
         </button>
@@ -248,10 +252,11 @@ const VideoCourseSlider = ({ data }) => {
     for (let i = startPage; i <= endPage; i++) {
       pagination.push(
         <button
+          style={{}}
           key={i}
           onClick={() => handlePageChange(i)}
           type="button"
-          className={`text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ${
+          className={` focus:outline-none text-white bg-gradient-to-br hover:bg-gradient-to-l from-purple-800 to-purple-600 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ${
             currentPage === i ? "bg-gray-200" : ""
           }`}
         >
@@ -269,7 +274,7 @@ const VideoCourseSlider = ({ data }) => {
           key="last"
           onClick={() => handlePageChange(totalPages)}
           type="button"
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className=" focus:outline-none  text-white bg-gradient-to-br hover:bg-gradient-to-l from-purple-800 to-purple-600 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
         >
           Last
         </button>
@@ -280,11 +285,12 @@ const VideoCourseSlider = ({ data }) => {
   };
 
   return (
-    <Card
+    <Box
+      className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
       sx={{
         padding: "15px",
         borderRadius: "0px",
-        bgcolor: "#1F2937",
+        // bgcolor: "#1F2937",
       }}
     >
       <div className="cards">{renderCards()}</div>
@@ -296,7 +302,7 @@ const VideoCourseSlider = ({ data }) => {
           {renderPagination()}
         </Box>
       )}
-    </Card>
+    </Box>
   );
 };
 

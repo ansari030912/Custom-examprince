@@ -1,11 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
+import { Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import AllCertificates from "../components/Tables/AllCertificates";
-import { Navbar } from "../navbar";
-import { Footer } from "../components/footer";
 import { Search } from "../components/Search";
+import AllCertificates from "../components/Tables/AllCertificates";
+import { Footer } from "../components/footer";
+import { Navbar } from "../navbar";
+import { HotExam } from "../components/Tables";
+import { WindowsDataCard } from "../components/Cards";
 
 const AllCertificaesPage = () => {
   return (
@@ -29,12 +31,15 @@ const AllCertificaesPage = () => {
           </Grid>
           <Grid item xs={12} md={8}>
             <AllCertificates />
+            <WindowsDataCard />
           </Grid>
           <Grid item sm={12} lg={4}>
+            <HotExam />
             <Grid
               container
-              className="bg-gray-900"
+              className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
               sx={{
+                mt: "10px",
                 display: "flex",
                 width: "100%",
               }}
@@ -96,7 +101,7 @@ const AllCertificaesPage = () => {
             </Grid>
             <Grid
               container
-              className="bg-gray-800"
+              className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
               sx={{
                 display: "flex",
                 mt: "10px",
@@ -114,7 +119,7 @@ const AllCertificaesPage = () => {
               >
                 <img
                   width="100%"
-                  src="safe_checkout_optimized.png"
+                  src="/safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>
@@ -146,7 +151,7 @@ const AllCertificaesPage = () => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    class="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>

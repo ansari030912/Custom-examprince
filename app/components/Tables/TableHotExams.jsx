@@ -33,10 +33,10 @@ const TableHotExams = ({ data }) => {
             </div>
             <Link href={`/exam/${exam_perma}`}>
               <div class="flex-grow pl-4">
-                <h2 class="font-semibold text-sm  mb-1 tracking-wider">
+                <h2 class="font-semibold text-md  mb-1 tracking-wider">
                   {vendor_title}
                 </h2>
-                <p class="leading-relaxed text-gray-700 ">{exam_title}</p>
+                <p class="leading-relaxed text-gray-700 text-sm">{exam_title}</p>
                 <hr style={{ marginTop: "12px" }} />
               </div>
             </Link>
@@ -102,7 +102,7 @@ const TableHotExams = ({ data }) => {
         <section class="text-gray-600 body-font">
           <div class="container px-5 mx-auto flex flex-wrap">
             <div class="flex flex-wrap w-full">
-              <div class="md:pr-10 md:py-6">
+              <div class="md:pr-1 md:py-6">
                 {selectedView === "week" && renderRows(data?.week)}
                 {selectedView === "month" && renderRows(data?.month)}
               </div>

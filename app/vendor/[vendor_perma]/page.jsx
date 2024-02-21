@@ -1,13 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import { Container, Grid, Typography } from "@mui/material";
+import { Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
 import { Navbar } from "../../navbar";
 import { Footer } from "../../components/footer";
 import { Search } from "../../components/Search";
+import { WindowsDataCard } from "../../components/Cards";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -41,14 +42,15 @@ const AllVendorsPerma = async ({ params }) => {
           </Grid>
           <Grid item xs={12} md={8}>
             <SingleVendorExamTable data={data} />
+            <WindowsDataCard />
           </Grid>
           <Grid item sm={12} lg={4}>
             <HotExamsData />
             <Grid
               container
-              className="bg-gray-900"
+              className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
               sx={{
-                mt: "15px",
+                mt: "10px",
                 display: "flex",
                 width: "100%",
               }}
@@ -110,7 +112,7 @@ const AllVendorsPerma = async ({ params }) => {
             </Grid>
             <Grid
               container
-              className="bg-gray-800"
+              className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
               sx={{
                 display: "flex",
                 mt: "10px",
@@ -160,7 +162,7 @@ const AllVendorsPerma = async ({ params }) => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    class="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>

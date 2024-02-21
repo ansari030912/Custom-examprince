@@ -18,7 +18,7 @@ const SearchBar = () => {
   const currentData = data.slice(startIndex, endIndex);
 
   return (
-    <nav className="text-white bg-gradient-to-b from-blue-300 to-gray-900 p-1">
+    <nav className="text-white bg-gradient-to-b from-blue-400 to-gray-900 p-1">
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12} sm={7} md={6} lg={4}>
