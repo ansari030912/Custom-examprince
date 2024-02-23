@@ -31,7 +31,6 @@ const Home = async () => {
               </div>
             </div>
           </Grid>
-
           <Grid item xs={12} lg={8}>
             <MainPageCard />
             <RecentlyUpdatedTable />
