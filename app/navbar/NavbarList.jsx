@@ -9,29 +9,35 @@ import { useEffect, useState } from "react";
 const NavbarList = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
-  const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+  const [loginResponse, setLoginResponse] = useState(null);
+
   useEffect(() => {
     const fetchData = async () => {
-      const config = {
-        method: "get",
-        maxBodyLength: Infinity,
-        url: "https://api.dumpsboss.com/v1/coupons",
-        headers: {
-          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-        },
-      };
       try {
-        const response = await axios.request(config);
-        const data = response.data;
-        // console.log("🚀 ~ Home ~ data:", data);
-        localStorage.setItem("coupons", JSON.stringify(data));
+        const response = await axios.get(
+          "https://api.dumpsboss.com/v1/coupons",
+          {
+            headers: {
+              "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            },
+          }
+        );
+        localStorage.setItem("coupons", JSON.stringify(response.data));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+
+    // Check if localStorage is defined before accessing it
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("loginResponse");
+      if (storedLoginResponse) {
+        setLoginResponse(JSON.parse(storedLoginResponse));
+      }
+    }
+
     fetchData();
   }, []);
-
   return (
     <nav class="text-white bg-gradient-to-t from-blue-400 to-gray-900">
       <Container maxWidth="lg">

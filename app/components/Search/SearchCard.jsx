@@ -13,43 +13,46 @@ const SearchCard = () => {
 
   const fetchData = async () => {
     try {
-      // Check if data exists in local storage for exams
-      const storedExamData = localStorage.getItem("searchData");
-      if (storedExamData) {
-        setSearchData(JSON.parse(storedExamData));
-      } else {
-        const examResponse = await axios.get(
-          `https://dumpsarena.com/exam-search`
-        );
-        setSearchData(examResponse.data);
-        localStorage.setItem("searchData", JSON.stringify(examResponse.data));
-      }
+      if (typeof window !== "undefined" && window.localStorage) {
+        const storedExamData = localStorage.getItem("searchData");
+        if (storedExamData) {
+          setSearchData(JSON.parse(storedExamData));
+        } else {
+          const examResponse = await axios.get(
+            `https://dumpsarena.com/exam-search`
+          );
+          setSearchData(examResponse.data);
+          localStorage.setItem("searchData", JSON.stringify(examResponse.data));
+        }
 
-      // Check if data exists in local storage for vendors
-      const storedVendorData = localStorage.getItem("vendorData");
-      if (storedVendorData) {
-        setVendorData(JSON.parse(storedVendorData));
-      } else {
-        const vendorResponse = await axios.get(
-          `https://dumpsarena.com/vendor-search`
-        );
-        setVendorData(vendorResponse.data);
-        localStorage.setItem("vendorData", JSON.stringify(vendorResponse.data));
-      }
+        const storedVendorData = localStorage.getItem("vendorData");
+        if (storedVendorData) {
+          setVendorData(JSON.parse(storedVendorData));
+        } else {
+          const vendorResponse = await axios.get(
+            `https://dumpsarena.com/vendor-search`
+          );
+          setVendorData(vendorResponse.data);
+          localStorage.setItem(
+            "vendorData",
+            JSON.stringify(vendorResponse.data)
+          );
+        }
 
-      // Check if data exists in local storage for certifications
-      const storedCertificationData = localStorage.getItem("certificationData");
-      if (storedCertificationData) {
-        setCertificationData(JSON.parse(storedCertificationData));
-      } else {
-        const certificationResponse = await axios.get(
-          `https://dumpsarena.com/certification-search`
-        );
-        setCertificationData(certificationResponse.data);
-        localStorage.setItem(
-          "certificationData",
-          JSON.stringify(certificationResponse.data)
-        );
+        const storedCertificationData =
+          localStorage.getItem("certificationData");
+        if (storedCertificationData) {
+          setCertificationData(JSON.parse(storedCertificationData));
+        } else {
+          const certificationResponse = await axios.get(
+            `https://dumpsarena.com/certification-search`
+          );
+          setCertificationData(certificationResponse.data);
+          localStorage.setItem(
+            "certificationData",
+            JSON.stringify(certificationResponse.data)
+          );
+        }
       }
     } catch (error) {
       console.error("Error fetching data:", error);

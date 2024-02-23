@@ -1,9 +1,11 @@
 "use client";
-import { Alert, Button, Snackbar } from "@mui/material";
+
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { Alert, Button, Snackbar } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+
 
 const SignInForm = () => {
   const [isLogin, setIsLogin] = useState({});
@@ -13,7 +15,6 @@ const SignInForm = () => {
   const [passwordError, setPasswordError] = useState("");
   const [ip, setIp] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const loginResponse = JSON.parse(localStorage?.getItem("loginResponse"));
   const router = useRouter();
 
   const fetchIP = async () => {
@@ -23,7 +24,7 @@ const SignInForm = () => {
           "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
         },
       });
-      setIp(response.data); // Assuming setIp is a state setter function
+      setIp(response.data);
     } catch (error) {
       console.error("Error fetching IP:", error);
     }
@@ -34,30 +35,28 @@ const SignInForm = () => {
   }, []);
 
   useEffect(() => {
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
     if (
       loginResponse &&
       Date.now() - loginResponse.timestamp > 3 * 60 * 60 * 1000
     ) {
-      localStorage?.removeItem("loginResponse"); // Remove the loginResponse
+      localStorage.removeItem("loginResponse");
     }
-  }, [loginResponse]);
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Reset previous errors
     setEmailError("");
     setPasswordError("");
 
-    // Validate email
     if (!email) {
       setEmailError("Email is required");
     }
-    // Validate password
+
     if (!password) {
       setPasswordError("Password is required");
     }
 
-    // If there are errors, do not proceed with form submission
     if (emailError || passwordError) {
       return;
     }
@@ -76,8 +75,7 @@ const SignInForm = () => {
         }
       );
       console.log(response.data);
-      // Store loginResponse with timestamp
-      localStorage?.setItem(
+      localStorage.setItem(
         "loginResponse",
         JSON.stringify({ ...response.data, timestamp: Date.now() })
       );
@@ -92,9 +90,7 @@ const SignInForm = () => {
 
   return (
     <>
-      {loginResponse?.is_active === true ? (
-        ""
-      ) : (
+      {!isLogin?.is_active === true ? (
         <form onSubmit={handleSubmit} className="lg:mt-12">
           <div className="flex ">
             <div className="flex flex-row w-full">
@@ -163,7 +159,7 @@ const SignInForm = () => {
             </div>
           </div>
         </form>
-      )}
+      ) : null}
       <Snackbar
         open={openSnackbar}
         autoHideDuration={6000}
@@ -175,11 +171,11 @@ const SignInForm = () => {
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
-          severity={loginResponse?.is_active ? "success" : "error"}
+          severity={isLogin?.is_active ? "success" : "error"}
           variant="filled"
           sx={{ width: "100%" }}
         >
-          {loginResponse && loginResponse.message}
+          {isLogin && isLogin.message}
         </Alert>
       </Snackbar>
     </>
