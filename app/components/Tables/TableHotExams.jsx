@@ -31,12 +31,14 @@ const TableHotExams = ({ data }) => {
                 />
               </svg>
             </div>
-            <Link href={`/exam/${exam_perma}`}>
+            <Link href={`/exam/${exam_perma}`} className="w-full">
               <div class="flex-grow pl-4">
                 <h2 class="font-semibold text-md  mb-1 tracking-wider">
                   {vendor_title}
                 </h2>
-                <p class="leading-relaxed text-gray-700 text-sm">{exam_title}</p>
+                <p class="leading-relaxed text-gray-700 text-sm">
+                  {exam_title}
+                </p>
                 <hr style={{ marginTop: "12px" }} />
               </div>
             </Link>
@@ -98,7 +100,7 @@ const TableHotExams = ({ data }) => {
         </Grid>
       </Card>
 
-      <Card sx={{ borderRadius: "0px" }}>
+      <Card sx={{ borderRadius: "0px", width: "100%" }}>
         <section class="text-gray-600 body-font">
           <div class="container px-5 mx-auto flex flex-wrap">
             <div class="flex flex-wrap w-full">

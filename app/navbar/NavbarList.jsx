@@ -7,9 +7,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NavbarList = () => {
-  const [userLogin, setUserLogin] = useState("login");
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
+  const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
   useEffect(() => {
     const fetchData = async () => {
       const config = {
@@ -23,7 +23,7 @@ const NavbarList = () => {
       try {
         const response = await axios.request(config);
         const data = response.data;
-        console.log("🚀 ~ Home ~ data:", data);
+        // console.log("🚀 ~ Home ~ data:", data);
         localStorage.setItem("coupons", JSON.stringify(data));
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -157,7 +157,7 @@ const NavbarList = () => {
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                class="relative rounded-full text-white bg-gradient-to-t hover:from-gray-800 hover:to-blue-400 p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
+                class="relative rounded-full text-white hover:bg-gradient-to-t hover:from-gray-800 hover:to-blue-400 p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
               >
                 <Card class="bg-white">
                   {/* <span class="absolute pl-3 text-white">0</span> */}
@@ -180,7 +180,7 @@ const NavbarList = () => {
                 </Link>
               </button>
 
-              {userLogin === "login" ? (
+              {loginResponse?.is_active ? (
                 <div class="relative ml-3">
                   <div>
                     <button
@@ -209,17 +209,16 @@ const NavbarList = () => {
                       aria-labelledby="user-menu-button"
                       tabindex="-1"
                     >
-                      <div>
-                        <Link
-                          href="#"
-                          class="block px-4 py-2 text-sm text-gray-700"
-                          role="menuitem"
-                          tabindex="-1"
-                          id="user-menu-item-0"
-                        >
-                          Your Profile
-                        </Link>
-                      </div>
+                      <Link
+                        href="#"
+                        class="block px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-0"
+                      >
+                        Your Profile
+                      </Link>
+
                       <Link
                         href="#"
                         class="block px-4 py-2 text-sm text-gray-700"
@@ -244,9 +243,12 @@ const NavbarList = () => {
                   )}
                 </div>
               ) : (
-                <button className="hover:text-gray-200  hover:bg-gray-400 text-gray-300 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md">
-                  Login / SignUp
-                </button>
+                <Link
+                  href={"/sign-in"}
+                  className="text-white hover:bg-gradient-to-t from-blue-400 to-gray-900 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md"
+                >
+                  <button>Login / SignUp</button>
+                </Link>
               )}
             </div>
           </div>

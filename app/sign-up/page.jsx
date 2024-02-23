@@ -1,24 +1,22 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Typography } from "@mui/material";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Link from "next/link";
+// pages/SignIn.js
 
-import SignInForm from "../components/Form/SignInForm";
+import { Container, Grid, Typography } from "@mui/material";
+import Link from "next/link";
+import SignUpForm from "../components/Form/SignUpForm";
 import HotExamsData from "../components/Tables/HotExamsData";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <>
       <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+            <div class="mx-auto max-w-8xl flex justify-center">
+              <div class="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
                   alt="SASSA_Status_Check"
@@ -30,7 +28,7 @@ export default function SignIn() {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <SignInForm />
+            <SignUpForm />
           </Grid>
           <Grid item xs={12} md={4}>
             <div className="mt-7">
@@ -70,7 +68,7 @@ export default function SignIn() {
                     component="div"
                     fontSize={12}
                   >
-                    DumpsArena.com has a remarkable success record. We're
+                    DumpsArena.com has a remarkable success record. We`&apos;`re
                     confident of our products and provide a no hassle refund
                     policy.
                   </Typography>
@@ -151,7 +149,7 @@ export default function SignIn() {
                   >
                     <button
                       type="button"
-                      className="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                      class="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                     >
                       Customer Support
                     </button>

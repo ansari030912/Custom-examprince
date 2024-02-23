@@ -1,5 +1,4 @@
 import { Inter } from "next/font/google";
-import { Search } from "./components/Search";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
