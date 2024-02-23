@@ -3,9 +3,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
-import { Alert, Button, Snackbar } from "@mui/material";
+import { Alert, Button, Snackbar, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
-
 
 const SignInForm = () => {
   const [isLogin, setIsLogin] = useState({});
@@ -134,6 +133,12 @@ const SignInForm = () => {
                         {passwordError}
                       </span>
                     )}
+                    <Link
+                      href={"/reset-password"}
+                      className="text-blue-500 text-right underline font-bold"
+                    >
+                      <Typography>Fogot Password?</Typography>
+                    </Link>
                     <button
                       type="submit"
                       className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white"
