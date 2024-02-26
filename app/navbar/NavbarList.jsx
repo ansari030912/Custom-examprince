@@ -215,32 +215,99 @@ const NavbarList = () => {
                       aria-labelledby="user-menu-button"
                       tabindex="-1"
                     >
+                      <div>{loginResponse?.name}</div>
+                      <div>{loginResponse?.email}</div>
+                      <hr />
                       <Link
-                        href="#"
-                        class="block px-4 py-2 text-sm text-gray-700"
+                        href="/products"
+                        class="px-4 py-2 text-sm text-gray-700 flex"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-0"
                       >
-                        Your Profile
+                        <Icon
+                          icon="eos-icons:product-classes-outlined"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
+                        Products
                       </Link>
 
                       <Link
-                        href="#"
-                        class="block px-4 py-2 text-sm text-gray-700"
+                        href="/setting"
+                        class="flex px-4 py-2 text-sm text-gray-700"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
                       >
+                        <Icon
+                          icon="lets-icons:setting-line"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
                         Settings
                       </Link>
                       <Link
-                        href="#"
-                        class="block px-4 py-2 text-sm text-gray-700"
+                        href="/invoices"
+                        class="flex px-4 py-2 text-sm text-gray-700"
                         role="menuitem"
                         tabindex="-1"
-                        id="user-menu-item-2"
+                        id="user-menu-item-1"
                       >
+                        <Icon
+                          icon="mdi:invoice-text-edit-outline"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
+                        Invoices
+                      </Link>
+                      <Link
+                        href="#"
+                        class="flex px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        <Icon
+                          icon="mdi:download-multiple-outline"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
+                        Download History
+                      </Link>
+                      <Link
+                        href="#"
+                        class="flex px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        <Icon
+                          icon="mdi:clipboard-text-history-outline"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
+                        Login History
+                      </Link>
+                      <hr />
+                      <Link
+                        href="#"
+                        class="flex px-4 py-2 text-sm text-gray-700"
+                        role="menuitem"
+                        tabindex="-1"
+                        id="user-menu-item-1"
+                      >
+                        <Icon
+                          icon="ri:logout-box-line"
+                          width="1.3em"
+                          height="1.4em"
+                          style={{ color: "black", marginRight: "4px" }}
+                        />
                         Sign out
                       </Link>
                     </div>
