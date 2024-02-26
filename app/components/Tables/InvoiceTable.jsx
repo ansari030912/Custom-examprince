@@ -59,20 +59,16 @@ const InvoiceTable = () => {
               </th>
             </tr>
           </thead>
+
           <tbody>
-            {data.length === 0 ? (
-              <div className="p-4 w-full">
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
-                <Skeleton />
-                <br />
-              </div>
-            ) : (
-              ""
-            )}
+            {!data &&
+              Array.from(Array(5)).map((_, index) => (
+                <tr key={index}>
+                  <td colSpan="2">
+                    <Skeleton animation="wave" />
+                  </td>
+                </tr>
+              ))}
             {(rowsPerPage > 0
               ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : data
@@ -89,7 +85,7 @@ const InvoiceTable = () => {
                       </div>
                       <div class="font-normal text-gray-500">
                         {moment(item?.invoice_date).format(
-                          "MM ddd yyyy : hh:mm A"
+                          "MMM DD yyyy : hh:mm A"
                         )}
                       </div>
                     </div>

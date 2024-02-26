@@ -283,7 +283,7 @@ const NavbarList = () => {
                         Invoices
                       </Link>
                       <Link
-                        href="#"
+                        href="download-history"
                         class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
@@ -298,7 +298,7 @@ const NavbarList = () => {
                         Download History
                       </Link>
                       <Link
-                        href="#"
+                        href="login-history"
                         class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
