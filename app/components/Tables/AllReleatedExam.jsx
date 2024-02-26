@@ -34,7 +34,7 @@ const AllReleatedExam = ({ data }) => {
             <div class="flex flex-wrap w-full">
               <div class="md:pr-1 md:py-6">
                 {Array.isArray(data) &&
-                  data.map((item) => {
+                  data.slice(0, 5).map((item) => {
                     const {
                       vendor_title,
                       exam_title,

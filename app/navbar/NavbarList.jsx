@@ -11,6 +11,11 @@ const NavbarList = () => {
   const [profileToggles, setProfileToggles] = useState(false);
   const [loginResponse, setLoginResponse] = useState(null);
 
+  const handleSignOut = () => {
+    localStorage.removeItem("loginResponse");
+    window.location.reload(); // Refresh the page
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -215,12 +220,18 @@ const NavbarList = () => {
                       aria-labelledby="user-menu-button"
                       tabindex="-1"
                     >
-                      <div>{loginResponse?.name}</div>
-                      <div>{loginResponse?.email}</div>
-                      <hr />
+                      <div className="p-2">
+                        <div className="text-gray-600">
+                          <b>{loginResponse?.name}</b>
+                        </div>
+                        <div className="text-gray-700 text-sm">
+                          <b>{loginResponse?.email}</b>
+                        </div>
+                        <hr />
+                      </div>
                       <Link
                         href="/products"
-                        class="px-4 py-2 text-sm text-gray-700 flex"
+                        class="px-4 py-2 text-sm text-gray-700 flex hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-0"
@@ -236,7 +247,7 @@ const NavbarList = () => {
 
                       <Link
                         href="/setting"
-                        class="flex px-4 py-2 text-sm text-gray-700"
+                        class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -251,7 +262,7 @@ const NavbarList = () => {
                       </Link>
                       <Link
                         href="/invoices"
-                        class="flex px-4 py-2 text-sm text-gray-700"
+                        class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -266,7 +277,7 @@ const NavbarList = () => {
                       </Link>
                       <Link
                         href="#"
-                        class="flex px-4 py-2 text-sm text-gray-700"
+                        class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -281,7 +292,7 @@ const NavbarList = () => {
                       </Link>
                       <Link
                         href="#"
-                        class="flex px-4 py-2 text-sm text-gray-700"
+                        class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -295,9 +306,9 @@ const NavbarList = () => {
                         Login History
                       </Link>
                       <hr />
-                      <Link
-                        href="#"
-                        class="flex px-4 py-2 text-sm text-gray-700"
+                      <div
+                        onClick={handleSignOut}
+                        class="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
                         role="menuitem"
                         tabindex="-1"
                         id="user-menu-item-1"
@@ -309,7 +320,7 @@ const NavbarList = () => {
                           style={{ color: "black", marginRight: "4px" }}
                         />
                         Sign out
-                      </Link>
+                      </div>
                     </div>
                   ) : (
                     ""
