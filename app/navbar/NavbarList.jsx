@@ -191,7 +191,14 @@ const NavbarList = () => {
                 </Link>
               </button>
 
-              {loginResponse?.is_active ? (
+              {!loginResponse?.is_active ? (
+                <Link
+                  href={"/sign-in"}
+                  className="text-white hover:bg-gradient-to-t from-blue-400 to-gray-900 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md"
+                >
+                  <button>Login / SignUp</button>
+                </Link>
+              ) : (
                 <div class="relative ml-3">
                   <div>
                     <button
@@ -326,13 +333,6 @@ const NavbarList = () => {
                     ""
                   )}
                 </div>
-              ) : (
-                <Link
-                  href={"/sign-in"}
-                  className="text-white hover:bg-gradient-to-t from-blue-400 to-gray-900 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md"
-                >
-                  <button>Login / SignUp</button>
-                </Link>
               )}
             </div>
           </div>
