@@ -16,7 +16,7 @@ export default function SignUp() {
             <div class="mx-auto max-w-8xl flex justify-center">
               <div class="md:mx-150px lg:mt-2 rounded-2">
                 <img
-                  src="/banner.png"
+                  src="/banner.gif"
                   alt="SASSA_Status_Check"
                   loading="lazy"
                   width="100%"

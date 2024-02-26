@@ -13,11 +13,11 @@ export default function SignIn() {
       <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+        <Grid item xs={12}>
+            <div class="mx-auto max-w-8xl flex justify-center">
+              <div class="md:mx-150px lg:mt-2 rounded-2">
                 <img
-                  src="/banner.png"
+                  src="/banner.gif"
                   alt="SASSA_Status_Check"
                   loading="lazy"
                   width="100%"
