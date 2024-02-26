@@ -83,42 +83,42 @@ const FooterList = () => {
           <div className="mt-3">
             <Link href="/">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Home
                 </span>
               </button>
             </Link>
             <Link href="/all-vendors">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Vendor
                 </span>
               </button>
             </Link>
             <Link href="/all-certificates">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Certificates
                 </span>
               </button>
             </Link>
             <Link href="/video-courses">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Video Cources
                 </span>
               </button>
             </Link>
             <Link href="/unlimited-access">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Unlimited Access
                 </span>
               </button>
             </Link>
             <Link href="#">
               <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-700 text-white dark:bg-gray-700 rounded-md group-hover:bg-opacity-0">
+                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Faqs
                 </span>
               </button>

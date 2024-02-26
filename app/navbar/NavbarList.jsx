@@ -56,8 +56,6 @@ const NavbarList = () => {
                 aria-expanded="false"
                 onClick={() => setToggleMenu(!toggleMenu)}
               >
-                <span class="absolute -inset-0.5"></span>
-                <span class="sr-only">Open main menu</span>
                 {toggleMenu === false ? (
                   <svg
                     class="block h-6 w-6"
@@ -191,7 +189,7 @@ const NavbarList = () => {
                 </Link>
               </button>
 
-              {!loginResponse?.is_active ? (
+              {!loginResponse?.is_logged_in ? (
                 <Link
                   href={"/sign-in"}
                   className="text-white hover:bg-gradient-to-t from-blue-400 to-gray-900 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md"
@@ -221,17 +219,29 @@ const NavbarList = () => {
                   </div>
                   {profileToggles === true ? (
                     <div
-                      class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      class="absolute right-0 z-10 mt-2 w-auto origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="user-menu-button"
                       tabindex="-1"
                     >
                       <div className="p-2">
-                        <div className="text-gray-600">
+                        <div className="text-gray-600 flex">
+                          <Icon
+                            icon="noto:person"
+                            width="1.2em"
+                            height="1.4em"
+                            style={{ marginRight: "3px" }}
+                          />
                           <b>{loginResponse?.name}</b>
                         </div>
-                        <div className="text-gray-700 text-sm">
+                        <div className="text-gray-700 text-sm flex">
+                          <Icon
+                            icon="solar:letter-bold"
+                            width="1.4em"
+                            height="1.4em"
+                            style={{ color: "gray", marginRight: "2px" }}
+                          />
                           <b>{loginResponse?.email}</b>
                         </div>
                         <hr />

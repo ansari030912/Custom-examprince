@@ -34,7 +34,7 @@ const AllCertificatesTable = ({ data }) => {
           color={"white"}
           fontSize={24}
           fontWeight={500}
-          className="text-purple-600"
+          className="text-white"
         >
           <b>Vendors Ceritification</b>
         </Typography>

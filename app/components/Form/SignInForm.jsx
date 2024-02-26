@@ -59,6 +59,7 @@ const SignInForm = () => {
     if (emailError || passwordError) {
       return;
     }
+
     try {
       const response = await axios.post(
         "https://api.dumpsboss.com/v1/account/login",
@@ -73,14 +74,20 @@ const SignInForm = () => {
           },
         }
       );
+
       console.log(response.data);
-      localStorage.setItem(
-        "loginResponse",
-        JSON.stringify({ ...response.data, timestamp: Date.now() })
-      );
       setIsLogin(response.data);
       setOpenSnackbar(true);
-      router.push("/");
+
+      if (response.data.is_logged_in) {
+        localStorage.setItem(
+          "loginResponse",
+          JSON.stringify({ ...response.data, timestamp: Date.now() })
+        );
+        router.push("/");
+      } else {
+        router.push("/sign-in");
+      }
     } catch (error) {
       console.error("Error:", error);
       alert("Something went wrong. Please try again later.");
@@ -89,7 +96,7 @@ const SignInForm = () => {
 
   return (
     <>
-      {!isLogin?.is_active === true ? (
+      {!isLogin?.is_logged_in === true ? (
         <form onSubmit={handleSubmit} className="lg:mt-12">
           <div className="flex ">
             <div className="flex flex-row w-full">
@@ -176,7 +183,7 @@ const SignInForm = () => {
       >
         <Alert
           onClose={() => setOpenSnackbar(false)}
-          severity={isLogin?.is_active ? "success" : "error"}
+          severity={isLogin?.is_logged_in ? "success" : "error"}
           variant="filled"
           sx={{ width: "100%" }}
         >

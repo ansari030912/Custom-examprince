@@ -18,7 +18,7 @@ export default function ProductsPage() {
     async function fetchData() {
       try {
         const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        if (!loginResponse?._token) {
+        if (!loginResponse?.is_logged_in) {
           return router.push("/sign-in");
         }
       } catch (error) {
