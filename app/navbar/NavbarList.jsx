@@ -33,15 +33,15 @@ const NavbarList = () => {
       }
     };
 
-    // Check if localStorage is defined before accessing it
+    fetchData();
+  }, []);
+  useEffect(() => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");
       if (storedLoginResponse) {
         setLoginResponse(JSON.parse(storedLoginResponse));
       }
     }
-
-    fetchData();
   }, []);
   return (
     <nav class="text-white bg-gradient-to-t from-blue-400 to-gray-900">
