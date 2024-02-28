@@ -5,11 +5,10 @@ import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useEffect } from "react";
-import HotExamsData from "../components/Tables/HotExamsData";
+import { useEffect } from "react";
 import ProductsTable from "../components/Tables/ProductsTable";
-import { Navbar } from "../navbar";
 import { Footer } from "../components/footer";
+import { Navbar } from "../navbar";
 
 export default function ProductsPage() {
   const router = useRouter();

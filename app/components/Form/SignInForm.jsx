@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Alert, Snackbar, Typography } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
-import { Alert, Button, Snackbar, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const SignInForm = () => {
   const [isLogin, setIsLogin] = useState({});
@@ -14,6 +14,8 @@ const SignInForm = () => {
   const [passwordError, setPasswordError] = useState("");
   const [ip, setIp] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [expiredTimer, setExpiredTimer] = useState(null);
+
   const router = useRouter();
 
   const fetchIP = async () => {
@@ -33,15 +35,11 @@ const SignInForm = () => {
     fetchIP();
   }, []);
 
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (
-      loginResponse &&
-      Date.now() - loginResponse.timestamp > 3 * 60 * 60 * 1000
-    ) {
-      localStorage.removeItem("loginResponse");
-    }
-  }, []);
+  const handleTokenExpired = () => {
+    alert("Token expired Please Sign In again");
+    localStorage.removeItem("loginResponse");
+    router.push("/sign-in"); // Refresh the page
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -84,6 +82,7 @@ const SignInForm = () => {
           "loginResponse",
           JSON.stringify({ ...response.data, timestamp: Date.now() })
         );
+        setExpiredTimer(setTimeout(handleTokenExpired, 30000));
         router.push("/");
       } else {
         router.push("/sign-in");
@@ -93,7 +92,6 @@ const SignInForm = () => {
       alert("Something went wrong. Please try again later.");
     }
   };
-
   return (
     <>
       {!isLogin?.is_logged_in === true ? (

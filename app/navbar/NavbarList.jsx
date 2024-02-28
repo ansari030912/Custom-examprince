@@ -35,6 +35,8 @@ const NavbarList = () => {
 
     fetchData();
   }, []);
+
+  
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");

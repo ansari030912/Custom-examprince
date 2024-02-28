@@ -19,6 +19,7 @@ import {
   Button,
 } from "@mui/material";
 import moment from "moment";
+import Link from "next/link";
 
 function Row({ row }) {
   const [open, setOpen] = useState(false);
@@ -90,11 +91,37 @@ function Row({ row }) {
                   {row?.product_access?.map((product) => (
                     <TableRow key={product.anchor}>
                       <TableCell>
-                        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-                          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
-                            {product.anchor}
-                          </span>
-                        </button>
+                        {product.type === "download_pdf" ? (
+                          <Link href={product.url}>
+                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
+                                {product.anchor}
+                              </span>
+                            </button>
+                          </Link>
+                        ) : product.type === "te_access" ? (
+                          <Link
+                            href={`/te-access/${product.prams.payment_id}/${product.prams.exam_id}/${product.prams.rel_id}`}
+                          >
+                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
+                                {product.anchor}
+                              </span>
+                            </button>
+                          </Link>
+                        ) : product.type === "sc_access" ? (
+                          <Link
+                            href={`/sc-access/${product.prams.payment_id}/${product.prams.exam_id}`}
+                          >
+                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-300 group-hover:from-gray-800 group-hover:to-blue-300 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+                              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white text-gray-800 hover:text-white rounded-md group-hover:bg-opacity-0">
+                                {product.anchor}
+                              </span>
+                            </button>
+                          </Link>
+                        ) : (
+                          ""
+                        )}
                       </TableCell>
                       <TableCell align="right">
                         {moment(row.product_expiry_date).format("LL")}
