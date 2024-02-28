@@ -35,11 +35,11 @@ const SignInForm = () => {
     fetchIP();
   }, []);
 
-  const handleTokenExpired = () => {
-    alert("Token expired Please Sign In again");
-    localStorage.removeItem("loginResponse");
-    router.push("/sign-in"); // Refresh the page
-  };
+  // const handleTokenExpired = () => {
+  //   alert("Token expired Please Sign In again");
+  //   localStorage.removeItem("loginResponse");
+  //   router.push("/sign-in"); // Refresh the page
+  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -78,11 +78,11 @@ const SignInForm = () => {
       setOpenSnackbar(true);
 
       if (response.data.is_logged_in) {
+        const expiryTime = Date.now() + 20000;
         localStorage.setItem(
           "loginResponse",
-          JSON.stringify({ ...response.data, timestamp: Date.now() })
+          JSON.stringify({ ...response.data, expiryTime })
         );
-        setExpiredTimer(setTimeout(handleTokenExpired, 30000));
         router.push("/");
       } else {
         router.push("/sign-in");
