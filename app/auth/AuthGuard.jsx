@@ -39,7 +39,7 @@ export const AuthGuard = ({ children }) => {
     const isLogin = JSON.parse(localStorage.getItem("loginResponse"));
     if (isLogin?.is_logged_in) {
       const { exp } = jwtDecode(isLogin._token);
-      tokenExpired(isLogin.expiryTime);
+      tokenExpired(exp);
     }
   }, []);
   return children;
