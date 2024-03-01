@@ -3,10 +3,10 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import ForgotPasswordForm from "../components/Form/ForgotPasswordForm";
+import { useRouter } from "next/navigation";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
-import { useRouter } from "next/navigation";
+import ForgotPasswordForm from "../components/Form/forgotPasswordForm";
 
 export default function ForgotPassword() {
   const router = useRouter();
