@@ -35,7 +35,7 @@ const AllVendorsPage = () => {
             <AllVendors />
             <WindowsDataCard />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} md={4}>
             <HotExam />
             <Grid
               container
