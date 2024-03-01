@@ -1,3 +1,4 @@
+'use client'
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Container from "@mui/material/Container";
@@ -6,8 +7,17 @@ import Grid from "@mui/material/Grid";
 import SignInForm from "../components/Form/SignInForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SignIn() {
+  const router = useRouter();
+  useEffect(() => {
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    if (loginResponse?.is_active) {
+      return router.push("/");
+    }
+  }, [router]);
   return (
     <>
       <Navbar />

@@ -6,15 +6,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const SignUpForm = () => {
-  // const router = useRouter();
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState({});
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [userRegiter, setUserRegiter] = useState("");
   const [ip, setIp] = useState("");
   const [passwordMatchError, setPasswordMatchError] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
   const [formError, setFormError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -47,6 +47,11 @@ const SignUpForm = () => {
       setPasswordMatchError(true);
       return;
     }
+    // Check if password meets the minimum length requirement
+    if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+      return;
+    }
     // Proceed with form submission
     try {
       const response = await axios.post(
@@ -63,8 +68,6 @@ const SignUpForm = () => {
           },
         }
       );
-      // router.push("/sign-in");
-      console.log(response.data);
       setUserRegiter(response.data);
       setOpen(true);
       setConfirmPassword("");
@@ -80,9 +83,9 @@ const SignUpForm = () => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
+
   return (
     <>
       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
@@ -156,6 +159,7 @@ const SignUpForm = () => {
                     value={password}
                     onChange={(e) => {
                       setPassword(e.target.value);
+                      setPasswordError("");
                       setFormError(false);
                     }}
                     InputProps={{
@@ -205,6 +209,9 @@ const SignUpForm = () => {
                     <span style={{ color: "red" }}>
                       All fields are required
                     </span>
+                  )}
+                  {passwordError && (
+                    <span style={{ color: "red" }}>{passwordError}</span>
                   )}
                   <button
                     type="submit"

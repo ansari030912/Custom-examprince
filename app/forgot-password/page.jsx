@@ -1,13 +1,21 @@
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
-import ResetPasswordForm from "../components/Form/ResetPasswordForm";
+import ForgotPasswordForm from "../components/Form/ForgotPasswordForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
+import { useRouter } from "next/navigation";
 
 export default function ForgotPassword() {
+  const router = useRouter();
+  useEffect(() => {
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    if (loginResponse?.is_active) {
+      return router.push("/");
+    }
+  }, [router]);
   return (
     <>
       <Navbar />
@@ -27,7 +35,7 @@ export default function ForgotPassword() {
             </div>
           </Grid>
           <Grid item xs={12} md={12}>
-            <ResetPasswordForm />
+            <ForgotPasswordForm />
           </Grid>
         </Grid>
       </Container>

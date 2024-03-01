@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 // pages/SignIn.js
 
@@ -5,8 +6,17 @@ import { Container, Grid } from "@mui/material";
 import SignUpForm from "../components/Form/SignUpForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function SignUp() {
+  const router = useRouter();
+  useEffect(() => {
+    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+    if (loginResponse?.is_active) {
+      return router.push("/");
+    }
+  }, [router]);
   return (
     <>
       <Navbar />

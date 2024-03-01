@@ -54,6 +54,10 @@ const SignInForm = () => {
       setPasswordError("Password is required");
     }
 
+    if (password.length < 8) {
+      setPasswordError("Password must be at least 8 characters long");
+      return;
+    }
     if (emailError || passwordError) {
       return;
     }
@@ -139,7 +143,7 @@ const SignInForm = () => {
                       </span>
                     )}
                     <Link
-                      href={"/reset-password"}
+                      href={"/forgot-password"}
                       className="text-blue-500 text-right underline font-bold"
                     >
                       <Typography>Fogot Password?</Typography>
