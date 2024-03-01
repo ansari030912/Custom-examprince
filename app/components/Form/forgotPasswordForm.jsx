@@ -1,39 +1,23 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
-
 import { Alert, Snackbar } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const ResetPasswordForm = () => {
+const forgotPasswordForm = () => {
   const [passwordRest, setPasswordRest] = useState({});
-  const [email, setEmail] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [ip, setIp] = useState("");
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const fetchIP = async () => {
-    try {
-      const response = await axios.get("https://api.dumpsboss.com/v1/my-ip", {
-        headers: {
-          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-        },
-      });
-      setIp(response.data);
-    } catch (error) {
-      console.error("Error fetching IP:", error);
-    }
-  };
+  const [password, setPassword] = useState("");
+  const [PasswordError, setPasswordError] = useState("");
 
-  useEffect(() => {
-    fetchIP();
-  }, []);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setEmailError("");
+    setPasswordError("");
 
     if (!email) {
-      setEmailError("Email is required");
+      setPasswordError("Email is required");
     }
     if (emailError) {
       return;
@@ -43,8 +27,8 @@ const ResetPasswordForm = () => {
         "https://api.dumpsboss.com/v1/account/forgot-password",
         {
           email,
-          ip,
-          reset_url: "/forgot-password/",
+          reset_token,
+          new_password: password,
         },
         {
           headers: {
@@ -52,7 +36,6 @@ const ResetPasswordForm = () => {
           },
         }
       );
-      console.log(response.data);
       setPasswordRest(response.data);
       setOpenSnackbar(true);
     } catch (error) {
@@ -70,33 +53,41 @@ const ResetPasswordForm = () => {
               <div className="flex flex-1 flex-col  justify-center space-y-5 max-w-md">
                 <div className="flex flex-col space-y-2 text-center">
                   <h2 className="text-3xl md:text-4xl font-bold">
-                    Fotgot your account
+                    Create a new password
                   </h2>
                   <p className="text-md md:text-xl">
-                    Enter your email and press forgot password to get a rest
-                    verification code.
+                    Enter your new password and then sign in again.
                   </p>
                 </div>
                 <div className="flex flex-col max-w-md space-y-5">
                   <input
-                    type="email"
-                    placeholder="Email"
+                    type="password"
+                    placeholder="Password"
                     className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
-                    value={email}
+                    value={password}
                     onChange={(e) => {
-                      setEmail(e.target.value), setEmailError("");
+                      setPassword(e.target.value), setPasswordError("");
                     }}
                   />
-                  {emailError && (
+                  <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    className="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal"
+                    value={confirmPassword}
+                    onChange={(e) => {
+                      setPassword(e.target.value), setPasswordError("");
+                    }}
+                  />
+                  {passwordError && (
                     <span style={{ color: "red" }} className="text-sm">
-                      {emailError}
+                      {passwordError}
                     </span>
                   )}
                   <button
                     type="submit"
                     className="flex items-center justify-center flex-none px-3 py-2 md:px-4 md:py-3 border-2 rounded-lg font-medium border-black bg-black text-white"
                   >
-                    Forgot password
+                    Update
                   </button>
                   <div className="flex justify-center items-center">
                     <span className="w-full border border-black"></span>
@@ -139,4 +130,4 @@ const ResetPasswordForm = () => {
   );
 };
 
-export default ResetPasswordForm;
+export default forgotPasswordForm;

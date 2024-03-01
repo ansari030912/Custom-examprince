@@ -30,7 +30,7 @@ const LoginHistoryPage = () => {
               <div class="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
-                  alt="SASSA_Status_Check"
+                  alt="banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
