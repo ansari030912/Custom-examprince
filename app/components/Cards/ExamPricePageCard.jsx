@@ -2,8 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, Card, Grid, Typography } from "@mui/material";
 import moment from "moment";
-import Link from "next/link";
-import React from "react";
+import ExamAddToCart from "./ExamAddToCart";
 
 const ExamPricePageCard = ({ data }) => {
   return (
@@ -12,23 +11,12 @@ const ExamPricePageCard = ({ data }) => {
         className="text-white bg-gradient-to-b from-blue-400 to-gray-900"
         sx={{
           color: "white",
-          // backgroundImage: "linear-gradient(to bottom right, #805ad5, #4dabf7)",
           borderRadius: "0.375rem",
           fontSize: "0.875rem",
           textAlign: "center",
           cursor: "pointer",
           padding: "0.625rem 1.25rem",
           marginBottom: "0.5rem",
-          // "&:hover": {
-          //   backgroundImage:
-          //     "linear-gradient(to bottom left, #805ad5, #4dabf7)",
-          //   boxShadow:
-          //     "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-          // },
-          // "&:focus": {
-          //   boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-          //   outline: "none",
-          // },
         }}
       >
         <Typography
@@ -88,133 +76,7 @@ const ExamPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card sx={{ backgroundColor: "#a7cbf9", padding: "10px" }}>
-        <Grid container spacing={2}>
-          {Array.isArray(data.exam_prices) &&
-            data.exam_prices.map((item, index) => {
-              const { title, full_price, price, off, cart } = item;
-              return (
-                <>
-                  <Grid item xs={12} md={4}>
-                    <Link href="#">
-                      <Card
-                        className="text-white bg-gradient-to-t from-blue-400 to-gray-900"
-                        key={index}
-                        sx={{
-                          backgroundColor: "#1F2937",
-                          overflow: "hidden",
-                          display: "flex",
-                          transition: "transform 0.3s ease",
-                          "&:hover": {
-                            transform: "scale(1.05)",
-                          },
-                          borderRadius: "0px",
-                          borderTopLeftRadius: "15px",
-                          borderTopRightRadius: "0px",
-                          borderBottomRightRadius: "15px",
-                          borderBottomLeftRadius: "0px",
-                        }}
-                      >
-                        <Box>
-                          {off !== 0 && (
-                            <>
-                              <div
-                                style={{
-                                  color: "white",
-                                  backgroundColor: "#652E60",
-                                  padding: "10px",
-                                }}
-                                className="font-bold justify-center p-1"
-                              >
-                                <span
-                                  style={{
-                                    color: off >= 50 ? "#FFD700" : "white",
-                                  }}
-                                >
-                                  {off}% Off
-                                </span>
-                                <div className="flex justify-center">
-                                  {off >= 50 ? (
-                                    <div className="flex justify-between">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="1.6rem"
-                                        height="1.6rem"
-                                        viewBox="0 0 56 56"
-                                      >
-                                        <path
-                                          fill="white"
-                                          d="M45.416 28.85C51.155 28.85 56 24.068 56 18.287c0-5.781-4.783-10.564-10.584-10.564c-5.781 0-10.564 4.783-10.564 10.564c0 5.822 4.783 10.563 10.564 10.563m-28.51 12.976h24.268c.81 0 1.517-.665 1.517-1.56c0-.893-.707-1.559-1.517-1.559H17.26c-1.186 0-1.914-.832-2.1-2.1l-.313-2.184h26.368c2.163 0 3.556-.915 4.346-2.703c-1.788 0-3.473-.353-5.032-1.04c-.312.416-.707.603-1.29.603l-24.87.021l-1.767-12.06h19.463c-.103-.957-.041-2.205.104-3.14H12.144l-.374-2.642c-.229-1.6-.79-2.412-2.911-2.412h-7.32C.707 11.05 0 11.778 0 12.61c0 .852.707 1.58 1.539 1.58h7.028l3.328 22.833c.436 2.953 1.996 4.803 5.011 4.803m28.53-16.677c-.727 0-1.372-.5-1.372-1.268v-4.326h-3.972a1.274 1.274 0 0 1-1.268-1.268c0-.686.561-1.269 1.268-1.269h3.972v-4.304c0-.79.645-1.29 1.373-1.29c.727 0 1.35.5 1.35 1.29v4.304h3.973c.707 0 1.29.582 1.29 1.269c0 .686-.583 1.268-1.29 1.268h-3.972v4.326c0 .769-.624 1.268-1.351 1.268M18.55 51.933a3.342 3.342 0 0 0 3.369-3.37a3.355 3.355 0 0 0-3.37-3.368a3.342 3.342 0 0 0-3.368 3.369a3.329 3.329 0 0 0 3.369 3.369m19.464 0a3.342 3.342 0 0 0 3.368-3.37a3.355 3.355 0 0 0-3.368-3.368c-1.893 0-3.41 1.497-3.41 3.369c0 1.892 1.517 3.369 3.41 3.369"
-                                        />
-                                      </svg>
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        width="24"
-                                        height="24"
-                                      >
-                                        <path
-                                          fill="#FFD700"
-                                          d="M12 2l2.293 6.394 6.891.228c.808.027 1.13 1.14.487 1.712l-5.514 4.47 2.018 6.664c.236.78-.613 1.417-1.251.94L12 18.875l-5.424 3.402c-.638.399-1.487-.16-1.251-.94l2.018-6.664L2.329 10.334c-.643-.572-.32-1.685.487-1.712l6.891-.228L12 2z"
-                                        />
-                                      </svg>
-                                    </div>
-                                  ) : (
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="1.6rem"
-                                      height="1.6rem"
-                                      viewBox="0 0 56 56"
-                                    >
-                                      <path
-                                        fill="white"
-                                        d="M45.416 28.85C51.155 28.85 56 24.068 56 18.287c0-5.781-4.783-10.564-10.584-10.564c-5.781 0-10.564 4.783-10.564 10.564c0 5.822 4.783 10.563 10.564 10.563m-28.51 12.976h24.268c.81 0 1.517-.665 1.517-1.56c0-.893-.707-1.559-1.517-1.559H17.26c-1.186 0-1.914-.832-2.1-2.1l-.313-2.184h26.368c2.163 0 3.556-.915 4.346-2.703c-1.788 0-3.473-.353-5.032-1.04c-.312.416-.707.603-1.29.603l-24.87.021l-1.767-12.06h19.463c-.103-.957-.041-2.205.104-3.14H12.144l-.374-2.642c-.229-1.6-.79-2.412-2.911-2.412h-7.32C.707 11.05 0 11.778 0 12.61c0 .852.707 1.58 1.539 1.58h7.028l3.328 22.833c.436 2.953 1.996 4.803 5.011 4.803m28.53-16.677c-.727 0-1.372-.5-1.372-1.268v-4.326h-3.972a1.274 1.274 0 0 1-1.268-1.268c0-.686.561-1.269 1.268-1.269h3.972v-4.304c0-.79.645-1.29 1.373-1.29c.727 0 1.35.5 1.35 1.29v4.304h3.973c.707 0 1.29.582 1.29 1.269c0 .686-.583 1.268-1.29 1.268h-3.972v4.326c0 .769-.624 1.268-1.351 1.268M18.55 51.933a3.342 3.342 0 0 0 3.369-3.37a3.355 3.355 0 0 0-3.37-3.368a3.342 3.342 0 0 0-3.368 3.369a3.329 3.329 0 0 0 3.369 3.369m19.464 0a3.342 3.342 0 0 0 3.368-3.37a3.355 3.355 0 0 0-3.368-3.368c-1.893 0-3.41 1.497-3.41 3.369c0 1.892 1.517 3.369 3.41 3.369"
-                                      />
-                                    </svg>
-                                  )}
-                                </div>
-                              </div>
-                            </>
-                          )}
-                        </Box>
-                        <div
-                          style={{
-                            padding: "5px",
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "space-between",
-                          }}
-                        >
-                          <Typography
-                            fontWeight={700}
-                            color={"white"}
-                            fontSize={12}
-                            className="text-left"
-                          >
-                            {title}
-                          </Typography>
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "flex-end",
-                            }}
-                          >
-                            <div>
-                              <span className="text-xl font-bold text-white dark:text-white">
-                                ${price}
-                              </span>
-                              <span className="text-lg font-bold text-red-500 line-through ml-1">
-                                ${full_price}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    </Link>
-                  </Grid>
-                </>
-              );
-            })}
-        </Grid>
+        <ExamAddToCart data={data} />
       </Card>
       <Card
         className="text-white bg-gradient-to-l from-gray-400 to-gray-900"

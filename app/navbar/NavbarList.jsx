@@ -10,6 +10,7 @@ const NavbarList = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
   const [loginResponse, setLoginResponse] = useState(null);
+  const [cartResponce, setCartResponce] = useState(null);
 
   const handleSignOut = () => {
     localStorage.removeItem("loginResponse");
@@ -36,12 +37,17 @@ const NavbarList = () => {
     fetchData();
   }, []);
 
-  
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");
       if (storedLoginResponse) {
         setLoginResponse(JSON.parse(storedLoginResponse));
+      }
+    }
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("CartProducts");
+      if (storedLoginResponse) {
+        setCartResponce(JSON.parse(storedLoginResponse));
       }
     }
   }, []);
@@ -168,25 +174,29 @@ const NavbarList = () => {
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                class="relative rounded-full text-white hover:bg-gradient-to-t hover:from-gray-800 hover:to-blue-400 p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
+                class="relative rounded-full text-white  p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
               >
-                <Card class="bg-white">
-                  {/* <span class="absolute pl-3 text-white">0</span> */}
-                </Card>
                 <span class="sr-only">Add to Cart</span>
                 <Link href="/check-out">
                   <div className="flex space-x-1">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1.1rem"
-                      height="1.1rem"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M0 1h4.764l.545 2h18.078l-3.666 11H7.78l-.5 2H22v2H4.72l1.246-4.989L3.236 3H0zm7.764 11h10.515l2.334-7H5.855zM4 21a2 2 0 1 1 4 0a2 2 0 0 1-4 0m14 0a2 2 0 1 1 4 0a2 2 0 0 1-4 0"
-                      />
-                    </svg>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1.3rem"
+                        height="1.4rem"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M0 1h4.764l.545 2h18.078l-3.666 11H7.78l-.5 2H22v2H4.72l1.246-4.989L3.236 3H0zm7.764 11h10.515l2.334-7H5.855zM4 21a2 2 0 1 1 4 0a2 2 0 0 1-4 0m14 0a2 2 0 1 1 4 0a2 2 0 0 1-4 0"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <span class="text-white ">
+                        {!cartResponce ? "" : "1"}
+                      </span>
+                    </div>
                   </div>
                 </Link>
               </button>

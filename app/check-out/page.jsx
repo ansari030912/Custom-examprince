@@ -1,15 +1,71 @@
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Button, Card, Container, Grid, Typography } from "@mui/material";
+import {
+  Button,
+  Card,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
-import React from "react";
-// import AllVendors from "../components/Tables/AllVendors";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { Search } from "../components/Search";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
-import { Cart } from "../components/Cards";
-import { Search } from "../components/Search";
 
 const CheckOut = () => {
+  const [loginResponse, setLoginResponse] = useState(null);
+  const [cartResponce, setCartResponce] = useState(null);
+  const [examData, setExamData] = useState(null);
+
+  const router = useRouter();
+
+  const discountAmount =
+    Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+        if (!loginResponse?.is_logged_in) {
+          return router.push("/sign-in");
+        }
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    }
+    fetchData();
+  }, [router]);
+  useEffect(() => {
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("loginResponse");
+      if (storedLoginResponse) {
+        setLoginResponse(JSON.parse(storedLoginResponse));
+      }
+    }
+    if (typeof localStorage !== "undefined") {
+      const storedLoginResponse = localStorage.getItem("CartProducts");
+      if (storedLoginResponse) {
+        setCartResponce(JSON.parse(storedLoginResponse));
+      }
+    }
+    if (typeof localStorage !== "undefined") {
+      const localExamData = localStorage.getItem("ExamData");
+      if (localExamData) {
+        setExamData(JSON.parse(localExamData));
+      }
+    }
+  }, []);
+
+  const handleRemoveData = () => {
+    debugger;
+    localStorage.removeItem("CartProducts");
+    localStorage.removeItem("ExamData");
+    window.location.reload();
+  };
   return (
     <>
       <Navbar />
@@ -30,8 +86,176 @@ const CheckOut = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={12}>
-            <Cart />
+            <section class=" bg-gray-100 font-poppins dark:bg-gray-800">
+              <div class="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
+                <div>
+                  <h2 class="mb-8 text-4xl font-bold dark:text-white">
+                    Your Cart
+                  </h2>
+                  {!examData ? (
+                    <div class="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
+                      <h4 class="font-bold text-2xl text-gray-500 dark:text-white text-center">
+                        Nothing is in your Cart please add product in your cart
+                        first.
+                      </h4>
+                    </div>
+                  ) : (
+                    <>
+                      <div class="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
+                        <div class="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
+                          <div class="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
+                            <h2 class="font-bold text-gray-500 dark:text-white">
+                              Product name
+                            </h2>
+                          </div>
+                          <div class="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
+                            <h2 class="font-bold text-gray-500 dark:text-white">
+                              Price
+                            </h2>
+                            <h2 class="font-bold text-gray-500 dark:text-white">
+                              Clear Cart
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="py-4 mb-8 border-t border-b border-gray-200 dark:border-gray-700">
+                          <div class="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
+                            <div class="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
+                              <div class="flex flex-wrap items-center -mx-4">
+                                <div class="w-full px-4">
+                                  <h2 class="mb-2 text-xl font-bold text-white">
+                                    {cartResponce?.title}
+                                  </h2>
+                                  <p class="text-gray-500 dark:text-gray-400 text-lg font-bold">
+                                    {examData?.exam_title}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
+                              <div>
+                                <p class="text-xl font-bold text-blue-500 dark:text-white">
+                                  $ {cartResponce?.price}
+                                </p>
+                                <span class="text-lg text-red-500 line-through ">
+                                  $ {cartResponce?.full_price}
+                                </span>
+                              </div>
+
+                              <IconButton
+                                className="hover:bg-gray-700"
+                                onClick={handleRemoveData}
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="1em"
+                                  height="1em"
+                                  viewBox="0 0 15 15"
+                                >
+                                  <path
+                                    fill="RED"
+                                    d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"
+                                  />
+                                </svg>
+                              </IconButton>
+                            </div>
+                            <div class="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
+                              <p class="text-lg font-bold text-blue-500 dark:text-white"></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex flex-wrap justify-between">
+                        <div class="w-full px-4 mb-4 lg:w-1/2 ">
+                          <div class="flex flex-wrap items-center gap-4">
+                            <input
+                              type="text"
+                              class="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white dark:bg-gray-800"
+                              placeholder="Enter your Discount Cuppon"
+                              required
+                            />
+                            <button class="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
+                              Apply
+                            </button>
+                          </div>
+                        </div>
+                        <div class="w-full px-4 mb-4 lg:w-1/2 ">
+                          <div class="p-6 border border-blue-100 dark:bg-gray-900 dark:border-gray-900 bg-gray-50 md:p-8">
+                            <h2 class="mb-8 text-3xl font-bold text-gray-700 dark:text-white">
+                              Order Summary
+                            </h2>
+                            <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-300 dark:border-gray-700 ">
+                              <span class="text-gray-700 dark:text-white">
+                                Subtotal
+                              </span>
+                              <span class="text-xl font-bold text-gray-700 dark:text-white ">
+                                ${cartResponce.full_price}
+                              </span>
+                            </div>
+                            <div class="flex items-center justify-between pb-4 mb-4 ">
+                              <span class="text-gray-700 dark:text-white ">
+                                Off
+                              </span>
+                              <span class="text-xl font-bold text-gray-700 dark:text-white ">
+                                {cartResponce.off}%
+                              </span>
+                            </div>
+                            <div class="flex items-center justify-between pb-4 mb-4 ">
+                              <span class="text-gray-700 dark:text-white">
+                                Discount
+                              </span>
+                              <span class="text-xl font-bold text-gray-700 dark:text-white">
+                                - ${discountAmount}
+                              </span>
+                            </div>
+                            <div class="flex items-center justify-between pb-4 mb-4 ">
+                              <span class="text-gray-700 dark:text-white">
+                                Order Total
+                              </span>
+                              <span class="text-xl font-bold text-gray-700 dark:text-white">
+                                ${cartResponce.price}
+                              </span>
+                            </div>
+                            <h2 class="text-lg text-gray-500 dark:text-white">
+                              We offer:
+                            </h2>
+                            <div class="flex items-center gap-2 mb-4 ">
+                              <a href="#">
+                                <img
+                                  src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
+                                  alt=""
+                                  class="object-cover h-16 w-26"
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
+                                  alt=""
+                                  class="object-cover h-16 w-26"
+                                />
+                              </a>
+                              <a href="#">
+                                <img
+                                  src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
+                                  alt=""
+                                  class="object-cover h-16 w-26"
+                                />
+                              </a>
+                            </div>
+                            <div class="flex items-center justify-between ">
+                              <button class="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600">
+                                Checkout
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </section>
           </Grid>
+
           <Grid item sm={0} lg={8} />
           <Grid item sm={12} lg={4}>
             <Grid

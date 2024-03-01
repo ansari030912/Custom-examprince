@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import ScAccessAccordian from "../../../components/Cards/ScAccessAccordian";
 import ScPriceCard from "../../../components/Cards/ScPriceCard";
 import { Search } from "../../../components/Search";
+import { HotExam } from "../../../components/Tables";
 import { Footer } from "../../../components/footer";
 import { Navbar } from "../../../navbar";
 
@@ -84,7 +85,7 @@ const ScAccess = async ({ params }) => {
             {/* <WindowsDataCard /> */}
           </Grid>
           <Grid item sm={12} lg={4}>
-            {/* <HotExam /> */}
+            <HotExam />
             <Grid
               container
               className="text-white bg-gradient-to-br from-gray-800 to-blue-400"

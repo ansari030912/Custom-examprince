@@ -44,7 +44,7 @@ const AllVendorsPerma = async ({ params }) => {
             <SingleVendorExamTable data={data} />
             <WindowsDataCard />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} md={4}>
             <HotExamsData />
             <Grid
               container

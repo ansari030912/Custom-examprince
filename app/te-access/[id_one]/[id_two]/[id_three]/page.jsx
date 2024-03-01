@@ -234,7 +234,7 @@ const TeAccess = ({ params }) => {
                     color: "white",
                     mt: "10px",
                     p: "20px",
-                    background: `linear-gradient(to top, #5796E4, #1A273D)`, // Adjust color codes as needed
+                    background: `linear-gradient(to top, #5796E4, #1A273D)`,
                   }}
                 >
                   <Typography>No activation keys available.</Typography>
@@ -243,7 +243,7 @@ const TeAccess = ({ params }) => {
             </Box>
             <Box sx={{ mt: "10px" }}>
               {teAccess.te_file && (
-                <Link href={teAccess.te_file}>
+                <Link href={`https://api.dumpsboss.com${teAccess.te_file}`}>
                   <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
                       <Icon
@@ -258,7 +258,7 @@ const TeAccess = ({ params }) => {
                 </Link>
               )}
               {teAccess.te_file_zip && (
-                <Link href={teAccess.te_file_zip}>
+                <Link href={`https://api.dumpsboss.com${teAccess.te_file_zip}`}>
                   <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
                     <span class="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
                       <Icon
@@ -282,7 +282,7 @@ const TeAccess = ({ params }) => {
               }}
             >
               <Typography variant="h5">How To Use?</Typography>
-              <Typography >
+              <Typography>
                 Download the DumpsArena Test Engine Simulator and install it,
                 then download the premium .dumpsarena file using above yellow
                 button and you will get .zip file, unzip it, and add it to
