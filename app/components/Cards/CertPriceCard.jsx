@@ -10,7 +10,7 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-const ExamAddToCart = ({ data }) => {
+const CertPriceCard = ({ data }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const handleBoxClick = (item) => {
     localStorage.removeItem("ExamData");
@@ -157,4 +157,4 @@ const ExamAddToCart = ({ data }) => {
   );
 };
 
-export default ExamAddToCart;
+export default CertPriceCard;

@@ -3,8 +3,9 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
 import moment from "moment";
 import ExamAddToCart from "./ExamAddToCart";
+import { CertPrice } from ".";
 
-const ExamPricePageCard = ({ data }) => {
+const CertificationPricePageCard = ({ data }) => {
   return (
     <>
       <Card
@@ -47,14 +48,14 @@ const ExamPricePageCard = ({ data }) => {
                 className="text-purple-500"
                 color={"white"}
               >
-                {data.exam_title}
+                {data.cert_title}
               </Typography>
               <Typography fontSize={16} fontWeight={700} color={"white"}>
                 Latest updated date:{" "}
-                {moment(data.exam_update_date).format("LL")}
+                {moment(data.cert_update_date).format("LL")}
               </Typography>
               <Typography fontSize={16} fontWeight={700} color={"white"}>
-                Latest {data.exam_questions} Question & Answers
+                Latest {data.cert_questions} Question & Answers
               </Typography>
               <Card sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}>
                 <Typography fontSize={16} fontWeight={700} color={"#856404"}>
@@ -81,7 +82,7 @@ const ExamPricePageCard = ({ data }) => {
         </Typography>
       </Card>
       <Card sx={{ backgroundColor: "#a7cbf9", padding: "10px" }}>
-        <ExamAddToCart data={data} />
+        <CertPrice data={data.cert_single_exam} />
       </Card>
       <Card
         className="text-white bg-gradient-to-l from-gray-400 to-gray-900"
@@ -105,8 +106,8 @@ const ExamPricePageCard = ({ data }) => {
           borderTopRightRadius: "0px",
         }}
       >
-        {Array.isArray(data.question_types) &&
-          data.question_types.map((item, i) => {
+        {Array.isArray(data.cert_single_exam.question_types) &&
+          data.cert_single_exam.question_types.map((item, i) => {
             const { question_type, question_type_count } = item;
             return (
               <>
@@ -124,9 +125,7 @@ const ExamPricePageCard = ({ data }) => {
                   }}
                 >
                   <div className="text-white">{question_type}</div>
-                  <div className="text-white">
-                    {question_type_count} Qusetions
-                  </div>
+                  <div className="text-white">{question_type_count} Questions</div>
                 </Card>
               </>
             );
@@ -162,11 +161,22 @@ const ExamPricePageCard = ({ data }) => {
           <div>
             <div
               class="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
-              style={{ width: `${data.exam_last_week_average_score}%` }}
+              style={{
+                width: `${
+                  data.cert_single_exam.cert_last_week_average_score
+                    ? data.cert_single_exam.cert_last_week_average_score
+                    : "96.3"
+                }%`,
+              }}
             >
               <div className="flex justify-between">
                 <div>Average Score In Real Exam</div>
-                <div>{data.exam_last_week_average_score}% </div>
+                <div>
+                  {data.cert_single_exam.cert_last_week_average_score
+                    ? data.cert_single_exam.cert_last_week_average_score
+                    : "96.3"}
+                  %{" "}
+                </div>
               </div>
             </div>
           </div>
@@ -174,11 +184,22 @@ const ExamPricePageCard = ({ data }) => {
           <div>
             <div
               class="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
-              style={{ width: `${data.exam_last_week_word_to_word}%` }}
+              style={{
+                width: `${
+                  data.cert_single_exam.cert_last_week_word_to_word
+                    ? data.cert_single_exam.cert_last_week_word_to_word
+                    : "95.7"
+                }%`,
+              }}
             >
               <div className="flex justify-between">
-                <div>Questions came word for word</div>
-                <div>{data.exam_last_week_word_to_word}%</div>
+                <div>Questions came word for word from this dump</div>
+                <div>
+                  {data.cert_single_exam.cert_last_week_word_to_word
+                    ? data.cert_single_exam.cert_last_week_word_to_word
+                    : "95.7"}
+                  %
+                </div>
               </div>
             </div>
           </div>
@@ -188,4 +209,4 @@ const ExamPricePageCard = ({ data }) => {
   );
 };
 
-export default ExamPricePageCard;
+export default CertificationPricePageCard;

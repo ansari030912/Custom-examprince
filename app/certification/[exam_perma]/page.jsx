@@ -375,7 +375,7 @@ const CertificationExamPage = async ({ params }) => {
             </Grid>
             <Grid item sm={12} md={3.5}>
               <HotExam />
-              <ReleatedExam examData={data} />
+              <ReleatedExam examData={data.cert_single_exam} />
               <Grid
                 container
                 className="bg-gray-900"
