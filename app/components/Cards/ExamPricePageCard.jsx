@@ -170,7 +170,7 @@ const ExamPricePageCard = ({ data }) => {
               style={{ width: `${data.exam_last_week_word_to_word}%` }}
             >
               <div className="flex justify-between">
-                <div>Questions came word for word from this dump</div>
+                <div>Questions came word for word</div>
                 <div>{data.exam_last_week_word_to_word}%</div>
               </div>
             </div>

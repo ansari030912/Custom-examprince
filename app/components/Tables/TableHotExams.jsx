@@ -10,7 +10,7 @@ const TableHotExams = ({ data }) => {
   const [selectedView, setSelectedView] = useState("week");
 
   const renderRows = (items) => {
-    return items.slice(0, 10).map((item) => {
+    return items?.slice(0, 10)?.map((item) => {
       const { vendor_title, exam_title, exam_perma } = item;
       return (
         <>

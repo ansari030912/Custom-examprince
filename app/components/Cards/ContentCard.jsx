@@ -15,15 +15,15 @@ export default function ContentCard({ data }) {
   // State for storing expanded accordion panel
   const [expanded, setExpanded] = useState(null);
   // State for managing tab value
-  const [value, setValue] = useState(data.exam_article ? "article" : "faqs");
+  const [value, setValue] = useState(data?.exam_article ? "article" : "faqs");
   // State for storing decoded HTML content
   const [decodedHtml, setDecodedHtml] = useState("");
 
   // Effect to decode HTML entities when data changes
   useEffect(() => {
-    const decodedContent = decodeHtmlEntities(data.exam_article);
+    const decodedContent = decodeHtmlEntities(data?.exam_article);
     setDecodedHtml(decodedContent);
-  }, [data.exam_article]);
+  }, [data?.exam_article]);
 
   // Function to decode HTML entities
   const decodeHtmlEntities = (html) => {
@@ -39,7 +39,7 @@ export default function ContentCard({ data }) {
       const parser = new window.DOMParser();
       const doc = parser.parseFromString(html, "text/html");
       const elements = doc.body.children;
-      
+
       for (let i = 0; i < elements.length; i++) {
         const tagName = elements[i].tagName.toLowerCase();
         if (tagName in styles) {
@@ -124,21 +124,21 @@ export default function ContentCard({ data }) {
         }}
       >
         <Tabs value={value} onChange={handlePageChange}>
-          {data.exam_article && (
+          {data?.exam_article && (
             <Tab
               value="article"
               label="Article"
               className="text-gray-600 text-md font-bold"
             />
           )}
-          {data.exam_faqs && (
+          {data?.exam_faqs && (
             <Tab
               value="faqs"
               label="Faqs"
               className="text-gray-600 text-md font-bold"
             />
           )}
-          {data.exam_certs && (
+          {data?.exam_certs && (
             <Tab
               value="certifications"
               label="Certification"
@@ -151,10 +151,11 @@ export default function ContentCard({ data }) {
         {value === "article" && (
           <Card
             sx={{
-              padding: "15px",
+              padding: "25px",
             }}
           >
             <div
+              style={{ padding: "10px" }}
               dangerouslySetInnerHTML={{
                 __html: parseHtmlWithStyles(decodedHtml),
               }}
@@ -207,7 +208,7 @@ export default function ContentCard({ data }) {
       {value === "certifications" && (
         <Card sx={{ bgcolor: "#111827", color: "white", padding: "10px" }}>
           <Typography variant="h5" fontWeight={600} padding={1} color={"white"}>
-            {data.exam_vendor_title} Certifications
+            {data?.exam_vendor_title} Certifications
           </Typography>
           <Typography>
             {Array.isArray(data.exam_certs) &&

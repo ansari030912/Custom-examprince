@@ -48,7 +48,7 @@ export default function ProductsPage() {
           <Grid item xs={12} md={8}>
             <ProductsTable />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} md={4}>
             <Grid
               container
               className="text-white bg-gradient-to-br from-gray-800 to-blue-400"

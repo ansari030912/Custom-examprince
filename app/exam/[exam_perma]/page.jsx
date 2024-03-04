@@ -40,6 +40,43 @@ const AllVendorsPerma = async ({ params }) => {
           </Grid>
           <Grid item xs={12} md={8.5}>
             <ExamPriceCard data={data} />
+            {data?.exam_topics && (
+              <div class="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="text-white bg-gradient-to-b  from-blue-400 to-gray-900">
+                    <tr>
+                      <th
+                        scope="col"
+                        class="px-6 py-5 text-left text-xs font-medium text-white uppercase tracking-wider"
+                      >
+                        Topic
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-5 text-right text-xs font-medium text-white uppercase tracking-wider"
+                      >
+                        Questions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    {data?.exam_topics.map((topic) => (
+                      <tr
+                        key={topic.topic}
+                        class="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
+                      >
+                        <td class="px-6 py-4 whitespace-nowrap">
+                          {topic.topic}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                          {topic.topic_questions}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
             <Content data={data} />
           </Grid>
           <Grid item sm={12} md={3.5}>
