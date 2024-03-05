@@ -89,13 +89,13 @@ const CourseAccordionCard = ({ data }) => {
                           <td className="px-6 py-2 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-md leading-5">
                             {lecture_title}
                           </td>
-                          <td class="px-6 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-md text-right leading-5">
-                            <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                          <td className="px-6 py-2 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-md text-right leading-5">
+                            <span className="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                               <span
                                 aria-hidden
-                                class="absolute inset-0 bg-green-200 opacity-50 rounded-full"
+                                className="absolute inset-0 bg-green-200 opacity-50 rounded-full"
                               ></span>
-                              <span class="relative text-xs">
+                              <span className="relative text-xs">
                                 {lecture_duration}
                               </span>
                             </span>

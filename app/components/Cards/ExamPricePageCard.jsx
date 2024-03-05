@@ -161,7 +161,7 @@ const ExamPricePageCard = ({ data }) => {
         >
           <div>
             <div
-              class="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              className="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_average_score}%` }}
             >
               <div className="flex justify-between">
@@ -173,7 +173,7 @@ const ExamPricePageCard = ({ data }) => {
 
           <div>
             <div
-              class="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              className="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
               style={{ width: `${data.exam_last_week_word_to_word}%` }}
             >
               <div className="flex justify-between">

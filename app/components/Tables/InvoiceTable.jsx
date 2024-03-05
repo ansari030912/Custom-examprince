@@ -44,17 +44,17 @@ const InvoiceTable = () => {
   };
   return (
     <>
-      <div class="relative overflow-x-auto shadow-sm sm:rounded-lg">
-        <table class="w-full text-sm text-left rtl:text-right text-white">
-          <thead class="text-xs uppercase bg-gradient-to-r from-gray-800 to-blue-400">
+      <div className="relative overflow-x-auto shadow-sm sm:rounded-lg">
+        <table className="w-full text-sm text-left rtl:text-right text-white">
+          <thead className="text-xs uppercase bg-gradient-to-r from-gray-800 to-blue-400">
             <tr>
-              <th scope="col" class="px-10 py-3">
+              <th scope="col" className="px-10 py-3">
                 Invoice Id
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Amount
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Status
               </th>
             </tr>
@@ -73,17 +73,17 @@ const InvoiceTable = () => {
               ? data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : data
             ).map((item) => (
-              <tr class="bg-white border-b hover:bg-gray-50">
+              <tr className="bg-white border-b hover:bg-gray-50">
                 <th
                   scope="row"
-                  class="flex items-center px-6 py-2 text-gray-900 whitespace-nowrap dark:text-white"
+                  className="flex items-center px-6 py-2 text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   <Link href={"/"}>
-                    <div class="ps-3">
-                      <div class="text-base text-gray-700 font-semibold hover:text-blue-500">
+                    <div className="ps-3">
+                      <div className="text-base text-gray-700 font-semibold hover:text-blue-500">
                         # {item?.invoice_id}
                       </div>
-                      <div class="font-normal text-gray-500">
+                      <div className="font-normal text-gray-500">
                         {moment(item?.invoice_date).format(
                           "MMM DD yyyy : hh:mm A"
                         )}
@@ -91,11 +91,11 @@ const InvoiceTable = () => {
                     </div>
                   </Link>
                 </th>
-                <td class="px-6 py-4">
+                <td className="px-6 py-4">
                   <div style={{ color: "gray" }}>${item?.invoice_amount}</div>
                 </td>
-                <td class="px-6 py-4">
-                  <div class="flex items-center">
+                <td className="px-6 py-4">
+                  <div className="flex items-center">
                     <div
                       style={{
                         height: "10px",

@@ -26,8 +26,8 @@ const AllVendorsPerma = async ({ params }) => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div class="mx-auto max-w-8xl flex justify-center">
-              <div class="md:mx-150px lg:mt-2 rounded-2">
+            <div className="mx-auto max-w-8xl flex justify-center">
+              <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
                   alt="Banner"
@@ -41,34 +41,34 @@ const AllVendorsPerma = async ({ params }) => {
           <Grid item xs={12} md={8.5}>
             <ExamPriceCard data={data} />
             {data?.exam_topics && (
-              <div class="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
-                <table class="min-w-full divide-y divide-gray-200">
-                  <thead class="text-white bg-gradient-to-b  from-blue-400 to-gray-900">
+              <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="text-white bg-gradient-to-b  from-blue-400 to-gray-900">
                     <tr>
                       <th
                         scope="col"
-                        class="px-6 py-5 text-left text-xs font-medium text-white uppercase tracking-wider"
+                        className="px-6 py-5 text-left text-xs font-medium text-white uppercase tracking-wider"
                       >
                         Topic
                       </th>
                       <th
                         scope="col"
-                        class="px-6 py-5 text-right text-xs font-medium text-white uppercase tracking-wider"
+                        className="px-6 py-5 text-right text-xs font-medium text-white uppercase tracking-wider"
                       >
                         Questions
                       </th>
                     </tr>
                   </thead>
-                  <tbody class="bg-white divide-y divide-gray-200">
+                  <tbody className="bg-white divide-y divide-gray-200">
                     {data?.exam_topics.map((topic) => (
                       <tr
                         key={topic.topic}
-                        class="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
+                        className="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
                       >
-                        <td class="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 whitespace-nowrap">
                           {topic.topic}
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                        <td className="px-6 py-4 whitespace-nowrap text-right">
                           {topic.topic_questions}
                         </td>
                       </tr>
@@ -198,7 +198,7 @@ const AllVendorsPerma = async ({ params }) => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>

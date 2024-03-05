@@ -14,11 +14,11 @@ const TableHotExams = ({ data }) => {
       const { vendor_title, exam_title, exam_perma } = item;
       return (
         <>
-          <div class="flex relative pb-6">
-            <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
-              <div class="h-full w-1 text-white bg-gradient-to-r from-gray-800 to-blue-400 pointer-events-none"></div>
+          <div className="flex relative pb-6">
+            <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
+              <div className="h-full w-1 text-white bg-gradient-to-r from-gray-800 to-blue-400 pointer-events-none"></div>
             </div>
-            <div class="flex-shrink-0 w-10 h-10 rounded-full  bg-gradient-to-r from-gray-800 to-blue-400 inline-flex items-center justify-center text-white relative z-10">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full  bg-gradient-to-r from-gray-800 to-blue-400 inline-flex items-center justify-center text-white relative z-10">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1.8em"
@@ -32,11 +32,11 @@ const TableHotExams = ({ data }) => {
               </svg>
             </div>
             <Link href={`/exam/${exam_perma}`} className="w-full">
-              <div class="flex-grow pl-4">
-                <h2 class="font-semibold text-md  mb-1 tracking-wider">
+              <div className="flex-grow pl-4">
+                <h2 className="font-semibold text-md  mb-1 tracking-wider">
                   {vendor_title}
                 </h2>
-                <p class="leading-relaxed text-gray-700 text-sm">
+                <p className="leading-relaxed text-gray-700 text-sm">
                   {exam_title}
                 </p>
                 <hr style={{ marginTop: "12px" }} />
@@ -101,10 +101,10 @@ const TableHotExams = ({ data }) => {
       </Card>
 
       <Card sx={{ borderRadius: "0px", width: "100%" }}>
-        <section class="text-gray-600 body-font">
-          <div class="container px-5 mx-auto flex flex-wrap">
-            <div class="flex flex-wrap w-full">
-              <div class="md:pr-1 md:py-6">
+        <section className="text-gray-600 body-font">
+          <div className="container px-5 mx-auto flex flex-wrap">
+            <div className="flex flex-wrap w-full">
+              <div className="md:pr-1 md:py-6">
                 {selectedView === "week" && renderRows(data?.week)}
                 {selectedView === "month" && renderRows(data?.month)}
               </div>

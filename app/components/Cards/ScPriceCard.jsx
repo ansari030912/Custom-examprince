@@ -1,30 +1,30 @@
 /* eslint-disable @next/next/no-img-element */
 const ScPriceCard = ({ data }) => {
   return (
-    <div class=" py-4 text-white bg-gradient-to-t from-blue-400 to-gray-900">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl rounded-3xl ring-1 ring-transparent lg:mx-0 lg:flex lg:max-w-none">
-          <div class="p-8 sm:p-10 lg:flex-auto">
-            <h3 class="text-2xl font-bold tracking-tight text-white">
+    <div className=" py-4 text-white bg-gradient-to-t from-blue-400 to-gray-900">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl rounded-3xl ring-1 ring-transparent lg:mx-0 lg:flex lg:max-w-none">
+          <div className="p-8 sm:p-10 lg:flex-auto">
+            <h3 className="text-2xl font-bold tracking-tight text-white">
               {data?.title}
             </h3>
-            <p class="mt-6 text-base leading-7 text-gray-200">
+            <p className="mt-6 text-base leading-7 text-gray-200">
               Get ready for your exam by enrolling in our comprehensive training
               course. This course includes a full set of instructional videos
               designed to equip you with in-depth knowledge essential for
               passing the certification exam with flying colors.
             </p>
-            <div class="mt-10 flex items-center gap-x-4">
-              <h4 class="flex-none text-xl font-semibold leading-6 text-gray-100">
+            <div className="mt-10 flex items-center gap-x-4">
+              <h4 className="flex-none text-xl font-semibold leading-6 text-gray-100">
                 What’s included
               </h4>
-              <div class="h-px flex-auto bg-gray-100"></div>
+              <div className="h-px flex-auto bg-gray-100"></div>
             </div>
             <ul
               role="list"
-              class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+              className="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
             >
-              <li class="flex gap-x-3 ">
+              <li className="flex gap-x-3 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -135,7 +135,7 @@ const ScPriceCard = ({ data }) => {
                   {data?.lectures} : Lectures
                 </span>
               </li>
-              <li class="flex gap-x-3">
+              <li className="flex gap-x-3">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -179,18 +179,18 @@ const ScPriceCard = ({ data }) => {
               </li>
             </ul>
           </div>
-          <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0 border-l-2 bg-transparent">
-            <div class="rounded-2xl bg-transparent py-2 text-center  lg:flex lg:flex-col lg:justify-center lg:py-6">
-              <div class="mx-auto max-w-xs">
+          <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0 border-l-2 bg-transparent">
+            <div className="rounded-2xl bg-transparent py-2 text-center  lg:flex lg:flex-col lg:justify-center lg:py-6">
+              <div className="mx-auto max-w-xs">
                 <img src="/video-file-formats.png" alt="video-file-formats" />
-                {/* <p class="text-base font-semibold text-white">
+                {/* <p className="text-base font-semibold text-white">
                   Pay once, own it forever
                 </p>
-                <p class="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span class="text-5xl font-bold tracking-tight text-white">
+                <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                  <span className="text-5xl font-bold tracking-tight text-white">
                     ${data?.price}
                   </span>
-                  <span class="text-2xl  font-semibold leading-6 tracking-wide ">
+                  <span className="text-2xl  font-semibold leading-6 tracking-wide ">
                     /
                     <span className="line-through text-2xl text-red-600">
                       {data?.full_price}
@@ -199,7 +199,7 @@ const ScPriceCard = ({ data }) => {
                 </p> */}
                 <a
                   href="#"
-                  class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   <div className="flex justify-center">
                     <svg

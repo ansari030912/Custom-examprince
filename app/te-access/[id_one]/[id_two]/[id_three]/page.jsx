@@ -21,7 +21,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Footer } from "../../../../components/footer";
 import { Navbar } from "../../../../navbar";
-import { max } from "moment";
 
 const TeAccess = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
@@ -95,8 +94,8 @@ const TeAccess = ({ params }) => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div class="mx-auto max-w-8xl flex justify-center">
-              <div class="md:mx-150px lg:mt-2 rounded-2">
+            <div className="mx-auto max-w-8xl flex justify-center">
+              <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
                   alt="banner"
@@ -174,8 +173,8 @@ const TeAccess = ({ params }) => {
                       <TextField
                         size="small"
                         variant="outlined"
-                        label={"Purchase Key"}
-                        value={item.purchase_key}
+                        label={"Activation Keys"}
+                        value={`${item.purchase_key}|${item.activation_key}`}
                         disabled
                         fullWidth
                         InputProps={{
@@ -183,7 +182,10 @@ const TeAccess = ({ params }) => {
                           endAdornment: (
                             <IconButton
                               onClick={() =>
-                                handleCopyToClipboard(item.purchase_key, i)
+                                handleCopyToClipboard(
+                                  `${item.purchase_key}|${item.activation_key}`,
+                                  i
+                                )
                               }
                             >
                               <Icon
@@ -196,34 +198,6 @@ const TeAccess = ({ params }) => {
                           ),
                         }}
                         sx={{ marginBottom: "10px", marginTop: "10px" }}
-                      />
-
-                      <TextField
-                        size="small"
-                        variant="outlined"
-                        label={"Activation Key"}
-                        value={item.activation_key}
-                        disabled
-                        fullWidth
-                        InputProps={{
-                          readOnly: true,
-                          endAdornment: (
-                            <IconButton
-                              sx={{ alignSelf: "flex-start" }}
-                              onClick={() =>
-                                handleCopyToClipboard(item.activation_key, i)
-                              }
-                            >
-                              <Icon
-                                icon="mingcute:copy-line"
-                                width="1em"
-                                height="1em"
-                                style={{ color: "#545e6b" }}
-                              />
-                            </IconButton>
-                          ),
-                        }}
-                        sx={{ marginBottom: "10px" }}
                       />
                     </AccordionDetails>
                   </Accordion>
@@ -241,11 +215,12 @@ const TeAccess = ({ params }) => {
                 </Card>
               )}
             </Box>
+
             <Box sx={{ mt: "10px" }}>
               {teAccess.te_file && (
                 <Link href={`https://api.dumpsboss.com${teAccess.te_file}`}>
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
                       <Icon
                         icon="uil:file-download-alt"
                         width="1.7em"
@@ -259,8 +234,8 @@ const TeAccess = ({ params }) => {
               )}
               {teAccess.te_file_zip && (
                 <Link href={`https://api.dumpsboss.com${teAccess.te_file_zip}`}>
-                  <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
+                  <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group hover:bg-gradient-to-l bg-gradient-to-br from-blue-800 to-red-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75  rounded-md group-hover:bg-opacity-0 flex">
                       <Icon
                         icon="tabler:file-type-zip"
                         width="1.7em"
@@ -408,7 +383,7 @@ const TeAccess = ({ params }) => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>

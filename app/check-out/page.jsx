@@ -73,8 +73,8 @@ const CheckOut = () => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div class="mx-auto max-w-8xl flex justify-center">
-              <div class="md:mx-150px lg:mt-2 rounded-2">
+            <div className="mx-auto max-w-8xl flex justify-center">
+              <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
                   alt="banner"
@@ -86,57 +86,57 @@ const CheckOut = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={12}>
-            <section class=" bg-gray-100 font-poppins dark:bg-gray-800">
-              <div class="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
+            <section className=" bg-gray-100 font-poppins dark:bg-gray-800">
+              <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
                 <div>
-                  <h2 class="mb-8 text-4xl font-bold dark:text-white">
+                  <h2 className="mb-8 text-4xl font-bold dark:text-white">
                     Your Cart
                   </h2>
                   {!examData ? (
-                    <div class="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
-                      <h4 class="font-bold text-2xl text-gray-500 dark:text-white text-center">
+                    <div className="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
+                      <h4 className="font-bold text-2xl text-gray-500 dark:text-white text-center">
                         Nothing is in your Cart please add product in your cart
                         first.
                       </h4>
                     </div>
                   ) : (
                     <>
-                      <div class="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
-                        <div class="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
-                          <div class="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                            <h2 class="font-bold text-gray-500 dark:text-white">
+                      <div className="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
+                        <div className="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
+                          <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
+                            <h2 className="font-bold text-gray-500 dark:text-white">
                               Product name
                             </h2>
                           </div>
-                          <div class="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                            <h2 class="font-bold text-gray-500 dark:text-white">
+                          <div className="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
+                            <h2 className="font-bold text-gray-500 dark:text-white">
                               Price
                             </h2>
-                            <h2 class="font-bold text-gray-500 dark:text-white">
+                            <h2 className="font-bold text-gray-500 dark:text-white">
                               Clear Cart
                             </h2>
                           </div>
                         </div>
-                        <div class="py-4 mb-8 border-t border-b border-gray-200 dark:border-gray-700">
-                          <div class="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
-                            <div class="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                              <div class="flex flex-wrap items-center -mx-4">
-                                <div class="w-full px-4">
-                                  <h2 class="mb-2 text-xl font-bold text-white">
+                        <div className="py-4 mb-8 border-t border-b border-gray-200 dark:border-gray-700">
+                          <div className="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
+                            <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
+                              <div className="flex flex-wrap items-center -mx-4">
+                                <div className="w-full px-4">
+                                  <h2 className="mb-2 text-xl font-bold text-white">
                                     {cartResponce?.title}
                                   </h2>
-                                  <p class="text-gray-500 dark:text-gray-400 text-lg font-bold">
+                                  <p className="text-gray-500 dark:text-gray-400 text-lg font-bold">
                                     {examData?.exam_title}
                                   </p>
                                 </div>
                               </div>
                             </div>
-                            <div class="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
+                            <div className="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
                               <div>
-                                <p class="text-xl font-bold text-blue-500 dark:text-white">
+                                <p className="text-xl font-bold text-blue-500 dark:text-white">
                                   $ {cartResponce?.price}
                                 </p>
-                                <span class="text-lg text-red-500 line-through ">
+                                <span className="text-lg text-red-500 line-through ">
                                   $ {cartResponce?.full_price}
                                 </span>
                               </div>
@@ -158,91 +158,91 @@ const CheckOut = () => {
                                 </svg>
                               </IconButton>
                             </div>
-                            <div class="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
-                              <p class="text-lg font-bold text-blue-500 dark:text-white"></p>
+                            <div className="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
+                              <p className="text-lg font-bold text-blue-500 dark:text-white"></p>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="flex flex-wrap justify-between">
-                        <div class="w-full px-4 mb-4 lg:w-1/2 ">
-                          <div class="flex flex-wrap items-center gap-4">
+                      <div className="flex flex-wrap justify-between">
+                        <div className="w-full px-4 mb-4 lg:w-1/2 ">
+                          <div className="flex flex-wrap items-center gap-4">
                             <input
                               type="text"
-                              class="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white dark:bg-gray-800"
+                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white dark:bg-gray-800"
                               placeholder="Enter your Discount Cuppon"
                               required
                             />
-                            <button class="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
+                            <button className="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
                               Apply
                             </button>
                           </div>
                         </div>
-                        <div class="w-full px-4 mb-4 lg:w-1/2 ">
-                          <div class="p-6 border border-blue-100 dark:bg-gray-900 dark:border-gray-900 bg-gray-50 md:p-8">
-                            <h2 class="mb-8 text-3xl font-bold text-gray-700 dark:text-white">
+                        <div className="w-full px-4 mb-4 lg:w-1/2 ">
+                          <div className="p-6 border border-blue-100 dark:bg-gray-900 dark:border-gray-900 bg-gray-50 md:p-8">
+                            <h2 className="mb-8 text-3xl font-bold text-gray-700 dark:text-white">
                               Order Summary
                             </h2>
-                            <div class="flex items-center justify-between pb-4 mb-4 border-b border-gray-300 dark:border-gray-700 ">
-                              <span class="text-gray-700 dark:text-white">
+                            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300 dark:border-gray-700 ">
+                              <span className="text-gray-700 dark:text-white">
                                 Subtotal
                               </span>
-                              <span class="text-xl font-bold text-gray-700 dark:text-white ">
+                              <span className="text-xl font-bold text-gray-700 dark:text-white ">
                                 ${cartResponce.full_price}
                               </span>
                             </div>
-                            <div class="flex items-center justify-between pb-4 mb-4 ">
-                              <span class="text-gray-700 dark:text-white ">
+                            <div className="flex items-center justify-between pb-4 mb-4 ">
+                              <span className="text-gray-700 dark:text-white ">
                                 Off
                               </span>
-                              <span class="text-xl font-bold text-gray-700 dark:text-white ">
+                              <span className="text-xl font-bold text-gray-700 dark:text-white ">
                                 {cartResponce.off}%
                               </span>
                             </div>
-                            <div class="flex items-center justify-between pb-4 mb-4 ">
-                              <span class="text-gray-700 dark:text-white">
+                            <div className="flex items-center justify-between pb-4 mb-4 ">
+                              <span className="text-gray-700 dark:text-white">
                                 Discount
                               </span>
-                              <span class="text-xl font-bold text-gray-700 dark:text-white">
+                              <span className="text-xl font-bold text-gray-700 dark:text-white">
                                 - ${discountAmount}
                               </span>
                             </div>
-                            <div class="flex items-center justify-between pb-4 mb-4 ">
-                              <span class="text-gray-700 dark:text-white">
+                            <div className="flex items-center justify-between pb-4 mb-4 ">
+                              <span className="text-gray-700 dark:text-white">
                                 Order Total
                               </span>
-                              <span class="text-xl font-bold text-gray-700 dark:text-white">
+                              <span className="text-xl font-bold text-gray-700 dark:text-white">
                                 ${cartResponce.price}
                               </span>
                             </div>
-                            <h2 class="text-lg text-gray-500 dark:text-white">
+                            <h2 className="text-lg text-gray-500 dark:text-white">
                               We offer:
                             </h2>
-                            <div class="flex items-center gap-2 mb-4 ">
+                            <div className="flex items-center gap-2 mb-4 ">
                               <a href="#">
                                 <img
                                   src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
                                   alt=""
-                                  class="object-cover h-16 w-26"
+                                  className="object-cover h-16 w-26"
                                 />
                               </a>
                               <a href="#">
                                 <img
                                   src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
                                   alt=""
-                                  class="object-cover h-16 w-26"
+                                  className="object-cover h-16 w-26"
                                 />
                               </a>
                               <a href="#">
                                 <img
                                   src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
                                   alt=""
-                                  class="object-cover h-16 w-26"
+                                  className="object-cover h-16 w-26"
                                 />
                               </a>
                             </div>
-                            <div class="flex items-center justify-between ">
-                              <button class="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600">
+                            <div className="flex items-center justify-between ">
+                              <button className="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600">
                                 Checkout
                               </button>
                             </div>
@@ -464,7 +464,7 @@ const CheckOut = () => {
                 >
                   <button
                     type="button"
-                    class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                    className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
                     Customer Support
                   </button>

@@ -13,8 +13,8 @@ const FooterList = () => {
         backgroundSize: "cover",
       }}
     >
-      <div class="container px-4 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-        <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div className="container px-4 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+        <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <div style={{ fontSize: 30, fontWeight: 800 }}>Dumps Boss</div>
           <img
             className="mt-2"
@@ -39,7 +39,7 @@ const FooterList = () => {
                 <path
                   fill="currentColor"
                   d="M32 6H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-1.54 22H5.66l7-7.24l-1.44-1.39L4 26.84V9.52l12.43 12.37a2 2 0 0 0 2.82 0L32 9.21v17.5l-7.36-7.36l-1.41 1.41ZM5.31 8h25.07L17.84 20.47Z"
-                  class="clr-i-outline clr-i-outline-path-1"
+                  className="clr-i-outline clr-i-outline-path-1"
                 />
                 <path fill="none" d="M0 0h36v36H0z" />
               </svg>
@@ -70,8 +70,8 @@ const FooterList = () => {
             </div>
           </div>
         </div>
-        <div class="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
-          <div class="lg:w-1/1 w-full px-4 text-justify">
+        <div className="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
+          <div className="lg:w-1/1 w-full px-4 text-justify">
             DumpsArena does not provide real Microsoft exam questions.
             Similarly, DumpsArena does not supply real Amazon exam questions.
             The materials offered by DumpsArena lack real questions and answers
@@ -82,43 +82,43 @@ const FooterList = () => {
           </div>
           <div className="mt-3">
             <Link href="/">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Home
                 </span>
               </button>
             </Link>
             <Link href="/all-vendors">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Vendor
                 </span>
               </button>
             </Link>
             <Link href="/all-certificates">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Certificates
                 </span>
               </button>
             </Link>
             <Link href="/video-courses">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Video Cources
                 </span>
               </button>
             </Link>
             <Link href="/unlimited-access">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Unlimited Access
                 </span>
               </button>
             </Link>
             <Link href="#">
-              <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
+              <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Faqs
                 </span>
               </button>
@@ -128,7 +128,7 @@ const FooterList = () => {
       </div>
       <div>
         <Box className="md:flex md:justify-center p-2 ">
-          <p class="text-white text-sm text-center sm:text-center">
+          <p className="text-white text-sm text-center sm:text-center">
             © 2024 DumpsArena.com - All Rights Reserved
           </p>
         </Box>
