@@ -65,23 +65,23 @@ const CustomCarousel = () => {
           </div>
         </div>
         <div className="absolute top-0 left-0 right-0 flex justify-between items-center h-full">
-          <IconButton sx={{ bgcolor: "gray" }} onClick={prevSlide}>
+          <IconButton sx={{ bgcolor: "#bfbfbf" }} onClick={prevSlide}>
             <Icon
               icon="mingcute:left-line"
               width="1.2em"
               height="1.2em"
-              style={{ color: "#bfbfbf" }}
+              style={{ color: "#415B83" }}
             />
           </IconButton>
           <IconButton
-            sx={{ bgcolor: "gray", color: "gray" }}
+            sx={{ bgcolor: "gray", color: "#bfbfbf" }}
             onClick={nextSlide}
           >
             <Icon
               icon="mingcute:right-line"
               width="1.2em"
               height="1.2em"
-              style={{ color: "#bfbfbf" }}
+              style={{ color: "#415B83" }}
             />
           </IconButton>
         </div>
