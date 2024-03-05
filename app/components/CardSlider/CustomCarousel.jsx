@@ -70,7 +70,7 @@ const CustomCarousel = () => {
               icon="mingcute:left-line"
               width="1.2em"
               height="1.2em"
-              style={{ color: "#415B83" }}
+              style={{ color: "#bfbfbf" }}
             />
           </IconButton>
           <IconButton
@@ -81,7 +81,7 @@ const CustomCarousel = () => {
               icon="mingcute:right-line"
               width="1.2em"
               height="1.2em"
-              style={{ color: "#415B83" }}
+              style={{ color: "#bfbfbf" }}
             />
           </IconButton>
         </div>
