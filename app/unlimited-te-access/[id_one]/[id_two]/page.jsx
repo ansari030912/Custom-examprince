@@ -265,10 +265,10 @@ const UnlimitedTeAccessPage = ({ params }) => {
                                     Answers
                                   </p>
                                 </div>
-                                <div className="flex justify-between items-center space-x-2">
+                                <div className="md:flex md:justify-between items-centerspace-x-2">
                                   <button
                                     onClick={() => handleGetKey(exam)}
-                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300"
+                                    className="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300"
                                   >
                                     Activation Key
                                     <Icon
@@ -279,7 +279,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
                                     />
                                   </button>
                                   <Link
-                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                                    className="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
                                     href={`https://api.dumpsboss.com${exam.download_url}`}
                                   >
                                     Downalod File
