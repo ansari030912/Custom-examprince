@@ -28,7 +28,7 @@ const VideoCourseSlider = ({ data }) => {
     return (
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
-          <Grid item xs={6} sm={4} md={4} key={index}>
+          <Grid item xs={12} md={4} key={index}>
             <Link
               key={vendor.vendor_title}
               href={`/training-course/${vendor.perma}`}
