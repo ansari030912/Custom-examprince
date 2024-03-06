@@ -265,7 +265,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
                                     Answers
                                   </p>
                                 </div>
-                                <div className="md:flex md:justify-between items-centerspace-x-2">
+                                <div className="md:flex md:justify-between items-center space-x-2 space-y-2">
                                   <button
                                     onClick={() => handleGetKey(exam)}
                                     className="inline-flex items-center px-2 py-1 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300"
