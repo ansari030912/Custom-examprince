@@ -24,6 +24,7 @@ import NavbarList from "../../../navbar/NavbarList";
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();
   const [unlimitedTeAccess, setUnlimitedTeAccess] = useState();
+  console.log("🚀 ~ UnlimitedTeAccessPage ~ unlimitedTeAccess:", unlimitedTeAccess)
   const [page, setPage] = useState(0);
   const [localUser, setLocalUser] = useState();
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -38,13 +39,17 @@ const UnlimitedTeAccessPage = ({ params }) => {
   };
 
   const handleGetKey = async (exam) => {
+    console.log("🚀 ~ handleGetKey ~ exam:", exam);
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
       if (!loginResponse?._token) {
         return router.push("/sign-in");
       }
       const response = await axios.get(
-        `https://api.dumpsboss.com${exam.activation_keys_url}`,
+        `https://api.dumpsboss.com${exam.activation_keys_url.replace(
+          "/api/",
+          "/v1/"
+        )}`, // Modified URL
         {
           headers: {
             "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",

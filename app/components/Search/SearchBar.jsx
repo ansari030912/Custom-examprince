@@ -21,8 +21,8 @@ const SearchBar = () => {
     <nav className="text-white bg-gradient-to-b from-blue-400 to-gray-900 p-1">
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={7} md={6} lg={4}>
-            <div className="overflow-hidden">
+          <Grid item xs={0} md={6} lg={4}>
+            <div className="hidden md:block overflow-hidden">
               <div className="flex space-x-1 sm:space-x-3 md:space-x-6 lg:space-x-3 mt-1">
                 {currentData.map((item, index) => (
                   <Link href={item.href} key={index}>
@@ -34,7 +34,7 @@ const SearchBar = () => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} sm={5} md={6} lg={8}>
+          <Grid item xs={12} md={6} lg={8}>
             <Searching />
           </Grid>
         </Grid>

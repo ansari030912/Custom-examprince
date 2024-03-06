@@ -3,25 +3,13 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export const AuthGuard = ({ children }) => {
-  function jwtDecode(token) {
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    const rawData = window.atob(base64);
-    const buffer = new Uint8Array(rawData.length);
-    for (let i = 0; i < rawData.length; i++) {
-      buffer[i] = rawData.charCodeAt(i);
-    }
-    const decoder = new TextDecoder();
-    const jsonPayload = decoder.decode(buffer);
-    return JSON.parse(jsonPayload);
-  }
   const router = useRouter();
-  const tokenExpired = (exp) => {
+  const tokenExpired = (expiryTime) => {
     // eslint-disable-next-line prefer-const
     let expiredTimer;
 
     const currentTime = Date.now();
-    const timeLeft = exp - currentTime;
+    const timeLeft = expiryTime - currentTime;
     console.log("🚀 ~ tokenExpired ~ timeLeft:", timeLeft);
 
     const date = new Date(timeLeft); // Convert Unix timestamp to milliseconds
@@ -44,8 +32,7 @@ export const AuthGuard = ({ children }) => {
   useEffect(() => {
     const isLogin = JSON.parse(localStorage.getItem("loginResponse"));
     if (isLogin?.is_logged_in) {
-      const { exp } = jwtDecode(isLogin._token);
-      tokenExpired(exp);
+      tokenExpired(isLogin?.expiryTime);
     }
   }, []);
   return children;

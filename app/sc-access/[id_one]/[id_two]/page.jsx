@@ -81,7 +81,7 @@ const ScAccess = async ({ params }) => {
           <Grid item xs={12}>
             <ScPriceCard data={data} />
           </Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} lg={8}>
             <ScAccessAccordian data={data} />
             {/* <WindowsDataCard /> */}
           </Grid>
