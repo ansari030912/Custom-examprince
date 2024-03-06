@@ -2,6 +2,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+
 export default function loginAuth(Component) {
   return function AuthenticatedComponent(props) {
     const router = useRouter();
@@ -13,15 +14,15 @@ export default function loginAuth(Component) {
     }
 
     useEffect(() => {
-      if (!loginResponse?.is_logged_in) {
-        // If not logged in, redirect to sign-in page
-        router.push("/sign-in");
+      if (loginResponse?.is_logged_in) {
+        router.push("/");
       }
-    }, [!loginResponse, router]);
+    }, [loginResponse, router]);
 
-    if (loginResponse?.is_logged_in) {
-      return router.push("/");
+    if (!loginResponse?.is_logged_in) {
+      return <Component {...props} />;
     }
-    return <Component {...props} />;
+
+    return null; 
   };
 }
