@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const SignInForm = () => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -14,9 +15,6 @@ const SignInForm = () => {
   const [passwordError, setPasswordError] = useState("");
   const [ip, setIp] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [expiredTimer, setExpiredTimer] = useState(null);
-
-  const router = useRouter();
 
   const fetchIP = async () => {
     try {
@@ -77,7 +75,7 @@ const SignInForm = () => {
 
       if (response.data.is_logged_in) {
         const currentTime = Date.now();
-        const twoHoursInMillis = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
+        const twoHoursInMillis = 2 * 60 * 60 * 1000;
         const expiryTime = currentTime + twoHoursInMillis;
 
         localStorage.setItem(
