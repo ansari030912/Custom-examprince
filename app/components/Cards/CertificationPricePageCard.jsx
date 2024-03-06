@@ -193,7 +193,7 @@ const CertificationPricePageCard = ({ data }) => {
               }}
             >
               <div className="flex justify-between">
-                <div>Questions came word for word from this dump</div>
+                <div>Questions (word for word)</div>
                 <div>
                   {data.cert_single_exam.cert_last_week_word_to_word
                     ? data.cert_single_exam.cert_last_week_word_to_word
