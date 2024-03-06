@@ -297,7 +297,7 @@ const CheckOut = () => {
                   policy.
                 </Typography>
                 <Link
-                  href="/"
+                  href="/refund-policy"
                   className="text-white underline  hover:text-blue-400"
                 >
                   How our refund policy works?

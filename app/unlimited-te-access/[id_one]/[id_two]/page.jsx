@@ -5,10 +5,18 @@
 import { Icon } from "@iconify/react";
 import {
   Box,
+  Button,
   Card,
   Container,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   Grid,
+  IconButton,
+  InputAdornment,
   TablePagination,
+  TextField,
   Typography,
 } from "@mui/material";
 import axios from "axios";
@@ -17,13 +25,14 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import withAuth from "../../../auth/RouterAuth";
 import { Search } from "../../../components/Search";
-import { HotExam } from "../../../components/Tables";
 import { Footer } from "../../../components/footer";
 import NavbarList from "../../../navbar/NavbarList";
 
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();
-  const [unlimitedTeAccess, setUnlimitedTeAccess] = useState();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [unlimitedTeAccess, setUnlimitedTeAccess] = useState(null);
+  const [activationKeys, setActivationKeys] = useState([]);
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
@@ -31,12 +40,20 @@ const UnlimitedTeAccessPage = ({ params }) => {
     setPage(newPage);
   };
 
+  const handleCopyToClipboard = (keys) => {
+    navigator.clipboard.writeText(keys);
+  };
+
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
 
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
   const handleGetKey = async (exam) => {
+    setDialogOpen(true);
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
       if (!loginResponse?._token) {
@@ -54,6 +71,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
           },
         }
       );
+
       setActivationKeys(response.data);
     } catch (error) {
       console.error("Error:", error.message);
@@ -84,14 +102,55 @@ const UnlimitedTeAccessPage = ({ params }) => {
     if (!unlimitedTeAccess) {
       fetchData();
     }
-  }, [unlimitedTeAccess, params.id_one, params.id_two, router]);
+  }, [params.id_one, params.id_two, router]);
 
   return (
     <>
       <NavbarList />
       <Search />
-
       <Container maxWidth="lg">
+        <Dialog fullWidth open={dialogOpen} onClose={handleCloseDialog}>
+          <DialogTitle className="text-white bg-gradient-to-b from-gray-800 to-blue-400">
+            Activation & Purchase Keys
+          </DialogTitle>
+          <DialogContent>
+            {activationKeys.map((key, index) => (
+              <Box key={index} width="100%" mb={2} mt={3}>
+                <TextField
+                  variant="outlined"
+                  size="medium"
+                  fullWidth
+                  value={`${key.purchase_key}|${key.activation_key}`}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() =>
+                            handleCopyToClipboard(
+                              `${key.purchase_key}|${key.activation_key}`
+                            )
+                          }
+                        >
+                          <Icon icon="akar-icons:copy" />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+              </Box>
+            ))}
+          </DialogContent>
+          <DialogActions className="text-white bg-gradient-to-t from-gray-800 to-blue-400">
+            <Button
+              variant="contained"
+              color="info"
+              onClick={handleCloseDialog}
+            >
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
+
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <div className="mx-auto max-w-8xl flex justify-center">
@@ -174,97 +233,90 @@ const UnlimitedTeAccessPage = ({ params }) => {
                 </Grid>
               </Grid>
             </Card>
-            {unlimitedTeAccess && (
-              <Card sx={{ padding: "18px", bgcolor: "#F8F9FA", mt: "10px" }}>
-                <Grid container spacing={3}>
-                  {unlimitedTeAccess?.vendors
-                    ?.slice(
-                      page * rowsPerPage,
-                      page * rowsPerPage + rowsPerPage
-                    )
-                    .map((vendor) => (
-                      <Grid item xs={12} key={vendor.vendor_perma}>
-                        <Box sx={{ bgcolor: "#E2E2E2", padding: "17px" }}>
-                          <div className="mb-1 text-2xl font-bold tracking-tight text-black">
-                            {vendor.vendor_title}
-                          </div>
-                          <Grid container spacing={2}>
-                            {vendor.exams.map((exam) => (
-                              <Grid key={exam.exam_perma} item xs={12} md={12}>
-                                <div
-                                  style={{
-                                    minHeight: "130px",
-                                    position: "relative",
-                                  }}
-                                  className="max-w-full p-6 text-white bg-gradient-to-l from-gray-400 to-gray-900 shadow flex flex-col justify-between"
-                                >
-                                  <div>
-                                    <h5 className="mb-1 text-2xl font-bold tracking-tight text-white">
-                                      {exam.exam_code}
-                                    </h5>
-                                    <p className="mb-4 text-large text-gray-200">
-                                      {exam.exam_name}
-                                    </p>
-                                    <p className="mb-2 text-sm font-bold text-gray-50">
-                                      Total {exam.exam_questions} Question &
-                                      Answers
-                                    </p>
-                                  </div>
-                                  <div className="flex justify-between items-center">
-                                    <button
-                                      onClick={() => handleGetKey(exam)}
-                                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300"
-                                    >
-                                      Activation Key
-                                      <Icon
-                                        icon="solar:key-outline"
-                                        width="1.4em"
-                                        height="1.4em"
-                                        style={{ color: "white" }}
-                                      />
-                                    </button>
-                                    <Link
-                                      className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-                                      href={`https://api.dumpsboss.com${exam.download_url}`}
-                                    >
-                                      Downalod File
-                                      <Icon
-                                        icon="ic:outline-download"
-                                        width="1.6em"
-                                        height="1.6em"
-                                        style={{ color: "white" }}
-                                      />
-                                    </Link>
-                                  </div>
+            <Card sx={{ padding: "18px", bgcolor: "#F8F9FA", mt: "10px" }}>
+              <Grid container spacing={3}>
+                {unlimitedTeAccess?.vendors
+                  ?.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((vendor, i) => (
+                    <Grid item xs={12} key={i}>
+                      <Box sx={{ bgcolor: "#E2E2E2", padding: "17px" }}>
+                        <div className="mb-1 text-2xl font-bold tracking-tight text-black">
+                          {vendor.vendor_title}
+                        </div>
+                        <Grid container spacing={2}>
+                          {vendor.exams.map((exam, i) => (
+                            <Grid key={i} item xs={12} md={12}>
+                              <div
+                                style={{
+                                  minHeight: "130px",
+                                  position: "relative",
+                                }}
+                                className="max-w-full p-6 text-white bg-gradient-to-l from-gray-400 to-gray-900 shadow flex flex-col justify-between"
+                              >
+                                <div>
+                                  <h5 className="mb-1 text-2xl font-bold tracking-tight text-white">
+                                    {exam.exam_code}
+                                  </h5>
+                                  <p className="mb-4 text-large text-gray-200">
+                                    {exam.exam_name}
+                                  </p>
+                                  <p className="mb-2 text-sm font-bold text-gray-50">
+                                    Total {exam.exam_questions} Question &
+                                    Answers
+                                  </p>
                                 </div>
-                              </Grid>
-                            ))}
-                          </Grid>
-                        </Box>
-                      </Grid>
-                    ))}
-                </Grid>
-                <div style={{ textAlign: "right", marginBottom: "-5px" }}>
-                  <TablePagination
-                    rowsPerPageOptions={[10, 25, 100]}
-                    component="div"
-                    count={unlimitedTeAccess?.vendors?.length || 0}
-                    rowsPerPage={rowsPerPage}
-                    page={page}
-                    onPageChange={handleChangePage}
-                    onRowsPerPageChange={handleChangeRowsPerPage}
-                  />
-                </div>
-              </Card>
-            )}
+                                <div className="flex justify-between items-center">
+                                  <button
+                                    onClick={() => handleGetKey(exam)}
+                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300"
+                                  >
+                                    Activation Key
+                                    <Icon
+                                      icon="solar:key-outline"
+                                      width="1.4em"
+                                      height="1.4em"
+                                      style={{ color: "white" }}
+                                    />
+                                  </button>
+                                  <Link
+                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                                    href={`https://api.dumpsboss.com${exam.download_url}`}
+                                  >
+                                    Downalod File
+                                    <Icon
+                                      icon="ic:outline-download"
+                                      width="1.6em"
+                                      height="1.6em"
+                                      style={{ color: "white" }}
+                                    />
+                                  </Link>
+                                </div>
+                              </div>
+                            </Grid>
+                          ))}
+                        </Grid>
+                      </Box>
+                    </Grid>
+                  ))}
+              </Grid>
+              <div style={{ textAlign: "right", marginBottom: "-5px" }}>
+                <TablePagination
+                  rowsPerPageOptions={[10, 25, 100]}
+                  component="div"
+                  count={unlimitedTeAccess?.vendors?.length || 0}
+                  rowsPerPage={rowsPerPage}
+                  page={page}
+                  onPageChange={handleChangePage}
+                  onRowsPerPageChange={handleChangeRowsPerPage}
+                />
+              </div>
+            </Card>
           </Grid>
           <Grid item sm={12} md={3.5}>
-            <HotExam />
             <Grid
               container
               className="bg-gray-900"
               sx={{
-                marginTop: "10px",
                 display: "flex",
                 width: "100%",
               }}
@@ -300,7 +352,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
                   policy.
                 </Typography>
                 <Link
-                  href="/"
+                  href="/refund-policy"
                   className="text-white underline  hover:text-blue-400"
                 >
                   How our refund policy works?
