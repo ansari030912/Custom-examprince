@@ -76,7 +76,10 @@ const SignInForm = () => {
       setOpenSnackbar(true);
 
       if (response.data.is_logged_in) {
-        const expiryTime = Date.now() + 20000;
+        const currentTime = Date.now();
+        const twoHoursInMillis = 2 * 60 * 60 * 1000; // 2 hours in milliseconds
+        const expiryTime = currentTime + twoHoursInMillis;
+
         localStorage.setItem(
           "loginResponse",
           JSON.stringify({ ...response.data, expiryTime })
