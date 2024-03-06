@@ -10,10 +10,7 @@ const ResetPasswordForm = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const queryEmail = searchParams.get("email");
-  console.log("🚀 ~ ResetPasswordForm ~ queryEmail:", queryEmail);
   const queryToken = searchParams.get("token");
-  console.log("🚀 ~ ResetPasswordForm ~ queryToken:", queryToken);
-
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");

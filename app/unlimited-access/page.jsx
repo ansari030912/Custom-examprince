@@ -19,9 +19,7 @@ const UnlimitedAccessPage = async () => {
       },
     }
   );
-
   const data = await response.json();
-  console.log("🚀 ~ UnlimitedAccessPage ~ data:", data);
 
   return (
     <>

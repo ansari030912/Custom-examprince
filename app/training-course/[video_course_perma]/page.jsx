@@ -21,7 +21,6 @@ const TrainingCoursePage = async ({ params }) => {
   );
 
   const data = await response.json();
-  console.log("🚀 ~ TrainingCoursePage ~ data:", data);
 
   return (
     <>

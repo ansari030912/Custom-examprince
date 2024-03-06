@@ -58,7 +58,6 @@ const ForgotPassword = () => {
           },
         }
       );
-      console.log(response.data);
       setPasswordRest(response.data);
       setOpenSnackbar(true);
     } catch (error) {

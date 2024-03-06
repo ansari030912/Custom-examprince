@@ -68,8 +68,6 @@ const SignInForm = () => {
           },
         }
       );
-
-      console.log(response.data);
       setIsLogin(response.data);
       setOpenSnackbar(true);
 

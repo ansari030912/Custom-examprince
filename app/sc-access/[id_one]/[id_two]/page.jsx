@@ -35,13 +35,11 @@ const ScAccess = async ({ params }) => {
   useEffect(() => {
     debugger;
     const fetchData = async () => {
-      // Check if localStorage is available (client-side)
       if (
         typeof window !== "undefined" &&
         localStorage.getItem("loginResponse")
       ) {
         const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        console.log("🚀 ~ fetchData ~ loginResponse:", loginResponse);
         const response = await axios.get(
           `https://api.dumpsboss.com/v1/account/sc-access/${params.id_one}/${params.id_two}`,
           {
@@ -51,7 +49,6 @@ const ScAccess = async ({ params }) => {
             },
           }
         );
-
         setData(response.data);
       }
     };
