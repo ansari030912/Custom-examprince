@@ -6,20 +6,12 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import withAuth from "../auth/RouterAuth";
 import SettingChangeForm from "../components/Form/SettingChangeForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
 const SettingPage = () => {
-  const [user, setUser] = useState();
-  const router = useRouter();
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (!loginResponse?.is_logged_in) {
-      return router.push("/sign-in");
-    }
-    setUser(loginResponse);
-  }, [router]);
   return (
     <>
       <Navbar />
@@ -173,4 +165,4 @@ const SettingPage = () => {
   );
 };
 
-export default SettingPage;
+export default withAuth(SettingPage);

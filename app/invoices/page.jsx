@@ -9,26 +9,9 @@ import React, { useEffect, useState } from "react";
 import InvoiceTable from "../components/Tables/InvoiceTable";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
+import withAuth from "../auth/RouterAuth";
 
-export default function InvoicePage() {
-  const router = useRouter();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        setUser(loginResponse);
-        if (!loginResponse?._token) {
-          return router.push("/sign-in");
-        }
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    }
-    fetchData();
-  }, [router]);
-
+function InvoicePage() {
   return (
     <>
       <Navbar />
@@ -183,3 +166,4 @@ export default function InvoicePage() {
     </>
   );
 }
+export default withAuth(InvoicePage);

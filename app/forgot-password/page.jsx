@@ -6,13 +6,12 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import loginAuth from "../auth/LoginAuth";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
-export default function ForgotPassword() {
-  const router = useRouter();
+const ForgotPassword = () => {
   const [passwordRest, setPasswordRest] = useState({});
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -67,13 +66,6 @@ export default function ForgotPassword() {
       alert("Something went wrong. Please try again later.");
     }
   };
-
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (loginResponse?.is_active) {
-      return router.push("/");
-    }
-  }, [router]);
   return (
     <>
       <Navbar />
@@ -173,4 +165,5 @@ export default function ForgotPassword() {
       <Footer />
     </>
   );
-}
+};
+export default loginAuth(ForgotPassword);

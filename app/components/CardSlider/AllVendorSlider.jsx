@@ -226,7 +226,7 @@ const AllVendorSlider = () => {
     },
   ];
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 10;
   const totalPages = Math.ceil(exams.length / itemsPerPage);
 
   const renderCards = () => {
@@ -237,7 +237,7 @@ const AllVendorSlider = () => {
     return (
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
-          <Grid item xs={6} sm={4} md={2} key={index}>
+          <Grid item xs={6} sm={4} md={2.4} key={index}>
             <Link href={`/certification/${vendor.perma}`}>
               <Card
                 className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
@@ -258,7 +258,7 @@ const AllVendorSlider = () => {
                 </CardMedia>
                 <Divider />
                 <CardContent
-                  style={{ minHeight: "80px" }}
+                  style={{ minHeight: "65px" }}
                   className="text-white bg-gradient-to-r from-gray-800 to-blue-400"
                 >
                   <Typography

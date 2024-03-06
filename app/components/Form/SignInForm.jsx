@@ -1,9 +1,7 @@
 "use client";
-
 import { Alert, Snackbar, Typography } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const SignInForm = () => {
@@ -14,9 +12,7 @@ const SignInForm = () => {
   const [passwordError, setPasswordError] = useState("");
   const [ip, setIp] = useState("");
   const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [expiredTimer, setExpiredTimer] = useState(null);
 
-  const router = useRouter();
 
   const fetchIP = async () => {
     try {
@@ -34,12 +30,6 @@ const SignInForm = () => {
   useEffect(() => {
     fetchIP();
   }, []);
-
-  // const handleTokenExpired = () => {
-  //   alert("Token expired Please Sign In again");
-  //   localStorage.removeItem("loginResponse");
-  //   router.push("/sign-in"); // Refresh the page
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -80,17 +70,6 @@ const SignInForm = () => {
       console.log(response.data);
       setIsLogin(response.data);
       setOpenSnackbar(true);
-
-      if (response.data.is_logged_in) {
-        const expiryTime = Date.now() + 20000;
-        localStorage.setItem(
-          "loginResponse",
-          JSON.stringify({ ...response.data, expiryTime })
-        );
-        router.push("/");
-      } else {
-        router.push("/sign-in");
-      }
     } catch (error) {
       console.error("Error:", error);
       alert("Something went wrong. Please try again later.");

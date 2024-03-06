@@ -2,8 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Icon } from "@iconify/react";
 import {
   Box,
   Card,
@@ -12,13 +11,15 @@ import {
   TablePagination,
   Typography,
 } from "@mui/material";
+import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import withAuth from "../../../auth/RouterAuth";
 import { Search } from "../../../components/Search";
 import { HotExam } from "../../../components/Tables";
 import { Footer } from "../../../components/footer";
 import NavbarList from "../../../navbar/NavbarList";
-import { useRouter } from "next/navigation";
-import { Icon } from "@iconify/react";
 
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();
@@ -389,4 +390,4 @@ const UnlimitedTeAccessPage = ({ params }) => {
   );
 };
 
-export default UnlimitedTeAccessPage;
+export default withAuth(UnlimitedTeAccessPage);

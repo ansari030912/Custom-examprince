@@ -19,6 +19,7 @@ import {
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import withAuth from "../../../../auth/RouterAuth";
 import { Footer } from "../../../../components/footer";
 import { Navbar } from "../../../../navbar";
 
@@ -398,4 +399,4 @@ const TeAccess = ({ params }) => {
   );
 };
 
-export default TeAccess;
+export default withAuth(TeAccess);

@@ -4,22 +4,12 @@
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import loginAuth from "../auth/LoginAuth";
 import LoginHistoryTable from "../components/Tables/LoginHistoryTable";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
 const LoginHistoryPage = () => {
-  const [user, setUser] = useState();
-  const router = useRouter();
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (!loginResponse?.is_active) {
-      return router.push("/sign-in");
-    }
-    setUser(loginResponse);
-  }, [router]);
   return (
     <>
       <Navbar />
@@ -173,4 +163,4 @@ const LoginHistoryPage = () => {
   );
 };
 
-export default LoginHistoryPage;
+export default loginAuth(LoginHistoryPage);

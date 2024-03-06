@@ -3,21 +3,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-
+import withAuth from "../auth/RouterAuth";
 import ResetPasswordForm from "../components/Form/ResetPasswordForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
-export default function ResetPassword() {
-  const router = useRouter();
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (loginResponse?.is_active) {
-      return router.push("/");
-    }
-  }, [router]);
+function ResetPassword() {
+
   return (
     <>
       <Navbar />
@@ -45,3 +37,4 @@ export default function ResetPassword() {
     </>
   );
 }
+export default withAuth(ResetPassword)

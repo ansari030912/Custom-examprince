@@ -4,29 +4,12 @@
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import withAuth from "../auth/RouterAuth";
 import ProductsTable from "../components/Tables/ProductsTable";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
-export default function ProductsPage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        if (!loginResponse?.is_logged_in) {
-          return router.push("/sign-in");
-        }
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    }
-    fetchData();
-  }, [router]);
-
+function ProductsPage() {
   return (
     <>
       <Navbar />
@@ -179,3 +162,5 @@ export default function ProductsPage() {
     </>
   );
 }
+
+export default withAuth(ProductsPage);

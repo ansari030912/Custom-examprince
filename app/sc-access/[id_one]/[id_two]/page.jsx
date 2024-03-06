@@ -13,6 +13,7 @@ import { Search } from "../../../components/Search";
 import { HotExam } from "../../../components/Tables";
 import { Footer } from "../../../components/footer";
 import { Navbar } from "../../../navbar";
+import withAuth from "../../../auth/RouterAuth";
 
 const ScAccess = async ({ params }) => {
   const [data, setData] = useState(null);
@@ -217,4 +218,4 @@ const ScAccess = async ({ params }) => {
   );
 };
 
-export default ScAccess;
+export default withAuth(ScAccess);

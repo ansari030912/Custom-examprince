@@ -3,20 +3,12 @@
 // pages/SignIn.js
 
 import { Container, Grid } from "@mui/material";
+import loginAuth from "../auth/LoginAuth";
 import SignUpForm from "../components/Form/SignUpForm";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
-export default function SignUp() {
-  const router = useRouter();
-  useEffect(() => {
-    const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-    if (loginResponse?.is_active) {
-      return router.push("/");
-    }
-  }, [router]);
+function SignUpPage() {
   return (
     <>
       <Navbar />
@@ -44,3 +36,4 @@ export default function SignUp() {
     </>
   );
 }
+export default loginAuth(SignUpPage);

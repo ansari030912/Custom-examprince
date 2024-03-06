@@ -21,10 +21,16 @@ export const AuthGuard = ({ children }) => {
     let expiredTimer;
 
     const currentTime = Date.now();
-
-    // Test token expires after 10s
-    // const timeLeft = currentTime + 10000 - currentTime; // ~10s
     const timeLeft = exp - currentTime;
+    console.log("🚀 ~ tokenExpired ~ timeLeft:", timeLeft);
+
+    const date = new Date(timeLeft); // Convert Unix timestamp to milliseconds
+
+    // Format time in 12-hour format
+    const time12hr = date.toLocaleTimeString("en-US", { hour12: true });
+
+    console.log("token expire on", time12hr);
+    // Test token expires after 10s
 
     clearTimeout(expiredTimer);
     expiredTimer = setTimeout(() => {
