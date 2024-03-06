@@ -30,12 +30,7 @@ const SingleVendorExamTable = ({ data }) => {
           mb: 1,
         }}
       >
-        <Typography
-          color={"white"}
-          fontSize={24}
-          fontWeight={500}
-          className="text-purple-600"
-        >
+        <Typography color={"white"} fontSize={24} fontWeight={500}>
           <b>Vendors - Ceritification Providers</b>
         </Typography>
         <Typography

@@ -26,19 +26,19 @@ const CheckOut = () => {
   const discountAmount =
     Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-        if (!loginResponse?.is_logged_in) {
-          return router.push("/sign-in");
-        }
-      } catch (error) {
-        console.error("Error:", error.message);
-      }
-    }
-    fetchData();
-  }, [router]);
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
+  //       if (!loginResponse?.is_logged_in) {
+  //         return router.push("/sign-in");
+  //       }
+  //     } catch (error) {
+  //       console.error("Error:", error.message);
+  //     }
+  //   }
+  //   fetchData();
+  // }, [router]);
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");
