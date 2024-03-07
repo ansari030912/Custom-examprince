@@ -117,11 +117,12 @@ const NavbarList = () => {
                     >
                       <Icon
                         icon="ic:twotone-home"
-                        width="1.2rem"
-                        height="1.2rem"
+                        width="1.3rem"
+                        height="1.3rem"
                         color="white"
+                        style={{ marginRight: "4px", paddingBottom:"2px" }}
                       />
-                    {" "}Home
+                      Home
                     </Link>
                   </div>
                   <Link
@@ -143,8 +144,9 @@ const NavbarList = () => {
                       icon="game-icons:tied-scroll"
                       width="1.2rem"
                       height="1.2rem"
+                      style={{ marginRight: "4px" }}
                     />
-                    {" "}Certifications
+                    Certifications
                   </Link>
                   <Link
                     href="/video-courses"
@@ -154,8 +156,9 @@ const NavbarList = () => {
                       icon="icon-park-solid:video-two"
                       width="1.2rem"
                       height="1.2rem"
+                      style={{ marginRight: "4px" }}
                     />
-                    {" "}Video Cources
+                    Video Cources
                   </Link>
                   <Link
                     href="/unlimited-access"
@@ -165,8 +168,9 @@ const NavbarList = () => {
                       icon="game-icons:over-infinity"
                       width="1.2rem"
                       height="1.2rem"
+                      style={{ marginRight: "4px" }}
                     />
-                    {" "}Unlimited Access
+                    Unlimited Access
                   </Link>
                 </div>
               </div>
@@ -244,7 +248,7 @@ const NavbarList = () => {
                             icon="noto:person"
                             width="1.2em"
                             height="1.4em"
-                            style={{ marginRight: "3px" }}
+                            style={{ marginRight: "4px" }}
                           />
                           <b>{loginResponse?.name}</b>
                         </div>
@@ -367,7 +371,7 @@ const NavbarList = () => {
                 href="/"
                 className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
-                <Icon icon="ic:twotone-home" width="1.2rem" height="1.2rem" />
+                <Icon icon="ic:twotone-home" width="1.3rem" height="1.4rem" />
                 Home
               </Link>
               <Link
@@ -377,7 +381,8 @@ const NavbarList = () => {
                 <Icon
                   icon="icon-park-twotone:necktie"
                   width="1.2rem"
-                  height="1.2rem"
+                  height="1.5rem"
+                style={{ marginRight: "2px" }}
                 />
                 Vendors
               </Link>
@@ -389,6 +394,7 @@ const NavbarList = () => {
                   icon="game-icons:tied-scroll"
                   width="1.2rem"
                   height="1.2rem"
+                style={{ marginRight: "4px" }}
                 />
                 Certifications
               </Link>
@@ -400,6 +406,7 @@ const NavbarList = () => {
                   icon="icon-park-solid:video-two"
                   width="1.2rem"
                   height="1.2rem"
+                style={{ marginRight: "4px" }}
                 />
                 Video Cources
               </Link>
@@ -411,6 +418,7 @@ const NavbarList = () => {
                   icon="game-icons:over-infinity"
                   width="1.2rem"
                   height="1.2rem"
+                style={{ marginRight: "4px" }}
                 />
                 Unlimited Access
               </Link>
