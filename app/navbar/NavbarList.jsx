@@ -101,8 +101,8 @@ const NavbarList = () => {
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
-                    height={'120px'}
-                    width={'120px'}
+                    height={"120px"}
+                    width={"120px"}
                     src="/examprince.png"
                     alt="dumpsarena"
                   />
@@ -121,7 +121,7 @@ const NavbarList = () => {
                         height="1.2rem"
                         color="white"
                       />
-                      Home
+                    {" "}Home
                     </Link>
                   </div>
                   <Link
@@ -144,7 +144,7 @@ const NavbarList = () => {
                       width="1.2rem"
                       height="1.2rem"
                     />
-                    Certifications
+                    {" "}Certifications
                   </Link>
                   <Link
                     href="/video-courses"
@@ -155,7 +155,7 @@ const NavbarList = () => {
                       width="1.2rem"
                       height="1.2rem"
                     />
-                    Video Cources
+                    {" "}Video Cources
                   </Link>
                   <Link
                     href="/unlimited-access"
@@ -166,7 +166,7 @@ const NavbarList = () => {
                       width="1.2rem"
                       height="1.2rem"
                     />
-                    Unlimited Access
+                    {" "}Unlimited Access
                   </Link>
                 </div>
               </div>
