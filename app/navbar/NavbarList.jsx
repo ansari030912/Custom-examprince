@@ -101,8 +101,8 @@ const NavbarList = () => {
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
-                    height={'140px'}
-                    width={'140px'}
+                    height={'120px'}
+                    width={'120px'}
                     src="/examprince.png"
                     alt="dumpsarena"
                   />
