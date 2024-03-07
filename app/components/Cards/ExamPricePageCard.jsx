@@ -76,7 +76,7 @@ const ExamPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card className="text-white text-center py-2 bg-gradient-to-t from-blue-400 to-gray-900">
-        <Typography variant="h6" fontSize={25} fontWeight={600}>
+        <Typography variant="h6" color={'white'} fontSize={25} fontWeight={600}>
           Add to cart
         </Typography>
       </Card>
