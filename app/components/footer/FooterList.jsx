@@ -15,7 +15,9 @@ const FooterList = () => {
     >
       <div className="container px-4 py-10 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-          <div style={{ fontSize: 30, fontWeight: 800 }}>Dumps Boss</div>
+          <div style={{ fontSize: 30, fontWeight: 800, textAlign: "center" }}>
+            Exam Prince
+          </div>
           <img
             className="mt-2"
             width="100%"
@@ -72,13 +74,13 @@ const FooterList = () => {
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/1 w-full px-4 text-justify">
-            DumpsArena does not provide real Microsoft exam questions.
-            Similarly, DumpsArena does not supply real Amazon exam questions.
-            The materials offered by DumpsArena lack real questions and answers
-            from Cisco's certification exams. The CFA Institute neither endorses
-            nor assures the accuracy or quality of DumpsArena's content. CFA®
-            and Chartered Financial Analyst® are registered trademarks held by
-            the CFA Institute.
+            ExamPrince does not provide real Microsoft exam questions. Similarly,
+            ExamPrincedoes not supply real Amazon exam questions. The materials
+            offered by ExamPrincelack real questions and answers from Cisco's
+            certification exams. The CFA Institute neither endorses nor assures
+            the accuracy or quality of DumpsArena's content. CFA® and Chartered
+            Financial Analyst® are registered trademarks held by the CFA
+            Institute.
           </div>
           <div className="mt-3">
             <Link href="/">

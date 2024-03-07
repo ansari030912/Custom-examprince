@@ -228,7 +228,7 @@ const TeAccess = ({ params }) => {
                         height="1.4em"
                         style={{ color: "white" }}
                       />
-                      Download .dumpsarena File
+                      Download .ExamPrinceFile
                     </span>
                   </button>
                 </Link>
@@ -259,11 +259,11 @@ const TeAccess = ({ params }) => {
             >
               <Typography variant="h5">How To Use?</Typography>
               <Typography>
-                Download the DumpsArena Test Engine Simulator and install it,
-                then download the premium .dumpsarena file using above yellow
+                Download the ExamPrinceTest Engine Simulator and install it,
+                then download the premium .ExamPrincefile using above yellow
                 button and you will get .zip file, unzip it, and add it to
-                DumpsArena Test Engine Simulator. Activate the premium
-                .dumpsarena file with above purchase and activation keys.
+                ExamPrinceTest Engine Simulator. Activate the premium
+                .ExamPrincefile with above purchase and activation keys.
               </Typography>
             </Box>
           </Grid>

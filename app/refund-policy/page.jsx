@@ -96,7 +96,7 @@ const RefundPolicy = () => {
                     PayPal).
                   </li>
                   <li class="text-base md:text-md lg:text-lg">
-                    To claim a refund, you must send your DumpsArena Invoice
+                    To claim a refund, you must send your ExamPrinceInvoice
                     number and failed result PDF or screenshot to{" "}
                     <a
                       href="mailto:sales@dumpsarena.com"

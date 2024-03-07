@@ -177,14 +177,14 @@ const AllVideoCoursesPage = () => {
                       sx={{ textAlign: "center" }}
                       className="text-white hover:text-yellow-200 hover:underline text-center"
                     >
-                      How to Open Test Engine .dumpsarena Files
+                      How to Open Test Engine .ExamPrinceFiles
                     </Typography>
                     <Typography
                       fontSize={20}
                       variant="body1"
                       className="text-white text-center mb-2"
                     >
-                      Use FREE DumpsArena Test Engine player to open .dumpsarena
+                      Use FREE ExamPrinceTest Engine player to open .dumpsarena
                       files
                     </Typography>
                   </div>

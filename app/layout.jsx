@@ -5,7 +5,7 @@ import { AuthGuard } from "./auth/AuthGuard";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Dumps Boss",
+  title: "Exam Prince",
   description: "A world of css",
 };
 
