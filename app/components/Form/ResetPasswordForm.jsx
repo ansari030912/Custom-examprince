@@ -29,6 +29,10 @@ const ResetPasswordForm = () => {
       setPasswordError("Password must be at least 8 characters long");
       return;
     }
+    if (password.length < 8) {
+      setPasswordError("Password must contain at least 8 words");
+      return;
+    }
 
     try {
       const response = await axios.post(

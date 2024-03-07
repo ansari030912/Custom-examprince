@@ -1,21 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-"use client";
+'use client'
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import withAuth from "../auth/RouterAuth";
 import InvoiceTable from "../components/Tables/InvoiceTable";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
-import withAuth from "../auth/RouterAuth";
 
 function InvoicePage() {
   return (
     <>
       <Navbar />
-
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -32,7 +29,7 @@ function InvoicePage() {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            {!user ? "" : <InvoiceTable />}
+            <InvoiceTable />
           </Grid>
           <Grid item xm={12} md={4}>
             <Grid
