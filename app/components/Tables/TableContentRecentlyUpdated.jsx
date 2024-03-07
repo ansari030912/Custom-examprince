@@ -100,7 +100,7 @@ const TableContentRecentlyUpdated = ({ data }) => {
                                   <b>Updated Date: </b>
                                   <em>
                                     {moment(exam_update_date).format(
-                                      "MM ddd YYYY"
+                                      "DD MMM YYYY"
                                     )}
                                   </em>
                                 </Typography>
