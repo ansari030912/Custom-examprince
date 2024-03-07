@@ -30,7 +30,7 @@ const RefundPolicy = () => {
           </Grid>
           <Grid item xs={12} lg={8}>
             <Card className="text-white bg-gradient-to-r from-blue-400 to-gray-900 p-2.5 font-bold text-2xl">
-              Dumpsarena.Com Refund Policy
+              <div style={{ color: "white" }}>Dumpsarena.Com Refund Policy</div>
             </Card>
             <Card className="p-6 mt-2">
               <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold ">
