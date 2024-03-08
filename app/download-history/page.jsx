@@ -7,8 +7,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DownloadHistoryTable from "../components/Tables/DownloadHistoryTable";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const DownloadHistoryPage = () => {
   const [user, setUser] = useState();
@@ -22,7 +20,6 @@ const DownloadHistoryPage = () => {
   }, [router]);
   return (
     <>
-      <Navbar />
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -168,7 +165,6 @@ const DownloadHistoryPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

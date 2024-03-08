@@ -1,21 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 // import AllVendors from "../components/Tables/AllVendors";
-import AllVendors from "../components/Tables/AllVendors";
-import { Navbar } from "../navbar";
-import { Footer } from "../components/footer";
-import { Search } from "../components/Search";
-import { HotExam } from "../components/Tables";
 import { WindowsDataCard } from "../components/Cards";
+import { HotExam } from "../components/Tables";
+import AllVendors from "../components/Tables/AllVendors";
 
 const AllVendorsPage = () => {
   return (
     <>
-      <Navbar />
-      <Search />
+     
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -163,7 +159,7 @@ const AllVendorsPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
+    
     </>
   );
 };

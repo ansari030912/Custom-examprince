@@ -5,9 +5,6 @@ import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
-import { Footer } from "../../components/footer";
-import NavbarList from "../../navbar/NavbarList";
-import { Search } from "../../components/Search";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -21,8 +18,6 @@ const AllVendorsPerma = async ({ params }) => {
   const data = await response.json();
   return (
     <>
-      <NavbarList />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -211,7 +206,6 @@ const AllVendorsPerma = async ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

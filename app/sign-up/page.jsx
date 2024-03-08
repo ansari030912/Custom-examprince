@@ -5,13 +5,10 @@
 import { Container, Grid } from "@mui/material";
 import loginAuth from "../auth/LoginAuth";
 import SignUpForm from "../components/Form/SignUpForm";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 function SignUpPage() {
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -32,7 +29,6 @@ function SignUpPage() {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 }

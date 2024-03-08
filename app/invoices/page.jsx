@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-'use client'
+"use client";
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
@@ -12,7 +12,6 @@ import { Navbar } from "../navbar";
 function InvoicePage() {
   return (
     <>
-      <Navbar />
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -158,8 +157,6 @@ function InvoicePage() {
           </Grid>
         </Grid>
       </Container>
-
-      <Footer />
     </>
   );
 }

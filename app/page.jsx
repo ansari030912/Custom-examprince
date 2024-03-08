@@ -5,17 +5,12 @@ import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
-import { Search } from "./components/Search";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import { Footer } from "./components/footer";
-import { Navbar } from "./navbar";
 
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -168,7 +163,6 @@ const Home = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

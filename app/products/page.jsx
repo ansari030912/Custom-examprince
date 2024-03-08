@@ -6,13 +6,10 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import withAuth from "../auth/RouterAuth";
 import ProductsTable from "../components/Tables/ProductsTable";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 function ProductsPage() {
   return (
     <>
-      <Navbar />
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -158,7 +155,6 @@ function ProductsPage() {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 }

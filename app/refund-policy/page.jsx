@@ -3,16 +3,11 @@
 import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import WindowsCard from "../components/Cards/WindowsCard";
-import { Search } from "../components/Search";
 import HotExamsData from "../components/Tables/HotExamsData";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const RefundPolicy = () => {
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -196,7 +191,6 @@ const RefundPolicy = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

@@ -6,9 +6,6 @@ import Link from "next/link";
 
 import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
-import { Search } from "../components/Search";
 
 const UnlimitedAccessPage = async () => {
   const response = await fetch(
@@ -23,8 +20,6 @@ const UnlimitedAccessPage = async () => {
 
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -172,7 +167,6 @@ const UnlimitedAccessPage = async () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

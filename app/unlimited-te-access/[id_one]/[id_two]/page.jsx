@@ -106,8 +106,6 @@ const UnlimitedTeAccessPage = ({ params }) => {
 
   return (
     <>
-      <NavbarList />
-      <Search />
       <Container maxWidth="lg">
         <Dialog fullWidth open={dialogOpen} onClose={handleCloseDialog}>
           <DialogTitle className="text-white bg-gradient-to-b from-gray-800 to-blue-400">
@@ -438,7 +436,6 @@ const UnlimitedTeAccessPage = ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

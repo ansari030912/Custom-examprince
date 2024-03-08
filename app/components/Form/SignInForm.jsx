@@ -81,6 +81,7 @@ const SignInForm = () => {
           JSON.stringify({ ...response.data, expiryTime })
         );
         router.push("/");
+        window.location.reload();
       } else {
         router.push("/sign-in");
       }

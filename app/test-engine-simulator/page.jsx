@@ -3,15 +3,10 @@
 import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CustomCarousel from "../components/CardSlider/CustomCarousel";
-import { Search } from "../components/Search";
 import HotExamsData from "../components/Tables/HotExamsData";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 const TestEngineSimulator = () => {
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -313,7 +308,6 @@ const TestEngineSimulator = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

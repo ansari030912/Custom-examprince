@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import loginAuth from "../auth/LoginAuth";
 import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const ForgotPassword = () => {
   const [passwordRest, setPasswordRest] = useState({});
@@ -67,7 +66,6 @@ const ForgotPassword = () => {
   };
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -161,7 +159,6 @@ const ForgotPassword = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

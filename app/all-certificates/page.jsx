@@ -1,19 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { Search } from "../components/Search";
-import AllCertificates from "../components/Tables/AllCertificates";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
-import { HotExam } from "../components/Tables";
 import { WindowsDataCard } from "../components/Cards";
+import { HotExam } from "../components/Tables";
+import AllCertificates from "../components/Tables/AllCertificates";
 
 const AllCertificaesPage = () => {
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -161,7 +156,6 @@ const AllCertificaesPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

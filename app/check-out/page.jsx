@@ -10,35 +10,21 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Search } from "../components/Search";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const CheckOut = () => {
   const [loginResponse, setLoginResponse] = useState(null);
   const [cartResponce, setCartResponce] = useState(null);
   const [examData, setExamData] = useState(null);
-
+  const searchParams = useSearchParams();
+  const queryEmail = searchParams.get("ReferalCode");
+  console.log("🚀 ~ CheckOut ~ queryEmail:", queryEmail);
   const router = useRouter();
 
   const discountAmount =
     Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-  //       if (!loginResponse?.is_logged_in) {
-  //         return router.push("/sign-in");
-  //       }
-  //     } catch (error) {
-  //       console.error("Error:", error.message);
-  //     }
-  //   }
-  //   fetchData();
-  // }, [router]);
   useEffect(() => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");
@@ -68,8 +54,6 @@ const CheckOut = () => {
   };
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -474,7 +458,6 @@ const CheckOut = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

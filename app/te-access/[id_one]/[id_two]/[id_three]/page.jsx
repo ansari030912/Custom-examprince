@@ -20,8 +20,6 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import withAuth from "../../../../auth/RouterAuth";
-import { Footer } from "../../../../components/footer";
-import { Navbar } from "../../../../navbar";
 
 const TeAccess = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
@@ -67,7 +65,6 @@ const TeAccess = ({ params }) => {
 
   return (
     <>
-      <Navbar />
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={3000}
@@ -394,7 +391,6 @@ const TeAccess = ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

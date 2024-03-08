@@ -14,7 +14,7 @@ const NavbarList = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("loginResponse");
-    window.location.reload(); // Refresh the page
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -120,7 +120,7 @@ const NavbarList = () => {
                         width="1.3rem"
                         height="1.3rem"
                         color="white"
-                        style={{ marginRight: "4px", paddingBottom:"2px" }}
+                        style={{ marginRight: "4px", paddingBottom: "2px" }}
                       />
                       Home
                     </Link>
@@ -382,7 +382,7 @@ const NavbarList = () => {
                   icon="icon-park-twotone:necktie"
                   width="1.2rem"
                   height="1.5rem"
-                style={{ marginRight: "2px" }}
+                  style={{ marginRight: "2px" }}
                 />
                 Vendors
               </Link>
@@ -394,7 +394,7 @@ const NavbarList = () => {
                   icon="game-icons:tied-scroll"
                   width="1.2rem"
                   height="1.2rem"
-                style={{ marginRight: "4px" }}
+                  style={{ marginRight: "4px" }}
                 />
                 Certifications
               </Link>
@@ -406,7 +406,7 @@ const NavbarList = () => {
                   icon="icon-park-solid:video-two"
                   width="1.2rem"
                   height="1.2rem"
-                style={{ marginRight: "4px" }}
+                  style={{ marginRight: "4px" }}
                 />
                 Video Cources
               </Link>
@@ -418,7 +418,7 @@ const NavbarList = () => {
                   icon="game-icons:over-infinity"
                   width="1.2rem"
                   height="1.2rem"
-                style={{ marginRight: "4px" }}
+                  style={{ marginRight: "4px" }}
                 />
                 Unlimited Access
               </Link>

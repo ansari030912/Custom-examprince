@@ -1,14 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 
-import { Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import { WindowsDataCard } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
-import { Navbar } from "../../navbar";
-import { Footer } from "../../components/footer";
-import { Search } from "../../components/Search";
-import { WindowsDataCard } from "../../components/Cards";
 
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
@@ -23,8 +20,6 @@ const AllVendorsPerma = async ({ params }) => {
   const data = await response.json();
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -172,7 +167,6 @@ const AllVendorsPerma = async ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

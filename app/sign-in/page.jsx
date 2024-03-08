@@ -5,13 +5,10 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import loginAuth from "../auth/LoginAuth";
 import SignInForm from "../components/Form/SignInForm";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const SignInPage = () => {
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -32,7 +29,6 @@ const SignInPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

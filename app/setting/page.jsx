@@ -4,17 +4,13 @@
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import withAuth from "../auth/RouterAuth";
 import SettingChangeForm from "../components/Form/SettingChangeForm";
 import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 const SettingPage = () => {
   return (
     <>
-      <Navbar />
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -160,7 +156,6 @@ const SettingPage = () => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

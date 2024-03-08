@@ -16,10 +16,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import withAuth from "../../../auth/RouterAuth";
-import { Search } from "../../../components/Search";
 import { HotExam } from "../../../components/Tables";
-import { Footer } from "../../../components/footer";
-import NavbarList from "../../../navbar/NavbarList";
 
 const UnlimitedPDFPage = ({ params }) => {
   const router = useRouter();
@@ -65,9 +62,6 @@ const UnlimitedPDFPage = ({ params }) => {
 
   return (
     <>
-      <NavbarList />
-      <Search />
-
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -351,7 +345,6 @@ const UnlimitedPDFPage = ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

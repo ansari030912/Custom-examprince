@@ -5,14 +5,11 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import withAuth from "../auth/RouterAuth";
 import ResetPasswordForm from "../components/Form/ResetPasswordForm";
-import { Footer } from "../components/footer";
-import { Navbar } from "../navbar";
 
 function ResetPassword() {
 
   return (
     <>
-      <Navbar />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -33,7 +30,6 @@ function ResetPassword() {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 }

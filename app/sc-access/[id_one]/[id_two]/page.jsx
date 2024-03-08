@@ -7,13 +7,10 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import withAuth from "../../../auth/RouterAuth";
 import ScAccessAccordian from "../../../components/Cards/ScAccessAccordian";
 import ScPriceCard from "../../../components/Cards/ScPriceCard";
-import { Search } from "../../../components/Search";
 import { HotExam } from "../../../components/Tables";
-import { Footer } from "../../../components/footer";
-import { Navbar } from "../../../navbar";
-import withAuth from "../../../auth/RouterAuth";
 
 const ScAccess = async ({ params }) => {
   const [data, setData] = useState(null);
@@ -58,8 +55,6 @@ const ScAccess = async ({ params }) => {
 
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -210,7 +205,6 @@ const ScAccess = async ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

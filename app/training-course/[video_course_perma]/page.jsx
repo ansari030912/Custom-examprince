@@ -2,13 +2,9 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-
 import { CourseAccordian, WindowsDataCard } from "../../components/Cards";
 import VideoCoursePrice from "../../components/Cards/VideoCoursePrice";
-import { Search } from "../../components/Search";
 import { HotExam } from "../../components/Tables";
-import { Footer } from "../../components/footer";
-import { Navbar } from "../../navbar";
 
 const TrainingCoursePage = async ({ params }) => {
   const response = await fetch(
@@ -24,8 +20,6 @@ const TrainingCoursePage = async ({ params }) => {
 
   return (
     <>
-      <Navbar />
-      <Search />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -176,7 +170,6 @@ const TrainingCoursePage = async ({ params }) => {
           </Grid>
         </Grid>
       </Container>
-      <Footer />
     </>
   );
 };

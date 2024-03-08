@@ -4,11 +4,7 @@
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
-import { Search } from "../../components/Search";
 import { HotExam, ReleatedExam } from "../../components/Tables";
-import { Footer } from "../../components/footer";
-import NavbarList from "../../navbar/NavbarList";
-import moment from "moment";
 
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
@@ -22,8 +18,6 @@ const CertificationExamPage = async ({ params }) => {
   const data = await response.json();
   return (
     <>
-      <NavbarList />
-      <Search />
       {data._has_multiple_exams && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
@@ -506,7 +500,6 @@ const CertificationExamPage = async ({ params }) => {
           </Grid>
         </Container>
       )}
-      <Footer />
     </>
   );
 };
