@@ -8,15 +8,11 @@ import { useState, useEffect } from "react";
 const CustomCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
-    "/dumpsarena-test-engine_optimized.png",
+    "/slide1_optimized.png",
+    "/slide2_optimized.png",
+    "/slide3_optimized.png",
+    "/slide4_optimized.png",
+    "/slide5_optimized.png",
   ];
 
   const prevSlide = () => {
@@ -48,12 +44,12 @@ const CustomCarousel = () => {
             className="flex transition-transform duration-300 ease-in-out transform"
             style={{
               transform: `translateX(-${
-                (currentIndex % slides.length) * (100 / 3)
+                (currentIndex % slides.length) * (100 / 1)
               }%)`,
             }}
           >
             {slides.map((slide, index) => (
-              <div key={index} className="w-1/3 h-full flex-shrink-0">
+              <div key={index} className="w-full h-full flex-shrink-0">
                 <img
                   src={slide}
                   alt={`Slide ${index + 1}`}
