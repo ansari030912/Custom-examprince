@@ -4,7 +4,8 @@ import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
-const AllVideoCoursesPage = () => {
+const AllVideoCoursesPage = ({ searchParams }) => {
+  const referral = searchParams?.ref || "";
   return (
     <>
       <Container maxWidth="lg">
@@ -23,9 +24,9 @@ const AllVideoCoursesPage = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllVideoCourses />
+            <AllVideoCourses referral={referral} />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} md={4}>
             <Box sx={{ mb: 2 }}>
               <HotExamsMW />
             </Box>

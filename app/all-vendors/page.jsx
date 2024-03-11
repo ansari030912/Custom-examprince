@@ -2,16 +2,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
-// import AllVendors from "../components/Tables/AllVendors";
 import { WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 import AllVendors from "../components/Tables/AllVendors";
 
-const AllVendorsPage = () => {
+const AllVendorsPage = ({ searchParams }) => {
+  const referral = searchParams?.ref || "";
   return (
     <>
-     
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -28,7 +26,7 @@ const AllVendorsPage = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllVendors />
+            <AllVendors referral={referral}/>
             <WindowsDataCard />
           </Grid>
           <Grid item sm={12} md={4}>
@@ -159,7 +157,6 @@ const AllVendorsPage = () => {
           </Grid>
         </Grid>
       </Container>
-    
     </>
   );
 };

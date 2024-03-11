@@ -6,7 +6,8 @@ import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
 
-const AllVendorsPerma = async ({ params }) => {
+const AllVendorsPerma = async ({ params, searchParams }) => {
+  const referral = searchParams?.ref || "";
   const response = await fetch(
     `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
@@ -72,7 +73,7 @@ const AllVendorsPerma = async ({ params }) => {
                 </table>
               </div>
             )}
-            <Content data={data} />
+            <Content data={data} referral={referral} />
           </Grid>
           <Grid item sm={12} md={3.5}>
             <HotExam />

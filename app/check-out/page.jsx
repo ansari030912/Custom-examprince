@@ -18,7 +18,7 @@ const CheckOut = () => {
   const [cartResponce, setCartResponce] = useState(null);
   const [examData, setExamData] = useState(null);
   const searchParams = useSearchParams();
-  const queryEmail = searchParams.get("ReferalCode");
+  const queryEmail = searchParams.get("referralCode");
   console.log("🚀 ~ CheckOut ~ queryEmail:", queryEmail);
   const router = useRouter();
 
@@ -70,22 +70,22 @@ const CheckOut = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={12}>
-            <section className=" bg-gray-100 font-poppins dark:bg-gray-800">
+            <section className=" bg-gray-100 font-poppins ">
               <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
                 <div>
                   <h2 className="mb-8 text-4xl font-bold dark:text-white">
                     Your Cart
                   </h2>
                   {!examData ? (
-                    <div className="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
-                      <h4 className="font-bold text-2xl text-gray-500 dark:text-white text-center">
+                    <div className="p-6 mb-8 border bg-gray-50 ">
+                      <h4 className="font-bold text-2xl text-gray-500 text-center">
                         Nothing is in your Cart please add product in your cart
                         first.
                       </h4>
                     </div>
                   ) : (
                     <>
-                      <div className="p-6 mb-8 border bg-gray-50 dark:bg-gray-800 dark:border-gray-800">
+                      <div className="p-6 mb-8 border bg-gray-50 ">
                         <div className="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
                           <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
                             <h2 className="font-bold text-gray-500 dark:text-white">
@@ -106,10 +106,10 @@ const CheckOut = () => {
                             <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
                               <div className="flex flex-wrap items-center -mx-4">
                                 <div className="w-full px-4">
-                                  <h2 className="mb-2 text-xl font-bold text-white">
+                                  <h2 className="mb-2 text-xl font-bold text-gray-900">
                                     {cartResponce?.title}
                                   </h2>
-                                  <p className="text-gray-500 dark:text-gray-400 text-lg font-bold">
+                                  <p className="text-gray-500 text-lg font-bold">
                                     {examData?.exam_title}
                                   </p>
                                 </div>
@@ -153,7 +153,7 @@ const CheckOut = () => {
                           <div className="flex flex-wrap items-center gap-4">
                             <input
                               type="text"
-                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white dark:bg-gray-800"
+                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white "
                               placeholder="Enter your Discount Cuppon"
                               required
                             />
@@ -187,7 +187,7 @@ const CheckOut = () => {
                               <span className="text-gray-700 dark:text-white">
                                 Discount
                               </span>
-                              <span className="text-xl font-bold text-gray-700 dark:text-white">
+                              <span className="text-xl font-bold text-green-500 dark:text-white">
                                 - ${discountAmount}
                               </span>
                             </div>
@@ -315,7 +315,7 @@ const CheckOut = () => {
                 mt: "10px",
               }}
             >
-              <Grid container>
+              <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <div>
                     <Typography

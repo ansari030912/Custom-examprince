@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
+import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";

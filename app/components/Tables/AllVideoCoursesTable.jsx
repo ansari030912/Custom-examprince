@@ -12,13 +12,22 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import VideoCourseSlider from "../CardSlider/VideoCourseSlider";
 
-const AllVideoCoursesTable = ({ data }) => {
+const AllVideoCoursesTable = ({ data, referral }) => {
   const [page, setPage] = useState(0);
   const rowsPerPage = 15;
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // Check if referral already exists in localStorage
+      const storedReferral = localStorage.getItem("referral");
+      if (!storedReferral) {
+        // If referral doesn't exist, save it to localStorage
+        localStorage.setItem("referral", referral);
+      }
+    }
+  }, [referral]);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };

@@ -6,7 +6,9 @@ import { WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 import AllCertificates from "../components/Tables/AllCertificates";
 
-const AllCertificaesPage = () => {
+const AllCertificaesPage = ({ searchParams }) => {
+  const referral = searchParams?.ref || "";
+  
   return (
     <>
       <Container maxWidth="lg">
@@ -25,7 +27,7 @@ const AllCertificaesPage = () => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllCertificates />
+            <AllCertificates referral={referral}/>
             <WindowsDataCard />
           </Grid>
           <Grid item sm={12} md={4}>

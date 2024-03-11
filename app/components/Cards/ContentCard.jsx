@@ -11,21 +11,25 @@ import {
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-export default function ContentCard({ data }) {
-  // State for storing expanded accordion panel
+export default function ContentCard({ data, referral }) {
   const [expanded, setExpanded] = useState(null);
-  // State for managing tab value
   const [value, setValue] = useState(data?.exam_article ? "article" : "faqs");
-  // State for storing decoded HTML content
   const [decodedHtml, setDecodedHtml] = useState("");
 
-  // Effect to decode HTML entities when data changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedReferral = localStorage.getItem("referral");
+      if (!storedReferral) {
+        localStorage.setItem("referral", referral);
+      }
+    }
+  }, [referral]);
+
   useEffect(() => {
     const decodedContent = decodeHtmlEntities(data?.exam_article);
     setDecodedHtml(decodedContent);
   }, [data?.exam_article]);
 
-  // Function to decode HTML entities
   const decodeHtmlEntities = (html) => {
     const txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -51,29 +55,23 @@ export default function ContentCard({ data }) {
         }
       }
 
-      // Add line breaks before <strong> elements
       const strongs = doc.querySelectorAll("strong");
       strongs.forEach((strong) => {
         const br = document.createElement("br");
         strong.insertAdjacentElement("beforebegin", br);
       });
 
-      // Add line breaks after <p> elements
       const paragraphs = doc.querySelectorAll("p");
       paragraphs.forEach((paragraph) => {
         const br = document.createElement("br");
         paragraph.insertAdjacentElement("afterend", br);
       });
-
-      // Return the modified HTML content
       return doc.body.innerHTML;
     } else {
-      // Return the original HTML content if DOMParser is not available
       return html;
     }
   };
 
-  // CSS styles to apply to different HTML elements
   const styles = {
     h1: {
       fontSize: "2.2rem",
@@ -104,12 +102,10 @@ export default function ContentCard({ data }) {
     },
   };
 
-  // Event handler for tab change
   const handlePageChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  // Event handler for accordion panel change
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : null);
   };
