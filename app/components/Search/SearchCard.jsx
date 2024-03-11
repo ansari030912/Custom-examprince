@@ -2,10 +2,11 @@
 "use client";
 import { Card } from "@mui/material";
 import axios from "axios";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const SearchCard = () => {
+  const router = useRouter()
   const [searchValue, setSearchValue] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [vendorData, setVendorData] = useState([]);
@@ -85,6 +86,14 @@ const SearchCard = () => {
     )
     .slice(0, 10);
 
+  const handleExamPage = (exam) => {
+    router.push(`/exam/${exam}`);
+    setSearchValue("");
+  };
+  const handleVendorPage = (exam) => {
+    router.push(`/vendor/${exam}`);
+    setSearchValue("");
+  };
   return (
     <div style={{ position: "relative", marginBottom: 4 }}>
       <input
@@ -162,9 +171,9 @@ const SearchCard = () => {
                 Exams - {filteredData.length}
               </li>
               {filteredData.map((item, index) => (
-                <Link
+                <div
                   key={item.code}
-                  href={`/exam/${item.code}`}
+                  onClick={() => handleExamPage(item.code)}
                   style={{ cursor: "pointer" }}
                 >
                   <li
@@ -180,7 +189,7 @@ const SearchCard = () => {
                     <div className="text-gray-700 font-bold">{item.code}</div>
                     <div>{item.name}</div>
                   </li>
-                </Link>
+                </div>
               ))}
               <li
                 className="bg-gray-700 text-white font-bold text-xl text-center"
@@ -195,9 +204,9 @@ const SearchCard = () => {
                 Vendors - {filteredVendors.length}
               </li>
               {filteredVendors.map((item, index) => (
-                <Link
-                  key={item.id}
-                  href={`/vendor/${item.slug}`}
+                <div
+                  key={item.code}
+                  onClick={() => handleVendorPage(item.slug)}
                   style={{ cursor: "pointer" }}
                 >
                   <li
@@ -213,7 +222,7 @@ const SearchCard = () => {
                     <div className="text-gray-700 font-bold">{item.slug}</div>
                     <div>{item.name}</div>
                   </li>
-                </Link>
+                </div>
               ))}
               <li
                 className="bg-gray-700 text-white font-bold text-xl text-center"
@@ -228,9 +237,9 @@ const SearchCard = () => {
                 Certifications - {filteredCertifications.length}
               </li>
               {filteredCertifications.map((item, index) => (
-                <Link
-                  key={item.id}
-                  href={`/vendor/${item.vendor}`}
+                <div
+                  key={item.code}
+                  onClick={() => handleVendorPage(item.vendor)}
                   style={{ cursor: "pointer" }}
                 >
                   <li
@@ -246,7 +255,7 @@ const SearchCard = () => {
                     <div className="text-gray-700 font-bold">{item.slug}</div>
                     <div>{item.name}</div>
                   </li>
-                </Link>
+                </div>
               ))}
             </Card>
           </ul>
