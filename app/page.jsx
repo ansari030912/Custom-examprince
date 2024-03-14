@@ -7,16 +7,15 @@ import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import Head from "next/head";
 
 const Home = () => {
   return (
     <Container maxWidth="lg">
-      <Head>
+      {/* <Head>
         <title>Next.js Application</title>
         <meta name="description" content="Your description here" />
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
-      </Head>
+      </Head> */}
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <div className="mx-auto max-w-8xl flex justify-center">
