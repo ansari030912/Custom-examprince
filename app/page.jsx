@@ -1,16 +1,22 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Card, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
+import Head from "next/head";
 
 const Home = () => {
   return (
     <Container maxWidth="lg">
+      <Head>
+        <title>Next.js Application</title>
+        <meta name="description" content="Your description here" />
+        <meta name="keywords" content="keyword1, keyword2, keyword3" />
+      </Head>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <div className="mx-auto max-w-8xl flex justify-center">
