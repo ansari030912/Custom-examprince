@@ -6,6 +6,12 @@ import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
 
+export const metadata = {
+  title: "Exam",
+  description: "A world of css",
+  keywords: "A world of css",
+};
+
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
   const response = await fetch(

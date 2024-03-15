@@ -18,6 +18,12 @@ import { useEffect, useState } from "react";
 import withAuth from "../../../auth/RouterAuth";
 import { HotExam } from "../../../components/Tables";
 
+export const metadata = {
+  title: "Unlimited PDF Access",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const UnlimitedPDFPage = ({ params }) => {
   const router = useRouter();
   const [unlimitedTeAccess, setUnlimitedTeAccess] = useState();

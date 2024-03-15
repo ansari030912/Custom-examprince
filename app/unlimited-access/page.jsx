@@ -3,10 +3,16 @@
 
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-
 import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 
+
+export const metadata = {
+  title: "Unlimites Access",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const UnlimitedAccessPage = async () => {
   const response = await fetch(
     `${process.env.baseURL}/v1/unlimited_access/?coupon=MEGASALE-30`,

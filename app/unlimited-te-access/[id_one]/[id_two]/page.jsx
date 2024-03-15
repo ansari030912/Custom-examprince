@@ -28,6 +28,12 @@ import { Search } from "../../../components/Search";
 import { Footer } from "../../../components/footer";
 import NavbarList from "../../../navbar/NavbarList";
 
+export const metadata = {
+  title: "Unlimited Test Engine Access",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();
   const [dialogOpen, setDialogOpen] = useState(false);

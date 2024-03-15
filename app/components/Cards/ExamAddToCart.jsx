@@ -58,7 +58,7 @@ const ExamAddToCart = ({ data }) => {
                         <div
                           style={{
                             color: "white",
-                            backgroundColor: "#652E60",
+                            backgroundColor: off >= 50 ? "#652E60" : "#1F2937",
                             padding: "10px",
                           }}
                           className="font-bold justify-center p-1"

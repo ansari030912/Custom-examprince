@@ -6,6 +6,12 @@ import { WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 import AllVendors from "../components/Tables/AllVendors";
 
+export const metadata = {
+  title: "Vendors",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const AllVendorsPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";
   return (

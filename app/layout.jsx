@@ -7,10 +7,7 @@ import { Navbar } from "./navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Exam Prince",
-  description: "A world of css",
-};
+
 
 export default function RootLayout({ children }) {
   return (

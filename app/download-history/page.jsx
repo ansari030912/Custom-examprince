@@ -8,6 +8,12 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DownloadHistoryTable from "../components/Tables/DownloadHistoryTable";
 
+export const metadata = {
+  title: "Download History",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const DownloadHistoryPage = () => {
   const [user, setUser] = useState();
   const router = useRouter();

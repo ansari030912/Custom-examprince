@@ -10,6 +10,12 @@ import { useEffect, useState } from "react";
 import loginAuth from "../auth/LoginAuth";
 import { Footer } from "../components/footer";
 
+export const metadata = {
+  title: "Forgot password",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const ForgotPassword = () => {
   const [passwordRest, setPasswordRest] = useState({});
   const [email, setEmail] = useState("");

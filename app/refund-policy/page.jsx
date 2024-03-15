@@ -5,6 +5,13 @@ import Link from "next/link";
 import WindowsCard from "../components/Cards/WindowsCard";
 import HotExamsData from "../components/Tables/HotExamsData";
 
+
+export const metadata = {
+  title: "Refund policy",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const RefundPolicy = () => {
   return (
     <>

@@ -4,6 +4,13 @@ import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
+
+export const metadata = {
+  title: "Video Courses",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const AllVideoCoursesPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";
   return (

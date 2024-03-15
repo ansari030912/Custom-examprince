@@ -7,6 +7,13 @@ import { WindowsDataCard } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
 
+
+export const metadata = {
+  title: "Vendor",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,

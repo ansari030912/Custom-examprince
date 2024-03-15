@@ -6,6 +6,13 @@ import { CourseAccordian, WindowsDataCard } from "../../components/Cards";
 import VideoCoursePrice from "../../components/Cards/VideoCoursePrice";
 import { HotExam } from "../../components/Tables";
 
+
+export const metadata = {
+  title: "Training Courses",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const TrainingCoursePage = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/training-course/${params.video_course_perma}/?coupon=MEGASALE-30`,

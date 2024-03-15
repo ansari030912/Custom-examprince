@@ -6,6 +6,13 @@ import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
 
+
+export const metadata = {
+  title: "Exam Certifications",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/certification/${params.exam_perma}?coupon=MEGASALE-30`,

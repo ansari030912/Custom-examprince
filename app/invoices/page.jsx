@@ -9,6 +9,13 @@ import InvoiceTable from "../components/Tables/InvoiceTable";
 import { Footer } from "../components/footer";
 import { Navbar } from "../navbar";
 
+
+export const metadata = {
+  title: "Invoices",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 function InvoicePage() {
   return (
     <>

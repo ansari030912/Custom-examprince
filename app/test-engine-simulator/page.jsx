@@ -4,6 +4,13 @@ import { Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import CustomCarousel from "../components/CardSlider/CustomCarousel";
 import HotExamsData from "../components/Tables/HotExamsData";
+
+export const metadata = {
+  title: "Test Engine Simulator",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const TestEngineSimulator = () => {
   return (
     <>

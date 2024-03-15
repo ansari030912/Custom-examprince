@@ -6,8 +6,14 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import withAuth from "../auth/RouterAuth";
 import SettingChangeForm from "../components/Form/SettingChangeForm";
-import { Footer } from "../components/footer";
 
+
+export const metadata = {
+  title: "Setting",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 const SettingPage = () => {
   return (
     <>

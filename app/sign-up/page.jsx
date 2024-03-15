@@ -6,6 +6,12 @@ import { Container, Grid } from "@mui/material";
 import loginAuth from "../auth/LoginAuth";
 import SignUpForm from "../components/Form/SignUpForm";
 
+export const metadata = {
+  title: "Sign up",
+  description: "A world of css",
+  keywords: "A world of css",
+  robots: "noIndex",
+};
 function SignUpPage() {
   return (
     <>
