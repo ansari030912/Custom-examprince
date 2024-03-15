@@ -7,7 +7,6 @@ import Grid from "@mui/material/Grid";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import loginAuth from "../auth/LoginAuth";
 
 export const metadata = {
   title: "Forgot password",
