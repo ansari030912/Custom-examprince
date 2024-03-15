@@ -6,13 +6,6 @@ import Grid from "@mui/material/Grid";
 import withAuth from "../auth/RouterAuth";
 import ResetPasswordForm from "../components/Form/ResetPasswordForm";
 
-
-export const metadata = {
-  title: "Reset Password",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 function ResetPassword() {
 
   return (

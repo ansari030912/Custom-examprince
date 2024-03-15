@@ -3,14 +3,9 @@
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
+import withAuth from "../auth/RouterAuth";
 import ProductsTable from "../components/Tables/ProductsTable";
 
-export const metadata = {
-  title: "Products",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 function ProductsPage() {
   return (
     <>
@@ -163,4 +158,4 @@ function ProductsPage() {
   );
 }
 
-export default ProductsPage;
+export default withAuth(ProductsPage);

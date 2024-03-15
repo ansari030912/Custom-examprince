@@ -6,13 +6,6 @@ import Grid from "@mui/material/Grid";
 import loginAuth from "../auth/LoginAuth";
 import SignInForm from "../components/Form/SignInForm";
 
-
-export const metadata = {
-  title: "Sign in",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 const SignInPage = () => {
   return (
     <>
