@@ -21,12 +21,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import withAuth from "../../../../auth/RouterAuth";
 
-export const metadata = {
-  title: "Test Engine Access",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 const TeAccess = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
   const [copiedKeyIndex, setCopiedKeyIndex] = useState(-1);
