@@ -1,12 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-"use client";
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import withAuth from "../auth/RouterAuth";
 import ProductsTable from "../components/Tables/ProductsTable";
-
 
 export const metadata = {
   title: "Products",
@@ -166,4 +163,4 @@ function ProductsPage() {
   );
 }
 
-export default withAuth(ProductsPage);
+export default ProductsPage;
