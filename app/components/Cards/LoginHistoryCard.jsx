@@ -4,8 +4,7 @@
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
-import withAuth from "../auth/RouterAuth";
-import LoginHistoryTable from "../components/Tables/LoginHistoryTable";
+import LoginHistoryTable from "../Tables/LoginHistoryTable";
 
 const LoginHistoryCard = () => {
   return (

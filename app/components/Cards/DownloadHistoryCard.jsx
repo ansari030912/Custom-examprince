@@ -6,7 +6,8 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import DownloadHistoryTable from "../components/Tables/DownloadHistoryTable";
+import DownloadHistoryTable from "../Tables/DownloadHistoryTable";
+
 
 const DownloadHistoryCard = () => {
   const [user, setUser] = useState();
