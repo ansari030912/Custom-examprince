@@ -10,7 +10,6 @@ export const metadata = {
   title: "Vendors",
   description: "A world of css",
   keywords: "A world of css",
-  robots: "noIndex",
 };
 const AllVendorsPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";

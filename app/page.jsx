@@ -13,7 +13,6 @@ export const metadata = {
   title: "Exam Prince",
   description: "A world of css",
   keywords: "A world of css",
-  robots: "noIndex",
 };
 const Home = () => {
   return (

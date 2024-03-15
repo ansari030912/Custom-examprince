@@ -11,7 +11,6 @@ export const metadata = {
   title: "Certificates",
   description: "A world of css",
   keywords: "A world of css",
-  robots: "noIndex",
 };
 const AllCertificaesPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";
