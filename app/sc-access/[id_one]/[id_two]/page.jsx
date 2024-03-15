@@ -12,12 +12,6 @@ import ScAccessAccordian from "../../../components/Cards/ScAccessAccordian";
 import ScPriceCard from "../../../components/Cards/ScPriceCard";
 import { HotExam } from "../../../components/Tables";
 
-export const metadata = {
-  title: "Exam SC-Access",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 const ScAccess = async ({ params }) => {
   const [data, setData] = useState(null);
   const router = useRouter();
