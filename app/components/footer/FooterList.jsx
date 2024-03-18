@@ -45,7 +45,7 @@ const FooterList = () => {
                 />
                 <path fill="none" d="M0 0h36v36H0z" />
               </svg>
-              <div style={{ marginBottom: "10px" }}> sales@dumpsarena.com</div>
+              <div style={{ marginBottom: "10px" }}> sales@examprince.com</div>
             </div>
             <div
               style={{
@@ -78,7 +78,7 @@ const FooterList = () => {
             ExamPrincedoes not supply real Amazon exam questions. The materials
             offered by ExamPrincelack real questions and answers from Cisco's
             certification exams. The CFA Institute neither endorses nor assures
-            the accuracy or quality of DumpsArena's content. CFA® and Chartered
+            the accuracy or quality of ExamPrince content. CFA® and Chartered
             Financial Analyst® are registered trademarks held by the CFA
             Institute.
           </div>
@@ -131,7 +131,7 @@ const FooterList = () => {
       <div>
         <Box className="md:flex md:justify-center p-2 ">
           <p className="text-white text-sm text-center sm:text-center">
-            © 2024 DumpsArena.com - All Rights Reserved
+            © 2024 ExamPrince.com - All Rights Reserved
           </p>
         </Box>
       </div>

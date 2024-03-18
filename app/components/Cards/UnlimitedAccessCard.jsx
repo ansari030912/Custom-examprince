@@ -23,7 +23,7 @@ const UnlimitedAccessCard = ({ data }) => {
                   Get Unlimited Access to the all ExamPrincePREMIUM files!
                   <br />
                   Take advantage of premium Files which are Latest and valid by
-                  DumpsArena!
+                  ExamPrince!
                 </b>
               </p>
             </div>

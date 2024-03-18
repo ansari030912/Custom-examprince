@@ -32,16 +32,16 @@ const RefundPolicy = () => {
           </Grid>
           <Grid item xs={12} lg={8}>
             <Card className="text-white bg-gradient-to-r from-blue-400 to-gray-900 p-2.5 font-bold text-2xl">
-              <div style={{ color: "white" }}>Dumpsarena.Com Refund Policy</div>
+              <div style={{ color: "white" }}>ExamPrince.Com Refund Policy</div>
             </Card>
             <Card className="p-6 mt-2">
               <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold ">
-                dumpsarena.com Refund Policy
+                ExamPrince.com Refund Policy
               </h1>
 
               <div class="container mx-auto mt-2">
                 <p class="text-base md:text-lg lg:text-xl text-justify">
-                  dumpsarena.com offers premium IT products to its clientele,
+                  ExamPrince.com offers premium IT products to its clientele,
                   aiming for their success in exams. Our team provides
                   meticulously curated, genuine preparation materials for
                   various exams, for the following reasons:
@@ -67,7 +67,7 @@ const RefundPolicy = () => {
                   <li class="text-base md:text-md lg:text-lg">
                     We are so confident in the quality of our products that we
                     offer a full refund if you fail any exam on your first
-                    attempt. We guarantee your success with dumpsarena.com
+                    attempt. We guarantee your success with ExamPrince.com
                     products.
                   </li>
                 </ul>
@@ -101,10 +101,10 @@ const RefundPolicy = () => {
                     To claim a refund, you must send your ExamPrinceInvoice
                     number and failed result PDF or screenshot to{" "}
                     <a
-                      href="mailto:sales@dumpsarena.com"
+                      href="mailto:sales@ExamPrince.com"
                       class="text-blue-500 underline"
                     >
-                      sales@dumpsarena.com
+                      sales@ExamPrince.com
                     </a>{" "}
                     within 7 days of receiving the result.
                   </li>
@@ -126,7 +126,7 @@ const RefundPolicy = () => {
 
                 <p class="text-base md:text-lg lg:text-xl text-justify">
                   For cases not explicitly mentioned but related to the refund
-                  policy, dumpsarena.com reserves all rights for final
+                  policy, ExamPrince.com reserves all rights for final
                   explanation.
                 </p>
               </div>
@@ -177,8 +177,8 @@ const RefundPolicy = () => {
                   fontSize={12}
                   style={{ textAlign: "justify" }}
                 >
-                  Your purchase with DumpsArena.com is safe and fast. The
-                  DumpsArena.com website is protected by 256-bit SSL from
+                  Your purchase with ExamPrince.com is safe and fast. The
+                  ExamPrince.com website is protected by 256-bit SSL from
                   Cloudflare, the leader in online security.
                 </Typography>
                 <Link

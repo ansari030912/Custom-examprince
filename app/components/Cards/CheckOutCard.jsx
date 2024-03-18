@@ -276,7 +276,7 @@ const CheckOutCard = () => {
                   component="div"
                   fontSize={12}
                 >
-                  DumpsArena.com has a remarkable success record. We're
+                  ExamPrince.com has a remarkable success record. We're
                   confident of our products and provide a no hassle refund
                   policy.
                 </Typography>
@@ -331,7 +331,7 @@ const CheckOutCard = () => {
                       variant="body1"
                       className="text-white text-center mb-2"
                     >
-                      Use FREE ExamPrinceTest Engine player to open .dumpsarena
+                      Use FREE ExamPrinceTest Engine player to open .ExamPrince
                       files
                     </Typography>
                   </div>
@@ -346,7 +346,7 @@ const CheckOutCard = () => {
                   }}
                 >
                   <img
-                    src="/dumpsarena-test-engine_optimized.png"
+                    src="/ExamPrince-test-engine_optimized.png"
                     alt="dumpsboss"
                     style={{ maxHeight: "400px", maxWidth: "100%" }}
                   />
@@ -437,8 +437,8 @@ const CheckOutCard = () => {
                   fontSize={12}
                   style={{ textAlign: "justify" }}
                 >
-                  Your purchase with DumpsArena.com is safe and fast. The
-                  DumpsArena.com website is protected by 256-bit SSL from
+                  Your purchase with ExamPrince.com is safe and fast. The
+                  ExamPrince.com website is protected by 256-bit SSL from
                   Cloudflare, the leader in online security.
                 </Typography>
                 <Link
