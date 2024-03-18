@@ -31,20 +31,24 @@ const ExamAddToCart = ({ data }) => {
           data.exam_prices.map((item, index) => {
             const { title, full_price, price, off, cart } = item;
             return (
-              <Grid item xs={12} md={4} key={index}>
+              <Grid item xs={12} md={6} key={index}>
                 <Box
                   onClick={() => handleBoxClick(item)}
-                  sx={{ cursor: "pointer" }}
+                  sx={{
+                    cursor: "pointer",
+                  }}
                 >
                   <Card
-                    className="text-white bg-gradient-to-t from-blue-400 to-gray-900"
+                    className="text-white bg-gray-200"
                     sx={{
+                      
                       backgroundColor: "#1F2937",
                       overflow: "hidden",
                       display: "flex",
                       transition: "transform 0.3s ease",
                       "&:hover": {
-                        transform: "scale(1.05)",
+                        transform: "scale(1.04)",
+                        border: "none",
                       },
                       borderRadius: "0px",
                       borderTopLeftRadius: "15px",
@@ -58,14 +62,15 @@ const ExamAddToCart = ({ data }) => {
                         <div
                           style={{
                             color: "white",
-                            backgroundColor: off >= 50 ? "#652E60" : "#1F2937",
+                            backgroundColor: off >= 50 ? "#2880ed" : "#1fad53",
                             padding: "10px",
                           }}
                           className="font-bold justify-center p-1"
                         >
                           <span
                             style={{
-                              color: off >= 50 ? "#FFD700" : "white",
+                              color: off >= 50 ? "yellow" : "white",
+                              font: off >= 50 ? "bold" : "",
                             }}
                           >
                             {off}% Off
@@ -75,16 +80,16 @@ const ExamAddToCart = ({ data }) => {
                               <div className="flex justify-between">
                                 <Icon
                                   icon="tdesign:cart-add"
-                                  width="1.6em"
-                                  height="1.6em"
-                                  style={{ color: "white" }}
+                                  width="1.8em"
+                                  height="1.8em"
+                                  style={{ color: "yellow" }}
                                 />
                               </div>
                             ) : (
                               <Icon
                                 icon="tdesign:cart-add"
-                                width="1.6em"
-                                height="1.6em"
+                                width="1.8em"
+                                height="1.8em"
                                 style={{ color: "white" }}
                               />
                             )}
@@ -102,25 +107,41 @@ const ExamAddToCart = ({ data }) => {
                     >
                       <Typography
                         fontWeight={700}
-                        color={"white"}
-                        fontSize={12}
+                        color={"#1F2937"}
+                        fontSize={18}
                         className="text-left"
                       >
                         {title}
                       </Typography>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "flex-end",
-                        }}
-                      >
-                        <div>
-                          <span className="text-xl font-bold text-white dark:text-white">
-                            ${price}
-                          </span>
-                          <span className="text-lg font-bold text-red-500 line-through ml-1">
-                            ${full_price}
-                          </span>
+                      <div>
+                        <div className="flex justify-between">
+                          <div>
+                            <span className="text-2xl font-bold text-gray-500">
+                              ${price}
+                            </span>
+                            <span className="text-xl font-medium text-red-500 line-through ml-1">
+                              ${full_price}
+                            </span>
+                          </div>
+                          {off >= 70 ? (
+                            <div className="align-right">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="1.8em"
+                                height="1.8em"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fill="navy"
+                                  fill-rule="evenodd"
+                                  d="m9.194 5l.351.873l.94.064l3.197.217l-2.46 2.055l-.722.603l.23.914l.782 3.108l-2.714-1.704L8 10.629l-.798.5l-2.714 1.705l.782-3.108l.23-.914l-.723-.603l-2.46-2.055l3.198-.217l.94-.064l.35-.874L8 2.025zm-7.723-.292l3.943-.268L6.886.773C7.29-.231 8.71-.231 9.114.773l1.472 3.667l3.943.268c1.08.073 1.518 1.424.688 2.118L12.185 9.36l.964 3.832c.264 1.05-.886 1.884-1.802 1.31L8 12.4l-3.347 2.101c-.916.575-2.066-.26-1.802-1.309l.964-3.832L.783 6.826c-.83-.694-.391-2.045.688-2.118"
+                                  clip-rule="evenodd"
+                                />
+                              </svg>
+                            </div>
+                          ) : (
+                            ""
+                          )}
                         </div>
                       </div>
                     </div>

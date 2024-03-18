@@ -1,16 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
-
-export const metadata = {
-  title: "Exam",
-  description: "A world of css",
-  keywords: "A world of css",
-};
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
@@ -218,3 +211,11 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
 };
 
 export default AllVendorsPerma;
+export async function generateMetadata({ params }) {
+  return {
+    title: `${params.exam_perma.toUpperCase()} Exam`,
+    icons: {
+      other: [{ rel: "canonical", url: "https://examprince.com/" }],
+    },
+  };
+}

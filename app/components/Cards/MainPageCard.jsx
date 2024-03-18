@@ -12,7 +12,7 @@ const MainPageCard = () => {
         <div className="px-5 py-5 mx-auto">
           <div className=" mb-5">
             <h1 className="sm:text-4xl text-xl font-medium title-font text-gray-700 mb-4">
-              <b>Hello Ace Your Upcoming Certification Exam Quickly!</b>
+              <b>Ace Your Upcoming Certification Exam Quickly!</b>
             </h1>
             <p className="text-gray-500 leading-relaxed">
               <b>

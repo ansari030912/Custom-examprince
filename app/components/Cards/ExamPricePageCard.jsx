@@ -75,12 +75,18 @@ const ExamPricePageCard = ({ data }) => {
           </Grid>
         </Grid>
       </Card>
-      <Card className="text-white text-center py-2 bg-gradient-to-t from-blue-400 to-gray-900">
-        <Typography variant="h6" color={'white'} fontSize={25} fontWeight={600}>
+      <Card
+        className="text-white text-center py-2 bg-gradient-to-t from-blue-400 to-gray-900"
+        sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
+      >
+        <Typography variant="h6" color={"white"} fontSize={25} fontWeight={600}>
           Add to cart
         </Typography>
       </Card>
-      <Card sx={{ backgroundColor: "#a7cbf9", padding: "10px" }}>
+      <Card
+        className="text-white bg-gradient-to-r from-gray-400 to-gray-900"
+        sx={{ padding: "10px", borderRadius: "0px" }}
+      >
         <ExamAddToCart data={data} />
       </Card>
       <Card

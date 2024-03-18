@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-css-tags */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
-import Head from "next/head";
+
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";
@@ -9,11 +10,6 @@ import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
 
-export const metadata = {
-  title: "Exam Prince",
-  description: "A world of css",
-  keywords: "A world of css",
-};
 const Home = () => {
   return (
     <>
@@ -174,3 +170,17 @@ const Home = () => {
 };
 
 export default Home;
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated Exam Dumps Questions answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of All IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: "http://localhost:3000/",
+        },
+      ],
+    },
+  };
+}

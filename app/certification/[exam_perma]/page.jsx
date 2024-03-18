@@ -6,13 +6,6 @@ import Link from "next/link";
 import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
 import { HotExam, ReleatedExam } from "../../components/Tables";
 
-
-export const metadata = {
-  title: "Exam Certifications",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/certification/${params.exam_perma}?coupon=MEGASALE-30`,
@@ -512,3 +505,18 @@ const CertificationExamPage = async ({ params }) => {
 };
 
 export default CertificationExamPage;
+
+export async function generateMetadata({ params }) {
+  return {
+    title: `Certification ${params.exam_perma.toUpperCase()}`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${params.exam_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `http://localhost:3000/certification/${params.exam_perma}`,
+        },
+      ],
+    },
+  };
+}
