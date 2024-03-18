@@ -14,7 +14,7 @@ const MainPageCard = () => {
             <h1 className="sm:text-4xl text-xl font-medium title-font text-gray-700 mb-4">
               <b>Ace Your Upcoming Certification Exam Quickly!</b>
             </h1>
-            <p className="text-gray-500 leading-relaxed">
+            <p className="text-gray-500 text-xl">
               <b>
                 Prepare, study, and ace your certification exam effortlessly
                 with everything you need. Enjoy 90 days of free updates and
