@@ -8,9 +8,6 @@ import { HotExam } from "../components/Tables";
 
 
 export const metadata = {
-  title: "Unlimites Access",
-  description: "A world of css",
-  keywords: "A world of css",
   robots: "noIndex",
 };
 const UnlimitedAccessPage = async () => {

@@ -6,11 +6,6 @@ import { WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 import AllVendors from "../components/Tables/AllVendors";
 
-export const metadata = {
-  title: "Vendors",
-  description: "A world of css",
-  keywords: "A world of css",
-};
 const AllVendorsPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";
   return (
@@ -31,7 +26,7 @@ const AllVendorsPage = ({ searchParams }) => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllVendors referral={referral}/>
+            <AllVendors referral={referral} />
             <WindowsDataCard />
           </Grid>
           <Grid item sm={12} md={4}>
@@ -167,3 +162,17 @@ const AllVendorsPage = ({ searchParams }) => {
 };
 
 export default AllVendorsPage;
+export async function generateMetadata() {
+  return {
+    // title: `Updated Vendors Exam Dumps Questions answers by Tech Professionals`,
+    // description: `Examprince is a premium provider of Real and Valid Exam dumps of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/all-vendors`,
+        },
+      ],
+    },
+  };
+}

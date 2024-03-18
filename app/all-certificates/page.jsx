@@ -6,15 +6,9 @@ import { WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 import AllCertificates from "../components/Tables/AllCertificates";
 
-
-export const metadata = {
-  title: "Certificates",
-  description: "A world of css",
-  keywords: "A world of css",
-};
 const AllCertificaesPage = ({ searchParams }) => {
   const referral = searchParams?.ref || "";
-  
+
   return (
     <>
       <Container maxWidth="lg">
@@ -33,7 +27,7 @@ const AllCertificaesPage = ({ searchParams }) => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllCertificates referral={referral}/>
+            <AllCertificates referral={referral} />
             <WindowsDataCard />
           </Grid>
           <Grid item sm={12} md={4}>
@@ -169,3 +163,18 @@ const AllCertificaesPage = ({ searchParams }) => {
 };
 
 export default AllCertificaesPage;
+
+export async function generateMetadata() {
+  return {
+    // title: `Updated Certificates Exam Dumps Questions answers by Tech Professionals`,
+    // description: `Examprince is a premium provider of Real and Valid Exam dumps of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/all-certificates`,
+        },
+      ],
+    },
+  };
+}

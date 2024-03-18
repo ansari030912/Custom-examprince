@@ -9,9 +9,6 @@ import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable
 
 
 export const metadata = {
-  title: "Vendor",
-  description: "A world of css",
-  keywords: "A world of css",
   robots: "noIndex",
 };
 const AllVendorsPerma = async ({ params }) => {
