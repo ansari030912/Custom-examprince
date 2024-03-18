@@ -507,9 +507,18 @@ const CertificationExamPage = async ({ params }) => {
 export default CertificationExamPage;
 
 export async function generateMetadata({ params }) {
+  const response = await fetch(
+    `${process.env.baseURL}/v1/certification/${params.exam_perma}?coupon=MEGASALE-30`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
+  const data = await response.json();
   return {
-    title: `Certification ${params.exam_perma.toUpperCase()}`,
-    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${params.exam_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    title: `Updated ${data.cert_title} Exam Dumps Questions answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     icons: {
       other: [
         {
