@@ -170,7 +170,7 @@ const Home = () => {
 };
 
 export default Home;
-export async function generateMetadata({ params }) {
+export async function generateMetadata() {
   return {
     title: `Updated Exam Dumps Questions answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam dumps of All IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,

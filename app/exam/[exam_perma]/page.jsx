@@ -214,6 +214,7 @@ export default AllVendorsPerma;
 export async function generateMetadata({ params }) {
   return {
     title: `${params.exam_perma.toUpperCase()} Exam`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${params.exam_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     icons: {
       other: [
         {
