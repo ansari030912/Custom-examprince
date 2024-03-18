@@ -215,7 +215,12 @@ export async function generateMetadata({ params }) {
   return {
     title: `${params.exam_perma.toUpperCase()} Exam`,
     icons: {
-      other: [{ rel: "canonical", url: "https://examprince.com/" }],
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.netlify.app/exam/${params.exam_perma}`,
+        },
+      ],
     },
   };
 }

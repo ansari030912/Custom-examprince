@@ -178,7 +178,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: "http://localhost:3000/",
+          url: "https://examprince.netlify.app/",
         },
       ],
     },
