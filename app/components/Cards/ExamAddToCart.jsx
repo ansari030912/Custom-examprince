@@ -61,27 +61,41 @@ const ExamAddToCart = ({ data }) => {
                         <div
                           style={{
                             color: "white",
-                            backgroundColor: off >= 50 ? "#2880ed" : "#1fad53",
+                            backgroundColor:
+                              title === "Full Premium Bundle"
+                                ? "#2880ed"
+                                : title === "PDF & Test Engine Bundle"
+                                ? "#1fad53"
+                                : title === "Training Course Only"
+                                ? "#FFB703"
+                                : title === "Test Engine Only"
+                                ? "#ef233c"
+                                : title === "PDF Only"
+                                ? "#003049"
+                                : "",
                             padding: "10px",
                           }}
                           className="font-bold justify-center p-1"
                         >
                           <span
                             style={{
-                              color: off >= 50 ? "yellow" : "white",
+                              color:
+                                title === "Full Premium Bundle"
+                                  ? "white"
+                                  : "white",
                               font: off >= 50 ? "bold" : "",
                             }}
                           >
                             {off}% Off
                           </span>
                           <div className="flex justify-center">
-                            {off >= 50 ? (
+                            {title === "Full Premium Bundle" ? (
                               <div className="flex justify-between">
                                 <Icon
                                   icon="tdesign:cart-add"
                                   width="1.8em"
                                   height="1.8em"
-                                  style={{ color: "yellow" }}
+                                  style={{ color: "white" }}
                                 />
                               </div>
                             ) : (
@@ -122,19 +136,20 @@ const ExamAddToCart = ({ data }) => {
                               ${full_price}
                             </span>
                           </div>
-                          {off >= 70 ? (
+                          {title === "Full Premium Bundle" ? (
                             <div className="align-right">
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="1.8em"
                                 height="1.8em"
-                                viewBox="0 0 16 16"
+                                viewBox="0 0 48 48"
                               >
                                 <path
-                                  fill="navy"
-                                  fill-rule="evenodd"
-                                  d="m9.194 5l.351.873l.94.064l3.197.217l-2.46 2.055l-.722.603l.23.914l.782 3.108l-2.714-1.704L8 10.629l-.798.5l-2.714 1.705l.782-3.108l.23-.914l-.723-.603l-2.46-2.055l3.198-.217l.94-.064l.35-.874L8 2.025zm-7.723-.292l3.943-.268L6.886.773C7.29-.231 8.71-.231 9.114.773l1.472 3.667l3.943.268c1.08.073 1.518 1.424.688 2.118L12.185 9.36l.964 3.832c.264 1.05-.886 1.884-1.802 1.31L8 12.4l-3.347 2.101c-.916.575-2.066-.26-1.802-1.309l.964-3.832L.783 6.826c-.83-.694-.391-2.045.688-2.118"
-                                  clip-rule="evenodd"
+                                  fill="#fff654"
+                                  stroke="#2880ED"
+                                  stroke-linejoin="round"
+                                  stroke-width="4"
+                                  d="M23.9986 5L17.8856 17.4776L4 19.4911L14.0589 29.3251L11.6544 43L23.9986 36.4192L36.3454 43L33.9586 29.3251L44 19.4911L30.1913 17.4776L23.9986 5Z"
                                 />
                               </svg>
                             </div>

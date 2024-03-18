@@ -245,7 +245,7 @@ const AllVendorSlider = () => {
                   boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)",
                 }}
               >
-                <CardMedia>
+                <CardMedia sx={{ padding: "15px" }}>
                   <img
                     src={`/${vendor.image}.png`}
                     alt="card"
