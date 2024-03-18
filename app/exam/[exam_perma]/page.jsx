@@ -219,7 +219,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.netlify.app/exam/${params.exam_perma}`,
+          url: `https://examprince.com/exam/${params.exam_perma}`,
         },
       ],
     },

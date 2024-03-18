@@ -178,7 +178,7 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: "https://examprince.netlify.app",
+          url: "https://examprince.com",
         },
       ],
     },
