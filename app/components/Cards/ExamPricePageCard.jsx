@@ -29,11 +29,11 @@ const ExamPricePageCard = ({ data }) => {
         </Typography>
       </Card>
       <Card sx={{ bgcolor: "#1F2937", my: "10px", width: "100%" }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={1}>
           <Grid item xs={12} md={3.5}>
             <div className="flex justify-center">
               <img
-                className="p-8 rounded-t-lg "
+                className="pl-5 rounded-t-lg "
                 src="/package-small-min_optimized.png"
                 alt="product image"
               />
@@ -41,20 +41,19 @@ const ExamPricePageCard = ({ data }) => {
           </Grid>
           <Grid item xs={12} md={8.5}>
             <div style={{ padding: "20px" }}>
-              <Typography
-                fontSize={20}
-                fontWeight={700}
-                className="text-purple-500"
-                color={"white"}
-              >
+              <Typography fontSize={20} fontWeight={700} color={"#ff161e"}>
                 {data.exam_title}
               </Typography>
-              <Typography fontSize={16} fontWeight={700} color={"white"}>
+              <Typography fontSize={16} fontWeight={700} color={"#3a93ff"}>
                 Latest updated date:{" "}
-                {moment(data.exam_update_date).format("LL")}
+                <span style={{ color: "#FFB703" }}>
+                  {moment(data.exam_update_date).format("LL")}
+                </span>
               </Typography>
-              <Typography fontSize={16} fontWeight={700} color={"white"}>
-                Latest {data.exam_questions} Question & Answers
+              <Typography fontSize={16} fontWeight={700} color={"#3a93ff"}>
+                Latest{" "}
+                <span style={{ color: "#23c65c" }}>{data.exam_questions}</span>{" "}
+                Question & Answers
               </Typography>
               <Card sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}>
                 <Typography fontSize={16} fontWeight={700} color={"#856404"}>
