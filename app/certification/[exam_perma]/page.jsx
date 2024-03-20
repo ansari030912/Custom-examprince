@@ -57,11 +57,11 @@ const CertificationExamPage = async ({ params }) => {
                 </Typography>
               </Card>
               <Card sx={{ bgcolor: "#1F2937", my: "10px", width: "100%" }}>
-                <Grid container spacing={3}>
+                <Grid container spacing={1}>
                   <Grid item xs={12} md={3.5}>
                     <div className="flex justify-center">
                       <img
-                        className="p-8 rounded-t-lg "
+                           className="pl-5 rounded-t-lg h-full w-full"
                         src="/package-small-min_optimized.png"
                         alt="product image"
                       />
