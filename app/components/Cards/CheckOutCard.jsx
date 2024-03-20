@@ -2,12 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import {
-    Button,
-    Card,
-    Container,
-    Grid,
-    IconButton,
-    Typography,
+  Button,
+  Card,
+  Container,
+  Grid,
+  IconButton,
+  Typography,
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -19,9 +19,6 @@ const CheckOutCard = () => {
   const [examData, setExamData] = useState(null);
   const searchParams = useSearchParams();
   const queryEmail = searchParams.get("referralCode");
-  console.log("🚀 ~ CheckOut ~ queryEmail:", queryEmail);
-  const router = useRouter();
-
   const discountAmount =
     Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
 
@@ -47,7 +44,6 @@ const CheckOutCard = () => {
   }, []);
 
   const handleRemoveData = () => {
-    debugger;
     localStorage.removeItem("CartProducts");
     localStorage.removeItem("ExamData");
     window.location.reload();

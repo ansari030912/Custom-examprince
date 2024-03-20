@@ -61,7 +61,7 @@ const CertificationExamPage = async ({ params }) => {
                   <Grid item xs={12} md={3.5}>
                     <div className="flex justify-center">
                       <img
-                           className="pl-5 rounded-t-lg h-full w-full"
+                        className="pl-5 rounded-t-lg h-full w-full"
                         src="/package-small-min_optimized.png"
                         alt="product image"
                       />
