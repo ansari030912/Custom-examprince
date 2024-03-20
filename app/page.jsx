@@ -158,7 +158,6 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item sm={12} lg={8}></Grid>
           <Grid item xs={12}>
             <CardSliderVendor />
           </Grid>

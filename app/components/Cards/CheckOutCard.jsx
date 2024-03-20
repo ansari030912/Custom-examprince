@@ -346,7 +346,7 @@ const CheckOutCard = () => {
                   }}
                 >
                   <img
-                    src="/ExamPrince-test-engine_optimized.png"
+                    src="/dumpsarena-test-engine_optimized.png"
                     alt="dumpsboss"
                     style={{ maxHeight: "400px", maxWidth: "100%" }}
                   />
@@ -416,7 +416,7 @@ const CheckOutCard = () => {
               >
                 <img
                   width="100%"
-                  src="safe_checkout_optimized.png"
+                  src="/safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>
