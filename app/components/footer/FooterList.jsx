@@ -75,8 +75,8 @@ const FooterList = () => {
         <div className="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/1 w-full px-4 text-justify">
             ExamPrince does not provide real Microsoft exam questions. Similarly,
-            ExamPrincedoes not supply real Amazon exam questions. The materials
-            offered by ExamPrincelack real questions and answers from Cisco's
+            ExamPrince does not supply real Amazon exam questions. The materials
+            offered by ExamPrince lack real questions and answers from Cisco's
             certification exams. The CFA Institute neither endorses nor assures
             the accuracy or quality of ExamPrince content. CFA® and Chartered
             Financial Analyst® are registered trademarks held by the CFA
