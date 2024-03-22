@@ -228,7 +228,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/exam/${params.vendor_perma}`,
+          url: `https://examprince.com/vendor-exam-questions/${params.vendor_perma}`,
         },
       ],
     },

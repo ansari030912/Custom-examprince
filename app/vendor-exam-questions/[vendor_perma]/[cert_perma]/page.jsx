@@ -376,10 +376,10 @@ const CertificationExamPage = async ({ params }) => {
               <ReleatedExam examData={data.cert_single_exam} />
               <Grid
                 container
-                className="bg-gray-900"
+                className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
                 sx={{
-                  marginTop: "10px",
                   display: "flex",
+                  mt: "10px",
                   width: "100%",
                 }}
               >
@@ -414,7 +414,7 @@ const CertificationExamPage = async ({ params }) => {
                     policy.
                   </Typography>
                   <Link
-                    href="/"
+                    href="/refund-policy"
                     className="text-white underline  hover:text-blue-400"
                   >
                     How our refund policy works?
@@ -440,7 +440,7 @@ const CertificationExamPage = async ({ params }) => {
               </Grid>
               <Grid
                 container
-                className="bg-gray-800"
+                className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
                 sx={{
                   display: "flex",
                   mt: "10px",
@@ -458,7 +458,7 @@ const CertificationExamPage = async ({ params }) => {
                 >
                   <img
                     width="100%"
-                    src="/safe_checkout_optimized.png"
+                    src="safe_checkout_optimized.png"
                     alt="safe_checkout_optimized"
                   />
                 </Grid>
@@ -490,7 +490,7 @@ const CertificationExamPage = async ({ params }) => {
                   >
                     <button
                       type="button"
-                      className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                      className="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                     >
                       Customer Support
                     </button>
@@ -527,7 +527,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/certification/${params.cert_perma}`,
+          url: `https://examprince.com/vendor-exam-questions/${params.vendor_perma}/${params.cert_perma}`,
         },
       ],
     },
