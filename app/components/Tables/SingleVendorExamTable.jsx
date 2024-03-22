@@ -27,7 +27,8 @@ const SingleVendorExamTable = ({ data }) => {
         className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
           padding: 1,
-          mb: 1,
+          mt: 1,
+          borderRadius: "0px",
         }}
       >
         <Typography color={"white"} fontSize={24} fontWeight={500}>
@@ -43,9 +44,9 @@ const SingleVendorExamTable = ({ data }) => {
           Success
         </Typography>
       </Card>
-      <Card>
-        <TableContainer component={Paper}>
-          <Table sx={{ p: "10px" }} size="small">
+      <Card sx={{ borderRadius: "0px" }}>
+        <TableContainer>
+          <Table sx={{ p: "10px", borderRadius: "0px" }} size="small">
             <TableBody sx={{ padding: 2 }}>
               {Array.isArray(data.vendor_exams) &&
                 data.vendor_exams

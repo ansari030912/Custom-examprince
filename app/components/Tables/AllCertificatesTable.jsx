@@ -59,6 +59,7 @@ const AllCertificatesTable = ({ data, referral }) => {
           Success
         </Typography>
       </Card>
+
       <Card>
         <TableContainer component={Paper}>
           <Table sx={{ p: "10px" }} size="medium">
@@ -76,7 +77,9 @@ const AllCertificatesTable = ({ data, referral }) => {
                     return (
                       <TableRow hover key={vendor_id}>
                         <TableCell style={{ m: "-4px" }}>
-                          <Link href={`/vendor/${vendor_perma}?certifates`}>
+                          <Link
+                            href={`/certifications/${vendor_perma}`}
+                          >
                             <Typography
                               className="flex justify-between"
                               fontSize={14}

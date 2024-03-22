@@ -5,11 +5,11 @@ import { Searching } from ".";
 
 const SearchBar = () => {
   const data = [
-    { href: "/vendor/cisco", label: "Cisco" },
-    { href: "/vendor/amazon", label: "Amazon" },
-    { href: "/vendor/microsoft", label: "Microsoft" },
-    { href: "/vendor/pmi", label: "PMI" },
-    { href: "/all-vendors", label: "View All" },
+    { href: "/exam-provider/cisco", label: "Cisco" },
+    { href: "/exam-provider/amazon", label: "Amazon" },
+    { href: "/exam-provider/microsoft", label: "Microsoft" },
+    { href: "/exam-provider/pmi", label: "PMI" },
+    { href: "/exam-providers", label: "View All" },
   ];
   const itemsPerPage = 5;
 
@@ -18,7 +18,7 @@ const SearchBar = () => {
   const currentData = data.slice(startIndex, endIndex);
 
   return (
-    <nav className="text-white bg-gradient-to-b from-blue-400 to-gray-900 p-1">
+    <nav className="text-white bg-gradient-to-b from-blue-400 to-gray-700 p-1">
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={0} md={6} lg={4}>

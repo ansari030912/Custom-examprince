@@ -27,8 +27,8 @@ const ExamAddToCart = ({ data }) => {
   return (
     <>
       <Grid container spacing={2}>
-        {Array.isArray(data.exam_prices) &&
-          data.exam_prices.map((item, index) => {
+        {Array.isArray(data?.exam_prices) &&
+          data?.exam_prices.map((item, index) => {
             const { title, full_price, price, off, cart } = item;
             return (
               <Grid item xs={12} md={6} key={index}>

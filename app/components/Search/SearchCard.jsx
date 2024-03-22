@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const SearchCard = () => {
-  const router = useRouter()
+  const router = useRouter();
   const [searchValue, setSearchValue] = useState("");
   const [searchData, setSearchData] = useState([]);
   const [vendorData, setVendorData] = useState([]);
@@ -87,13 +87,21 @@ const SearchCard = () => {
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/exam/${exam}`);
+    router.push(`/vendor-exam-questions/${exam}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
-    router.push(`/vendor/${exam}`);
+    router.push(`/exam-provider/${exam}`);
     setSearchValue("");
   };
+  const handleCertificationPage = (exam) => {
+    router.push(`/vendor-exam-questions/${exam.vendor}/${exam.slug}`);
+    setSearchValue("");
+  };
+  // const handleCertificationPage = (exam) => {
+  //   router.push(`/${exam.vendor}/exam-provider-${exam.slug}`);
+  //   setSearchValue("");
+  // };
   return (
     <div style={{ position: "relative", marginBottom: 4 }}>
       <input
@@ -239,7 +247,7 @@ const SearchCard = () => {
               {filteredCertifications.map((item, index) => (
                 <div
                   key={item.code}
-                  onClick={() => handleVendorPage(item.vendor)}
+                  onClick={() => handleCertificationPage(item)}
                   style={{ cursor: "pointer" }}
                 >
                   <li

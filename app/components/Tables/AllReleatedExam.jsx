@@ -45,9 +45,9 @@ const AllReleatedExam = ({ data }) => {
                       <>
                         <div key={exam_perma} className="flex relative pb-6">
                           <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
-                            <div className="h-full w-1 text-white bg-gradient-to-r from-gray-800 to-blue-400 pointer-events-none"></div>
+                            <div className="h-full w-1 text-white bg-gradient-to-r from-gray-500 to-stone-800 pointer-events-none"></div>
                           </div>
-                          <div className="flex-shrink-0 w-10 h-10 rounded-full  bg-gradient-to-r from-gray-800 to-blue-400 inline-flex items-center justify-center text-white relative z-10">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full  bg-gradient-to-r from-gray-500 to-stone-800 inline-flex items-center justify-center text-white relative z-10">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="1.8em"
@@ -60,7 +60,7 @@ const AllReleatedExam = ({ data }) => {
                               />
                             </svg>
                           </div>
-                          <Link href={`/exam/${exam_perma}`}>
+                          <Link href={`/vendor-exam-questions/${exam_perma}`}>
                             <div className="flex-grow pl-4">
                               <h2 className="font-semibold text-sm  mb-1 tracking-wider">
                                 {vendor_title}

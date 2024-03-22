@@ -3,12 +3,16 @@
 
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
-import { HotExam, ReleatedExam } from "../../components/Tables";
+import {
+  CommentsCard,
+  Content,
+  ExamPriceCard,
+} from "../../../components/Cards";
+import { HotExam, ReleatedExam } from "../../../components/Tables";
 
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
-    `${process.env.baseURL}/v1/certification/${params.exam_perma}?coupon=MEGASALE-30`,
+    `${process.env.baseURL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
     {
       headers: {
         "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
@@ -53,7 +57,7 @@ const CertificationExamPage = async ({ params }) => {
                   className="text-white"
                   color={"white"}
                 >
-                  {data.cert_title}
+                  {data?.cert_title}
                 </Typography>
               </Card>
               <Card sx={{ bgcolor: "#1F2937", my: "10px", width: "100%" }}>
@@ -135,7 +139,7 @@ const CertificationExamPage = async ({ params }) => {
               </Card>
               <Box>
                 <Grid container spacing={1}>
-                  {data.cert_multiple_exams.map((exam) => (
+                  {data?.cert_multiple_exams?.map((exam) => (
                     <Grid key={exam.exam_perma} item xs={12} md={12}>
                       <div
                         style={{ minHeight: "130px", position: "relative" }}
@@ -155,7 +159,7 @@ const CertificationExamPage = async ({ params }) => {
                           </p>
                           <Link
                             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-                            href={`/exam/${exam.exam_perma}`}
+                            href={`/vendor-exam-questions/${exam.exam_perma}`}
                           >
                             Buy Now!
                             <svg
@@ -310,7 +314,7 @@ const CertificationExamPage = async ({ params }) => {
           </Grid>
         </Container>
       )}
-      {data._has_multiple_exams === false && (
+      {data?._has_multiple_exams === false && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -328,7 +332,7 @@ const CertificationExamPage = async ({ params }) => {
             </Grid>
             <Grid item xs={12} md={8.5}>
               <ExamPriceCard data={data.cert_single_exam} />
-              {data?.cert_single_exam.exam_topics && (
+              {data?.cert_single_exam?.exam_topics && (
                 <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="text-white bg-gradient-to-l  from-gray-400 to-gray-900">
@@ -508,7 +512,7 @@ export default CertificationExamPage;
 
 export async function generateMetadata({ params }) {
   const response = await fetch(
-    `${process.env.baseURL}/v1/certification/${params.exam_perma}?coupon=MEGASALE-30`,
+    `${process.env.baseURL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
     {
       headers: {
         "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
@@ -523,7 +527,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/certification/${params.exam_perma}`,
+          url: `https://examprince.com/certification/${params.cert_perma}`,
         },
       ],
     },

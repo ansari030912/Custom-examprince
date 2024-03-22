@@ -2,12 +2,20 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { WindowsDataCard } from "../components/Cards";
-import { HotExam } from "../components/Tables";
-import AllVendors from "../components/Tables/AllVendors";
+import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
+import { HotExam, ReleatedExam } from "../../components/Tables";
 
-const AllVendorsPage = ({ searchParams }) => {
+const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
+  const response = await fetch(
+    `${process.env.baseURL}/v1/exam/${params.vendor_perma}?coupon=MEGASALE-30`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
+  const data = await response.json();
   return (
     <>
       <Container maxWidth="lg">
@@ -17,7 +25,7 @@ const AllVendorsPage = ({ searchParams }) => {
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
-                  alt="banner"
+                  alt="Banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
@@ -25,18 +33,56 @@ const AllVendorsPage = ({ searchParams }) => {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={8}>
-            <AllVendors referral={referral} />
-            <WindowsDataCard />
+          <Grid item xs={12} md={8.5}>
+            <ExamPriceCard data={data} />
+            {data?.exam_topics && (
+              <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="text-white bg-gradient-to-b  from-blue-400 to-gray-900">
+                    <tr>
+                      <th
+                        scope="col"
+                        className="px-6 py-5 text-left text-xs font-medium text-white uppercase tracking-wider"
+                      >
+                        Topic
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-5 text-right text-xs font-medium text-white uppercase tracking-wider"
+                      >
+                        Questions
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {data?.exam_topics.map((topic) => (
+                      <tr
+                        key={topic.topic}
+                        className="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
+                      >
+                        <td className="px-6 py-4 whitespace-nowrap">
+                          {topic.topic}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-right">
+                          {topic.topic_questions}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+            <Content data={data} referral={referral} />
           </Grid>
-          <Grid item sm={12} md={4}>
+          <Grid item sm={12} md={3.5}>
             <HotExam />
+            <ReleatedExam examData={data} />
             <Grid
               container
               className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
               sx={{
-                display: "flex",
                 mt: "10px",
+                display: "flex",
                 width: "100%",
               }}
             >
@@ -115,7 +161,7 @@ const AllVendorsPage = ({ searchParams }) => {
               >
                 <img
                   width="100%"
-                  src="safe_checkout_optimized.png"
+                  src="/safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>
@@ -155,22 +201,34 @@ const AllVendorsPage = ({ searchParams }) => {
               </Grid>
             </Grid>
           </Grid>
+          <Grid item xs={12} md={8.5}>
+            <CommentsCard data={data} />
+          </Grid>
         </Grid>
       </Container>
     </>
   );
 };
 
-export default AllVendorsPage;
-export async function generateMetadata() {
+export default AllVendorsPerma;
+export async function generateMetadata({ params }) {
+  const response = await fetch(
+    `${process.env.baseURL}/v1/exam/${params.vendor_perma}?coupon=MEGASALE-30`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
+  const data = await response.json();
   return {
-    // title: `Updated Vendors Exam Dumps Questions answers by Tech Professionals`,
-    // description: `Examprince is a premium provider of Real and Valid Exam dumps of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    title: `Updated ${data.exam_title} Exam Dumps Questions answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     icons: {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/all-vendors`,
+          url: `https://examprince.com/exam/${params.vendor_perma}`,
         },
       ],
     },

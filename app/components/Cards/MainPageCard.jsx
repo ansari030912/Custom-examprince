@@ -24,7 +24,7 @@ const MainPageCard = () => {
           </div>
           <div className="flex flex-wrap  sm:mx-auto sm:mb-2 -mx-2">
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-br from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center">
+              <div className="text-white bg-blue-500   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -45,7 +45,7 @@ const MainPageCard = () => {
             </div>
 
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-bl from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl md:rounded-tr-3xl rounded-tl-none rounded-bl-none flex p-4 h-full items-center">
+              <div className="text-white bg-stone-800   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl md:rounded-tr-3xl rounded-tl-none rounded-bl-none flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -65,7 +65,7 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-r from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
+              <div className="text-white bg-yellow-500   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -103,7 +103,7 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-l from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
+              <div className="text-white bg-red-600  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -119,7 +119,7 @@ const MainPageCard = () => {
                     d="M64.61 50.35c-.89 1.22-1.13 3.26.79 3.38c1.91.11 40.95-.18 40.95-.18S78.46 79.18 70.02 86.83s-36.39 32.43-38.27 34.18c-1.84 1.72-3.51 3.3-4.19 3.08c-.11-.03-.25-.62 2.38-4.95c2.4-3.95 25.44-42.56 26.34-44.02c.9-1.46 1.69-2.7 2.14-3.38c.45-.68 1.91-4.39-1.13-4.39s-38 .9-38 .9s24.15-20.49 31.13-26S96.96 3.18 98.29 3.18S65.51 49.12 64.61 50.35"
                   />
                   <path
-                    fill="#1F2937"
+                    fill="none"
                     d="M63.45 70.75c1.8-2.59 3.57-2.78 4.64-2.14c1.38.83 1.52 2.74-.22 5.05c-2.74 3.66-22.88 30.61-23.65 31.56c-1.46 1.8-3.61 1.01-2.21-1.6c1.17-2.16 19.58-30.19 21.44-32.87m-28.62-5.26c-3.45 2.31-6.66-1.14-4.35-3.67s17.47-15.15 20.54-17.76s20.99-18.2 22.38-19.32c1.84-1.48 2.98.02 1.82 1.56c-1.15 1.54-13.82 14.2-19.41 19.34c-4.32 3.98-17.7 17.65-20.98 19.85"
                   />
                 </svg>
@@ -131,7 +131,7 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-tr from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-br-none md:rounded-bl-3xl flex p-4 h-full items-center">
+              <div className="text-white bg-lime-600   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-br-none md:rounded-bl-3xl flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -149,7 +149,7 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-gradient-to-tl from-gray-800 to-blue-400  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-bl-none rounded-br-4xl flex p-4 h-full items-center">
+              <div className="text-white bg-purple-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-bl-none rounded-br-4xl flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"

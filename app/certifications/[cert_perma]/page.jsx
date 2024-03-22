@@ -2,13 +2,27 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { WindowsDataCard } from "../components/Cards";
-import { HotExam } from "../components/Tables";
-import AllCertificates from "../components/Tables/AllCertificates";
+import { HotExam } from "../../components/Tables";
+import SingleCertificationTable from "../../components/Tables/SingleCertificationTable";
 
-const AllCertificaesPage = ({ searchParams }) => {
-  const referral = searchParams?.ref || "";
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated ${params.vendor_name} Exam Dumps Questions answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${params.cert_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+  };
+}
 
+const AllCertificatesPerma = async ({ params }) => {
+  const response = await fetch(
+    `${process.env.baseURL}/v1/vendor/${params.cert_perma}`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
+
+  const data = await response.json();
   return (
     <>
       <Container maxWidth="lg">
@@ -18,7 +32,7 @@ const AllCertificaesPage = ({ searchParams }) => {
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/banner.png"
-                  alt="banner"
+                  alt="Banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
@@ -27,8 +41,9 @@ const AllCertificaesPage = ({ searchParams }) => {
             </div>
           </Grid>
           <Grid item xs={12} md={8}>
-            <AllCertificates referral={referral} />
-            <WindowsDataCard />
+            <SingleCertificationTable data={data} />
+            {/* <SingleVendorExamTable data={data} />
+            <WindowsDataCard /> */}
           </Grid>
           <Grid item sm={12} md={4}>
             <HotExam />
@@ -162,19 +177,4 @@ const AllCertificaesPage = ({ searchParams }) => {
   );
 };
 
-export default AllCertificaesPage;
-
-export async function generateMetadata() {
-  return {
-    // title: `Updated Certificates Exam Dumps Questions answers by Tech Professionals`,
-    // description: `Examprince is a premium provider of Real and Valid Exam dumps of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
-    icons: {
-      other: [
-        {
-          rel: "canonical",
-          url: `https://examprince.com/all-certificates`,
-        },
-      ],
-    },
-  };
-}
+export default AllCertificatesPerma;

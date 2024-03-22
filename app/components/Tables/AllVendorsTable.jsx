@@ -75,7 +75,9 @@ const AllVendorsTable = ({ data, referral }) => {
                     return (
                       <TableRow hover key={vendor_id}>
                         <TableCell style={{ m: "-4px" }}>
-                          <Link href={`/vendor/${vendor_perma}`}>
+                          <Link
+                            href={`/exam-provider/${vendor_perma}`}
+                          >
                             <Typography
                               className="flex justify-between"
                               fontSize={14}

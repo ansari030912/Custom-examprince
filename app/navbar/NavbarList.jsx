@@ -52,7 +52,7 @@ const NavbarList = () => {
     }
   }, []);
   return (
-    <nav className="text-white bg-gradient-to-t from-blue-400 to-gray-900">
+    <nav className="text-white bg-gradient-to-t from-blue-400 to-gray-700">
       <Container maxWidth="lg">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
           <div className="relative flex h-12 items-center justify-between">
@@ -126,7 +126,7 @@ const NavbarList = () => {
                     </Link>
                   </div>
                   <Link
-                    href="/all-vendors"
+                    href="/exam-providers"
                     className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
@@ -137,7 +137,7 @@ const NavbarList = () => {
                     Vendors
                   </Link>
                   <Link
-                    href="/all-certificates"
+                    href="/certifications"
                     className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
@@ -375,7 +375,7 @@ const NavbarList = () => {
                 Home
               </Link>
               <Link
-                href="/all-vendors"
+                href="/exam-providers"
                 className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
@@ -387,7 +387,7 @@ const NavbarList = () => {
                 Vendors
               </Link>
               <Link
-                href="/all-certificates"
+                href="/certificates"
                 className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
