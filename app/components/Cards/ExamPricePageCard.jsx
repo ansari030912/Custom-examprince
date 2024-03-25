@@ -121,7 +121,7 @@ const ExamPricePageCard = ({ data }) => {
         className="text-white text-center py-2 bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400"
         sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
       >
-        <Typography variant="h6" color={"white"} fontSize={25} fontWeight={600}>
+        <Typography variant="body2" color={"white"} fontSize={25} fontWeight={600}>
           Add to cart
         </Typography>
       </Card>

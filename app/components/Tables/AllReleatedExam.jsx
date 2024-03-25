@@ -64,9 +64,9 @@ const AllReleatedExam = ({ data }) => {
                             href={`/exam-questions/${vendor_perma}/${exam_perma}`}
                           >
                             <div className="flex-grow pl-4">
-                              <h2 className="font-semibold text-sm  mb-1 tracking-wider">
+                              <b className="font-semibold text-sm  mb-1 tracking-wider">
                                 {vendor_title}
-                              </h2>
+                              </b>
                               <p className="leading-relaxed text-gray-700 ">
                                 {exam_title}
                               </p>

@@ -75,13 +75,14 @@ const TableContentRecentlyUpdated = ({ data }) => {
                       exam_code,
                       exam_perma,
                       exam_vendor_img,
+                      exam_vendor_perma,
                     } = item;
                     return (
                       <TableRow hover key={exam_code}>
                         <TableCell style={{ marginLeft: -15 }}>
                           <div>
                             <Link
-                              href={`/exam/${exam_perma}`}
+                              href={`/exam-questions/${exam_vendor_perma}/${exam_perma}`}
                               className="md:flex justify-between"
                             >
                               <Typography className="flex">

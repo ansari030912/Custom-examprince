@@ -36,9 +36,9 @@ const TableHotExams = ({ data }) => {
               className="w-full"
             >
               <div className="flex-grow pl-4">
-                <h2 className="font-semibold text-md  mb-1 tracking-wider">
+                <b className="font-semibold text-md  mb-1 tracking-wider">
                   {vendor_title}
-                </h2>
+                </b>
                 <p className="leading-relaxed text-gray-700 text-sm">
                   {exam_title}
                 </p>

@@ -166,7 +166,13 @@ export default function ContentCard({ data, referral }) {
             padding: "15px",
           }}
         >
-          <Typography variant="h5" fontWeight={600} padding={1} color={"white"}>
+          <Typography
+            variant="h2"
+            fontWeight={600}
+            fontSize={32}
+            padding={1}
+            color={"white"}
+          >
             Frequently Asked Questions
           </Typography>
           {data?.exam_faqs?.map((faq, index) => (
@@ -192,7 +198,7 @@ export default function ContentCard({ data, referral }) {
                     <path d="M7 10l5 5 5-5z" />
                   </svg>
                 </div>
-                <Typography>{faq.faq_q}</Typography>
+                <Typography variant="h3"  fontSize={20}>{faq.faq_q}</Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ bgcolor: "#111827", color: "white" }}>
                 <Typography>{faq.faq_a}</Typography>

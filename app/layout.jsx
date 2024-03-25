@@ -4,6 +4,7 @@ import SearchBar from "./components/Search/SearchBar";
 import { Footer } from "./components/footer";
 import "./globals.css";
 import { Navbar } from "./navbar";
+import { Container, Divider } from "@mui/material";
 const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
         <body className={inter.className}>
           <Navbar />
           <SearchBar />
-          <main>
+          <main style={{ marginTop: "6px" }}>
             <AuthGuard>{children}</AuthGuard>
           </main>
           <Footer />

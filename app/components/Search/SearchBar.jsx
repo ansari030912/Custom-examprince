@@ -18,15 +18,24 @@ const SearchBar = () => {
   const currentData = data.slice(startIndex, endIndex);
 
   return (
-    <nav className="text-white bg-gradient-to-b from-blue-400 to-gray-700 p-1">
-      <Container maxWidth="lg">
-        <Grid container spacing={2}>
+    <nav
+      class="text-white bg-gray-100 "
+      style={{
+        boxShadow:
+          "inset 0 4px 4px rgba(0, 0, 0, 0.3), 0 0 8px rgba(0, 0, 0, 0.175)",
+      }}
+    >
+      <Container maxWidth="lg" className="sm:-pt-4 ">
+        <Grid container spacing={1} sx={{ padding: "2px 3px 4px 2px" }}>
           <Grid item xs={0} md={6} lg={4}>
             <div className="hidden md:block overflow-hidden">
               <div className="flex space-x-1 sm:space-x-3 md:space-x-6 lg:space-x-3 mt-1">
                 {currentData.map((item, index) => (
                   <Link href={item.href} key={index}>
-                    <b className="text-white hover:bg-gradient-to-t hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-2 py-2 text-sm font-medium flex">
+                    <b
+                      style={{ fontSize: "14px" }}
+                      className="text-gray-600  hover:bg-gray-300  rounded-md px-2 py-2 text-md flex"
+                    >
                       {item.label}
                     </b>
                   </Link>

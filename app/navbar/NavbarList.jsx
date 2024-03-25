@@ -52,14 +52,17 @@ const NavbarList = () => {
     }
   }, []);
   return (
-    <nav className="text-white bg-gradient-to-t from-blue-400 to-gray-700">
+    <nav
+      style={{ zIndex: 1 }}
+      className="text-white border-b shadow-2xl shadow-gray-400 py-2 bg-gradient-to-l from-gray-800 via-blue-400 to-gray-800"
+    >
       <Container maxWidth="lg">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-6">
           <div className="relative flex h-12 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">
               <button
                 type="button"
-                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
                 onClick={() => setToggleMenu(!toggleMenu)}
@@ -113,7 +116,7 @@ const NavbarList = () => {
                   <div>
                     <Link
                       href="/"
-                      className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:to-blue-300 hover:text-gray-200 rounded-md px-3 py-2 text-sm font-medium flex"
+                      className="text-white hover:bg-gradient-to-r hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-sm font-medium flex"
                     >
                       <Icon
                         icon="ic:twotone-home"
@@ -127,7 +130,7 @@ const NavbarList = () => {
                   </div>
                   <Link
                     href="/exam-providers"
-                    className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
+                    className="text-white hover:bg-gradient-to-r hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="icon-park-twotone:necktie"
@@ -138,7 +141,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/certifications"
-                    className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
+                    className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800  rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="game-icons:tied-scroll"
@@ -150,7 +153,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/video-courses"
-                    className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
+                    className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="icon-park-solid:video-two"
@@ -162,7 +165,7 @@ const NavbarList = () => {
                   </Link>
                   <Link
                     href="/unlimited-access"
-                    className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-sm font-medium flex"
+                    className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-sm font-medium flex"
                   >
                     <Icon
                       icon="game-icons:over-infinity"
@@ -369,14 +372,14 @@ const NavbarList = () => {
             <div className="space-y-1 px-2 pb-3 pt-2">
               <Link
                 href="/"
-                className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
+                className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon icon="ic:twotone-home" width="1.3rem" height="1.4rem" />
                 Home
               </Link>
               <Link
                 href="/exam-providers"
-                className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
+                className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="icon-park-twotone:necktie"
@@ -388,7 +391,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/certificates"
-                className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
+                className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="game-icons:tied-scroll"
@@ -400,7 +403,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/video-courses"
-                className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
+                className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="icon-park-solid:video-two"
@@ -412,7 +415,7 @@ const NavbarList = () => {
               </Link>
               <Link
                 href="/unlimited-access"
-                className="text-white hover:bg-gradient-to-b hover:from-gray-800 hover:text-white hover:to-blue-300 rounded-md px-3 py-2 text-base font-medium flex"
+                className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
                   icon="game-icons:over-infinity"

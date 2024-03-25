@@ -113,6 +113,7 @@ const SearchCard = () => {
           width: "100%",
           outline: "none",
           paddingLeft: "30px",
+          border: "1px solid #D7DBE0",
         }}
         placeholder="Search..."
         value={searchValue}
