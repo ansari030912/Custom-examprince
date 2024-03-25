@@ -6,6 +6,22 @@ import Link from "next/link";
 import { WindowsDataCard } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
+
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated ${params.vendor_perma} Exam Dumps Questions answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${params.vendor_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/exam-providers/${params?.vendor_perma}`,
+        },
+      ],
+    },
+  };
+}
+
 const AllVendorsPerma = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,

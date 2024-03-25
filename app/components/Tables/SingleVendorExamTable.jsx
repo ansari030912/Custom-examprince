@@ -61,8 +61,10 @@ const SingleVendorExamTable = ({ data }) => {
                     return (
                       <TableRow hover key={exam_code}>
                         <TableCell>
-                          <Link href={`/exam/${exam_perma}`}>
-                            <Typography fontSize={14} fontWeight={600}>
+                          <Link
+                            href={`/exam-questions/${data?.vendor_perma}/${exam_perma}`}
+                          >
+                            <Typography fontSize={16} fontWeight={400}>
                               <b>{exam_title}</b>
                             </Typography>
                             <Typography

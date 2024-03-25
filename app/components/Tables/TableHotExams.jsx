@@ -11,7 +11,7 @@ const TableHotExams = ({ data }) => {
 
   const renderRows = (items) => {
     return items?.slice(0, 10)?.map((item) => {
-      const { vendor_title, exam_title, exam_perma } = item;
+      const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
       return (
         <>
           <div className="flex relative pb-6">
@@ -31,7 +31,10 @@ const TableHotExams = ({ data }) => {
                 />
               </svg>
             </div>
-            <Link href={`/vendor-exam-questions/${exam_perma}`} className="w-full">
+            <Link
+              href={`/exam-questions/${vendor_perma}/${exam_perma}`}
+              className="w-full"
+            >
               <div className="flex-grow pl-4">
                 <h2 className="font-semibold text-md  mb-1 tracking-wider">
                   {vendor_title}

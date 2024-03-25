@@ -9,7 +9,7 @@ const ExamPricePageCard = ({ data }) => {
   return (
     <>
       <Card
-        className="text-white bg-gradient-to-b from-blue-400 to-gray-900"
+        className="text-white bg-gradient-to-l from-gray-900 via-blue-400 to-gray-900"
         sx={{
           color: "white",
           borderRadius: "0.375rem",
@@ -50,43 +50,44 @@ const ExamPricePageCard = ({ data }) => {
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#3a93ff"}>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                 Latest updated date:{" "}
-                <span style={{ color: "#FFB703" }}>
+                <span className="text-green-500">
                   {moment(data?.exam_update_date).format("LL")}
                 </span>
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#3a93ff"}>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                 Latest{" "}
-                <span style={{ color: "#23c65c" }}>{data?.exam_questions}</span>{" "}
+                <span className="text-green-500">{data?.exam_questions}</span>{" "}
                 Question & Answers
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#3a93ff"}>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                 Exam Question Provider:{" "}
                 <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
                   <span
                     style={{
-                      color: "#23c65c",
-                      textDecoration: "underline",
+                      color: "#0da8e5",
                       cursor: "pointer",
                     }}
+                    className="hover:underline"
                   >
                     {data?.exam_vendor_title}
                   </span>
                 </Link>
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#3a93ff"}>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                 Certification Exam Name:{" "}
                 <span
                   style={{
-                    color: "#23c65c",
-                    textDecoration: "underline",
+                    // color: "black",
                     cursor: "pointer",
                   }}
+                  // className="hover:underline"
                 >
                   {data?.exam_certs?.map((item, i) => (
                     <Link
                       key={i}
+                      className="hover:underline text-sky-500"
                       href={`/vendor-exam-questions/${data?.exam_vendor_perma}/${item?.cert_perma}`}
                     >
                       {item.cert_title},{"  "}
@@ -117,7 +118,7 @@ const ExamPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card
-        className="text-white text-center py-2 bg-gradient-to-t from-blue-400 to-gray-900"
+        className="text-white text-center py-2 bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400"
         sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
       >
         <Typography variant="h6" color={"white"} fontSize={25} fontWeight={600}>
@@ -125,13 +126,13 @@ const ExamPricePageCard = ({ data }) => {
         </Typography>
       </Card>
       <Card
-        className="text-white bg-gradient-to-r from-gray-400 to-gray-900"
+        className="text-white bg-gradient-to-r from-gray-300 to-gray-500"
         sx={{ padding: "10px", borderRadius: "0px" }}
       >
         <ExamAddToCart data={data} />
       </Card>
       <Card
-        className="text-white bg-gradient-to-l from-gray-400 to-gray-900"
+        className="text-white bg-gradient-to-l from-gray-900 via-blue-400 to-gray-900"
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
@@ -158,7 +159,7 @@ const ExamPricePageCard = ({ data }) => {
             return (
               <>
                 <Card
-                  className="text-white bg-gradient-to-l from-blue-400 to-gray-900"
+                  className="text-white bg-gradient-to-l from-sky-900 via-blue-500 to-sky-900"
                   key={i}
                   sx={{
                     display: "flex",
@@ -180,13 +181,13 @@ const ExamPricePageCard = ({ data }) => {
           })}
       </Card>
       <Card
-        className="bg-gradient-to-l from-gray-400 to-gray-900"
+        className="bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400 "
         sx={{
           mt: 2,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           fontSize: 20,
-          padding: "15px",
+          padding: "12px",
           textAlign: "center",
           color: "white",
         }}
@@ -208,7 +209,7 @@ const ExamPricePageCard = ({ data }) => {
         >
           <div>
             <div
-              className="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              className="text-white w-full h-8 pt-1 rounded-full bg-gradient-to-l from-green-900 via-blue-400 to-green-900 font-medium  text-sm px-5 text-center"
               style={{ width: `${data?.exam_last_week_average_score}%` }}
             >
               <div className="flex justify-between">
@@ -220,7 +221,7 @@ const ExamPricePageCard = ({ data }) => {
 
           <div>
             <div
-              className="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-500 to-gray-800  focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium  text-sm px-5 text-center"
+              className="mt-1 text-white h-8 pt-1 w-full rounded-full bg-gradient-to-l from-blue-900 via-green-400 to-blue-900 font-medium  text-sm px-5 text-center"
               style={{ width: `${data?.exam_last_week_word_to_word}%` }}
             >
               <div className="flex justify-between">

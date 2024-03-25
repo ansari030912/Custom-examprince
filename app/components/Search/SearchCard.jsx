@@ -87,7 +87,7 @@ const SearchCard = () => {
     .slice(0, 10);
 
   const handleExamPage = (exam) => {
-    router.push(`/vendor-exam-questions/${exam}`);
+    router.push(`/exam-questions/${exam.vendor}/${exam.slug}`);
     setSearchValue("");
   };
   const handleVendorPage = (exam) => {
@@ -181,7 +181,7 @@ const SearchCard = () => {
               {filteredData.map((item, index) => (
                 <div
                   key={item.code}
-                  onClick={() => handleExamPage(item.code)}
+                  onClick={() => handleExamPage(item)}
                   style={{ cursor: "pointer" }}
                 >
                   <li

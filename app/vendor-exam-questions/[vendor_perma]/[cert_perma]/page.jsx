@@ -159,7 +159,7 @@ const CertificationExamPage = async ({ params }) => {
                           </p>
                           <Link
                             className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
-                            href={`/vendor-exam-questions/${exam.exam_perma}`}
+                            href={`/exam-questions/${params.vendor_perma}/${exam.exam_perma}`}
                           >
                             Buy Now!
                             <svg
@@ -189,10 +189,10 @@ const CertificationExamPage = async ({ params }) => {
               <HotExam />
               <Grid
                 container
-                className="bg-gray-900"
+                className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
                 sx={{
-                  marginTop: "10px",
                   display: "flex",
+                  mt: "10px",
                   width: "100%",
                 }}
               >
@@ -227,7 +227,7 @@ const CertificationExamPage = async ({ params }) => {
                     policy.
                   </Typography>
                   <Link
-                    href="/"
+                    href="/refund-policy"
                     className="text-white underline  hover:text-blue-400"
                   >
                     How our refund policy works?
@@ -253,7 +253,7 @@ const CertificationExamPage = async ({ params }) => {
               </Grid>
               <Grid
                 container
-                className="bg-gray-800"
+                className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
                 sx={{
                   display: "flex",
                   mt: "10px",
@@ -271,7 +271,7 @@ const CertificationExamPage = async ({ params }) => {
                 >
                   <img
                     width="100%"
-                    src="/safe_checkout_optimized.png"
+                    src="safe_checkout_optimized.png"
                     alt="safe_checkout_optimized"
                   />
                 </Grid>
@@ -303,7 +303,7 @@ const CertificationExamPage = async ({ params }) => {
                   >
                     <button
                       type="button"
-                      className="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                      className="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                     >
                       Customer Support
                     </button>
@@ -335,7 +335,7 @@ const CertificationExamPage = async ({ params }) => {
               {data?.cert_single_exam?.exam_topics && (
                 <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
                   <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="text-white bg-gradient-to-l  from-gray-400 to-gray-900">
+                    <thead className="text-white bg-gradient-to-l  from-gray-900 via-blue-400 to-gray-900">
                       <tr>
                         <th
                           scope="col"
@@ -355,7 +355,7 @@ const CertificationExamPage = async ({ params }) => {
                       {data?.cert_single_exam.exam_topics.map((topic) => (
                         <tr
                           key={topic.topic}
-                          className="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
+                          className="hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-gray-800 hover:to-blue-500 "
                         >
                           <td className="px-6 py-4 whitespace-nowrap">
                             {topic.topic}

@@ -2,13 +2,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
-import { CommentsCard, Content, ExamPriceCard } from "../../components/Cards";
-import { HotExam, ReleatedExam } from "../../components/Tables";
+import {
+  CommentsCard,
+  Content,
+  ExamPriceCard,
+} from "../../../components/Cards";
+import { HotExam, ReleatedExam } from "../../../components/Tables";
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
   const response = await fetch(
-    `${process.env.baseURL}/v1/exam/${params.vendor_perma}?coupon=MEGASALE-30`,
+    `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
       headers: {
         "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
@@ -38,17 +42,17 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
             {data?.exam_topics && (
               <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
                 <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="text-white bg-gradient-to-b  from-blue-400 to-gray-900">
+                  <thead className="text-white bg-gradient-to-l  from-gray-900 via-blue-400 to-gray-900">
                     <tr>
                       <th
                         scope="col"
-                        className="px-6 py-5 text-left text-xs font-medium text-white uppercase tracking-wider"
+                        className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider"
                       >
                         Topic
                       </th>
                       <th
                         scope="col"
-                        className="px-6 py-5 text-right text-xs font-medium text-white uppercase tracking-wider"
+                        className="px-6 py-3 text-right text-lg font-medium text-white uppercase tracking-wider"
                       >
                         Questions
                       </th>
@@ -58,9 +62,9 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
                     {data?.exam_topics.map((topic) => (
                       <tr
                         key={topic.topic}
-                        className="hover:text-white hover:bg-gradient-to-r hover:from-blue-400 hover:to-gray-900 "
+                        className="hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-gray-800 hover:to-blue-500 "
                       >
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 text-lg whitespace-nowrap">
                           {topic.topic}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-right">
@@ -213,7 +217,7 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
 export default AllVendorsPerma;
 export async function generateMetadata({ params }) {
   const response = await fetch(
-    `${process.env.baseURL}/v1/exam/${params.vendor_perma}?coupon=MEGASALE-30`,
+    `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
       headers: {
         "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
@@ -228,7 +232,7 @@ export async function generateMetadata({ params }) {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/vendor-exam-questions/${params.vendor_perma}`,
+          url: `https://examprince.com/exam-questions/${params.vendor_perma}/${params.exam_perma}`,
         },
       ],
     },

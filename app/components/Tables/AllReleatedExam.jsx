@@ -38,7 +38,7 @@ const AllReleatedExam = ({ data }) => {
                     const {
                       vendor_title,
                       exam_title,
-
+                      vendor_perma,
                       exam_perma,
                     } = item;
                     return (
@@ -60,7 +60,9 @@ const AllReleatedExam = ({ data }) => {
                               />
                             </svg>
                           </div>
-                          <Link href={`/vendor-exam-questions/${exam_perma}`}>
+                          <Link
+                            href={`/exam-questions/${vendor_perma}/${exam_perma}`}
+                          >
                             <div className="flex-grow pl-4">
                               <h2 className="font-semibold text-sm  mb-1 tracking-wider">
                                 {vendor_title}
