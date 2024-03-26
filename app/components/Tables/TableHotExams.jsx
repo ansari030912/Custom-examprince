@@ -14,7 +14,7 @@ const TableHotExams = ({ data }) => {
       const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
       return (
         <>
-          <div className="flex relative pb-6">
+          <div className="flex relative pb-6 hover:text-blue-500">
             <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
               <div className="h-full w-1 text-white bg-gradient-to-r from-gray-500 to-stone-800 pointer-events-none"></div>
             </div>
@@ -33,15 +33,13 @@ const TableHotExams = ({ data }) => {
             </div>
             <Link
               href={`/exam-questions/${vendor_perma}/${exam_perma}`}
-              className="w-full"
+              className="w-full hover:text-blue-500"
             >
               <div className="flex-grow pl-4">
-                <b className="font-semibold text-md  mb-1 tracking-wider">
+                <b className="font-semibold text-md mb-1 tracking-wider">
                   {vendor_title}
                 </b>
-                <p className="leading-relaxed text-gray-700 text-sm">
-                  {exam_title}
-                </p>
+                <p className="leading-relaxed text-sm">{exam_title}</p>
                 <hr style={{ marginTop: "12px" }} />
               </div>
             </Link>
@@ -103,7 +101,7 @@ const TableHotExams = ({ data }) => {
         </Grid>
       </Card>
 
-      <Card sx={{ borderRadius: "0px", width: "100%" }}>
+      <Card sx={{ borderRadius: "0px", width: "100%", padding: "10px" }}>
         <section className="text-gray-600 body-font">
           <div className="container px-5 mx-auto flex flex-wrap">
             <div className="flex flex-wrap w-full">

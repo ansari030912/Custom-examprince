@@ -30,6 +30,7 @@ const Home = () => {
           <Grid item xs={12} lg={8}>
             <MainPageCard />
             <RecentlyUpdatedTable />
+            <CardSliderVendor />
             <WindowsCard />
           </Grid>
           <Grid item sm={12} lg={4}>
@@ -158,9 +159,7 @@ const Home = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <CardSliderVendor />
-          </Grid>
+          <Grid item xs={12}></Grid>
         </Grid>
       </Container>
     </>

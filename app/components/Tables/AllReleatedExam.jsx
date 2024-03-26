@@ -62,14 +62,13 @@ const AllReleatedExam = ({ data }) => {
                           </div>
                           <Link
                             href={`/exam-questions/${vendor_perma}/${exam_perma}`}
+                            className="w-full hover:text-blue-500"
                           >
                             <div className="flex-grow pl-4">
                               <b className="font-semibold text-sm  mb-1 tracking-wider">
                                 {vendor_title}
                               </b>
-                              <p className="leading-relaxed text-gray-700 ">
-                                {exam_title}
-                              </p>
+                              <p className="leading-relaxed">{exam_title}</p>
                               <hr style={{ marginTop: "12px" }} />
                             </div>
                           </Link>
