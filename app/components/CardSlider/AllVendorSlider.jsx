@@ -267,7 +267,7 @@ const AllVendorSlider = () => {
     },
   ];
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 10;
   const totalPages = Math.ceil(exams.length / itemsPerPage);
 
   const renderCards = () => {
@@ -278,10 +278,8 @@ const AllVendorSlider = () => {
     return (
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
-          <Grid item xs={12} sm={4} md={4} key={index}>
-            <Link
-              href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}
-            >
+          <Grid item xs={12} sm={4} md={2.4} key={index}>
+            <Link href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}>
               <Card
                 className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
                 sx={{
@@ -294,6 +292,7 @@ const AllVendorSlider = () => {
                     alt="card"
                     style={{
                       width: "100%",
+                      maxHeight: "170px",
                       minHeight: "169px",
                     }}
                   />
@@ -389,7 +388,6 @@ const AllVendorSlider = () => {
       sx={{
         padding: "15px",
         borderRadius: "0px",
-        marginTop: "10px",
       }}
     >
       <Box sx={{ textAlign: "right", mb: 1 }}>
