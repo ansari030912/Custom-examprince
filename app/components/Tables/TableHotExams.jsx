@@ -101,7 +101,7 @@ const TableHotExams = ({ data }) => {
         </Grid>
       </Card>
 
-      <Card sx={{ borderRadius: "0px", width: "100%", padding: "10px" }}>
+      <Card sx={{ borderRadius: "0px", width: "100%", padding: "5px" }}>
         <section className="text-gray-600 body-font">
           <div className="container px-5 mx-auto flex flex-wrap">
             <div className="flex flex-wrap w-full">
