@@ -179,10 +179,10 @@ const NavbarList = () => {
               </div>
             </div>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:ml-6 sm:pr-0">
               <button
                 type="button"
-                className="relative rounded-full text-white  p-2 hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 mr-2"
+                className="relative rounded-full text-white  p-2 hover:text-gray-200 mr-2"
               >
                 <span className="sr-only">Add to Cart</span>
                 <Link href="/check-out">
