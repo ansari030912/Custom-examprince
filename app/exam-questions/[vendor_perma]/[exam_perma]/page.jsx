@@ -22,6 +22,23 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
   const data = await response.json();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: data?.exam_faqs?.map((faq) => ({
+              "@type": "Question",
+              name: faq.faq_q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.faq_a,
+              },
+            })),
+          }),
+        }}
+      />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -226,8 +243,8 @@ export async function generateMetadata({ params }) {
   );
   const data = await response.json();
   return {
-    title: `Updated ${data.exam_title} Exam Dumps Questions answers by Tech Professionals`,
-    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    title: `Updated ${data.exam_title} Exam Question and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     icons: {
       other: [
         {

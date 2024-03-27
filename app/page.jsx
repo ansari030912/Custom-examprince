@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";
@@ -174,7 +175,7 @@ const Home = () => {
 export default Home;
 export async function generateMetadata() {
   return {
-    title: `Updated Exam Dumps Questions answers by Tech Professionals`,
-    description: `Examprince is a premium provider of Real and Valid Exam dumps of  IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    title: `Updated Exam Questions and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of  IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
   };
 }

@@ -22,6 +22,23 @@ const CertificationExamPage = async ({ params }) => {
   const data = await response.json();
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: data?.cert_single_exam?.exam_faqs?.map((faq) => ({
+              "@type": "Question",
+              name: faq.faq_q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.faq_a,
+              },
+            })),
+          }),
+        }}
+      />
       {data._has_multiple_exams && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>

@@ -6,10 +6,20 @@ import Link from "next/link";
 import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
 
-
-export const metadata = {
-  robots: "noIndex",
-};
+export async function generateMetadata() {
+  return {
+    title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/unlimited-access`,
+        },
+      ],
+    },
+  };
+}
 const UnlimitedAccessPage = async () => {
   const response = await fetch(
     `${process.env.baseURL}/v1/unlimited_access/?coupon=MEGASALE-30`,

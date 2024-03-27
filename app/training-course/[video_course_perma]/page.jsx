@@ -6,10 +6,20 @@ import { CourseAccordian, WindowsDataCard } from "../../components/Cards";
 import VideoCoursePrice from "../../components/Cards/VideoCoursePrice";
 import { HotExam } from "../../components/Tables";
 
-
-export const metadata = {
-  robots: "noIndex",
-};
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    icons: {
+      other: [
+        {
+          rel: "canonical",
+          url: `https://examprince.com/training-course/${params.video_course_perma}`,
+        },
+      ],
+    },
+  };
+}
 const TrainingCoursePage = async ({ params }) => {
   const response = await fetch(
     `${process.env.baseURL}/v1/training-course/${params.video_course_perma}/?coupon=MEGASALE-30`,
