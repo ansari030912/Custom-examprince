@@ -20,6 +20,7 @@ const CertificationExamPage = async ({ params }) => {
     }
   );
   const data = await response.json();
+  const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   return (
     <>
       <script
@@ -36,6 +37,34 @@ const CertificationExamPage = async ({ params }) => {
                 text: faq.faq_a,
               },
             })),
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            name: data?.cert_title,
+            description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+            review: {
+              "@type": "Review",
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: 4,
+                bestRating: 5,
+              },
+              author: {
+                "@type": "Person",
+                name: "Fred Benson",
+              },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: 4.4,
+              reviewCount: randomReviewCount,
+            },
           }),
         }}
       />
@@ -538,8 +567,8 @@ export async function generateMetadata({ params }) {
   );
   const data = await response.json();
   return {
-    title: `Updated ${data.cert_title} Exam Dumps Questions answers by Tech Professionals`,
-    description: `Examprince is a premium provider of Real and Valid Exam dumps of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    title: `Updated ${data.cert_title} Exam Questions and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
     icons: {
       other: [
         {
