@@ -70,7 +70,7 @@ const CheckOutCard = () => {
             <section className=" bg-gray-100 font-poppins ">
               <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
                 <div>
-                  <h2 className="mb-8 text-4xl font-bold dark:text-white">
+                  <h2 className="mb-8 text-4xl font-bold ">
                     Your Cart
                   </h2>
                   {!examData ? (
@@ -85,20 +85,20 @@ const CheckOutCard = () => {
                       <div className="p-6 mb-8 border bg-gray-50 ">
                         <div className="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
                           <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                            <h2 className="font-bold text-gray-500 dark:text-white">
+                            <h2 className="font-bold text-gray-500 ">
                               Product name
                             </h2>
                           </div>
                           <div className="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                            <h2 className="font-bold text-gray-500 dark:text-white">
+                            <h2 className="font-bold text-gray-500 ">
                               Price
                             </h2>
-                            <h2 className="font-bold text-gray-500 dark:text-white">
+                            <h2 className="font-bold text-gray-500 ">
                               Clear Cart
                             </h2>
                           </div>
                         </div>
-                        <div className="py-4 mb-8 border-t border-b border-gray-200 dark:border-gray-700">
+                        <div className="py-4 mb-8 border-t border-b border-gray-200 ">
                           <div className="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
                             <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
                               <div className="flex flex-wrap items-center -mx-4">
@@ -114,7 +114,7 @@ const CheckOutCard = () => {
                             </div>
                             <div className="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
                               <div>
-                                <p className="text-xl font-bold text-blue-500 dark:text-white">
+                                <p className="text-xl font-bold text-blue-500 ">
                                   $ {cartResponce?.price}
                                 </p>
                                 <span className="text-lg text-red-500 line-through ">
@@ -140,7 +140,7 @@ const CheckOutCard = () => {
                               </IconButton>
                             </div>
                             <div className="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
-                              <p className="text-lg font-bold text-blue-500 dark:text-white"></p>
+                              <p className="text-lg font-bold text-blue-500 "></p>
                             </div>
                           </div>
                         </div>
@@ -150,7 +150,7 @@ const CheckOutCard = () => {
                           <div className="flex flex-wrap items-center gap-4">
                             <input
                               type="text"
-                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1 dark:border-gray-700 dark:placeholder-gray-500 dark:text-white "
+                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1  dark:placeholder-gray-500  "
                               placeholder="Enter your Discount Cuppon"
                               required
                             />
@@ -161,42 +161,42 @@ const CheckOutCard = () => {
                         </div>
                         <div className="w-full px-4 mb-4 lg:w-1/2 ">
                           <div className="p-6 border border-blue-100 dark:bg-gray-900 dark:border-gray-900 bg-gray-50 md:p-8">
-                            <h2 className="mb-8 text-3xl font-bold text-gray-700 dark:text-white">
+                            <h2 className="mb-8 text-3xl font-bold text-gray-700 ">
                               Order Summary
                             </h2>
-                            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300 dark:border-gray-700 ">
-                              <span className="text-gray-700 dark:text-white">
+                            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300  ">
+                              <span className="text-gray-700 ">
                                 Subtotal
                               </span>
-                              <span className="text-xl font-bold text-gray-700 dark:text-white ">
+                              <span className="text-xl font-bold text-gray-700  ">
                                 ${cartResponce.full_price}
                               </span>
                             </div>
                             <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 dark:text-white ">
+                              <span className="text-gray-700  ">
                                 Off
                               </span>
-                              <span className="text-xl font-bold text-gray-700 dark:text-white ">
+                              <span className="text-xl font-bold text-gray-700  ">
                                 {cartResponce.off}%
                               </span>
                             </div>
                             <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 dark:text-white">
+                              <span className="text-gray-700 ">
                                 Discount
                               </span>
-                              <span className="text-xl font-bold text-green-500 dark:text-white">
+                              <span className="text-xl font-bold text-green-500 ">
                                 - ${discountAmount}
                               </span>
                             </div>
                             <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 dark:text-white">
+                              <span className="text-gray-700 ">
                                 Order Total
                               </span>
-                              <span className="text-xl font-bold text-gray-700 dark:text-white">
+                              <span className="text-xl font-bold text-gray-700 ">
                                 ${cartResponce.price}
                               </span>
                             </div>
-                            <h2 className="text-lg text-gray-500 dark:text-white">
+                            <h2 className="text-lg text-gray-500 ">
                               We offer:
                             </h2>
                             <div className="flex items-center gap-2 mb-4 ">
