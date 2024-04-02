@@ -2,41 +2,9 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <!-- site map -->
   <url>
-    <loc>https://examprince.com</loc>
+    <loc>https://examprince.com/static-sitemap.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/exam-providers</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/certifications</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/video-courses</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/unlimited-access</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/check-out</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://examprince.com/sign-in</loc>
-    <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://examprince.com/exam-provider-sitemap.xml</loc>
