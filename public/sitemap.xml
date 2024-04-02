@@ -1,57 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  <url>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
     <loc>https://examprince.com/static-sitemap.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-provider-sitemap.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-1.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-2.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-3.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-4.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-5.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-6.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/exam-questions-sitemap-7.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/vendor-exam-questions-sitemap-1.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/vendor-exam-questions-sitemap-2.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/vendor-exam-questions-sitemap-3.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-  <url>
+  </sitemap>
+  <sitemap>
     <loc>https://examprince.com/training-course-sitemap.xml</loc>
     <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-  </url>
-</urlset>
+  </sitemap>
+</sitemapindex>
