@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-async-client-component */
 "use client";
-//
 import { Button, Card, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
@@ -14,7 +13,10 @@ const TableHotExams = ({ data }) => {
       const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
       return (
         <>
-          <div className="flex relative pb-6 hover:text-blue-500">
+          <div
+            style={{ width: "100%" }}
+            className="flex relative pb-6 hover:text-blue-500"
+          >
             <div className="h-full w-10 absolute inset-0 flex items-center justify-center">
               <div className="h-full w-1 text-white bg-gradient-to-r from-gray-500 to-stone-800 pointer-events-none"></div>
             </div>

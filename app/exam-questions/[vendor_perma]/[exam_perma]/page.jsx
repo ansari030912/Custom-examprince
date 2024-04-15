@@ -8,9 +8,20 @@ import {
   ExamPriceCard,
 } from "../../../components/Cards";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
+import ExamLinking from "../../../components/enternalLinking/examLinking";
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
+  const vendorResponce = await fetch(
+    `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,
+    {
+      headers: {
+        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      },
+    }
+  );
+  const vendorData = await vendorResponce.json();
+
   const response = await fetch(
     `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
@@ -20,6 +31,7 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
     }
   );
   const data = await response.json();
+
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
   return (
     <>
@@ -122,6 +134,10 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
                 </table>
               </div>
             )}
+            <ExamLinking
+              vendorTitle={vendorData.vendor_title}
+              vendorData={vendorData}
+            />
             <Content data={data} referral={referral} />
           </Grid>
           <Grid item sm={12} md={3.5}>
