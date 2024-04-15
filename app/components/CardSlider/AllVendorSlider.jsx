@@ -279,7 +279,9 @@ const AllVendorSlider = () => {
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
           <Grid item xs={12} sm={4} md={2.4} key={index}>
-            <Link href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}>
+            <Link
+              href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}
+            >
               <Card
                 className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
                 sx={{
@@ -292,8 +294,6 @@ const AllVendorSlider = () => {
                     alt="card"
                     style={{
                       width: "100%",
-                      maxHeight: "170px",
-                      minHeight: "169px",
                     }}
                   />
                 </CardMedia>
