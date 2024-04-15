@@ -35,7 +35,7 @@ const ExamLinking = ({ vendorData, vendorTitle }) => {
       !storedVendorData.vendor_exams ||
       storedVendorData.vendor_exams.length === 0
     ) {
-      localStorage.removeItem(vendorTitle); // Remove the entire object if vendor_exams is empty or null
+      localStorage.removeItem(vendorTitle);
     }
   }, [storedVendorData, vendorTitle]);
 
