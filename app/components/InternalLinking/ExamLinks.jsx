@@ -32,7 +32,7 @@ const ExamLinks = ({ vendorData, vendorTitle }) => {
 
   useEffect(() => {
     if (
-      !storedVendorData.vendor_exams ||
+      storedVendorData.vendor_exams &&
       storedVendorData.vendor_exams.length === 0
     ) {
       localStorage.removeItem(vendorTitle);
