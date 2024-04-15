@@ -32,11 +32,7 @@ const LoginHistoryCard = () => {
             <Grid
               container
               className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
-              sx={{
-                display: "flex",
-                mt: "10px",
-                width: "100%",
-              }}
+             c
             >
               <Grid item xs={12} sx={{ padding: "10px" }}>
                 <Typography
@@ -113,7 +109,7 @@ const LoginHistoryCard = () => {
               >
                 <img
                   width="100%"
-                  src="safe_checkout_optimized.png"
+                  src="/safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>

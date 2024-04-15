@@ -45,7 +45,6 @@ const DownloadHistoryCard = () => {
               className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
               sx={{
                 display: "flex",
-                mt: "10px",
                 width: "100%",
               }}
             >
@@ -124,7 +123,7 @@ const DownloadHistoryCard = () => {
               >
                 <img
                   width="100%"
-                  src="safe_checkout_optimized.png"
+                  src="/safe_checkout_optimized.png"
                   alt="safe_checkout_optimized"
                 />
               </Grid>

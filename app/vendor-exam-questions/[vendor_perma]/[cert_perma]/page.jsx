@@ -317,7 +317,7 @@ const CertificationExamPage = async ({ params }) => {
                 >
                   <img
                     width="100%"
-                    src="safe_checkout_optimized.png"
+                    src="/safe_checkout_optimized.png"
                     alt="safe_checkout_optimized"
                   />
                 </Grid>
@@ -504,7 +504,7 @@ const CertificationExamPage = async ({ params }) => {
                 >
                   <img
                     width="100%"
-                    src="safe_checkout_optimized.png"
+                    src="/safe_checkout_optimized.png"
                     alt="safe_checkout_optimized"
                   />
                 </Grid>
