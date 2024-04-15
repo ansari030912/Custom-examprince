@@ -71,7 +71,6 @@ const AllVendorSlider = () => {
     },
     {
       name: "Microsoft Certified: Azure Solutions Architect Expert",
-
       perma: "azure-solutions-architect-expert",
       image: "14",
       vendor: "microsoft",
@@ -188,7 +187,6 @@ const AllVendorSlider = () => {
     },
     {
       name: "CISSP Certified Information Systems Security Professional",
-
       perma: "cissp-certification",
       image: "37",
       vendor: "isc",
