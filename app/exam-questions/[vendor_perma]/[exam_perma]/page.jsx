@@ -7,8 +7,8 @@ import {
   Content,
   ExamPriceCard,
 } from "../../../components/Cards";
+import ExamLinks from "../../../components/InternalLinking/ExamLinks";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
-import ExamLinking from "../../../components/enternalLinking/examLinking";
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
@@ -134,7 +134,7 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
                 </table>
               </div>
             )}
-            <ExamLinking
+            <ExamLinks
               vendorTitle={vendorData.vendor_title}
               vendorData={vendorData}
             />

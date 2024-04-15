@@ -11,7 +11,6 @@ const WindowsCard = () => {
       sx={{
         padding: "12px",
         borderRadius: "0px",
-        marginTop: 1,
       }}
     >
       <Grid container spacing={1}>

@@ -10,7 +10,7 @@ const shuffleArray = (array) => {
   return array;
 };
 
-const ExamLinking = ({ vendorData, vendorTitle }) => {
+const ExamLinks = ({ vendorData, vendorTitle }) => {
   const [storedVendorData, setStoredVendorData] = useState([]);
   const [displayedExams, setDisplayedExams] = useState([]);
 
@@ -104,4 +104,4 @@ const ExamLinking = ({ vendorData, vendorTitle }) => {
   );
 };
 
-export default ExamLinking;
+export default ExamLinks;
