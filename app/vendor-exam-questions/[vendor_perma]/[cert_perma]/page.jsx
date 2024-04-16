@@ -71,11 +71,12 @@ const CertificationExamPage = async ({ params }) => {
       {data._has_multiple_exams && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12}></Grid>
+            <Grid item xs={12} md={8.5}>
               <div className="mx-auto max-w-8xl flex justify-center">
-                <div className="md:mx-150px lg:mt-2 rounded-2">
+                <div className="md:mx-150px mb-3 rounded-2">
                   <img
-                    src="/banner.png"
+                    src="/examprince-discount-banner.png"
                     alt="Banner"
                     loading="lazy"
                     width="100%"
@@ -83,8 +84,6 @@ const CertificationExamPage = async ({ params }) => {
                   />
                 </div>
               </div>
-            </Grid>
-            <Grid item xs={12} md={8.5}>
               <Card
                 className="text-white bg-gradient-to-b from-blue-400 to-gray-900"
                 sx={{
@@ -367,7 +366,7 @@ const CertificationExamPage = async ({ params }) => {
               <div className="mx-auto max-w-8xl flex justify-center">
                 <div className="md:mx-150px lg:mt-2 rounded-2">
                   <img
-                    src="/banner.png"
+                    src="/examprince-discount-banner.png"
                     alt="Banner"
                     loading="lazy"
                     width="100%"

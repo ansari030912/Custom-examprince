@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -19,25 +20,17 @@ const ExamLinks = ({ vendorData, vendorTitle }) => {
 
     if (existingData) {
       setStoredVendorData(existingData);
-      setDisplayedExams(shuffleArray(existingData.vendor_exams).slice(0, 5));
-    } else {
-      const storedData = JSON.parse(localStorage.getItem(vendorTitle));
-      if (!storedData) {
-        localStorage.setItem(vendorTitle, JSON.stringify(vendorData));
-        setStoredVendorData(vendorData);
-        setDisplayedExams(shuffleArray(vendorData.vendor_exams).slice(0, 5));
+      if (existingData.vendor_exams.length <= 5) {
+        localStorage.removeItem(vendorTitle);
+      } else {
+        setDisplayedExams(shuffleArray(existingData.vendor_exams).slice(0, 5));
       }
+    } else {
+      localStorage.setItem(vendorTitle, JSON.stringify(vendorData));
+      setStoredVendorData(vendorData);
+      setDisplayedExams(shuffleArray(vendorData.vendor_exams).slice(0, 5));
     }
   }, [vendorData, vendorTitle]);
-
-  useEffect(() => {
-    if (
-      storedVendorData.vendor_exams &&
-      storedVendorData.vendor_exams.length === 0
-    ) {
-      localStorage.removeItem(vendorTitle);
-    }
-  }, [storedVendorData, vendorTitle]);
 
   const handleLinkClick = () => {
     const displayedExamIds = displayedExams.map((exam) => exam.exam_id);

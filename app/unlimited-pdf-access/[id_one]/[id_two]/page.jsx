@@ -33,7 +33,6 @@ const UnlimitedPDFPage = ({ params }) => {
     setPage(0);
   };
 
-
   useEffect(() => {
     async function fetchData() {
       try {
@@ -64,11 +63,12 @@ const UnlimitedPDFPage = ({ params }) => {
     <>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12} md={8.5}>
             <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+              <div className="md:mx-150px mb-3 rounded-2">
                 <img
-                  src="/banner.png"
+                  src="/examprince-discount-banner.png"
                   alt="Banner"
                   loading="lazy"
                   width="100%"
@@ -76,8 +76,6 @@ const UnlimitedPDFPage = ({ params }) => {
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} md={8.5}>
             <Card sx={{ bgcolor: "#1F2937", width: "100%" }}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={3.5}>

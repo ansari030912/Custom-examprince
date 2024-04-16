@@ -10,11 +10,11 @@ function SignUpPage() {
     <>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item lg={7}>
             <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
-                  src="/banner.gif"
+                  src="/examprince-discount-banner.png"
                   alt="banner"
                   loading="lazy"
                   width="100%"
@@ -23,7 +23,7 @@ function SignUpPage() {
               </div>
             </div>
           </Grid>
-          <Grid item xs={12} md={12}>
+          <Grid item lg={5}>
             <SignUpForm />
           </Grid>
         </Grid>

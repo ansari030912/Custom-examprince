@@ -9,6 +9,7 @@ import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
+import BannerModel from "./components/Models/BannerModel";
 
 const Home = () => {
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
@@ -44,20 +45,19 @@ const Home = () => {
       />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12} lg={8}>
             <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+              <div className="md:mx-150px mb-3 rounded-2">
                 <img
-                  src="/banner.gif"
-                  alt="banner"
+                  src="/examprince-discount-banner.png"
+                  alt="Banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} lg={8}>
             <MainPageCard />
             <RecentlyUpdatedTable />
           </Grid>

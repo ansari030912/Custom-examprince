@@ -63,11 +63,12 @@ const AllCertificatesPerma = async ({ params }) => {
       />
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12} lg={8}>
             <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+              <div className="md:mx-150px mb-3 rounded-2">
                 <img
-                  src="/banner.png"
+                  src="/examprince-discount-banner.png"
                   alt="Banner"
                   loading="lazy"
                   width="100%"
@@ -75,8 +76,6 @@ const AllCertificatesPerma = async ({ params }) => {
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} md={8}>
             <SingleCertificationTable data={data} />
             {/* <SingleVendorExamTable data={data} />
             <WindowsDataCard /> */}

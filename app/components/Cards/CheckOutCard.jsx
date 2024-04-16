@@ -53,26 +53,23 @@ const CheckOutCard = () => {
     <>
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12} lg={8}>
             <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+              <div className="md:mx-150px mb-3 rounded-2">
                 <img
-                  src="/banner.png"
-                  alt="banner"
+                  src="/examprince-discount-banner.png"
+                  alt="Banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} md={12}>
             <section className=" bg-gray-100 font-poppins ">
               <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
                 <div>
-                  <h2 className="mb-8 text-4xl font-bold ">
-                    Your Cart
-                  </h2>
+                  <h2 className="mb-8 text-4xl font-bold ">Your Cart</h2>
                   {!examData ? (
                     <div className="p-6 mb-8 border bg-gray-50 ">
                       <h4 className="font-bold text-2xl text-gray-500 text-center">
@@ -90,9 +87,7 @@ const CheckOutCard = () => {
                             </h2>
                           </div>
                           <div className="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                            <h2 className="font-bold text-gray-500 ">
-                              Price
-                            </h2>
+                            <h2 className="font-bold text-gray-500 ">Price</h2>
                             <h2 className="font-bold text-gray-500 ">
                               Clear Cart
                             </h2>
@@ -165,25 +160,19 @@ const CheckOutCard = () => {
                               Order Summary
                             </h2>
                             <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300  ">
-                              <span className="text-gray-700 ">
-                                Subtotal
-                              </span>
+                              <span className="text-gray-700 ">Subtotal</span>
                               <span className="text-xl font-bold text-gray-700  ">
                                 ${cartResponce.full_price}
                               </span>
                             </div>
                             <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700  ">
-                                Off
-                              </span>
+                              <span className="text-gray-700  ">Off</span>
                               <span className="text-xl font-bold text-gray-700  ">
                                 {cartResponce.off}%
                               </span>
                             </div>
                             <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 ">
-                                Discount
-                              </span>
+                              <span className="text-gray-700 ">Discount</span>
                               <span className="text-xl font-bold text-green-500 ">
                                 - ${discountAmount}
                               </span>

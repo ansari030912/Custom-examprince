@@ -152,7 +152,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
             <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
-                  src="/banner.png"
+                  src="/examprince-discount-banner.png"
                   alt="Banner"
                   loading="lazy"
                   width="100%"

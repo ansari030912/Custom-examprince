@@ -12,20 +12,19 @@ const SettingPage = () => {
     <>
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid item xs={12}></Grid>
+          <Grid item xs={12} lg={8}>
             <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
+              <div className="md:mx-150px mb-3 rounded-2">
                 <img
-                  src="/banner.png"
-                  alt="banner"
+                  src="/examprince-discount-banner.png"
+                  alt="Banner"
                   loading="lazy"
                   width="100%"
                   height="100%"
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item xs={12} md={8}>
             <SettingChangeForm />
           </Grid>
           <Grid item xm={12} md={4}>

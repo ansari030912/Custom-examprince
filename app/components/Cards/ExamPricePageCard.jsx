@@ -9,7 +9,7 @@ const ExamPricePageCard = ({ data }) => {
   return (
     <>
       <Card
-        className="text-white bg-gradient-to-l from-gray-900 via-blue-400 to-gray-900"
+        className="text-white bg-gradient-to-l from-red-600 via-red-600 to-red-600"
         sx={{
           color: "white",
           borderRadius: "0.375rem",
