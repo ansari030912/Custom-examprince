@@ -10,6 +10,7 @@ const WindowsCard = () => {
       className="bg-white text-gray-800"
       sx={{
         padding: "12px",
+        marginTop: "10px",
         borderRadius: "0px",
       }}
     >

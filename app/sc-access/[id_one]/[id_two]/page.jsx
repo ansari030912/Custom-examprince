@@ -75,7 +75,6 @@ const ScAccess = async ({ params }) => {
           </Grid>
           <Grid item xs={12} lg={8}>
             <ScAccessAccordian data={data} />
-            {/* <WindowsDataCard /> */}
           </Grid>
           <Grid item sm={12} lg={4}>
             <HotExam />

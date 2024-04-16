@@ -8,10 +8,10 @@ import SignUpForm from "../components/Form/SignUpForm";
 function SignUpPage() {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{ marginTop: "20px" }}>
         <Grid container spacing={2}>
-          <Grid item lg={7}>
-            <div className="mx-auto max-w-8xl flex justify-center">
+          <Grid item lg={12}>
+          <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/examprince-discount-banner.png"
@@ -22,8 +22,6 @@ function SignUpPage() {
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item lg={5}>
             <SignUpForm />
           </Grid>
         </Grid>

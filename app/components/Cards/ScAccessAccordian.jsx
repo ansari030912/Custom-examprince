@@ -49,7 +49,7 @@ const ScAccessAccordian = ({ data }) => {
   };
 
   return (
-    <div className="bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden sm:p-4">
+    <div className="bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden ">
       {data?.sections.map((item, index) => {
         const { section_title, lectures } = item;
         return (

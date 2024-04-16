@@ -67,7 +67,7 @@ const Home = () => {
           <Grid item xs={12}>
             <CardSliderVendor />
           </Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={12} lg={8} style={{ marginTop: "-10px" }}>
             <WindowsCard />
           </Grid>
           <Grid item sm={12} lg={4}>

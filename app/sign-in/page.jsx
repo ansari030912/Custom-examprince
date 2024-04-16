@@ -9,9 +9,9 @@ import SignInForm from "../components/Form/SignInForm";
 const SignInPage = () => {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" style={{ marginTop: "20px" }}>
         <Grid container spacing={2}>
-          <Grid item lg={7}>
+          <Grid item lg={12}>
             <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
@@ -23,8 +23,6 @@ const SignInPage = () => {
                 />
               </div>
             </div>
-          </Grid>
-          <Grid item lg={5}>
             <SignInForm />
           </Grid>
         </Grid>

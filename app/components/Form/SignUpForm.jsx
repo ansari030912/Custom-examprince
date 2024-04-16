@@ -100,7 +100,7 @@ const SignUpForm = () => {
           {userRegiter?.message}
         </Alert>
       </Snackbar>
-      <form onSubmit={handleSubmit} className="lg:mt-12">
+      <form onSubmit={handleSubmit} className="lg:mt-10">
         <div className="flex">
           <div className="flex flex-row w-full">
             <div className="flex flex-1  justify-center px-4">
