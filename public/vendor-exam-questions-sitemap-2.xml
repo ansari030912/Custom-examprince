@@ -717,12 +717,6 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://examprince.com/vendor-exam-questions/xml/xml-master-basic</loc>
-        <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
         <loc>https://examprince.com/vendor-exam-questions/zend/php-and-zend-framework-certifications</loc>
         <lastmod>2024-04-01T17:53:41+00:00</lastmod>
         <changefreq>weekly</changefreq>
@@ -3733,12 +3727,6 @@
     </url>
     <url>
         <loc>https://examprince.com/vendor-exam-questions/huawei/hcia-public-safety</loc>
-        <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://examprince.com/vendor-exam-questions/huawei/hcsa-uc&amp;c</loc>
         <lastmod>2024-04-01T17:53:41+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

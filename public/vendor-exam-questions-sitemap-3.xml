@@ -261,12 +261,6 @@
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://examprince.com/vendor-exam-questions/sdi/sdi-certification</loc>
-        <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
         <loc>https://examprince.com/vendor-exam-questions/snia/snia-certified-professional</loc>
         <lastmod>2024-04-01T17:53:41+00:00</lastmod>
         <changefreq>weekly</changefreq>
@@ -579,12 +573,6 @@
     </url>
     <url>
         <loc>https://examprince.com/vendor-exam-questions/ibm/solutions-developer</loc>
-        <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://examprince.com/vendor-exam-questions/ibm/certified-sales-expert</loc>
         <lastmod>2024-04-01T17:53:41+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -4095,12 +4083,6 @@
     </url>
     <url>
         <loc>https://examprince.com/vendor-exam-questions/prince-2/prince2-agile</loc>
-        <lastmod>2024-04-01T17:53:41+00:00</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://examprince.com/vendor-exam-questions/eccouncil/chfi-v10</loc>
         <lastmod>2024-04-01T17:53:41+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

@@ -71,7 +71,7 @@ const CertificationExamPage = async ({ params }) => {
       {data._has_multiple_exams && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            <Grid item xs={12}></Grid>
+            {/* <Grid item xs={12}></Grid> */}
             <Grid item xs={12} md={8.5}>
               <div className="mx-auto max-w-8xl flex justify-center">
                 <div className="md:mx-150px mb-3 rounded-2">
@@ -362,9 +362,10 @@ const CertificationExamPage = async ({ params }) => {
       {data?._has_multiple_exams === false && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12}></Grid>
+            <Grid item xs={12} md={8.5}>
               <div className="mx-auto max-w-8xl flex justify-center">
-                <div className="md:mx-150px lg:mt-2 rounded-2">
+                <div className="md:mx-150px mb-3 rounded-2">
                   <img
                     src="/examprince-discount-banner.png"
                     alt="Banner"
@@ -374,10 +375,8 @@ const CertificationExamPage = async ({ params }) => {
                   />
                 </div>
               </div>
-            </Grid>
-            <Grid item xs={12} md={8.5}>
               <ExamPriceCard data={data.cert_single_exam} />
-              {data?.cert_single_exam?.exam_topics && (
+              {data?.cert_single_exam?.exam_topics?.length > 0 && (
                 <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="text-white bg-gradient-to-l  from-gray-900 via-blue-400 to-gray-900">
