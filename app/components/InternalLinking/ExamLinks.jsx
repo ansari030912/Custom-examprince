@@ -1,41 +1,48 @@
 "use client";
-"use client";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
+  for (let i = array?.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 };
 
-const ExamLinks = ({ vendorData, vendorTitle }) => {
+const ExamLinks = ({ vendorData, vendorTitle, data }) => {
   const [storedVendorData, setStoredVendorData] = useState([]);
   const [displayedExams, setDisplayedExams] = useState([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (data?.exam_title === "null" || data?.exam_title === "") {
+      router.push("/");
+    }
+  }, []);
 
   useEffect(() => {
     const existingData = JSON.parse(localStorage.getItem(vendorTitle));
 
     if (existingData) {
       setStoredVendorData(existingData);
-      if (existingData.vendor_exams.length <= 5) {
+      if (existingData?.vendor_exams?.length <= 5) {
         localStorage.removeItem(vendorTitle);
       } else {
-        setDisplayedExams(shuffleArray(existingData.vendor_exams).slice(0, 5));
+        setDisplayedExams(shuffleArray(existingData?.vendor_exams)?.slice(0, 5));
       }
     } else {
       localStorage.setItem(vendorTitle, JSON.stringify(vendorData));
       setStoredVendorData(vendorData);
-      setDisplayedExams(shuffleArray(vendorData.vendor_exams).slice(0, 5));
+      setDisplayedExams(shuffleArray(vendorData?.vendor_exams).slice(0, 5));
     }
   }, [vendorData, vendorTitle]);
 
   const handleLinkClick = () => {
     const displayedExamIds = displayedExams.map((exam) => exam.exam_id);
-    const updatedStoredExams = storedVendorData.vendor_exams.filter(
-      (exam) => !displayedExamIds.includes(exam.exam_id)
+    const updatedStoredExams = storedVendorData?.vendor_exams?.filter(
+      (exam) => !displayedExamIds?.includes(exam.exam_id)
     );
     const updatedStoredData = {
       ...storedVendorData,
@@ -59,7 +66,7 @@ const ExamLinks = ({ vendorData, vendorTitle }) => {
                   className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider"
                 >
                   Other useful related exams by - (
-                  {storedVendorData.vendor_title})
+                  {storedVendorData?.vendor_title})
                 </th>
                 <th
                   scope="col"
@@ -76,7 +83,7 @@ const ExamLinks = ({ vendorData, vendorTitle }) => {
                   className="hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-gray-800 hover:to-blue-500 "
                 >
                   <Link
-                    href={`/exam-questions/${storedVendorData.vendor_perma}/${topic.exam_perma}`}
+                    href={`/exam-questions/${storedVendorData?.vendor_perma}/${topic.exam_perma}`}
                     onClick={handleLinkClick}
                   >
                     <td className="px-6 py-4 text-base whitespace-nowrap">

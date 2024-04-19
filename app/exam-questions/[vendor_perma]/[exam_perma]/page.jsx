@@ -31,9 +31,14 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
     }
   );
   const data = await response.json();
-
+  if (data?.exam_code === "null") {
+    return <div>Hello</div>;
+  }
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
-  return (
+
+  return data.exam_code === "null" ? (
+    <div>Hello</div>
+  ) : (
     <>
       <script
         type="application/ld+json"
@@ -135,8 +140,9 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
             )}
             <Content data={data} referral={referral} />
             <ExamLinks
-              vendorTitle={vendorData.vendor_title}
+              vendorTitle={vendorData?.vendor_title}
               vendorData={vendorData}
+              data={data}
             />
           </Grid>
           <Grid item sm={12} md={3.5}>

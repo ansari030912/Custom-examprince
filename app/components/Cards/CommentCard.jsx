@@ -5,9 +5,11 @@
 import { Alert, Divider, Snackbar } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const CommentCard = ({ data }) => {
+  const router = useRouter();
   const [comments, setComments] = useState({
     total_pages: 0,
     current_page: 0,
@@ -24,7 +26,7 @@ const CommentCard = ({ data }) => {
     try {
       const response = await axios.get(
         `https://api.dumpsboss.com/v1/exam_comments/${
-          data.exam_perma
+          data?.exam_perma
         }?page=${1}`,
         {
           headers: {
@@ -61,7 +63,15 @@ const CommentCard = ({ data }) => {
   }, [data]);
 
   useEffect(() => {
-    fetchData();
+    if (
+      !data.exam_title ||
+      data.exam_title === "null" ||
+      data.exam_title === 0
+    ) {
+      router.push("/");
+    } else {
+      fetchData();
+    }
   }, [data]);
 
   const handleSubmit = async (event) => {
@@ -312,7 +322,9 @@ const CommentCard = ({ data }) => {
                         </p>
                       </div>
                     </footer>
-                    <p className=" text-black dark:text-white text-sm">{decodedComment}</p>
+                    <p className=" text-black dark:text-white text-sm">
+                      {decodedComment}
+                    </p>
                     {country && (
                       <p className="text-sm text-black dark:text-white text-right"></p>
                     )}
