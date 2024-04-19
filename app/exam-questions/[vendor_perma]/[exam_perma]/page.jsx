@@ -31,9 +31,6 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
     }
   );
   const data = await response.json();
-  if (data?.exam_code === "null") {
-    return <div>Hello</div>;
-  }
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
 
   return data.exam_code === "null" ? (
