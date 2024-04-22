@@ -5,11 +5,16 @@ import Link from "next/link";
 import { CourseAccordian, WindowsDataCard } from "../../components/Cards";
 import VideoCoursePrice from "../../components/Cards/VideoCoursePrice";
 import { HotExam } from "../../components/Tables";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 export async function generateMetadata({ params }) {
   return {
     title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    robots: {
+      index: true,
+    },
     icons: {
       other: [
         {
@@ -22,10 +27,10 @@ export async function generateMetadata({ params }) {
 }
 const TrainingCoursePage = async ({ params }) => {
   const response = await fetch(
-    `${process.env.baseURL}/v1/training-course/${params.video_course_perma}/?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/training-course/${params.video_course_perma}/?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );

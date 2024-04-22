@@ -51,7 +51,7 @@ const ExamPricePageCard = ({ data }) => {
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
               </Typography>
-              {data.exam_retired ? (
+              {data?.exam_retired ? (
                 <Card
                   sx={{
                     bgcolor: "#F8D7DA",
@@ -130,7 +130,7 @@ const ExamPricePageCard = ({ data }) => {
                   </Typography>
                 </>
               )}
-              {data.exam_retired ? (
+              {data?.exam_retired ? (
                 ""
               ) : (
                 <Card

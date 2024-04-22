@@ -1,27 +1,23 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useState } from "react";
 
 function BackCountDown() {
-  // Set the initial countdown duration to 16 hours (in milliseconds)
-  const initialDuration = 16 * 60 * 60 * 1000; // 16 hours in milliseconds
+  const initialDuration = 16 * 60 * 60 * 1000;
   const [duration, setDuration] = useState(initialDuration);
 
-  // Check if localStorage is available
   const isLocalStorageAvailable =
     typeof window !== "undefined" && window.localStorage;
 
-  // Get the start time from localStorage or set it to the current time
   const startTime =
     isLocalStorageAvailable && localStorage.getItem("countdownStartTime")
       ? parseInt(localStorage.getItem("countdownStartTime"))
       : new Date().getTime();
 
-  // Calculate the remaining time based on the start time and duration
   const calculateRemainingTime = () => {
     const currentTime = new Date().getTime();
     let remainingTime = duration - (currentTime - startTime);
 
-    // If remaining time is negative or zero, reset the countdown
     if (remainingTime <= 0) {
       remainingTime = initialDuration;
       setDuration(initialDuration);
@@ -34,7 +30,6 @@ function BackCountDown() {
 
   const [remainingTime, setRemainingTime] = useState(calculateRemainingTime());
 
-  // Update the remaining time every second
   useEffect(() => {
     const timer = setInterval(() => {
       setRemainingTime(calculateRemainingTime());
@@ -43,7 +38,6 @@ function BackCountDown() {
     return () => clearInterval(timer);
   }, []);
 
-  // Convert remaining time to hours, minutes, and seconds
   const hours = Math.floor(remainingTime / (1000 * 60 * 60));
   const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);

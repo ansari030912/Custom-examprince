@@ -2,14 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import { Container, Grid, Typography } from "@mui/material";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import BannerModel from "./components/Models/BannerModel";
 
 const Home = () => {
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
@@ -205,5 +203,8 @@ export async function generateMetadata() {
   return {
     title: `Updated Exam Questions and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of  IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    robots: {
+      index: true,
+    },
   };
 }

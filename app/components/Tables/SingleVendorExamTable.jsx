@@ -88,7 +88,7 @@ const SingleVendorExamTable = ({ data }) => {
           }}
           rowsPerPageOptions={[rowsPerPage]}
           component="div"
-          count={data.vendor_exams?.length} // Corrected count
+          count={data.vendor_exams?.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

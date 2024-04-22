@@ -6,11 +6,23 @@ import Link from "next/link";
 import { WindowsDataCard } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 export async function generateMetadata({ params }) {
+  const response = await fetch(`${BaseUrl}/v1/vendor/${params.vendor_perma}`, {
+    headers: {
+      "x-api-key": X_API_Key,
+    },
+  });
+
+  const metaDATA = await response.json();
   return {
     title: `Updated ${params.vendor_perma} Exam Questions and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${params.vendor_perma} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    robots: {
+      index: metaDATA?.index_tag,
+    },
     icons: {
       other: [
         {
@@ -23,14 +35,11 @@ export async function generateMetadata({ params }) {
 }
 
 const AllVendorsPerma = async ({ params }) => {
-  const response = await fetch(
-    `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,
-    {
-      headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-      },
-    }
-  );
+  const response = await fetch(`${BaseUrl}/v1/vendor/${params.vendor_perma}`, {
+    headers: {
+      "x-api-key": X_API_Key,
+    },
+  });
 
   const data = await response.json();
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;

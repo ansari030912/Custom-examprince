@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { Skeleton, TablePagination } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
-import Link from "next/link";
-import { Skeleton, TablePagination } from "@mui/material";
+import { useEffect, useState } from "react";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const LoginHistoryTable = () => {
   const [data, setData] = useState([]);
@@ -14,15 +15,12 @@ const LoginHistoryTable = () => {
   const fetchData = async () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-      const response = await axios.get(
-        `https://api.dumpsboss.com/v1/account/login-history`,
-        {
-          headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-            Authorization: `Bearer ${loginResponse._token}`,
-          },
-        }
-      );
+      const response = await axios.get(`${BaseUrl}/v1/account/login-history`, {
+        headers: {
+          "x-api-key": X_API_Key,
+          Authorization: `Bearer ${loginResponse._token}`,
+        },
+      });
       setData(response.data.history);
       setLoading(false);
     } catch (error) {

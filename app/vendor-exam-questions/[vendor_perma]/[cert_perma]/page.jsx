@@ -2,6 +2,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
 import {
   CommentsCard,
   Content,
@@ -12,10 +14,10 @@ import BackCountDown from "../../../components/TimeOut/BackCountDown";
 
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
-    `${process.env.baseURL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );
@@ -558,17 +560,26 @@ export default CertificationExamPage;
 
 export async function generateMetadata({ params }) {
   const response = await fetch(
-    `${process.env.baseURL}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/certification/${params.cert_perma}?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );
+
   const data = await response.json();
+  let shouldIndex = true;
+  if (data.cert_title === null) {
+    shouldIndex = false;
+  }
+
   return {
     title: `Updated ${data.cert_title} Exam Questions and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Questions and Answers of ${data.cert_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    robots: {
+      index: shouldIndex,
+    },
     icons: {
       other: [
         {

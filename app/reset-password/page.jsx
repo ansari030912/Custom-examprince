@@ -7,7 +7,6 @@ import withAuth from "../auth/RouterAuth";
 import ResetPasswordForm from "../components/Form/ResetPasswordForm";
 
 function ResetPassword() {
-
   return (
     <>
       <Container maxWidth="lg">

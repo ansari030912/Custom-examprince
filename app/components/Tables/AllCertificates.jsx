@@ -1,9 +1,11 @@
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 import AllCertificatesTable from "./AllCertificatesTable";
 
 const AllCertificates = async ({ referral }) => {
-  const response = await fetch(`${process.env.baseURL}/v1/certifications`, {
+  const response = await fetch(`${BaseUrl}/v1/certifications`, {
     headers: {
-      "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      "x-api-key": X_API_Key,
     },
   });
 

@@ -2,17 +2,9 @@
 import {
   Box,
   Card,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TablePagination,
-  TableRow,
-  Typography,
+  Typography
 } from "@mui/material";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import VideoCourseSlider from "../CardSlider/VideoCourseSlider";
 
 const AllVideoCoursesTable = ({ data, referral }) => {
@@ -20,17 +12,12 @@ const AllVideoCoursesTable = ({ data, referral }) => {
   const rowsPerPage = 15;
   useEffect(() => {
     if (typeof window !== "undefined") {
-      // Check if referral already exists in localStorage
       const storedReferral = localStorage.getItem("referral");
       if (!storedReferral) {
-        // If referral doesn't exist, save it to localStorage
         localStorage.setItem("referral", referral);
       }
     }
   }, [referral]);
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
 
   return (
     <>

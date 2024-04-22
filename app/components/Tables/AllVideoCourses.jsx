@@ -1,9 +1,11 @@
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 import AllVideoCoursesTable from "./AllVideoCoursesTable";
 
 const AllVideoCourses = async ({ referral }) => {
-  const response = await fetch(`${process.env.baseURL}/v1/training-courses`, {
+  const response = await fetch(`${BaseUrl}/v1/training-courses`, {
     headers: {
-      "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+      "x-api-key": X_API_Key,
     },
   });
 

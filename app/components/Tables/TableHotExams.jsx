@@ -1,7 +1,7 @@
+"use client";
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 /* eslint-disable @next/next/no-async-client-component */
-"use client";
 import { Box, Button, Card, Grid, Paper, Typography } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
@@ -16,14 +16,13 @@ const TableHotExams = ({ data }) => {
           <div
             key={exam_perma}
             style={{ width: "100%" }}
-            // style={{ width: "100%", border: "1px solid #003049" }}
             className="flex justify-center items-center relative pb-1 hover:text-blue-500"
           >
             <div className="flex-grow w-full pl-2 text-gray-700 hover:text-blue-400">
               <Link
                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
                 className="w-full"
-                style={{ width: "100%" }} // corrected typo here from 'widht' to 'width'
+                style={{ width: "100%" }}
               >
                 <b className="font-semibold text-md tracking-wider">
                   <span className="text-blue-500">{vendor_title}</span>

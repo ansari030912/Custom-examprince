@@ -1,15 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
 import { Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { UnlimitedAccess, WindowsDataCard } from "../components/Cards";
 import { HotExam } from "../components/Tables";
+import { BaseUrl } from "../AllUrls/BaseUrl";
+import { X_API_Key } from "../AllUrls/ApiKey";
 
 export async function generateMetadata() {
   return {
     title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    robots: {
+      index: true,
+    },
     icons: {
       other: [
         {
@@ -22,10 +26,10 @@ export async function generateMetadata() {
 }
 const UnlimitedAccessPage = async () => {
   const response = await fetch(
-    `${process.env.baseURL}/v1/unlimited_access/?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/unlimited_access/?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );

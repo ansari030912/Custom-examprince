@@ -7,6 +7,8 @@ import axios from "axios";
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 const CommentCard = ({ data }) => {
   const router = useRouter();
@@ -25,12 +27,10 @@ const CommentCard = ({ data }) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://api.dumpsboss.com/v1/exam_comments/${
-          data?.exam_perma
-        }?page=${1}`,
+        `${BaseUrl}/v1/exam_comments/${data?.exam_perma}?page=${1}`,
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );
@@ -48,9 +48,9 @@ const CommentCard = ({ data }) => {
   useEffect(() => {
     const fetchUserIP = async () => {
       try {
-        const response = await axios.get(`https://api.dumpsboss.com/v1/my-ip`, {
+        const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         });
         await setUserIP(response.data);
@@ -64,9 +64,12 @@ const CommentCard = ({ data }) => {
 
   useEffect(() => {
     if (
-      !data.exam_title ||
-      data.exam_title === "null" ||
-      data.exam_title === 0
+      data?.is_disabled ||
+      data?.exam_title === "null" ||
+      data?.exam_title === 0 ||
+      data?.cert_title === "null" ||
+      data?.cert_id === 0 ||
+      !data?.index_tag
     ) {
       router.push("/");
     } else {
@@ -80,7 +83,7 @@ const CommentCard = ({ data }) => {
 
     try {
       const response = await axios.post(
-        `https://api.dumpsboss.com/v1/exam_comment/${data.exam_perma}`,
+        `${BaseUrl}/v1/exam_comment/${data.exam_perma}`,
         {
           name: name,
           email: email,
@@ -89,7 +92,7 @@ const CommentCard = ({ data }) => {
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );

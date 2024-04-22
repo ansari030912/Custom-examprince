@@ -74,13 +74,13 @@ const FooterList = () => {
         </div>
         <div className="flex-grow flex flex-wrap md:pl-20 mb-4 md:mt-0 mt-10 md:text-left text-center">
           <div className="lg:w-1/1 w-full px-4 text-justify">
-            ExamPrince does not provide real Microsoft exam questions. Similarly,
-            ExamPrince does not supply real Amazon exam questions. The materials
-            offered by ExamPrince lack real questions and answers from Cisco's
-            certification exams. The CFA Institute neither endorses nor assures
-            the accuracy or quality of ExamPrince content. CFA® and Chartered
-            Financial Analyst® are registered trademarks held by the CFA
-            Institute.
+            ExamPrince does not provide real Microsoft exam questions.
+            Similarly, ExamPrince does not supply real Amazon exam questions.
+            The materials offered by ExamPrince lack real questions and answers
+            from Cisco's certification exams. The CFA Institute neither endorses
+            nor assures the accuracy or quality of ExamPrince content. CFA® and
+            Chartered Financial Analyst® are registered trademarks held by the
+            CFA Institute.
           </div>
           <div className="mt-3">
             <Link href="/">
@@ -118,13 +118,13 @@ const FooterList = () => {
                 </span>
               </button>
             </Link>
-            <Link href="#">
+            {/* <Link href="#">
               <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-gray-800 to-blue-400 group-hover:from-gray-600 group-hover:to-blue-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                 <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-600 text-white  rounded-md group-hover:bg-opacity-0">
                   Faqs
                 </span>
               </button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>

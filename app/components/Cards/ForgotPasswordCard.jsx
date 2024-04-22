@@ -7,13 +7,8 @@ import Grid from "@mui/material/Grid";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
-export const metadata = {
-  title: "Forgot password",
-  description: "A world of css",
-  keywords: "A world of css",
-  robots: "noIndex",
-};
 const ForgotPasswordCard = () => {
   const [passwordRest, setPasswordRest] = useState({});
   const [email, setEmail] = useState("");
@@ -22,9 +17,9 @@ const ForgotPasswordCard = () => {
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const fetchIP = async () => {
     try {
-      const response = await axios.get("https://api.dumpsboss.com/v1/my-ip", {
+      const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
         headers: {
-          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+          "x-api-key": X_API_Key,
         },
       });
       setIp(response.data);
@@ -49,15 +44,15 @@ const ForgotPasswordCard = () => {
     }
     try {
       const response = await axios.post(
-        "https://api.dumpsboss.com/v1/account/forgot-password",
+        `${BaseUrl}/v1/account/forgot-password`,
         {
           email,
           ip,
-          reset_url: "http://localhost:3000/reset-password/",
+          reset_url: "http://examprince.com/reset-password/",
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );

@@ -17,6 +17,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import withAuth from "../../../auth/RouterAuth";
 import { HotExam } from "../../../components/Tables";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
 
 const UnlimitedPDFPage = ({ params }) => {
   const router = useRouter();
@@ -41,10 +43,10 @@ const UnlimitedPDFPage = ({ params }) => {
           return router.push("/sign-in");
         }
         const response = await axios.get(
-          `https://api.dumpsboss.com/v1/account/pdf-unlimited-access/${params.id_one}/${params.id_two}/A`,
+          `${BaseUrl}/v1/account/pdf-unlimited-access/${params.id_one}/${params.id_two}/A`,
           {
             headers: {
-              "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+              "x-api-key": X_API_Key,
               Authorization: `Bearer ${loginResponse._token}`,
             },
           }

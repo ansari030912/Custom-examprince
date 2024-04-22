@@ -20,7 +20,6 @@ const SingleCertificationTable = ({ data }) => {
     setPage(newPage);
   };
 
-  // Preprocess the data to filter out duplicates based on cert_id
   const uniqueCerts = Array.from(
     new Set(data?.vendor_certs?.map((cert) => cert?.cert_id))
   ).map((certId) => {
@@ -34,7 +33,7 @@ const SingleCertificationTable = ({ data }) => {
         sx={{
           padding: 1,
           mt: 1,
-          borderRadius: "0px", // Adjust the values according to your design
+          borderRadius: "0px",
         }}
       >
         <Typography color={"white"} fontSize={24} fontWeight={500}>
@@ -90,7 +89,7 @@ const SingleCertificationTable = ({ data }) => {
           }}
           rowsPerPageOptions={[rowsPerPage]}
           component="div"
-          count={uniqueCerts.length} // Corrected count
+          count={uniqueCerts.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

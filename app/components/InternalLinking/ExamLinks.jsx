@@ -17,7 +17,7 @@ const ExamLinks = ({ vendorData, vendorTitle, data }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (data?.exam_title === "null" || data?.exam_title === "") {
+    if (data?.is_disabled) {
       router.push("/");
     }
   }, []);
@@ -30,7 +30,9 @@ const ExamLinks = ({ vendorData, vendorTitle, data }) => {
       if (existingData?.vendor_exams?.length <= 5) {
         localStorage.removeItem(vendorTitle);
       } else {
-        setDisplayedExams(shuffleArray(existingData?.vendor_exams)?.slice(0, 5));
+        setDisplayedExams(
+          shuffleArray(existingData?.vendor_exams)?.slice(0, 5)
+        );
       }
     } else {
       localStorage.setItem(vendorTitle, JSON.stringify(vendorData));

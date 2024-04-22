@@ -9,12 +9,15 @@ import {
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
 
 export default function ContentCard({ data, referral }) {
   const [expanded, setExpanded] = useState(null);
   const [value, setValue] = useState(data?.exam_article ? "article" : "faqs");
   const [decodedHtml, setDecodedHtml] = useState("");
+  const router = useRouter();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -35,6 +38,15 @@ export default function ContentCard({ data, referral }) {
     txt.innerHTML = html;
     return txt.value;
   };
+  useEffect(() => {
+    if (
+      data?.is_disabled ||
+      data?.cert_title === "null" ||
+      data?.cert_id === 0
+    ) {
+      router.push("/");
+    }
+  }, [data]);
   const parseHtmlWithStyles = (html) => {
     if (
       typeof window !== "undefined" &&
@@ -198,7 +210,9 @@ export default function ContentCard({ data, referral }) {
                     <path d="M7 10l5 5 5-5z" />
                   </svg>
                 </div>
-                <Typography variant="h3"  fontSize={20}>{faq.faq_q}</Typography>
+                <Typography variant="h3" fontSize={20}>
+                  {faq.faq_q}
+                </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ bgcolor: "#111827", color: "white" }}>
                 <Typography>{faq.faq_a}</Typography>

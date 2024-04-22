@@ -1,12 +1,14 @@
 "use client";
+/* eslint-disable react/jsx-key */
+/* eslint-disable @next/next/no-async-client-component */
+/* eslint-disable @next/next/no-img-element */
 import { Skeleton, TablePagination } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
 import Link from "next/link";
-/* eslint-disable react/jsx-key */
-/* eslint-disable @next/next/no-async-client-component */
-/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from "react";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 const InvoiceTable = () => {
   const [data, setData] = useState([]);
@@ -16,15 +18,12 @@ const InvoiceTable = () => {
   const fetchData = async () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
-      const response = await axios.get(
-        `https://api.dumpsboss.com/v1/account/invoices`,
-        {
-          headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
-            Authorization: `Bearer ${loginResponse._token}`,
-          },
-        }
-      );
+      const response = await axios.get(`${BaseUrl}/v1/account/invoices`, {
+        headers: {
+          "x-api-key": X_API_Key,
+          Authorization: `Bearer ${loginResponse._token}`,
+        },
+      });
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

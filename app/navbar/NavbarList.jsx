@@ -5,6 +5,8 @@ import { Container } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../AllUrls/ApiKey";
+import { BaseUrl } from "../AllUrls/BaseUrl";
 
 const NavbarList = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -21,10 +23,10 @@ const NavbarList = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api.dumpsboss.com/v1/coupons",
+          `${BaseUrl}/v1/coupons`,
           {
             headers: {
-              "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+              "x-api-key": X_API_Key,
             },
           }
         );

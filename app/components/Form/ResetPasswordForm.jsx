@@ -5,6 +5,8 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 const ResetPasswordForm = () => {
   const searchParams = useSearchParams();
@@ -36,7 +38,7 @@ const ResetPasswordForm = () => {
 
     try {
       const response = await axios.post(
-        "https://api.dumpsboss.com/v1/account/reset-password",
+        `${BaseUrl}/v1/account/reset-password`,
         {
           email: queryEmail,
           reset_token: queryToken,
@@ -44,7 +46,7 @@ const ResetPasswordForm = () => {
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );

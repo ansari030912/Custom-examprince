@@ -5,6 +5,8 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const SignInForm = () => {
   const router = useRouter();
@@ -18,9 +20,9 @@ const SignInForm = () => {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get("https://api.dumpsboss.com/v1/my-ip", {
+      const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
         headers: {
-          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+          "x-api-key": X_API_Key,
         },
       });
       setIp(response.data);
@@ -56,7 +58,7 @@ const SignInForm = () => {
 
     try {
       const response = await axios.post(
-        "https://api.dumpsboss.com/v1/account/login",
+        `${BaseUrl}/v1/account/login`,
         {
           email,
           password,
@@ -64,7 +66,7 @@ const SignInForm = () => {
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );

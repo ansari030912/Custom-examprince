@@ -20,6 +20,8 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import withAuth from "../../../../auth/RouterAuth";
+import { BaseUrl } from "../../../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../../../AllUrls/ApiKey";
 
 const TeAccess = ({ params }) => {
   const [teAccess, setTeAccess] = useState({});
@@ -43,10 +45,10 @@ const TeAccess = ({ params }) => {
         if (loginResponse) {
           try {
             const response = await axios.get(
-              `https://api.dumpsboss.com/v1/account/te-access/${params.id_one}/${params.id_two}/${params.id_three}`,
+              `${BaseUrl}/v1/account/te-access/${params.id_one}/${params.id_two}/${params.id_three}`,
               {
                 headers: {
-                  "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+                  "x-api-key": X_API_Key,
                   Authorization: `Bearer ${loginResponse._token}`,
                 },
               }

@@ -1,9 +1,10 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { Skeleton, TablePagination } from "@mui/material";
 import axios from "axios";
 import moment from "moment";
-import Link from "next/link";
-import { Skeleton, TablePagination } from "@mui/material";
+import { useEffect, useState } from "react";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../AllUrls/ApiKey";
 
 const DownloadHistoryTable = () => {
   const [data, setData] = useState([]);
@@ -15,10 +16,10 @@ const DownloadHistoryTable = () => {
     try {
       const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
       const response = await axios.get(
-        `https://api.dumpsboss.com/v1/account/download-history`,
+        `${BaseUrl}/v1/account/download-history`,
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
             Authorization: `Bearer ${loginResponse._token}`,
           },
         }
@@ -56,16 +57,14 @@ const DownloadHistoryTable = () => {
           </thead>
           <tbody>
             {loading
-              ? // Render Skeleton placeholders when loading
-                Array.from(Array(5)).map((_, index) => (
+              ? Array.from(Array(5)).map((_, index) => (
                   <tr key={index}>
                     <td colSpan="2">
                       <Skeleton animation="wave" />
                     </td>
                   </tr>
                 ))
-              : // Render actual data when not loading
-                (rowsPerPage > 0
+              : (rowsPerPage > 0
                   ? data.slice(
                       page * rowsPerPage,
                       page * rowsPerPage + rowsPerPage

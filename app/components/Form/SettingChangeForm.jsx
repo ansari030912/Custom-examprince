@@ -4,6 +4,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const SettingChangeForm = () => {
   const [formData, setFormData] = useState({
@@ -45,14 +47,14 @@ const SettingChangeForm = () => {
     const loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
     try {
       const response = await axios.post(
-        "https://api.dumpsboss.com/v1/account/update-profile",
+        `${BaseUrl}/v1/account/update-profile`,
         {
           name: formData.name,
           password: formData.password,
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
             Authorization: `Bearer ${loginResponse._token}`,
           },
         }

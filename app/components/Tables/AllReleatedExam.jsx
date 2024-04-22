@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/no-async-client-component */
-
 import { Card, Typography } from "@mui/material";
 import Link from "next/link";
 

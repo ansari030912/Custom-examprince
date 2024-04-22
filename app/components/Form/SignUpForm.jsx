@@ -4,6 +4,8 @@ import { Alert, Button, IconButton, Snackbar, TextField } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const SignUpForm = () => {
   const [open, setOpen] = useState(false);
@@ -20,9 +22,9 @@ const SignUpForm = () => {
 
   const fetchIP = async () => {
     try {
-      const response = await axios.get("https://api.dumpsboss.com/v1/my-ip", {
+      const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
         headers: {
-          "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+          "x-api-key": X_API_Key,
         },
       });
       setIp(response.data);
@@ -55,7 +57,7 @@ const SignUpForm = () => {
     // Proceed with form submission
     try {
       const response = await axios.post(
-        "https://api.dumpsboss.com/v1/account/register",
+        `${BaseUrl}/v1/account/register`,
         {
           name,
           email,
@@ -64,7 +66,7 @@ const SignUpForm = () => {
         },
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
           },
         }
       );

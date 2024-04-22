@@ -24,7 +24,8 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import withAuth from "../../../auth/RouterAuth";
-
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
 
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();
@@ -58,13 +59,10 @@ const UnlimitedTeAccessPage = ({ params }) => {
         return router.push("/sign-in");
       }
       const response = await axios.get(
-        `https://api.dumpsboss.com${exam.activation_keys_url.replace(
-          "/api/",
-          "/v1/"
-        )}`,
+        `${BaseUrl}${exam.activation_keys_url.replace("/api/", "/v1/")}`,
         {
           headers: {
-            "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+            "x-api-key": X_API_Key,
             Authorization: `Bearer ${loginResponse._token}`,
           },
         }
@@ -84,10 +82,10 @@ const UnlimitedTeAccessPage = ({ params }) => {
           return router.push("/sign-in");
         }
         const response = await axios.get(
-          `https://api.dumpsboss.com/v1/account/te-unlimited-access/${params.id_one}/${params.id_two}/A`,
+          `${BaseUrl}/v1/account/te-unlimited-access/${params.id_one}/${params.id_two}/A`,
           {
             headers: {
-              "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+              "x-api-key": X_API_Key,
               Authorization: `Bearer ${loginResponse._token}`,
             },
           }

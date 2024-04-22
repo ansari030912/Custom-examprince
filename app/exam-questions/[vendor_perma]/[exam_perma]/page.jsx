@@ -9,24 +9,26 @@ import {
 } from "../../../components/Cards";
 import ExamLinks from "../../../components/InternalLinking/ExamLinks";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";
   const vendorResponce = await fetch(
-    `${process.env.baseURL}/v1/vendor/${params.vendor_perma}`,
+    `${BaseUrl}/v1/vendor/${params.vendor_perma}`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );
   const vendorData = await vendorResponce.json();
 
   const response = await fetch(
-    `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );
@@ -281,10 +283,10 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
 export default AllVendorsPerma;
 export async function generateMetadata({ params }) {
   const response = await fetch(
-    `${process.env.baseURL}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
+    `${BaseUrl}/v1/exam/${params.exam_perma}?coupon=MEGASALE-30`,
     {
       headers: {
-        "x-api-key": "ed79766c-2cc1-4967-8d3c-035387603caf",
+        "x-api-key": X_API_Key,
       },
     }
   );
@@ -292,6 +294,9 @@ export async function generateMetadata({ params }) {
   return {
     title: `Updated ${data.exam_title} Exam Question and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of ${data.exam_title} IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024 and become certified professional.`,
+    robots: {
+      index: data.index_tag ? data.index_tag : false,
+    },
     icons: {
       other: [
         {
