@@ -61,10 +61,9 @@ const ExamPricePageCard = ({ data }) => {
                   }}
                 >
                   <Typography fontSize={16} fontWeight={600} color={"#003049"}>
-                    <span style={{ color: "blue" }}>Note:</span> Amazon AWS
-                    AWS-Certified-Solutions-Architect-Associate-SAA-C01 (AWS
-                    Certified Solutions Architect - Associate (SAA-C01)) will
-                    not receive any new updates.
+                    <span style={{ color: "blue" }}>Note: </span>
+                    {data.exam_code} ({data.exam_title}) will not receive any
+                    new updates.
                   </Typography>
                   <Typography
                     fontSize={16}
