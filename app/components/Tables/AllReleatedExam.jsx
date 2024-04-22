@@ -7,7 +7,7 @@ import Link from "next/link";
 const AllReleatedExam = ({ data }) => {
   return (
     <>
-      <Card className="text-white mt-2" sx={{ mb: 1, bgcolor: "#2F4766" }}>
+      <Card className="text-white mt-2" sx={{ mb: 1, bgcolor: "#345277" }}>
         <Typography
           color={"white"}
           fontSize={24}
@@ -29,21 +29,21 @@ const AllReleatedExam = ({ data }) => {
           <b> Releated Exams</b>
         </Typography>
       </Card>
-      <Card>
+      <Card sx={{ borderRadius: "0px" }}>
         <section className="text-gray-600 body-font">
           <div className="container px-2 mx-auto flex flex-wrap">
-            <div className="flex flex-wrap w-full">
-              <div className="md:pr-1 md:py-2">
-                {Array.isArray(data) &&
-                  data.slice(0, 5).map((item, index) => {
-                    const {
-                      vendor_title,
-                      exam_title,
-                      vendor_perma,
-                      exam_perma,
-                    } = item;
-                    return (
-                      <>
+            <div className="flex flex-wrap w-full ">
+              <div className="md:py-2">
+                <div style={{ border: "1px solid #E5E7EB" }}>
+                  {Array.isArray(data) &&
+                    data.slice(0, 5).map((item, index, array) => {
+                      const {
+                        vendor_title,
+                        exam_title,
+                        vendor_perma,
+                        exam_perma,
+                      } = item;
+                      return (
                         <>
                           <div
                             key={exam_perma}
@@ -54,14 +54,14 @@ const AllReleatedExam = ({ data }) => {
                               <Link
                                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
                                 className="w-full"
-                                style={{ widht: "100%" }}
+                                style={{ width: "100%" }}
                               >
                                 <b className="font-semibold text-md tracking-wider">
-                                  <span className=" text-blue-500">
+                                  <span className="text-blue-500">
                                     {vendor_title}
                                   </span>
                                   <p
-                                    className="leading-relaxed "
+                                    className="leading-relaxed"
                                     style={{
                                       fontSize: "12px",
                                       fontWeight: 600,
@@ -73,16 +73,16 @@ const AllReleatedExam = ({ data }) => {
                               </Link>
                             </div>
                           </div>
-                          {index <= 3 && (
+                          {index < array.length - 1 && (
                             <hr
                               style={{ marginBottom: "2px" }}
                               className="bg-gradient-to-r from-gray-800 to-blue-400 "
                             />
                           )}
                         </>
-                      </>
-                    );
-                  })}
+                      );
+                    })}
+                </div>
               </div>
             </div>
           </div>
