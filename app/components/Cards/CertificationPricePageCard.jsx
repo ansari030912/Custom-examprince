@@ -4,6 +4,7 @@ import { Box, Card, Grid, Typography } from "@mui/material";
 import moment from "moment";
 import ExamAddToCart from "./ExamAddToCart";
 import { CertPrice } from ".";
+import BackCountDown from "../TimeOut/BackCountDown";
 
 const CertificationPricePageCard = ({ data }) => {
   return (
@@ -65,8 +66,7 @@ const CertificationPricePageCard = ({ data }) => {
                   40-70% OFF
                 </Typography>
                 <Typography fontSize={16} fontWeight={700} color={"#856404"}>
-                  Hurry up! offer ends in{" "}
-                  <span className="text-red-500">16h 39m 40s</span>
+                  Hurry up! offer ends in <BackCountDown />
                 </Typography>
                 <Typography fontSize={18} fontWeight={700} color={"#0056B3"}>
                   *Descarga GRATIS el Reproductor de Test
@@ -77,7 +77,12 @@ const CertificationPricePageCard = ({ data }) => {
         </Grid>
       </Card>
       <Card className="text-white text-center py-2 bg-gradient-to-t from-blue-400 to-gray-900">
-        <Typography variant="body2" color={'white'} fontSize={25} fontWeight={600}>
+        <Typography
+          variant="body2"
+          color={"white"}
+          fontSize={25}
+          fontWeight={600}
+        >
           Add to cart
         </Typography>
       </Card>
@@ -125,7 +130,9 @@ const CertificationPricePageCard = ({ data }) => {
                   }}
                 >
                   <div className="text-white">{question_type}</div>
-                  <div className="text-white">{question_type_count} Questions</div>
+                  <div className="text-white">
+                    {question_type_count} Questions
+                  </div>
                 </Card>
               </>
             );

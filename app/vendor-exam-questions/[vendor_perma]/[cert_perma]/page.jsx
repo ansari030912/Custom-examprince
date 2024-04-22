@@ -9,6 +9,7 @@ import {
   ExamPriceCard,
 } from "../../../components/Cards";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
+import BackCountDown from "../../../components/TimeOut/BackCountDown";
 
 const CertificationExamPage = async ({ params }) => {
   const response = await fetch(
@@ -167,8 +168,7 @@ const CertificationExamPage = async ({ params }) => {
                           fontWeight={700}
                           color={"#856404"}
                         >
-                          Hurry up! offer ends in{" "}
-                          <span className="text-red-500">16h 39m 40s</span>
+                          Hurry up! offer ends in <BackCountDown />
                         </Typography>
                         <Typography
                           fontSize={18}
