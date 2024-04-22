@@ -3,6 +3,7 @@
 import { Box, Card, Grid, Typography } from "@mui/material";
 import moment from "moment";
 import Link from "next/link";
+import BackCountDown from "../TimeOut/BackCountDown";
 import ExamAddToCart from "./ExamAddToCart";
 
 const ExamPricePageCard = ({ data }) => {
@@ -79,10 +80,8 @@ const ExamPricePageCard = ({ data }) => {
                 Certification Exam Name:{" "}
                 <span
                   style={{
-                    // color: "black",
                     cursor: "pointer",
                   }}
-                  // className="hover:underline"
                 >
                   {data?.exam_certs?.map((item, i) => (
                     <Link
@@ -96,9 +95,6 @@ const ExamPricePageCard = ({ data }) => {
                 </span>
               </Typography>
               <Card sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}>
-                {/* <Typography fontSize={14} fontWeight={600} color={"#856404"}>
-                  
-                </Typography> */}
                 <Typography fontSize={20} fontWeight={700}>
                   <span style={{ color: "#856404" }}>
                     Limited Time Mega Sale!
@@ -107,16 +103,14 @@ const ExamPricePageCard = ({ data }) => {
                 </Typography>
                 <Typography fontSize={14} fontWeight={600} color={"#856404"}>
                   Hurry up! offer ends in{" "}
-                  <span className="text-red-500">16h 39m 40s</span>
+                 <BackCountDown />
                 </Typography>
-                {/* <Typography fontSize={18} fontWeight={700} color={"#0056B3"}>
-                  *Descarga GRATIS el Reproductor de Test
-                </Typography> */}
               </Card>
             </div>
           </Grid>
         </Grid>
       </Card>
+      
       <Card
         className="text-white text-center py-2 bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400"
         sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
