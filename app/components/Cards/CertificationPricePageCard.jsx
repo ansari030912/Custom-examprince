@@ -2,7 +2,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, Card, Grid, Typography } from "@mui/material";
 import moment from "moment";
-import ExamAddToCart from "./ExamAddToCart";
 import { CertPrice } from ".";
 import BackCountDown from "../TimeOut/BackCountDown";
 

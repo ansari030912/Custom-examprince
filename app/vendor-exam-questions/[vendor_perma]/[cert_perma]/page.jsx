@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
 import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import {
@@ -72,7 +71,6 @@ const CertificationExamPage = async ({ params }) => {
       {data._has_multiple_exams && (
         <Container maxWidth="lg">
           <Grid container spacing={2}>
-            {/* <Grid item xs={12}></Grid> */}
             <Grid item xs={12} md={8.5}>
               <div className="mx-auto max-w-8xl flex justify-center">
                 <div className="md:mx-150px mb-3 rounded-2">
@@ -203,10 +201,14 @@ const CertificationExamPage = async ({ params }) => {
                             Total {exam.exam_questions} Question & Answers
                           </p>
                           <Link
-                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+                            className={`inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300 ${
+                              exam.exam_retired
+                                ? "bg-red-500 hover:bg-red-600"
+                                : "bg-green-700 hover:bg-green-800"
+                            }`}
                             href={`/exam-questions/${params.vendor_perma}/${exam.exam_perma}`}
                           >
-                            Buy Now!
+                            {exam.exam_retired ? "Retired Exam" : "Buy Now"}
                             <svg
                               className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                               aria-hidden="true"

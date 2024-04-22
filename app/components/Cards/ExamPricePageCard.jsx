@@ -51,71 +51,118 @@ const ExamPricePageCard = ({ data }) => {
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Latest updated date:{" "}
-                <span className="text-green-500">
-                  {moment(data?.exam_update_date).format("LL")}
-                </span>
-              </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Latest{" "}
-                <span className="text-green-500">{data?.exam_questions}</span>{" "}
-                Question & Answers
-              </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Exam Question Provider:{" "}
-                <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
-                  <span
-                    style={{
-                      color: "#0da8e5",
-                      cursor: "pointer",
-                    }}
-                    className="hover:underline"
-                  >
-                    {data?.exam_vendor_title}
-                  </span>
-                </Link>
-              </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Certification Exam Name:{" "}
-                <span
-                  style={{
-                    cursor: "pointer",
+              {data.exam_retired ? (
+                <Card
+                  sx={{
+                    bgcolor: "#F8D7DA",
+                    border: "1px solid red",
+                    padding: "10px",
+                    my: "10px",
                   }}
                 >
-                  {data?.exam_certs?.map((item, i) => (
+                  <Typography fontSize={16} fontWeight={600} color={"#003049"}>
+                    <span style={{ color: "blue" }}>Note:</span> Amazon AWS
+                    AWS-Certified-Solutions-Architect-Associate-SAA-C01 (AWS
+                    Certified Solutions Architect - Associate (SAA-C01)) will
+                    not receive any new updates.
+                  </Typography>
+                  <Typography
+                    fontSize={16}
+                    fontWeight={600}
+                    color={"#003049"}
+                    sx={{ textAlign: "right" }}
+                  >
+                    New exam code :{" "}
                     <Link
-                      key={i}
-                      className="hover:underline text-sky-500"
-                      href={`/vendor-exam-questions/${data?.exam_vendor_perma}/${item?.cert_perma}`}
+                      href={`/exam-questions/${data?.exam_vendor_perma}/${data?.exam_alternate?.exam_alternate_perma}`}
+                      // style={{ color: "blue" }}
+                      className="hover:text-blue-600  text-blue-500 hover:underline"
                     >
-                      {item.cert_title},{"  "}
+                      {data?.exam_alternate.exam_alternate_code}
                     </Link>
-                  ))}
-                </span>
-              </Typography>
-              <Card sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}>
-                <Typography fontSize={20} fontWeight={700}>
-                  <span style={{ color: "#856404" }}>
-                    Limited Time Mega Sale!
-                  </span>{" "}
-                  <span style={{ color: "#DC3545" }}>(40-70% OFF)</span>
-                </Typography>
-                <Typography fontSize={14} fontWeight={600} color={"#856404"}>
-                  Hurry up! offer ends in{" "}
-                 <BackCountDown />
-                </Typography>
-              </Card>
+                  </Typography>
+                </Card>
+              ) : (
+                <>
+                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Latest updated date:{" "}
+                    <span className="text-green-500">
+                      {moment(data?.exam_update_date).format("LL")}
+                    </span>
+                  </Typography>
+                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Latest{" "}
+                    <span className="text-green-500">
+                      {data?.exam_questions}
+                    </span>{" "}
+                    Question & Answers
+                  </Typography>
+                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Exam Question Provider:{" "}
+                    <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
+                      <span
+                        style={{
+                          color: "#0da8e5",
+                          cursor: "pointer",
+                        }}
+                        className="hover:underline"
+                      >
+                        {data?.exam_vendor_title}
+                      </span>
+                    </Link>
+                  </Typography>
+                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Certification Exam Name:{" "}
+                    <span
+                      style={{
+                        cursor: "pointer",
+                      }}
+                    >
+                      {data?.exam_certs?.map((item, i) => (
+                        <Link
+                          key={i}
+                          className="hover:underline text-sky-500"
+                          href={`/vendor-exam-questions/${data?.exam_vendor_perma}/${item?.cert_perma}`}
+                        >
+                          {item.cert_title},{"  "}
+                        </Link>
+                      ))}
+                    </span>
+                  </Typography>
+                </>
+              )}
+              {data.exam_retired ? (
+                ""
+              ) : (
+                <Card
+                  sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}
+                >
+                  <Typography fontSize={20} fontWeight={700}>
+                    <span style={{ color: "#856404" }}>
+                      Limited Time Mega Sale!
+                    </span>{" "}
+                    <span style={{ color: "#DC3545" }}>(40-70% OFF)</span>
+                  </Typography>
+                  <Typography fontSize={14} fontWeight={600} color={"#856404"}>
+                    Hurry up! offer ends in <BackCountDown />
+                  </Typography>
+                </Card>
+              )}
             </div>
           </Grid>
         </Grid>
       </Card>
-      
+
       <Card
         className="text-white text-center py-2 bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400"
         sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
       >
-        <Typography variant="body2" color={"white"} fontSize={25} fontWeight={600}>
+        <Typography
+          variant="body2"
+          color={"white"}
+          fontSize={25}
+          fontWeight={600}
+        >
           Add to cart
         </Typography>
       </Card>
