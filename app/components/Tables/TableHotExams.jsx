@@ -109,7 +109,7 @@ const TableHotExams = ({ data }) => {
         <section className="text-gray-600 body-font">
           <div className="container px-2 mx-auto flex flex-wrap">
             <div className="flex flex-wrap w-full">
-              <div className="md:py-2">
+              <div className="py-2">
                 <div style={{ border: "1px solid #E5E7EB" }}>
                   {selectedView === "week" && renderRows(data?.week)}
                   {selectedView === "month" && renderRows(data?.month)}
