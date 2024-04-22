@@ -46,7 +46,7 @@ const Home = () => {
       <Container maxWidth="lg">
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={12} lg={8.5}>
             <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px mb-3 rounded-2">
                 <img
@@ -61,7 +61,7 @@ const Home = () => {
             <MainPageCard />
             <RecentlyUpdatedTable />
           </Grid>
-          <Grid item sm={12} lg={4}>
+          <Grid item sm={12} lg={3.5}>
             <HotExamsData />
           </Grid>
           <Grid item xs={12}>
