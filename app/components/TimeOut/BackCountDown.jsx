@@ -6,10 +6,15 @@ function BackCountDown() {
   const initialDuration = 16 * 60 * 60 * 1000; // 16 hours in milliseconds
   const [duration, setDuration] = useState(initialDuration);
 
+  // Check if localStorage is available
+  const isLocalStorageAvailable =
+    typeof window !== "undefined" && window.localStorage;
+
   // Get the start time from localStorage or set it to the current time
-  const startTime = localStorage.getItem("countdownStartTime")
-    ? parseInt(localStorage.getItem("countdownStartTime"))
-    : new Date().getTime();
+  const startTime =
+    isLocalStorageAvailable && localStorage.getItem("countdownStartTime")
+      ? parseInt(localStorage.getItem("countdownStartTime"))
+      : new Date().getTime();
 
   // Calculate the remaining time based on the start time and duration
   const calculateRemainingTime = () => {
@@ -20,7 +25,8 @@ function BackCountDown() {
     if (remainingTime <= 0) {
       remainingTime = initialDuration;
       setDuration(initialDuration);
-      localStorage.setItem("countdownStartTime", currentTime.toString());
+      isLocalStorageAvailable &&
+        localStorage.setItem("countdownStartTime", currentTime.toString());
     }
 
     return remainingTime;
