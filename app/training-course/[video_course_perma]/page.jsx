@@ -67,7 +67,7 @@ const TrainingCoursePage = async ({ params }) => {
           }),
         }}
       />
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12}>
             <div className="mx-auto max-w-8xl flex justify-center">

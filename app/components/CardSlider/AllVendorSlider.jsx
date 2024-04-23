@@ -15,38 +15,38 @@ import { useState } from "react";
 const AllVendorSlider = () => {
   const exams = [
     {
-      name: "AWS Developer Associate",
+      name: "Developer Associate",
       image: "2",
       perma: "aws-certified-developer-associate-certification",
       vendor: "aws",
     },
     {
-      name: "AWS Solution Architect Associate",
+      name: "Solution Architect Associate",
       perma: "aws-certified-solutions-architect-associate-certification",
       image: "3",
       vendor: "aws",
     },
     {
-      name: "AWS Solution Architect Professional",
+      name: "Solution Architect Professional",
       perma: "aws-certified-solutions-architect-professional-certification",
       image: "6",
       vendor: "aws",
     },
     {
-      name: "AWS Certified SysOps Administrator - Associate",
+      name: "SysOps Administrator - Associate",
       perma: "aws-certified-sysops-administrator-associate-certification",
       image: "7",
       vendor: "aws",
     },
 
     {
-      name: "PMP Project Management Professional",
+      name: "Project Management Professional",
       perma: "pmp-certification",
       image: "9",
       vendor: "pmp",
     },
     {
-      name: "PMI ACP",
+      name: "ACP",
       perma: "pmi-acp",
       image: "10",
       vendor: "pmp",
@@ -58,19 +58,19 @@ const AllVendorSlider = () => {
       vendor: "cisco",
     },
     {
-      name: "CCNP Enterprise",
+      name: "CCNP - Enterprise",
       perma: "ccnp-enterprise",
       image: "12",
       vendor: "cisco",
     },
     {
-      name: "CCIE Enterprise Wireless",
+      name: "CCIE - Enterprise Wireless",
       perma: "ccna-enterprise-wireless",
       image: "13",
       vendor: "cisco",
     },
     {
-      name: "Microsoft Certified: Azure Solutions Architect Expert",
+      name: "Azure Solutions Architect Expert",
       perma: "azure-solutions-architect-expert",
       image: "14",
       vendor: "microsoft",
@@ -82,13 +82,13 @@ const AllVendorSlider = () => {
       vendor: "microsoft",
     },
     {
-      name: "365 Certified: Enterprise Administrator Expert",
+      name: "Enterprise Administrator - Expert",
       perma: "microsoft-365-certified-enterprise-administrator-expert",
       image: "16",
       vendor: "microsoft",
     },
     {
-      name: "Azure Administrator Associate",
+      name: "Azure Administrator - Associate",
       perma: "azure-administrator-associate",
       image: "17",
       vendor: "microsoft",
@@ -112,13 +112,13 @@ const AllVendorSlider = () => {
       vendor: "microsoft",
     },
     {
-      name: "MCSA: SQL 2016 Database Administration",
+      name: "MCSA SQL 2016 Database Administration",
       perma: "mcsa-sql-2016-database-administration",
       image: "22",
       vendor: "microsoft",
     },
     {
-      name: "MCSE: Core Infrastructure",
+      name: "MCSE Core Infrastructure",
       perma: "mcse-core-infrastructure",
       image: "23",
       vendor: "microsoft",
@@ -180,13 +180,13 @@ const AllVendorSlider = () => {
       vendor: "citrix",
     },
     {
-      name: "CISM Certified Information Security Manager",
+      name: "CISM",
       perma: "cism-certification",
       image: "35",
       vendor: "isaca",
     },
     {
-      name: "CISSP Certified Information Systems Security Professional",
+      name: "CISSP",
       perma: "cissp-certification",
       image: "37",
       vendor: "isc",
@@ -265,7 +265,7 @@ const AllVendorSlider = () => {
     },
   ];
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 12;
   const totalPages = Math.ceil(exams.length / itemsPerPage);
 
   const renderCards = () => {
@@ -276,39 +276,39 @@ const AllVendorSlider = () => {
     return (
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
-          <Grid item xs={12} sm={4} md={2.4} key={index}>
+          <Grid item xs={12} sm={4} md={2} key={index}>
             <Link
               href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}
             >
               <Card
-                className="transition-transform hover:scale-105 hover:bg-blend-hard-light"
-                sx={{
-                  boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)",
-                }}
+                className="transition-transform  hover:scale-105 hover:bg-blend-hard-light"
+                // sx={{
+                //   boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)",
+                // }}
               >
-                <CardMedia sx={{ padding: "15px" }}>
+                <CardMedia sx={{ padding: "10px" }} className="rounded-full">
                   <img
                     src={`/${vendor.image}.png`}
                     alt="card"
                     style={{
                       width: "100%",
+                      minHeight: "185px",
                     }}
                   />
                 </CardMedia>
                 <Divider />
                 <CardContent
                   style={{ minHeight: "65px" }}
-                  className="text-white bg-gradient-to-r from-gray-800 to-blue-400"
+                  className="text-gray-600 "
                 >
                   <Typography
                     variant="h6"
-                    fontSize={13}
+                    fontSize={14}
                     fontWeight={700}
-                    color="white"
                     sx={{
                       textAlign: "center",
-                      mt: "-10px",
-                      m: "-6px",
+                      mt: "-8px",
+                      m: "-8px",
                       mb: "-10px",
                     }}
                   >
@@ -340,7 +340,7 @@ const AllVendorSlider = () => {
           key="first"
           onClick={() => handlePageChange(1)}
           type="button"
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="text-gray-100 bg-sky-900 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
         >
           First
         </button>
@@ -353,7 +353,7 @@ const AllVendorSlider = () => {
           key={i}
           onClick={() => handlePageChange(i)}
           type="button"
-          className={`text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 ${
+          className={`text-gray-100 bg-sky-900 border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  ${
             currentPage === i ? "bg-gray-200" : ""
           }`}
         >
@@ -371,7 +371,7 @@ const AllVendorSlider = () => {
           key="last"
           onClick={() => handlePageChange(totalPages)}
           type="button"
-          className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+          className="text-gray-100 bg-sky-900 focus:right-1 focus:ring-white border border-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 "
         >
           Last
         </button>
@@ -382,25 +382,16 @@ const AllVendorSlider = () => {
   };
 
   return (
-    <Card
+    <Box
       sx={{
         padding: "15px",
         borderRadius: "0px",
       }}
     >
-      <Box sx={{ textAlign: "right", mb: 1 }}>
-        <Link href="/exam-providers">
-          <button className="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium  rounded-lg group bg-gradient-to-br text-white from-green-400 to-blue-600  hover:text-white  focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
-            <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white  rounded-md bg-opacity-0">
-              View All Vendors
-            </span>
-          </button>
-        </Link>
-      </Box>
       <div className="cards">{renderCards()}</div>
 
       <Box sx={{ textAlign: "center", marginTop: 2 }}>{renderPagination()}</Box>
-    </Card>
+    </Box>
   );
 };
 

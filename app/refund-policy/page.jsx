@@ -25,7 +25,7 @@ export async function generateMetadata() {
 const RefundPolicy = () => {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>

@@ -39,9 +39,9 @@ const ExamAddToCart = ({ data }) => {
                   }}
                 >
                   <Card
-                    className="text-white"
+                    className="text-white bg-gray-100"
                     sx={{
-                      backgroundColor: "#E5E7EB",
+                      // backgroundColor: "#E5E7EB",
                       overflow: "hidden",
                       display: "flex",
                       transition: "transform 0.3s ease",

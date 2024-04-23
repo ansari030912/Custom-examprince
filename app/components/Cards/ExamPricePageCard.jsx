@@ -16,9 +16,9 @@ const ExamPricePageCard = ({ data }) => {
           borderRadius: "0.375rem",
           fontSize: "0.875rem",
           textAlign: "center",
-          cursor: "pointer",
           padding: "0.625rem 1.25rem",
           marginBottom: "0.5rem",
+          boxShadow: "4px 4px 8px rgba(0.1, 0.1, 0, 0.1)",
         }}
       >
         <Typography
@@ -30,13 +30,19 @@ const ExamPricePageCard = ({ data }) => {
           Buy Unlimited Access Package with 2500+ Exams. Only $203.99
         </Typography>
       </Card>
-      <Card sx={{ my: "10px", width: "100%" }}>
+      <Card
+        sx={{
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          borderRadius: "8px",
+          mb: "10px",
+        }}
+      >
         <Grid container spacing={1}>
           <Grid
             item
             xs={12}
             md={3.5}
-            className="text-white bg-gradient-to-r from-blue-400 to-blue-900"
+            className="text-white bg-gradient-to-r from-sky-900 to-sky-900"
           >
             <div className="flex justify-center">
               <img
@@ -46,7 +52,17 @@ const ExamPricePageCard = ({ data }) => {
               />
             </div>
           </Grid>
-          <Grid item xs={12} md={8.5} className="bg-gray-200">
+          <Grid
+            item
+            xs={12}
+            md={8.5}
+            sx={{
+              borderRadius: "0px",
+              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+              borderTopRightRadius: "8px",
+              borderBottomRightRadius: "8px",
+            }}
+          >
             <div style={{ padding: "20px" }}>
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
@@ -134,7 +150,12 @@ const ExamPricePageCard = ({ data }) => {
                 ""
               ) : (
                 <Card
-                  sx={{ bgcolor: "#FFF3CD", p: "15px", textAlign: "center" }}
+                  sx={{
+                    bgcolor: "#FFF3CD",
+                    p: "15px",
+                    textAlign: "center",
+                    mt: "10px",
+                  }}
                 >
                   <Typography fontSize={20} fontWeight={700}>
                     <span style={{ color: "#856404" }}>
@@ -154,7 +175,11 @@ const ExamPricePageCard = ({ data }) => {
 
       <Card
         className="text-white text-center py-2 bg-gradient-to-l from-blue-400 via-gray-900 to-blue-400"
-        sx={{ borderBottomLeftRadius: "0px", borderBottomRightRadius: "0px" }}
+        sx={{
+          borderBottomLeftRadius: "0px",
+          borderBottomRightRadius: "0px",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
       >
         <Typography
           variant="body2"
@@ -166,8 +191,15 @@ const ExamPricePageCard = ({ data }) => {
         </Typography>
       </Card>
       <Card
-        className="text-white bg-gradient-to-r from-gray-300 to-gray-500"
-        sx={{ padding: "10px", borderRadius: "0px" }}
+        className="text-white bg-gradient-to-r from-white to-white"
+        sx={{
+          padding: "10px",
+          borderBottomLeftRadius: "8px",
+          borderBottomRightRadius: "8px",
+          borderTopRightRadius: "0px",
+          borderTopLeftRadius: "0px",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+        }}
       >
         <ExamAddToCart data={data} />
       </Card>

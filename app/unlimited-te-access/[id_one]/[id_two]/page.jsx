@@ -102,7 +102,7 @@ const UnlimitedTeAccessPage = ({ params }) => {
 
   return (
     <>
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Dialog fullWidth open={dialogOpen} onClose={handleCloseDialog}>
           <DialogTitle className="text-white bg-gradient-to-b from-gray-800 to-blue-400">
             Activation & Purchase Keys

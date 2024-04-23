@@ -58,7 +58,7 @@ const NavbarList = () => {
       style={{ zIndex: 1 }}
       className="text-white border-b shadow-2xl shadow-gray-400 py-2 bg-gradient-to-l from-gray-800 via-blue-400 to-gray-800"
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <div className="mx-auto max-w-7xl pb-2 px-2 sm:px-4 lg:px-6">
           <div className="relative flex h-12 items-center justify-between">
             <div className="absolute inset-y-0 left-0 flex items-center lg:hidden">

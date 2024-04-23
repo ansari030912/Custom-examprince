@@ -1,5 +1,6 @@
 "use client";
 import {
+  Box,
   Card,
   Paper,
   Table,
@@ -38,12 +39,16 @@ const AllCertificatesTable = ({ data, referral }) => {
         className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
           padding: 1,
-          mb: 1,
+          mt: 1,
+          borderBottomLeftRadius: "0px",
+          borderBottomRightRadius: "0px",
+          borderTopLeftRadius: "8px",
+          borderTopRightRadius: "8px",
         }}
       >
         <Typography
           color={"white"}
-          fontSize={24}
+          fontSize={22}
           fontWeight={500}
           className="text-white"
         >
@@ -51,60 +56,65 @@ const AllCertificatesTable = ({ data, referral }) => {
         </Typography>
         <Typography
           variant="body2"
-          fontSize={20}
+          fontSize={18}
           fontWeight={700}
           color="white"
         >
-          Pass-Guaranteed Practice Exam Questions - Get Certified & Career
-          Success
+          Certify Your Success with Pass-Guaranteed Practice Exams
         </Typography>
       </Card>
 
-      <Card>
-        <TableContainer component={Paper}>
-          <Table sx={{ p: "10px" }} size="medium">
-            <TableBody sx={{ padding: 2 }}>
-              {Array.isArray(data) &&
-                data
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((item) => {
-                    const {
-                      vendor_title,
-                      vendor_certs,
-                      vendor_id,
-                      vendor_perma,
-                    } = item;
-                    return (
-                      <TableRow hover key={vendor_id}>
-                        <TableCell style={{ m: "-4px" }}>
-                          <Link
-                            href={`/certifications/${vendor_perma}`}
+      <Box
+        sx={{
+          borderRadius: "0px",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          borderBottomLeftRadius: "8px",
+          borderBottomRightRadius: "8px",
+        }}
+      >
+        <Table sx={{ p: "10px", bgcolor: "#FFFFFF" }} size="medium">
+          <TableBody sx={{ padding: 2 }}>
+            {Array.isArray(data) &&
+              data
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((item) => {
+                  const {
+                    vendor_title,
+                    vendor_certs,
+                    vendor_id,
+                    vendor_perma,
+                  } = item;
+                  return (
+                    <TableRow hover key={vendor_id}>
+                      <TableCell style={{ m: "-4px" }}>
+                        <Link href={`/certifications/${vendor_perma}`}>
+                          <Typography
+                            className="flex justify-between"
+                            fontSize={14}
+                            color={"#3D4049"}
+                            fontWeight={600}
                           >
-                            <Typography
-                              className="flex justify-between"
-                              fontSize={14}
-                              color={"#3D4049"}
-                              fontWeight={600}
-                            >
-                              <b>{vendor_title}</b>
-                              <Typography fontSize={16} fontWeight={500}>
-                                <i>
-                                  <b>{vendor_certs}</b>
-                                </i>{" "}
-                                <b>Certifications</b>
-                              </Typography>
+                            <b>{vendor_title}</b>
+                            <Typography fontSize={16} fontWeight={500}>
+                              <i>
+                                <b>{vendor_certs}</b>
+                              </i>{" "}
+                              <b>Certifications</b>
                             </Typography>
-                          </Link>
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-            </TableBody>
-          </Table>
-        </TableContainer>
+                          </Typography>
+                        </Link>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
+          </TableBody>
+        </Table>
+
         <TablePagination
           sx={{
-            boxShadow: "0 4px 8px rgba(0.5, 0, 0, 0.5)",
+            bgcolor: "#FFFFFF",
+            borderBottomLeftRadius: "8px",
+            borderBottomRightRadius: "8px",
           }}
           rowsPerPageOptions={[rowsPerPage]}
           component="div"
@@ -113,7 +123,7 @@ const AllCertificatesTable = ({ data, referral }) => {
           page={page}
           onPageChange={handleChangePage}
         />
-      </Card>
+      </Box>
     </>
   );
 };

@@ -91,7 +91,7 @@ const TeAccess = ({ params }) => {
         />
       </Snackbar>
 
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
 

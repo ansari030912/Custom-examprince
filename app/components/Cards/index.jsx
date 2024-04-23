@@ -5,4 +5,5 @@ export { default as ExamPriceCard } from "./ExamPricePageCard";
 export { default as UnlimitedAccess } from "./UnlimitedAccessCard";
 export { default as VideoCourseCard } from "./VideoCoursePrice";
 export { default as WindowsDataCard } from "./WindowsCard";
-
+export { default as SafeCheckOut } from "./SafeCheckOutCard";
+export { default as RefundPolicy } from "./RefundPolicyCard";
