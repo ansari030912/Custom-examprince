@@ -15,7 +15,7 @@ const CourseAccordionCard = ({ data }) => {
 
   return (
     <div className="bg-gray-50 flex flex-col items-center justify-center relative overflow-hidden sm:p-4">
-      {data?.sections.map((item, index) => {
+      {data?.sections?.map((item, index) => {
         const { section_title, secion_lectures, secion_duration, lectures } =
           item;
         return (
