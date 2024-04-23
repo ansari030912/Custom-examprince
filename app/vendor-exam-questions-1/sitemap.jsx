@@ -16,7 +16,9 @@ export default async function sitemap() {
   console.log("🚀 ~ sitemap ~ data:", data);
 
   return data?.certs?.map((item) => ({
-    url: `https://examprince.com/vendor-exam-questions/${item?.vendor_perma}/${item?.cert_perma}`,
+    url: `https://examprince.com/vendor-exam-questions/${
+      item?.vendor_perma
+    }/${item?.cert_perma.replace(/&/g, "&amp;")}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));
