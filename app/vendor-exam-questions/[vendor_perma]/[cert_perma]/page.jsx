@@ -8,6 +8,8 @@ import {
   CommentsCard,
   Content,
   ExamPriceCard,
+  RefundPolicy,
+  SafeCheckOut,
 } from "../../../components/Cards";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
 import BackCountDown from "../../../components/TimeOut/BackCountDown";
@@ -73,7 +75,7 @@ const CertificationExamPage = async ({ params }) => {
       {data._has_multiple_exams && (
         <Container maxWidth="xl">
           <Grid container spacing={2}>
-            <Grid item xs={12} md={8.5}>
+            <Grid item xs={12} md={8}>
               <div className="mx-auto max-w-8xl flex justify-center">
                 <div className="md:mx-150px mb-3 rounded-2">
                   <img
@@ -234,131 +236,10 @@ const CertificationExamPage = async ({ params }) => {
                 </Grid>
               </Box>
             </Grid>
-            <Grid item sm={12} md={3.5}>
+            <Grid item sm={12} md={4}>
               <HotExam />
-              <Grid
-                container
-                className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
-                sx={{
-                  display: "flex",
-                  mt: "10px",
-                  width: "100%",
-                }}
-              >
-                <Grid item xs={12} sx={{ padding: "10px" }}>
-                  <Typography
-                    component="div"
-                    variant="h5"
-                    color={"white"}
-                    sx={{ borderBottom: "1px solid white" }}
-                  >
-                    Refund Policy
-                  </Typography>
-                </Grid>
-                <Grid
-                  item
-                  xs={8}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "10px",
-                    mt: "-12px",
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    color={"white"}
-                    component="div"
-                    fontSize={12}
-                  >
-                    ExamPrince.com has a remarkable success record. We're
-                    confident of our products and provide a no hassle refund
-                    policy.
-                  </Typography>
-                  <Link
-                    href="/refund-policy"
-                    className="text-white underline  hover:text-blue-400"
-                  >
-                    How our refund policy works?
-                  </Link>
-                </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    mt: "-12px",
-                  }}
-                >
-                  <img
-                    width="200px"
-                    height="200px"
-                    src="/money_back.png"
-                    alt="Live from space album cover"
-                  />
-                </Grid>
-              </Grid>
-              <Grid
-                container
-                className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
-                sx={{
-                  display: "flex",
-                  mt: "10px",
-                  width: "100%",
-                }}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  sx={{
-                    padding: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    width="100%"
-                    src="/safe_checkout_optimized.png"
-                    alt="safe_checkout_optimized"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "10px",
-                    mt: "-12px",
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    color={"white"}
-                    component="div"
-                    fontSize={12}
-                    style={{ textAlign: "justify" }}
-                  >
-                    Your purchase with ExamPrince.com is safe and fast. The
-                    ExamPrince.com website is protected by 256-bit SSL from
-                    Cloudflare, the leader in online security.
-                  </Typography>
-                  <Link
-                    type="button"
-                    href="/"
-                    className="text-white underline  hover:text-blue-400 mt-2"
-                  >
-                    <button
-                      type="button"
-                      className="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                    >
-                      Customer Support
-                    </button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <RefundPolicy />
+              <SafeCheckOut />
             </Grid>
           </Grid>
         </Container>
@@ -367,7 +248,7 @@ const CertificationExamPage = async ({ params }) => {
         <Container maxWidth="xl">
           <Grid container spacing={2}>
             <Grid item xs={12}></Grid>
-            <Grid item xs={12} md={8.5}>
+            <Grid item xs={12} md={8}>
               <div className="mx-auto max-w-8xl flex justify-center">
                 <div className="md:mx-150px mb-3 rounded-2">
                   <img
@@ -419,132 +300,11 @@ const CertificationExamPage = async ({ params }) => {
               )}
               <Content data={data.cert_single_exam} />
             </Grid>
-            <Grid item sm={12} md={3.5}>
+            <Grid item sm={12} md={4}>
               <HotExam />
               <ReleatedExam examData={data.cert_single_exam} />
-              <Grid
-                container
-                className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
-                sx={{
-                  display: "flex",
-                  mt: "10px",
-                  width: "100%",
-                }}
-              >
-                <Grid item xs={12} sx={{ padding: "10px" }}>
-                  <Typography
-                    component="div"
-                    variant="h5"
-                    color={"white"}
-                    sx={{ borderBottom: "1px solid white" }}
-                  >
-                    Refund Policy
-                  </Typography>
-                </Grid>
-                <Grid
-                  item
-                  xs={8}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "10px",
-                    mt: "-12px",
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    color={"white"}
-                    component="div"
-                    fontSize={12}
-                  >
-                    ExamPrince.com has a remarkable success record. We're
-                    confident of our products and provide a no hassle refund
-                    policy.
-                  </Typography>
-                  <Link
-                    href="/refund-policy"
-                    className="text-white underline  hover:text-blue-400"
-                  >
-                    How our refund policy works?
-                  </Link>
-                </Grid>
-                <Grid
-                  item
-                  xs={4}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    mt: "-12px",
-                  }}
-                >
-                  <img
-                    width="200px"
-                    height="200px"
-                    src="/money_back.png"
-                    alt="Live from space album cover"
-                  />
-                </Grid>
-              </Grid>
-              <Grid
-                container
-                className="text-white bg-gradient-to-t from-gray-800 to-blue-400"
-                sx={{
-                  display: "flex",
-                  mt: "10px",
-                  width: "100%",
-                }}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  sx={{
-                    padding: "10px",
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <img
-                    width="100%"
-                    src="/safe_checkout_optimized.png"
-                    alt="safe_checkout_optimized"
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    padding: "10px",
-                    mt: "-12px",
-                  }}
-                >
-                  <Typography
-                    variant="subtitle1"
-                    color={"white"}
-                    component="div"
-                    fontSize={12}
-                    style={{ textAlign: "justify" }}
-                  >
-                    Your purchase with ExamPrince.com is safe and fast. The
-                    ExamPrince.com website is protected by 256-bit SSL from
-                    Cloudflare, the leader in online security.
-                  </Typography>
-                  <Link
-                    type="button"
-                    href="/"
-                    className="text-white underline  hover:text-blue-400 mt-2"
-                  >
-                    <button
-                      type="button"
-                      className="text-white bg-gradient-to-r from-blue-400 to-gray-600 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                    >
-                      Customer Support
-                    </button>
-                  </Link>
-                </Grid>
-              </Grid>
+              <RefundPolicy />
+              <SafeCheckOut />
             </Grid>
             <Grid item xs={12} md={8.5}>
               <CommentsCard data={data} />
