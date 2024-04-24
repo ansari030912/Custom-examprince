@@ -4,7 +4,7 @@ const MainPageCard = () => {
   return (
     <Card
       sx={{
-        p: "20px",
+        p: "5px",
         borderRadius: "0px",
       }}
     >
