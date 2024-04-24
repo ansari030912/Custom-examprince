@@ -39,7 +39,7 @@ const ExamAddToCart = ({ data }) => {
                   }}
                 >
                   <Card
-                    className="text-white bg-gray-100"
+                    className="text-white bg-gray-200"
                     sx={{
                       overflow: "hidden",
                       display: "flex",
