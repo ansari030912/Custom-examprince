@@ -282,9 +282,9 @@ const AllVendorSlider = () => {
             >
               <Card
                 className="transition-transform  hover:scale-105 hover:bg-blend-hard-light"
-                // sx={{
-                //   boxShadow: "2px 2px 8px rgba(225, 140, 250, 100)",
-                // }}
+                sx={{
+                  boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
+                }}
               >
                 <CardMedia sx={{ padding: "10px" }} className="rounded-full">
                   <img
