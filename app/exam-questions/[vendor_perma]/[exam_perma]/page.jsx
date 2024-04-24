@@ -89,7 +89,7 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
       <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
-          <Grid item xs={12} md={8}>
+          <Grid item xs={12} lg={8}>
             <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px mb-3 rounded-2">
                 <img
@@ -146,7 +146,7 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
               data={data}
             />
           </Grid>
-          <Grid item sm={12} md={4}>
+          <Grid item sm={12} lg={4}>
             <HotExam />
             <ReleatedExam examData={data} />
             <RefundPolicy />

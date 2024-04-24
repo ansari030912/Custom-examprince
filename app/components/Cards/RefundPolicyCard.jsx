@@ -15,11 +15,12 @@ const RefundPolicyCard = () => {
       sx={{
         borderRadius: "8px",
         mb: "10px",
-        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.2)",
+        boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.4)",
+        zIndex: 100000,
       }}
     >
       <CardMedia
-        sx={{ height: 140 }}
+        sx={{ height: 100, zIndex: -1 }}
         image="/refund-policy.png"
         title="green iguana"
       />

@@ -147,11 +147,11 @@ const TableHotExams = ({ data }) => {
       </Box>
 
       <Box sx={{ width: "100%" }}>
-        <section className="text-gray-600 body-font">
-          <div className="container mx-auto flex flex-wrap">
+        <section className="text-gray-600 body-font w-full">
+          <div className="mx-auto flex flex-wrap w-full">
             <div className="flex flex-wrap w-full">
-              <div className="py-2">
-                <div>
+              <div className="py-2 w-full">
+                <div className="w-full">
                   {selectedView === "week" && renderRows(data?.week)}
                   {selectedView === "month" && renderRows(data?.month)}
                 </div>

@@ -164,7 +164,7 @@ export default function ContentCard({ data, referral }) {
             }}
           >
             <div
-              style={{ padding: "10px" }}
+              style={{ padding: "10px", textAlign: "justify" }}
               dangerouslySetInnerHTML={{
                 __html: parseHtmlWithStyles(decodedHtml),
               }}
@@ -211,12 +211,18 @@ export default function ContentCard({ data, referral }) {
                     <path d="M7 10l5 5 5-5z" />
                   </svg>
                 </div>
-                <Typography variant="h3" fontSize={20}>
+                <Typography
+                  sx={{ textAlign: "justify" }}
+                  variant="h3"
+                  fontSize={20}
+                >
                   {faq.faq_q}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails sx={{ bgcolor: "#111827", color: "white" }}>
-                <Typography>{faq.faq_a}</Typography>
+                <Typography sx={{ textAlign: "justify" }}>
+                  {faq.faq_a}
+                </Typography>
               </AccordionDetails>
             </Accordion>
           ))}

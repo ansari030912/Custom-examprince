@@ -7,7 +7,7 @@ const SafeCheckOutCard = () => {
   return (
     <Box
       sx={{
-        boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
+        boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.4)",
         // bgcolor: "transparent",
         borderRadius: "8px",
       }}

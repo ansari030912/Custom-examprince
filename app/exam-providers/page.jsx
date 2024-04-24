@@ -70,7 +70,7 @@ const AllVendorsPage = ({ searchParams }) => {
             <AllVendors referral={referral} />
             <WindowsDataCard />
           </Grid>
-          <Grid item sm={12} md={4}>
+          <Grid item sm={12} lg={4}>
             <HotExam />
             <RefundPolicy />
             <SafeCheckOut />

@@ -99,7 +99,7 @@ const AllVendorsTable = ({ data, referral }) => {
                             <Avatar
                               className="mt-4 md:mt-1"
                               alt={vendor_title}
-                              src={`https://dumpsarena.com/media/bacb.pngs`}
+                              src={`https://dumpsarena.com/media/bacb.png`}
                             />
                             <div className="pl-4 mt-3">
                               <b className="flex">{vendor_title}</b>

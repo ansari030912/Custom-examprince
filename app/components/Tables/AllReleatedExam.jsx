@@ -29,11 +29,11 @@ const AllReleatedExam = ({ data }) => {
         </Typography>
       </Card>
       <Box sx={{ borderRadius: "0px" }}>
-        <section className="text-gray-600 body-font">
-          <div className="container mx-auto flex flex-wrap">
-            <div className="flex flex-wrap w-full ">
-              <div className="py-2">
-                <div>
+        <section className="text-gray-600 body-font w-full">
+          <div className="mx-auto flex flex-wrap w-full">
+            <div className="flex flex-wrap w-full">
+              <div className="py-2 w-full">
+                <div className="w-full">
                   {Array.isArray(data) &&
                     data.slice(0, 5).map((item, index, array) => {
                       const {

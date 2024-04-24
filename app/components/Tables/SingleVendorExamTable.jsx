@@ -81,7 +81,7 @@ const SingleVendorExamTable = ({ data }) => {
                             <Avatar
                               className="mt-3 md:mt-0"
                               alt={exam_title}
-                              src={`https://dumpsarena.com/media/bacb.pngs`}
+                              src={`https://dumpsarena.com/media/bacb.png`}
                             />
                             <div className="pl-4 mt-2">
                               <b className="flex">{exam_title}</b>
