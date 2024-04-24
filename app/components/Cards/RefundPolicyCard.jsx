@@ -11,7 +11,13 @@ import React from "react";
 
 const RefundPolicyCard = () => {
   return (
-    <Card sx={{ borderRadius: "8px" }}>
+    <Card
+      sx={{
+        borderRadius: "8px",
+        mb: "10px",
+        boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.2)",
+      }}
+    >
       <CardMedia
         sx={{ height: 140 }}
         image="/refund-policy.png"

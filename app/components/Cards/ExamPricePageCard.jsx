@@ -32,7 +32,7 @@ const ExamPricePageCard = ({ data }) => {
       </Card>
       <Card
         sx={{
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.5)",
           borderRadius: "8px",
           mb: "10px",
         }}
@@ -58,7 +58,7 @@ const ExamPricePageCard = ({ data }) => {
             md={8.5}
             sx={{
               borderRadius: "0px",
-              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+              boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.5)",
               borderTopRightRadius: "8px",
               borderBottomRightRadius: "8px",
             }}
@@ -67,6 +67,31 @@ const ExamPricePageCard = ({ data }) => {
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
               </Typography>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                Latest updated date:{" "}
+                <span className="text-green-500">
+                  {moment(data?.exam_update_date).format("LL")}
+                </span>
+              </Typography>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                Latest{" "}
+                <span className="text-green-500">{data?.exam_questions}</span>{" "}
+                Question & Answers
+              </Typography>
+              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                Exam Question Provider:{" "}
+                <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
+                  <span
+                    style={{
+                      color: "#0da8e5",
+                      cursor: "pointer",
+                    }}
+                    className="hover:underline"
+                  >
+                    {data?.exam_vendor_title}
+                  </span>
+                </Link>
+              </Typography>
               {data?.exam_retired ? (
                 <Card
                   sx={{
@@ -74,6 +99,7 @@ const ExamPricePageCard = ({ data }) => {
                     border: "1px solid red",
                     padding: "10px",
                     my: "10px",
+                    boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
                   }}
                 >
                   <Typography fontSize={16} fontWeight={600} color={"#003049"}>
@@ -155,6 +181,7 @@ const ExamPricePageCard = ({ data }) => {
                     p: "15px",
                     textAlign: "center",
                     mt: "10px",
+                    boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
                   }}
                 >
                   <Typography fontSize={20} fontWeight={700}>
@@ -191,14 +218,14 @@ const ExamPricePageCard = ({ data }) => {
         </Typography>
       </Card>
       <Card
-        className="text-white bg-gradient-to-r from-white to-white"
+        className="text-white bg-gradient-to-r from-gray-50 to-gray-50"
         sx={{
           padding: "10px",
           borderBottomLeftRadius: "8px",
           borderBottomRightRadius: "8px",
           borderTopRightRadius: "0px",
           borderTopLeftRadius: "0px",
-          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
+          boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
         }}
       >
         <ExamAddToCart data={data} />

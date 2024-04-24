@@ -7,8 +7,8 @@ const SafeCheckOutCard = () => {
   return (
     <Box
       sx={{
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-        bgcolor: "transparent",
+        boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
+        // bgcolor: "transparent",
         borderRadius: "8px",
       }}
     >
@@ -17,10 +17,11 @@ const SafeCheckOutCard = () => {
         className="text-white bg-blue-200"
         sx={{
           display: "flex",
-          mt: "10px",
+          // mt: "10px",
           width: "100%",
           borderRadius: "8px",
           border: "1px solid #74aff7",
+          boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
           // boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
         }}
       >

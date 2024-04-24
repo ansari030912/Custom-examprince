@@ -8,7 +8,7 @@ import {
   TableCell,
   TablePagination,
   TableRow,
-  Typography
+  Typography,
 } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
@@ -54,7 +54,10 @@ const SingleVendorExamTable = ({ data }) => {
           borderBottomRightRadius: "8px",
         }}
       >
-        <Table sx={{ p: "10px", borderRadius: "0px" }} size="small">
+        <Table
+          sx={{ p: "10px", borderRadius: "0px", bgcolor: "#FFFFFF" }}
+          size="small"
+        >
           <TableBody sx={{ padding: 2 }}>
             {Array.isArray(data.vendor_exams) &&
               data.vendor_exams
