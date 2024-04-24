@@ -388,7 +388,7 @@ const NavbarList = () => {
                 Vendors
               </Link>
               <Link
-                href="/certificates"
+                href="/certifications"
                 className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
               >
                 <Icon
