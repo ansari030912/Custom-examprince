@@ -142,7 +142,7 @@ const CheckOutCard = () => {
                         </div>
                       </div>
                       <div className="flex flex-wrap justify-between">
-                        <div className="w-full px-4 mb-4 lg:w-1/2 ">
+                        <div className="w-full mb-4 lg:w-1/2 ">
                           <div className="flex flex-wrap items-center gap-4">
                             <input
                               type="text"
@@ -150,12 +150,14 @@ const CheckOutCard = () => {
                               placeholder="Promo code"
                               required
                             />
-                            <button className="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
-                              Apply
-                            </button>
+                            <span className="pr-1">
+                              <button className="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
+                                Apply
+                              </button>
+                            </span>
                           </div>
                         </div>
-                        <div className="w-full px-4 mb-4 lg:w-1/2 ">
+                        <div className="w-full mb-4 lg:w-1/2 ">
                           <div className="p-6 border border-blue-100   bg-gray-50 md:p-8">
                             <h2 className="mb-8 text-3xl font-bold text-gray-700 ">
                               Order Summary
