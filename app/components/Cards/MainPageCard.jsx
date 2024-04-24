@@ -24,7 +24,10 @@ const MainPageCard = () => {
           </div>
           <div className="flex flex-wrap  sm:mx-auto sm:mb-2 -mx-2">
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-blue-500  rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -45,7 +48,10 @@ const MainPageCard = () => {
             </div>
 
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-stone-800   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl md:rounded-tr-3xl rounded-tl-none rounded-bl-none flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-stone-800  rounded-tl-4xl md:rounded-tr-3xl rounded-tl-none rounded-bl-none flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -65,7 +71,10 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-yellow-500   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-yellow-500  rounded-tl-4xl flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -103,7 +112,10 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-red-600  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-red-600 rounded-tl-4xl flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -131,7 +143,10 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-lime-600   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-br-none md:rounded-bl-3xl flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-lime-600  rounded-tl-4xl rounded-tr-none rounded-br-none md:rounded-bl-3xl flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
@@ -149,7 +164,10 @@ const MainPageCard = () => {
               </div>
             </div>
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-purple-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-bl-none rounded-br-4xl flex p-4 h-full items-center">
+              <div
+                style={{ boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)" }}
+                className="text-white bg-purple-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl rounded-tr-none rounded-bl-none rounded-br-4xl flex p-4 h-full items-center"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
