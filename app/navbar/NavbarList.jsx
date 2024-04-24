@@ -22,14 +22,11 @@ const NavbarList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `${BaseUrl}/v1/coupons`,
-          {
-            headers: {
-              "x-api-key": X_API_Key,
-            },
-          }
-        );
+        const response = await axios.get(`${BaseUrl}/v1/coupons`, {
+          headers: {
+            "x-api-key": X_API_Key,
+          },
+        });
         localStorage.setItem("coupons", JSON.stringify(response.data));
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -181,12 +178,11 @@ const NavbarList = () => {
               </div>
             </div>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:ml-6 sm:pr-0">
+            <div className="absolute inset-y-0 right-0 flex items-center pr-1 sm:static sm:ml-6 sm:pr-0">
               <button
                 type="button"
                 className="relative rounded-full text-white  p-2 hover:text-gray-200 mr-2"
               >
-                <span className="sr-only">Add to Cart</span>
                 <Link href="/check-out">
                   <div className="flex space-x-1">
                     <div>
@@ -216,7 +212,7 @@ const NavbarList = () => {
                   href={"/sign-in"}
                   className="text-white hover:bg-gradient-to-t from-blue-400 to-gray-900 px-1 lg:py-1 text-xs  lg:text-lg font-medium rounded-md"
                 >
-                  <button>Login / SignUp</button>
+                  <button>SignIn/Up</button>
                 </Link>
               ) : (
                 <div className="relative ml-3">

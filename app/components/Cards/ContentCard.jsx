@@ -174,9 +174,10 @@ export default function ContentCard({ data, referral }) {
       </div>
       {value === "faqs" && (
         <Card
-          className="text-white bg-gradient-to-b to-gray-300 from-gray-600"
+          className="text-white "
           sx={{
             padding: "15px",
+            bgcolor: "#345277",
           }}
         >
           <Typography
@@ -229,7 +230,7 @@ export default function ContentCard({ data, referral }) {
         </Card>
       )}
       {value === "certifications" && (
-        <Card sx={{ bgcolor: "#505A67", color: "white", padding: "10px" }}>
+        <Card sx={{ bgcolor: "#345277", color: "white", padding: "10px" }}>
           <Typography variant="h5" fontWeight={600} padding={1} color={"white"}>
             {data?.exam_vendor_title} Certifications
           </Typography>
@@ -241,10 +242,10 @@ export default function ContentCard({ data, referral }) {
                   key={item.cert_id}
                 >
                   <Card
-                    className="hover:bg-gray-600 hover:underline"
+                    className="hover:bg-sky-900 hover:underline"
                     sx={{
                       mt: "4px",
-                      bgcolor: "#505A67",
+                      bgcolor: "#345277", 
                       color: "white",
                       padding: "10px",
                       border: "1px solid white",
