@@ -10,7 +10,7 @@ export default async function sitemap() {
   }
 
   const data = await response.json();
-  console.log("🚀 ~ sitemap ~ data:", data);
+  
 
   return data.map((item) => ({
     url: `https://examprince.com/exam-provider/${item.vendor_perma}`,

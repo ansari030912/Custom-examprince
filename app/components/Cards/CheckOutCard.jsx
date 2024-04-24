@@ -20,7 +20,7 @@ const CheckOutCard = () => {
   const [examData, setExamData] = useState(null);
   const searchParams = useSearchParams();
   const queryEmail = searchParams.get("referralCode");
-  console.log("🚀 ~ CheckOut ~ queryEmail:", queryEmail);
+  console.log("🚀 ~ CheckOutCard ~ queryEmail:", queryEmail);
   const discountAmount =
     Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
 
