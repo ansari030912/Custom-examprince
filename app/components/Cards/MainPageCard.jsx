@@ -24,7 +24,7 @@ const MainPageCard = () => {
           </div>
           <div className="flex flex-wrap  sm:mx-auto sm:mb-2 -mx-2">
             <div className="p-1 sm:w-1/2 w-full">
-              <div className="text-white bg-blue-500   focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center">
+              <div className="text-white bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 rounded-tl-4xl  rounded-tr-none rounded-br-none flex p-4 h-full items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1.8em"
