@@ -67,62 +67,64 @@ const ExamPricePageCard = ({ data }) => {
               <Typography fontSize={20} fontWeight={700} color={"#003049"}>
                 ({data?.exam_code}) - Exam Questions - {data?.exam_title}
               </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Latest updated date:{" "}
-                <span className="text-green-500">
-                  {moment(data?.exam_update_date).format("LL")}
-                </span>
-              </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Latest{" "}
-                <span className="text-green-500">{data?.exam_questions}</span>{" "}
-                Question & Answers
-              </Typography>
-              <Typography fontSize={14} fontWeight={600} color={"#003049"}>
-                Exam Question Provider:{" "}
-                <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
-                  <span
-                    style={{
-                      color: "#0da8e5",
-                      cursor: "pointer",
-                    }}
-                    className="hover:underline"
-                  >
-                    {data?.exam_vendor_title}
-                  </span>
-                </Link>
-              </Typography>
+
               {data?.exam_retired ? (
-                <Card
-                  sx={{
-                    bgcolor: "#F8D7DA",
-                    border: "1px solid red",
-                    padding: "10px",
-                    my: "10px",
-                    boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
-                  <Typography fontSize={16} fontWeight={600} color={"#003049"}>
-                    <span style={{ color: "blue" }}>Note: </span>
-                    {data.exam_code} ({data.exam_title}) will not receive any
-                    new updates.
+                <>
+                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Latest updated date:{" "}
+                    <span className="text-green-500">
+                      {moment(data?.exam_update_date).format("LL")}
+                    </span>
                   </Typography>
-                  <Typography
-                    fontSize={16}
-                    fontWeight={600}
-                    color={"#003049"}
-                    sx={{ textAlign: "right" }}
-                  >
-                    New exam code :{" "}
-                    <Link
-                      href={`/exam-questions/${data?.exam_vendor_perma}/${data?.exam_alternate?.exam_alternate_perma}`}
-                      // style={{ color: "blue" }}
-                      className="hover:text-blue-600  text-blue-500 hover:underline"
-                    >
-                      {data?.exam_alternate.exam_alternate_code}
+                  {/* <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                    Exam Question Provider:{" "}
+                    <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>
+                      <span
+                        style={{
+                          color: "#0da8e5",
+                          cursor: "pointer",
+                        }}
+                        className="hover:underline"
+                      >
+                        {data?.exam_vendor_title}
+                      </span>
                     </Link>
-                  </Typography>
-                </Card>
+                  </Typography> */}
+                  <Card
+                    sx={{
+                      bgcolor: "#F8D7DA",
+                      border: "1px solid red",
+                      padding: "10px",
+                      my: "10px",
+                      boxShadow: "inset 0px 0px 8px rgba(0, 0, 0, 0.5)",
+                    }}
+                  >
+                    <Typography
+                      fontSize={16}
+                      fontWeight={600}
+                      color={"#003049"}
+                    >
+                      <span style={{ color: "blue" }}>Note: </span>
+                      {data.exam_code} ({data.exam_title}) will not receive any
+                      new updates.
+                    </Typography>
+                    <Typography
+                      fontSize={16}
+                      fontWeight={600}
+                      color={"#003049"}
+                      sx={{ textAlign: "right" }}
+                    >
+                      New exam code :{" "}
+                      <Link
+                        href={`/exam-questions/${data?.exam_vendor_perma}/${data?.exam_alternate?.exam_alternate_perma}`}
+                        // style={{ color: "blue" }}
+                        className="hover:text-blue-600  text-blue-500 hover:underline"
+                      >
+                        {data?.exam_alternate.exam_alternate_code}
+                      </Link>
+                    </Typography>
+                  </Card>
+                </>
               ) : (
                 <>
                   <Typography fontSize={14} fontWeight={600} color={"#003049"}>
