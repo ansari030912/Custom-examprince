@@ -70,12 +70,12 @@ const ExamPricePageCard = ({ data }) => {
 
               {data?.exam_retired ? (
                 <>
-                  <Typography fontSize={14} fontWeight={600} color={"#003049"}>
+                  {/* <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                     Latest updated date:{" "}
                     <span className="text-green-500">
                       {moment(data?.exam_update_date).format("LL")}
                     </span>
-                  </Typography>
+                  </Typography> */}
                   {/* <Typography fontSize={14} fontWeight={600} color={"#003049"}>
                     Exam Question Provider:{" "}
                     <Link href={`/exam-provider/${data?.exam_vendor_perma}`}>

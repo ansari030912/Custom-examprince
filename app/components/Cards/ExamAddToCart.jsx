@@ -53,7 +53,7 @@ const ExamAddToCart = ({ data }) => {
                       borderTopRightRadius: "0px",
                       borderBottomRightRadius: "15px",
                       borderBottomLeftRadius: "0px",
-                      boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.5)",
+                      boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.4)",
                     }}
                   >
                     <Box>
