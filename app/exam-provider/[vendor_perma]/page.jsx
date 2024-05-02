@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
-import { Container, Grid, Typography } from "@mui/material";
-import Link from "next/link";
+import { Container, Grid } from "@mui/material";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 import {
   RefundPolicy,
   SafeCheckOut,
@@ -10,8 +10,6 @@ import {
 } from "../../components/Cards";
 import HotExamsData from "../../components/Tables/HotExamsData";
 import SingleVendorExamTable from "../../components/Tables/SingleVendorExamTable";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
-import { X_API_Key } from "../../AllUrls/ApiKey";
 
 export async function generateMetadata({ params }) {
   const response = await fetch(`${BaseUrl}/v1/vendor/${params.vendor_perma}`, {

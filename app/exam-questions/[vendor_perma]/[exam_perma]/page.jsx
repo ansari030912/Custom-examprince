@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
-import Link from "next/link";
+import { Container, Grid } from "@mui/material";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
 import {
   CommentsCard,
   Content,
@@ -11,8 +12,6 @@ import {
 } from "../../../components/Cards";
 import ExamLinks from "../../../components/InternalLinking/ExamLinks";
 import { HotExam, ReleatedExam } from "../../../components/Tables";
-import { BaseUrl } from "../../../AllUrls/BaseUrl";
-import { X_API_Key } from "../../../AllUrls/ApiKey";
 
 const AllVendorsPerma = async ({ params, searchParams }) => {
   const referral = searchParams?.ref || "";

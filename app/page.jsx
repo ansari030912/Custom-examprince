@@ -2,22 +2,15 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
   Container,
-  Grid,
-  Typography,
+  Grid
 } from "@mui/material";
-import Link from "next/link";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
+import { RefundPolicy, SafeCheckOut } from "./components/Cards";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import { RefundPolicy, SafeCheckOut } from "./components/Cards";
 
 const Home = () => {
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;

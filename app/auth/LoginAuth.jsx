@@ -9,7 +9,6 @@ export default function loginAuth(Component) {
     let loginResponse;
 
     if (typeof window !== "undefined") {
-      // Check if running in a browser environment
       loginResponse = JSON.parse(localStorage.getItem("loginResponse"));
     }
 
