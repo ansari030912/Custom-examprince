@@ -7,8 +7,8 @@ import axios from "axios";
 import moment from "moment";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
 import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const CommentCard = ({ data }) => {
   const router = useRouter();

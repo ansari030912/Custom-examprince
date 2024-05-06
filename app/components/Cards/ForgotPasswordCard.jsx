@@ -8,6 +8,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
 const ForgotPasswordCard = () => {
   const [passwordRest, setPasswordRest] = useState({});

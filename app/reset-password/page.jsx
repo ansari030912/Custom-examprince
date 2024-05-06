@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import withAuth from "../auth/RouterAuth";
 import ResetPasswordForm from "../components/Form/ResetPasswordForm";
+import loginAuth from "../auth/LoginAuth";
 
 function ResetPassword() {
   return (
@@ -32,4 +33,4 @@ function ResetPassword() {
     </>
   );
 }
-export default withAuth(ResetPassword)
+export default loginAuth(ResetPassword)
