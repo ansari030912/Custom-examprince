@@ -15,10 +15,7 @@ export default async function sitemap() {
   const data = await response.json();
 
   return data?.certs?.map((item) => ({
-    url: `https://examprince.com/certifications/${item?.cert_perma.replace(
-      /&/g,
-      "&amp;"
-    )}`,
+    url: `https://examprince.com/certifications/${item?.vendor_perma}`,
     lastModified: "2024-04-17",
     priority: 0.6,
   }));
