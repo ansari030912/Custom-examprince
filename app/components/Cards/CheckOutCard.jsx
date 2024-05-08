@@ -103,7 +103,10 @@ const CheckOutCard = () => {
                                     {cartResponce?.title}
                                   </h2>
                                   <p className="text-gray-500 text-lg font-bold">
-                                    {examData?.exam_title}
+                                    {cartResponce?.title ===
+                                    examData?.exam_title
+                                      ? ""
+                                      : examData?.exam_title}
                                   </p>
                                 </div>
                               </div>

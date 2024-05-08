@@ -1,3 +1,5 @@
+import VideoExamAddToCart from "./VideoExamAddToCart";
+
 /* eslint-disable @next/next/no-img-element */
 const VideoCoursePrice = ({ data }) => {
   return (
@@ -197,12 +199,7 @@ const VideoCoursePrice = ({ data }) => {
                     </span>
                   </span>
                 </p>
-                <a
-                  href="#"
-                  className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Add to cart
-                </a>
+                <VideoExamAddToCart data={data} />
               </div>
             </div>
           </div>

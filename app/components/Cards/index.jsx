@@ -7,3 +7,4 @@ export { default as VideoCourseCard } from "./VideoCoursePrice";
 export { default as WindowsDataCard } from "./WindowsCard";
 export { default as SafeCheckOut } from "./SafeCheckOutCard";
 export { default as RefundPolicy } from "./RefundPolicyCard";
+export { default as VideoAddToCart } from "./VideoExamAddToCart";

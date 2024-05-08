@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
-import Link from "next/link";
+import { Container, Grid } from "@mui/material";
+import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 import {
   CourseAccordian,
   RefundPolicy,
@@ -10,8 +11,6 @@ import {
 } from "../../components/Cards";
 import VideoCoursePrice from "../../components/Cards/VideoCoursePrice";
 import { HotExam } from "../../components/Tables";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
-import { X_API_Key } from "../../AllUrls/ApiKey";
 
 export async function generateMetadata({ params }) {
   return {
