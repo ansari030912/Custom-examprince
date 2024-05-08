@@ -4,6 +4,7 @@ import {
   Card,
   Typography
 } from "@mui/material";
+
 import { useEffect, useState } from "react";
 import VideoCourseSlider from "../CardSlider/VideoCourseSlider";
 

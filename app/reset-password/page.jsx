@@ -3,9 +3,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import withAuth from "../auth/RouterAuth";
-import ResetPasswordForm from "../components/Form/ResetPasswordForm";
 import loginAuth from "../auth/LoginAuth";
+import ResetPasswordForm from "../components/Form/ResetPasswordForm";
 
 function ResetPassword() {
   return (
