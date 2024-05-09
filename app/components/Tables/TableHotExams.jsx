@@ -18,13 +18,16 @@ const TableHotExams = ({ data }) => {
             class="bg-white border border-gray-200 rounded-lg shadow hover:cursor-pointer hover:decoration-transparent"
           >
             <div className="px-4">
+              <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>
+                <h5 class=" text-lg pt-2 font-semibold tracking-tight text-blue-500 ">
+                  {exam_title}
+                </h5>
+              </Link>
               <Link
                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
-                class="flex items-center justify-between"
+                class="flex pb-2 items-center justify-between text-gray-500 hover:text-blue-400"
               >
-                <span class="text-lg font-bold text-blue-500 mt-2">
-                  {vendor_title}
-                </span>
+                <span class="text-base font-bold  mt-2">{vendor_title}</span>
 
                 <div class="flex items-center space-x-1 mt-2">
                   <svg
@@ -80,11 +83,6 @@ const TableHotExams = ({ data }) => {
                     </span>
                   </div>
                 </div>
-              </Link>
-              <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>
-                <h5 class="text-base pb-2 font-semibold tracking-tight text-gray-500 hover:text-blue-400">
-                  {exam_title}
-                </h5>
               </Link>
             </div>
           </div>

@@ -16,7 +16,10 @@ import React, { useEffect, useState } from "react";
 
 export default function ContentCard({ data, referral }) {
   const [expanded, setExpanded] = useState(null);
-  const [value, setValue] = useState(data?.exam_article ? "article" : "faqs");
+  const [value, setValue] = useState(
+    // data?.exam_article ? "article" :
+    "faqs"
+  );
   const [decodedHtml, setDecodedHtml] = useState("");
   const router = useRouter();
 
@@ -133,13 +136,13 @@ export default function ContentCard({ data, referral }) {
         }}
       >
         <Tabs value={value} onChange={handlePageChange}>
-          {data?.exam_article && (
+          {/* {data?.exam_article && (
             <Tab
               value="article"
               label="Article"
               className="text-gray-600 text-md font-bold"
             />
-          )}
+          )} */}
           {data?.exam_faqs && (
             <Tab
               value="faqs"
@@ -156,7 +159,7 @@ export default function ContentCard({ data, referral }) {
           )}
         </Tabs>
       </Card>
-      <div>
+      {/* <div>
         {value === "article" && (
           <Card
             sx={{
@@ -171,7 +174,7 @@ export default function ContentCard({ data, referral }) {
             />
           </Card>
         )}
-      </div>
+      </div> */}
       {value === "faqs" && (
         <Card
           className="text-white "
@@ -245,7 +248,7 @@ export default function ContentCard({ data, referral }) {
                     className="hover:bg-sky-900 hover:underline"
                     sx={{
                       mt: "4px",
-                      bgcolor: "#345277", 
+                      bgcolor: "#345277",
                       color: "white",
                       padding: "10px",
                       border: "1px solid white",
