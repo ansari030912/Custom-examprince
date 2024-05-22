@@ -11,7 +11,7 @@ const HotExamsData = async () => {
 
   const data = await response.json();
 
-  return <TableHotExams data={data} />;
+  return data.week.length >= 1 && <TableHotExams data={data} />;
 };
 
 export default HotExamsData;
