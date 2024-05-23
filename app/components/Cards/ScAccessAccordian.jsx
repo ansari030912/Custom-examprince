@@ -179,7 +179,7 @@ const ScAccessAccordian = ({ data }) => {
                 </div>
               ))}
             </div>
-            {/* Slider controls */}
+
             <button
               type="button"
               className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
