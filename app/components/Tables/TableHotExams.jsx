@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
-/* eslint-disable @next/next/no-async-client-component */
 import { Box, Button, Card, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
