@@ -15,3 +15,4 @@ const HotExamsData = async () => {
 };
 
 export default HotExamsData;
+ 
