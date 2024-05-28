@@ -20,7 +20,7 @@ const TableHotExams = ({ data }) => {
             <div className="px-4 pt-2">
               <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>
                 <div class="text-base font-semibold">
-                  {vendor_title} - ({exam_code})
+                  {vendor_title} {exam_code}
                 </div>
               </Link>
               <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>

@@ -86,7 +86,7 @@ const SingleVendorExamTable = ({ data }) => {
 
                             <div className="pl-4 mt-2">
                               <b className="flex font-semibold">
-                                {data.vendor_title} - {exam_code}
+                                {data.vendor_title} {exam_code}
                               </b>
                               <span className="flex">{exam_title}</span>
                             </div>

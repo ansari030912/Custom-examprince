@@ -54,7 +54,7 @@ const AllReleatedExam = ({ data }) => {
                                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
                               >
                                 <div class="text-base font-semibold">
-                                  {vendor_title} - ({exam_code})
+                                  {vendor_title} {exam_code}
                                 </div>
                               </Link>
                               <Link
