@@ -46,7 +46,7 @@ const ExamPricePageCard = ({ data }) => {
           >
             <div className="flex justify-center">
               <img
-                className="p-5 -mt-3 rounded-t-lg h-full w-full"
+                className="p-5 rounded-t-lg h-full w-full"
                 src="/package-small-min_optimized.png"
                 alt="product image"
               />
