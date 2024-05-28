@@ -9,26 +9,30 @@ const TableHotExams = ({ data }) => {
   const [selectedView, setSelectedView] = useState("month");
   const renderRows = (items) => {
     return items?.slice(0, 10)?.map((item, index, array) => {
-      const { vendor_title, exam_title, exam_perma, vendor_perma } = item;
+      const { vendor_title, exam_title, exam_perma, vendor_perma, exam_code } =
+        item;
       return (
         <>
           <div
             style={{ width: "100%", marginBottom: "8px" }}
             class="bg-white border border-gray-200 rounded-lg shadow hover:cursor-pointer hover:decoration-transparent"
           >
-            <div className="px-4">
+            <div className="px-4 pt-2">
               <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>
-                <h5 class=" text-lg pt-2 font-semibold tracking-tight text-blue-500 ">
+                <div class="text-base font-semibold">
+                  {vendor_title} - ({exam_code})
+                </div>
+              </Link>
+              <Link href={`/exam-questions/${vendor_perma}/${exam_perma}`}>
+                <h5 class=" text-base tracking-tight text-blue-500 ">
                   {exam_title}
                 </h5>
               </Link>
               <Link
                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
-                class="flex pb-2 items-center justify-between text-gray-500 hover:text-blue-400"
+                class="flex pb-2 items-center justify-end text-gray-500 hover:text-blue-400"
               >
-                <span class="text-base font-bold  mt-2">{vendor_title}</span>
-
-                <div class="flex items-center space-x-1 mt-2">
+                <div class="flex items-center space-x-1 ">
                   <svg
                     class="w-4 h-4 text-yellow-300"
                     aria-hidden="true"

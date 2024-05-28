@@ -7,6 +7,7 @@ import {
   Container,
   Grid,
   IconButton,
+  TextField,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
@@ -21,6 +22,55 @@ const CheckOutCard = () => {
   const searchParams = useSearchParams();
   const queryEmail = searchParams.get("referralCode");
   console.log("🚀 ~ CheckOutCard ~ queryEmail:", queryEmail);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    address: "",
+    city: "",
+    state: "",
+    country: "",
+    zip: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    let tempErrors = {};
+    tempErrors.firstName = formData.firstName ? "" : "This field is required";
+    tempErrors.lastName = formData.lastName ? "" : "This field is required";
+    tempErrors.email = formData.email ? "" : "This field is required";
+    tempErrors.address = formData.address ? "" : "This field is required";
+    tempErrors.city = formData.city ? "" : "This field is required";
+    tempErrors.state = formData.state ? "" : "This field is required";
+    tempErrors.country = formData.country ? "" : "This field is required";
+    tempErrors.zip = formData.zip ? "" : "This field is required";
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every((x) => x === "");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validate()) {
+      localStorage.setItem("userData", JSON.stringify(formData));
+      console.log("Data saved:", formData);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        address: "",
+        city: "",
+        state: "",
+        country: "",
+        zip: "",
+      });
+    }
+  };
   const discountAmount =
     Math.floor(cartResponce?.full_price) - Math.floor(cartResponce?.price);
 
@@ -56,7 +106,7 @@ const CheckOutCard = () => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item md={8}>
-            <div className="mx-auto max-w-8xl flex justify-center">
+            {/* <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/examprince-discount-banner.png"
@@ -66,7 +116,7 @@ const CheckOutCard = () => {
                   height="100%"
                 />
               </div>
-            </div>
+            </div> */}
             <section className=" bg-gray-100 font-poppins mt-3">
               <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
                 <div>
@@ -146,12 +196,13 @@ const CheckOutCard = () => {
                       </div>
                       <div className="flex flex-wrap justify-between">
                         <div className="w-full mb-4 lg:w-1/2 ">
-                          <div className="flex flex-wrap items-center gap-4">
+                          <div className="flex flex-nowrap items-center gap-4">
                             <input
                               type="text"
                               className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1  dark:placeholder-gray-500  "
                               placeholder="Promo code"
                               required
+                              value="MEGASALE"
                             />
                             <span className="pr-1">
                               <button className="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600">
@@ -160,69 +211,133 @@ const CheckOutCard = () => {
                             </span>
                           </div>
                         </div>
-                        <div className="w-full mb-4 lg:w-1/2 ">
-                          <div className="p-6 border border-blue-100   bg-gray-50 md:p-8">
-                            <h2 className="mb-8 text-3xl font-bold text-gray-700 ">
-                              Order Summary
-                            </h2>
-                            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300  ">
-                              <span className="text-gray-700 ">Subtotal</span>
-                              <span className="text-xl font-bold text-gray-700  ">
-                                ${cartResponce.full_price}
-                              </span>
-                            </div>
-                            <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700  ">Off</span>
-                              <span className="text-xl font-bold text-gray-700  ">
-                                {cartResponce.off}%
-                              </span>
-                            </div>
-                            <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 ">Discount</span>
-                              <span className="text-xl font-bold text-green-500 ">
-                                - ${discountAmount}
-                              </span>
-                            </div>
-                            <div className="flex items-center justify-between pb-4 mb-4 ">
-                              <span className="text-gray-700 ">
-                                Order Total
-                              </span>
-                              <span className="text-xl font-bold text-gray-700 ">
-                                ${cartResponce.price}
-                              </span>
-                            </div>
-                            <h2 className="text-lg text-gray-500 ">
-                              We offer:
-                            </h2>
-                            <div className="flex items-center gap-2 mb-4 ">
-                              <a href="#">
-                                <img
-                                  src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
-                                  alt=""
-                                  className="object-cover h-16 w-26"
-                                />
-                              </a>
-                              <a href="#">
-                                <img
-                                  src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
-                                  alt=""
-                                  className="object-cover h-16 w-26"
-                                />
-                              </a>
-                              <a href="#">
-                                <img
-                                  src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
-                                  alt=""
-                                  className="object-cover h-16 w-26"
-                                />
-                              </a>
-                            </div>
-                            <div className="flex items-center justify-between ">
-                              <button className="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600">
-                                Checkout
-                              </button>
-                            </div>
+                        <div className="w-full mb-4 mt-2 lg:w-1/2 ">
+                          <div className="text-center mt-2 text-base font-bold text-green-400">
+                            " <span className="text-red-500">MEGASALE</span> "
+                            CUPPON 40-70% OFF IS ACTIVE
                           </div>
+                        </div>
+                        <div
+                          // onSubmit={handleSubmit}
+                          className="space-y-4 p-6 py-8 bg-white "
+                        >
+                          <Grid container spacing={2}>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                label="First Name"
+                                variant="outlined"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.firstName}
+                                helperText={errors.firstName}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                label="Last Name"
+                                variant="outlined"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.lastName}
+                                helperText={errors.lastName}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12}>
+                              <TextField
+                                label="Email"
+                                variant="outlined"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                type="email"
+                                fullWidth
+                                error={!!errors.email}
+                                helperText={errors.email}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12}>
+                              <TextField
+                                label="Address"
+                                variant="outlined"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.address}
+                                helperText={errors.address}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                label="City"
+                                variant="outlined"
+                                name="city"
+                                value={formData.city}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.city}
+                                helperText={errors.city}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                label="State/Province"
+                                variant="outlined"
+                                name="state"
+                                value={formData.state}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.state}
+                                helperText={errors.state}
+                                className="bg-white"
+                              />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                select
+                                label="Country"
+                                variant="outlined"
+                                name="country"
+                                value={formData.country}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.country}
+                                helperText={errors.country}
+                                SelectProps={{
+                                  native: true,
+                                }}
+                                className="bg-white"
+                              >
+                                <option value="">-- Select country --</option>
+                                <option value="USA">USA</option>
+                                <option value="Canada">Canada</option>
+                                <option value="UK">UK</option>
+                                {/* Add more options as needed */}
+                              </TextField>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                              <TextField
+                                label="Zip Code"
+                                variant="outlined"
+                                name="zip"
+                                value={formData.zip}
+                                onChange={handleChange}
+                                fullWidth
+                                error={!!errors.zip}
+                                helperText={errors.zip}
+                                className="bg-white"
+                              />
+                            </Grid>
+                          </Grid>
                         </div>
                       </div>
                     </>
@@ -232,8 +347,70 @@ const CheckOutCard = () => {
             </section>
           </Grid>
           <Grid item sm={12} md={4}>
+            <div className="p-6 border my-3 border-blue-100 bg-white md:p-8">
+              <h2 className="mb-8 text-3xl font-bold text-gray-700 ">
+                Order Summary
+              </h2>
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300  ">
+                <span className="text-gray-700 ">Subtotal</span>
+                <span className="text-xl font-bold text-gray-700  ">
+                  ${cartResponce?.full_price}
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4 ">
+                <span className="text-gray-700  ">Off</span>
+                <span className="text-xl font-bold text-gray-700  ">
+                  {cartResponce?.off}%
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4 ">
+                <span className="text-gray-700 ">Discount</span>
+                <span className="text-xl font-bold text-green-500 ">
+                  - ${discountAmount}
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4 ">
+                <span className="text-gray-700 ">Order Total</span>
+                <span className="text-xl font-bold text-gray-700 ">
+                  ${cartResponce?.price}
+                </span>
+              </div>
+              <h2 className="text-lg text-gray-500 ">We offer:</h2>
+              <div className="flex items-center gap-2 mb-4 ">
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+              </div>
+              <div className="flex items-center justify-between ">
+                <button
+                  onClick={handleSubmit}
+                  className="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600"
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
             <RefundPolicy />
             <SafeCheckOut />
+
             <Card
               sx={{
                 bgcolor: "white",

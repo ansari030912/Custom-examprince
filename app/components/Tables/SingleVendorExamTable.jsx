@@ -69,32 +69,43 @@ const SingleVendorExamTable = ({ data }) => {
                     <TableRow hover key={exam_code}>
                       <TableCell>
                         <Link
-                          className="md:flex justify-between"
+                          className="flex justify-between text-left"
                           href={`/exam-questions/${data?.vendor_perma}/${exam_perma}`}
                         >
                           <Typography
                             className="flex justify-between"
                             fontSize={14}
                             color={"#3D4049"}
-                            fontWeight={600}
+                            // fontWeight={600}
                           >
                             <Avatar
                               className="mt-3 md:mt-0"
                               alt={exam_title}
                               src={`https://dumpsarena.com/media/bacb.png`}
                             />
+
                             <div className="pl-4 mt-2">
-                              <b className="flex">{exam_title}</b>
+                              <b className="flex font-semibold">
+                                {data.vendor_title} - {exam_code}
+                              </b>
+                              <span className="flex">{exam_title}</span>
                             </div>
                           </Typography>
                           <Typography
-                            className="pl-4 mt-3"
+                            className="pl-4 mt-3 hidden md:block text-nowrap text-right"
                             fontSize={14}
                             fontWeight={400}
                           >
                             <b>Total Exams:</b> <i>{exam_questions}</i>
                           </Typography>
                         </Link>
+                        <Typography
+                          className="pl-4 mt-3 md:hidden text-nowrap text-right"
+                          fontSize={14}
+                          fontWeight={400}
+                        >
+                          <b>Total Exams:</b> <i>{exam_questions}</i>
+                        </Typography>
                       </TableCell>
                     </TableRow>
                   );

@@ -41,24 +41,34 @@ const AllReleatedExam = ({ data }) => {
                         exam_title,
                         vendor_perma,
                         exam_perma,
+                        exam_code,
                       } = item;
                       return (
                         <>
                           <div
-                            key={exam_perma}
                             style={{ width: "100%", marginBottom: "8px" }}
                             class="bg-white border border-gray-200 rounded-lg shadow hover:cursor-pointer hover:decoration-transparent"
                           >
-                            <div class="px-4">
+                            <div className="px-4 pt-2">
                               <Link
                                 href={`/exam-questions/${vendor_perma}/${exam_perma}`}
-                                class="flex items-center justify-between"
                               >
-                                <span class="text-lg font-bold text-gray-600 mt-2">
-                                  {vendor_title}
-                                </span>
-
-                                <div class="flex items-center space-x-1 mt-2">
+                                <div class="text-base font-semibold">
+                                  {vendor_title} - ({exam_code})
+                                </div>
+                              </Link>
+                              <Link
+                                href={`/exam-questions/${vendor_perma}/${exam_perma}`}
+                              >
+                                <h5 class=" text-base tracking-tight text-blue-500 ">
+                                  {exam_title}
+                                </h5>
+                              </Link>
+                              <Link
+                                href={`/exam-questions/${vendor_perma}/${exam_perma}`}
+                                class="flex pb-2 items-center justify-end text-gray-500 hover:text-blue-400"
+                              >
+                                <div class="flex items-center space-x-1 ">
                                   <svg
                                     class="w-4 h-4 text-yellow-300"
                                     aria-hidden="true"
@@ -112,13 +122,6 @@ const AllReleatedExam = ({ data }) => {
                                     </span>
                                   </div>
                                 </div>
-                              </Link>
-                              <Link
-                                href={`/exam-questions/${vendor_perma}/${exam_perma}`}
-                              >
-                                <h5 class="text-base pb-2 font-semibold tracking-tight text-gray-500 hover:text-blue-400">
-                                  {exam_title}
-                                </h5>
                               </Link>
                             </div>
                           </div>
