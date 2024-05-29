@@ -29,17 +29,7 @@ const RefundPolicy = () => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>
-            <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px mb-3 rounded-2">
-                <img
-                  src="/examprince-discount-banner.png"
-                  alt="Banner"
-                  loading="lazy"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </div>
+            
             <Card className="text-white bg-gradient-to-l from-blue-400 to-gray-900 p-2.5 font-bold text-2xl">
               <div style={{ color: "white" }}>ExamPrince.Com Refund Policy</div>
             </Card>

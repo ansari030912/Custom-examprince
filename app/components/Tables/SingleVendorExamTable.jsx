@@ -27,7 +27,7 @@ const SingleVendorExamTable = ({ data }) => {
         className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
           padding: 1,
-          mt: 1,
+          // mt: 1,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           borderTopLeftRadius: "8px",
@@ -73,18 +73,18 @@ const SingleVendorExamTable = ({ data }) => {
                           href={`/exam-questions/${data?.vendor_perma}/${exam_perma}`}
                         >
                           <Typography
-                            className="flex justify-between"
+                            className="flex justify-between py-2"
                             fontSize={14}
                             color={"#3D4049"}
                             // fontWeight={600}
                           >
                             <Avatar
-                              className="mt-3 md:mt-0"
+                              className="mt-3 md:mt-1"
                               alt={exam_title}
                               src={`https://dumpsarena.com/media/bacb.png`}
                             />
 
-                            <div className="pl-4 mt-2">
+                            <div className="pl-4 mt-1">
                               <b className="flex font-semibold">
                                 {data.vendor_title} {exam_code}
                               </b>

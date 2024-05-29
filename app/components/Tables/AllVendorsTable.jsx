@@ -44,7 +44,7 @@ const AllVendorsTable = ({ data, referral }) => {
         className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
           padding: 1,
-          mt: 1,
+          // mt: 1,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           borderTopLeftRadius: "8px",
@@ -137,7 +137,7 @@ const AllVendorsTable = ({ data, referral }) => {
                               src={`https://dumpsarena.com/media/bacb.png`}
                             />
                             <div className="pl-4 mt-3">
-                              <b className="flex">{vendor_title}</b>
+                              <span className="flex font-semibold">{vendor_title}</span>
                               {/* <Typography>{vendor_title}</Typography> */}
                             </div>
                           </Typography>
@@ -146,7 +146,7 @@ const AllVendorsTable = ({ data, referral }) => {
                             fontSize={14}
                             fontWeight={400}
                           >
-                            <b>Total Exams:</b> <i>{vendor_exams}</i>
+                            <span className="font-semibold">Total Exams:</span> <i >{vendor_exams}</i>
                           </Typography>
                         </Link>
                       </TableCell>

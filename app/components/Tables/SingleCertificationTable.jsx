@@ -33,7 +33,7 @@ const SingleCertificationTable = ({ data }) => {
         className="text-white bg-gradient-to-br from-gray-800 to-blue-400"
         sx={{
           padding: 1,
-          mt: 1,
+          // mt: 1,
           borderBottomLeftRadius: "0px",
           borderBottomRightRadius: "0px",
           borderTopLeftRadius: "8px",
