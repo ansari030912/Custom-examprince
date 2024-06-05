@@ -58,19 +58,7 @@ const ScAccess = async ({ params }) => {
     <>
       <Container maxWidth="xl">
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <div className="mx-auto max-w-8xl flex justify-center">
-              <div className="md:mx-150px lg:mt-2 rounded-2">
-                <img
-                  src="/examprince-discount-banner.png"
-                  alt="banner"
-                  loading="lazy"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </div>
-          </Grid>
+          <Grid item xs={12}></Grid>
           <Grid item xs={12}>
             <ScPriceCard data={data} />
           </Grid>

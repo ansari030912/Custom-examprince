@@ -76,17 +76,6 @@ const CertificationExamPage = async ({ params }) => {
         <Container maxWidth="xl">
           <Grid container spacing={2}>
             <Grid item xs={12} md={8}>
-              <div className="mx-auto max-w-8xl flex justify-center">
-                <div className="md:mx-150px mb-3 rounded-2">
-                  <img
-                    src="/examprince-discount-banner.png"
-                    alt="Banner"
-                    loading="lazy"
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
-              </div>
               <Card
                 className="text-white bg-gradient-to-b from-blue-400 to-gray-900"
                 sx={{
@@ -249,17 +238,6 @@ const CertificationExamPage = async ({ params }) => {
           <Grid container spacing={2}>
             <Grid item xs={12}></Grid>
             <Grid item xs={12} md={8}>
-              <div className="mx-auto max-w-8xl flex justify-center">
-                <div className="md:mx-150px mb-3 rounded-2">
-                  <img
-                    src="/examprince-discount-banner.png"
-                    alt="Banner"
-                    loading="lazy"
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
-              </div>
               <ExamPriceCard data={data.cert_single_exam} />
               {data?.cert_single_exam?.exam_topics?.length > 0 && (
                 <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">

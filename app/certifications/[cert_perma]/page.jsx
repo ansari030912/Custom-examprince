@@ -1,13 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
-import Link from "next/link";
-import { HotExam } from "../../components/Tables";
-import SingleCertificationTable from "../../components/Tables/SingleCertificationTable";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
+import { Container, Grid } from "@mui/material";
 import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 import { RefundPolicy, SafeCheckOut } from "../../components/Cards";
 import WindowsCard from "../../components/Cards/WindowsCard";
+import { HotExam } from "../../components/Tables";
+import SingleCertificationTable from "../../components/Tables/SingleCertificationTable";
 
 export async function generateMetadata({ params }) {
   return {
