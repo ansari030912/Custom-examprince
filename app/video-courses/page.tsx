@@ -60,7 +60,6 @@ const AllVideoCoursesPage = ({ searchParams }) => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>
-            
             <AllVideoCourses referral={referral} />
           </Grid>
           <Grid item sm={12} md={4}>
