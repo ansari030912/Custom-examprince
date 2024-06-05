@@ -74,7 +74,7 @@ const TrainingCoursePage = async ({ params }) => {
       <Container maxWidth="xl">
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <div className="mx-auto max-w-8xl flex justify-center">
+            {/* <div className="mx-auto max-w-8xl flex justify-center">
               <div className="md:mx-150px lg:mt-2 rounded-2">
                 <img
                   src="/examprince-discount-banner.png"
@@ -84,7 +84,7 @@ const TrainingCoursePage = async ({ params }) => {
                   height="100%"
                 />
               </div>
-            </div>
+            </div> */}
           </Grid>
           <Grid item xs={12}>
             <VideoCoursePrice data={data} />
