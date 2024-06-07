@@ -7,7 +7,7 @@ import HotExamsData from "../components/Tables/HotExamsData";
 
 export async function generateMetadata() {
   return {
-    title: `Refund Policy ExamPrince.com`,
+    title: `About ExamPrince.com`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
     robots: {
       index: true,
@@ -16,13 +16,14 @@ export async function generateMetadata() {
       other: [
         {
           rel: "canonical",
-          url: `https://examprince.com/refund-policy`,
+          url: `https://examprince.com/about`,
         },
       ],
     },
   };
 }
-const RefundPolicy = () => {
+
+const page = () => {
   return (
     <>
       <Container maxWidth="xl">
@@ -30,13 +31,12 @@ const RefundPolicy = () => {
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>
             <Card className="text-white bg-gradient-to-l from-blue-400 to-gray-900 p-2.5 font-bold text-2xl">
-              <div style={{ color: "white" }}>ExamPrince.Com Refund Policy</div>
+              <div style={{ color: "white" }}>About ExamPrince.Com </div>
             </Card>
             <Card className="p-6 mt-2">
               <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold ">
-                ExamPrince.com Refund Policy
+                About ExamPrince.com
               </h1>
-
               <div className="container mx-auto mt-2 text-justify">
                 <p className="text-base md:text-lg lg:text-xl text-justify">
                   ExamPrince.com offers premium IT products to its clientele,
@@ -176,6 +176,64 @@ const RefundPolicy = () => {
                   explanation.
                 </p>
               </div>
+
+              <h2 className="text-2xl md:text-3xl lg:text-3xl font-bold mt-6">
+                About ExamPrince.Com
+              </h2>
+              <div className="container mx-auto mt-2 text-justify">
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  ExamPrince.com is a website committed to providing candidates
+                  with all kinds of IT certifications study materials.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  We at ExamPrince.com guarantee that candidates will not only
+                  pass their exams but also get a profound understanding of the
+                  respective subject. There are so many companies in the
+                  Certification Industry but ExamPrince.com is unique in itself.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  In the following parts, we will show you how your data is
+                  collected and used.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  Here you can find the latest and most accurate study materials
+                  for all kinds of IT certification exams. Especially, IBM,
+                  Microsoft, Cisco CCNA/CCDA/CCNP, VMware VCP510, Checkpoint
+                  CCSE, CompTIA A+/Network+ certification practice exams, and
+                  more. We help you pass any IT exam on the first try.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  Get fewer questions with a reasonable price. Why? Because
+                  accuracy is the key while comprehensiveness is the guarantee,
+                  both of which are the foundation for a good performance in the
+                  real exam. For example, with the CCNA product, some companies
+                  show you 800+ questions but we supply only 300 questions
+                  because other companies never delete the old questions that
+                  will not be used in the real exam, wasting your time.
+                  Sometimes, time is much more expensive than money.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  Our study materials, including quality questions, verified
+                  answers, and professional explanations in detail, cover all
+                  the knowledge points and at least 95% of the exam questions,
+                  with an emphasis on the main points and high summarization.
+                  Any changes that happen in the tests of vendors will reflect
+                  on our product off-hand.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  With the above advantages and disadvantages, candidates will
+                  make their own choices.
+                </p>
+                <p className="text-base md:text-lg lg:text-xl text-justify">
+                  Let us know if you have any queries:{" "}
+                  <a
+                    href="mailto:sales@examprince.com"
+                    className="text-blue-500 underline"
+                  >
+                    sales@examprince.com
+                  </a>
+                </p>
+              </div>
             </Card>
           </Grid>
           <Grid item xs={12} lg={4}>
@@ -191,4 +249,4 @@ const RefundPolicy = () => {
   );
 };
 
-export default RefundPolicy;
+export default page;
