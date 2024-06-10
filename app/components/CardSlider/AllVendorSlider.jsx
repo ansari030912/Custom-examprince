@@ -276,7 +276,7 @@ const AllVendorSlider = () => {
     return (
       <Grid container spacing={2}>
         {cards.map((vendor, index) => (
-          <Grid item xs={12} sm={4} md={2} key={index}>
+          <Grid item xs={12} sm={4} md={3} lg={2} key={index}>
             <Link
               href={`/vendor-exam-questions/${vendor.vendor}/${vendor.perma}`}
             >

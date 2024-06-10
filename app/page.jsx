@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-css-tags */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import {
-  Container,
-  Grid
-} from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import { RefundPolicy, SafeCheckOut } from "./components/Cards";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
+import TestimonialCarousel from "./components/MainPageReviews/MainReviews";
 
 const Home = () => {
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
@@ -68,6 +66,9 @@ const Home = () => {
           </Grid>
           <Grid item xs={12}>
             <CardSliderVendor />
+          </Grid>
+          <Grid item xs={12}>
+          <TestimonialCarousel />
           </Grid>
           <Grid item xs={12} lg={8} style={{ marginTop: "-10px" }}>
             <WindowsCard />
