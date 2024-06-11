@@ -2,8 +2,6 @@
 "use client";
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const reviews = [
   {
@@ -209,9 +207,102 @@ const reviews = [
   },
 ];
 
+const customStyles = `
+  .slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .slick-list:focus {
+    outline: none;
+  }
+
+  .slick-list.dragging {
+    cursor: pointer;
+  }
+
+  .slick-slider .slick-track,
+  .slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .slick-track:before,
+  .slick-track:after {
+    display: table;
+    content: "";
+  }
+
+  .slick-track:after {
+    clear: both;
+  }
+
+  .slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+  }
+
+  [dir="rtl"] .slick-slide {
+    float: right;
+  }
+
+  .slick-slide img {
+    display: block;
+  }
+
+  .slick-slide.slick-loading img {
+    display: none;
+  }
+
+  .slick-slide.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized .slick-slide {
+    display: block;
+  }
+
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+  }
+
+  .slick-arrow.slick-hidden {
+    display: none;
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+`;
+
 const TestimonialCarousel = () => {
   const settings = {
-    dots: false, // Disable bullets
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -246,26 +337,83 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <section className="pt-12 pb-12 bg-blueGray-100 overflow-hidden">
-      <div className="container px-4 mx-auto">
-        <h2 className="mb-5 text-3xl md:text-5xl font-bold font-heading text-center tracking-px-n leading-tight">
+    <section
+      style={{
+        paddingTop: "3rem",
+        // paddingBottom: "3rem",
+        backgroundColor: "#F8FAFC",
+        overflow: "hidden",
+      }}
+    >
+      <style>{customStyles}</style>
+      <div
+        style={{ paddingLeft: "1rem", paddingRight: "1rem", margin: "0 auto" }}
+      >
+        <h2
+          style={{
+            marginBottom: "1.25rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            letterSpacing: "-0.015em",
+            lineHeight: "1.2",
+          }}
+          className="text-4xl"
+        >
           See what others are saying
         </h2>
-        <p className="mb-16 text-lg text-gray-600 font-medium text-center mx-auto md:max-w-xl">
+        <p
+          style={{
+            marginBottom: "4rem",
+            fontSize: "1.125rem",
+            color: "#4B5563",
+            fontWeight: "500",
+            textAlign: "center",
+            margin: "0 auto",
+            maxWidth: "24rem",
+          }}
+        >
           Top World Wide Review About ExamPrince.com
         </p>
         <Slider {...settings}>
           {reviews.map((review, index) => (
             <div
               key={index}
-              style={{ minHeight: "400px" }}
-              className="flex-shrink-0 px-2 py-8"
+              style={{
+                minHeight: "400px",
+                flexShrink: "0",
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
+                paddingTop: "2rem",
+                paddingBottom: "2rem",
+              }}
+              className="px-2 min-h-95 mb-4 mt-3"
             >
-              <div className="p-6 h-full bg-white rounded-lg shadow-lg flex flex-col justify-between">
-                <div className="pb-6">
-                  <div className="flex justify-center mb-5">
+              <div
+                style={{
+                  padding: "1.5rem",
+                  height: "100%",
+                  backgroundColor: "white",
+                  borderRadius: "0.5rem",
+                  boxShadow:
+                    "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div style={{ paddingBottom: "1.5rem" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      marginBottom: "1.25rem",
+                    }}
+                  >
                     {Array.from({ length: 5 }).map((_, i) => (
-                      <div key={i} className="w-auto p-0.5">
+                      <div
+                        key={i}
+                        style={{ width: "auto", padding: "0.125rem" }}
+                      >
                         <svg
                           width="19"
                           height="18"
@@ -281,16 +429,34 @@ const TestimonialCarousel = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="text-lg font-medium text-center">
+                  <p
+                    style={{
+                      fontSize: "1.125rem",
+                      fontWeight: "500",
+                      textAlign: "center",
+                    }}
+                  >
                     {review.text}
                   </p>
                 </div>
-                <div className="flex justify-center">
-                  <div className="w-auto p-2">
-                    <img src="/img/1.png" alt="" className="rounded-full" />
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <div style={{ width: "auto", padding: "0.5rem" }}>
+                    <img
+                      src="/img/1.png"
+                      alt=""
+                      style={{ borderRadius: "50%" }}
+                    />
                   </div>
-                  <div className="w-auto p-2 text-center">
-                    <h3 className="text-base font-semibold">{review.name}</h3>
+                  <div
+                    style={{
+                      width: "auto",
+                      padding: "0.5rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    <h3 style={{ fontSize: "1rem", fontWeight: "600" }}>
+                      {review.name}
+                    </h3>
                   </div>
                 </div>
               </div>
