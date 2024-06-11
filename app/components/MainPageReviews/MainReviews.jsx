@@ -367,6 +367,7 @@ const TestimonialCarousel = () => {
             fontSize: "1.125rem",
             color: "#4B5563",
             fontWeight: "500",
+            
             textAlign: "center",
             margin: "0 auto",
             maxWidth: "24rem",
