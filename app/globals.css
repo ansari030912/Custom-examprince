@@ -12,3 +12,49 @@ body {
   z-index: 9999;
   background-color: rgba(255, 255, 255, 0.8); /* Optional: add a semi-transparent overlay */
 }
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-height: 200px;
+  flex-shrink: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1024px) {
+  .carousel-slide {
+    width: 33.33%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .carousel-slide {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .carousel-slide {
+    width: 100%;
+  }
+}
+
+.review-card {
+  padding: 1.5rem;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

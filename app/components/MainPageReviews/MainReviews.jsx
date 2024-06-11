@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React from "react";
-import Slider from "react-slick";
+import React, { useState, useEffect, useRef } from "react";
 
 const reviews = [
   {
@@ -207,148 +206,60 @@ const reviews = [
   },
 ];
 
-const customStyles = `
-  .slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    user-select: none;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .slick-list {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-
-  .slick-list:focus {
-    outline: none;
-  }
-
-  .slick-list.dragging {
-    cursor: pointer;
-  }
-
-  .slick-slider .slick-track,
-  .slick-slider .slick-list {
-    transform: translate3d(0, 0, 0);
-  }
-
-  .slick-track {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .slick-track:before,
-  .slick-track:after {
-    display: table;
-    content: "";
-  }
-
-  .slick-track:after {
-    clear: both;
-  }
-
-  .slick-slide {
-    display: none;
-    float: left;
-    height: 100%;
-    min-height: 1px;
-  }
-
-  [dir="rtl"] .slick-slide {
-    float: right;
-  }
-
-  .slick-slide img {
-    display: block;
-  }
-
-  .slick-slide.slick-loading img {
-    display: none;
-  }
-
-  .slick-slide.dragging img {
-    pointer-events: none;
-  }
-
-  .slick-initialized .slick-slide {
-    display: block;
-  }
-
-  .slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
-  }
-
-  .slick-arrow.slick-hidden {
-    display: none;
-  }
-
-  .slick-prev,
-  .slick-next {
-    display: none !important;
-  }
-`;
-
 const TestimonialCarousel = () => {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1500,
-    centerMode: true,
-    centerPadding: "0",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(3);
+  const timeoutRef = useRef(null);
+
+  const updateSlidesToShow = () => {
+    if (window.innerWidth >= 1024) {
+      setSlidesToShow(3);
+    } else if (window.innerWidth >= 768) {
+      setSlidesToShow(2);
+    } else {
+      setSlidesToShow(1);
+    }
   };
+
+  useEffect(() => {
+    updateSlidesToShow();
+    window.addEventListener("resize", updateSlidesToShow);
+    return () => {
+      window.removeEventListener("resize", updateSlidesToShow);
+    };
+  }, []);
+
+  const resetTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setCurrentIndex((prevIndex) =>
+          prevIndex === reviews.length - slidesToShow ? 0 : prevIndex + 1
+        ),
+      3000
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [currentIndex, slidesToShow]);
 
   return (
     <section
       style={{
         paddingTop: "3rem",
-        // paddingBottom: "3rem",
+        paddingBottom: "3rem",
         backgroundColor: "#F8FAFC",
         overflow: "hidden",
       }}
     >
-      <style>{customStyles}</style>
-      <div
-        style={{ paddingLeft: "1rem", paddingRight: "1rem", margin: "0 auto" }}
-      >
+      <div style={{ paddingLeft: "1rem", paddingRight: "1rem", margin: "0 auto" }}>
         <h2
           style={{
             marginBottom: "1.25rem",
@@ -367,7 +278,6 @@ const TestimonialCarousel = () => {
             fontSize: "1.125rem",
             color: "#4B5563",
             fontWeight: "500",
-            
             textAlign: "center",
             margin: "0 auto",
             maxWidth: "24rem",
@@ -375,95 +285,76 @@ const TestimonialCarousel = () => {
         >
           Top World Wide Review About ExamPrince.com
         </p>
-        <Slider {...settings}>
-          {reviews.map((review, index) => (
-            <div
-              key={index}
-              style={{
-                minHeight: "400px",
-                flexShrink: "0",
-                paddingLeft: "1rem",
-                paddingRight: "1rem",
-                paddingTop: "2rem",
-                paddingBottom: "2rem",
-              }}
-              className="px-2 min-h-95 mb-4 mt-3"
-            >
-              <div
-                style={{
-                  padding: "1.5rem",
-                  height: "100%",
-                  backgroundColor: "white",
-                  borderRadius: "0.5rem",
-                  boxShadow:
-                    "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                }}
-              >
-                <div style={{ paddingBottom: "1.5rem" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      marginBottom: "1.25rem",
-                    }}
-                  >
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <div
-                        key={i}
-                        style={{ width: "auto", padding: "0.125rem" }}
-                      >
-                        <svg
-                          width="19"
-                          height="18"
-                          viewBox="0 0 19 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M9.30769 0L12.1838 5.82662L18.6154 6.76111L13.9615 11.2977L15.0598 17.7032L9.30769 14.6801L3.55554 17.7032L4.65385 11.2977L0 6.76111L6.43162 5.82662L9.30769 0Z"
-                            fill="#F59E0B"
-                          ></path>
-                        </svg>
-                      </div>
-                    ))}
+        <div className="carousel-container">
+          <div
+            className="carousel-track"
+            style={{
+              transform: `translateX(${-currentIndex * (100 / slidesToShow)}%)`,
+            }}
+          >
+            {reviews.map((review, index) => (
+              <div key={index} className="carousel-slide">
+                <div className="review-card">
+                  <div style={{ paddingBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        marginBottom: "1.25rem",
+                      }}
+                    >
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <div key={i} style={{ width: "auto", padding: "0.125rem" }}>
+                          <svg
+                            width="19"
+                            height="18"
+                            viewBox="0 0 19 18"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M9.30769 0L12.1838 5.82662L18.6154 6.76111L13.9615 11.2977L15.0598 17.7032L9.30769 14.6801L3.55554 17.7032L4.65385 11.2977L0 6.76111L6.43162 5.82662L9.30769 0Z"
+                              fill="#F59E0B"
+                            ></path>
+                          </svg>
+                        </div>
+                      ))}
+                    </div>
+                    <p
+                      style={{
+                        fontSize: "1.125rem",
+                        fontWeight: "500",
+                        textAlign: "center",
+                      }}
+                    >
+                      {review.text}
+                    </p>
                   </div>
-                  <p
-                    style={{
-                      fontSize: "1.125rem",
-                      fontWeight: "500",
-                      textAlign: "center",
-                    }}
-                  >
-                    {review.text}
-                  </p>
-                </div>
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                  <div style={{ width: "auto", padding: "0.5rem" }}>
-                    <img
-                      src="/img/1.png"
-                      alt=""
-                      style={{ borderRadius: "50%" }}
-                    />
-                  </div>
-                  <div
-                    style={{
-                      width: "auto",
-                      padding: "0.5rem",
-                      textAlign: "center",
-                    }}
-                  >
-                    <h3 style={{ fontSize: "1rem", fontWeight: "600" }}>
-                      {review.name}
-                    </h3>
+                  <div style={{ display: "flex", justifyContent: "center" }}>
+                    <div style={{ width: "auto", padding: "0.5rem" }}>
+                      <img
+                        src="/img/1.png"
+                        alt=""
+                        style={{ borderRadius: "50%" }}
+                      />
+                    </div>
+                    <div
+                      style={{
+                        width: "auto",
+                        padding: "0.5rem",
+                        textAlign: "center",
+                      }}
+                    >
+                      <h3 style={{ fontSize: "1rem", fontWeight: "600" }}>
+                        {review.name}
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </Slider>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
