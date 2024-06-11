@@ -4,10 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 
 const reviews = [
   {
-    text: "Exam Prince offers the most comprehensive test engine I’ve ever used for my Cisco certifications!",
-    name: "John Doe",
-  },
-  {
     text: "I aced my Amazon certification thanks to the detailed practice exams on Exam Prince.",
     name: "Jane Smith",
   },
@@ -175,7 +171,6 @@ const reviews = [
     text: "I passed my Microsoft certification thanks to Exam Prince. Their test engine is the best!",
     name: "Jerry Reed",
   },
-
   {
     text: "Exam Prince’s test engine is incredibly user-friendly and effective for Riverbed exams.",
     name: "Sarah Hill",
@@ -259,7 +254,9 @@ const TestimonialCarousel = () => {
         overflow: "hidden",
       }}
     >
-      <div style={{ paddingLeft: "1rem", paddingRight: "1rem", margin: "0 auto" }}>
+      <div
+        style={{ paddingLeft: "1rem", paddingRight: "1rem", margin: "0 auto" }}
+      >
         <h2
           style={{
             marginBottom: "1.25rem",
@@ -268,7 +265,7 @@ const TestimonialCarousel = () => {
             letterSpacing: "-0.015em",
             lineHeight: "1.2",
           }}
-          className="text-4xl"
+          className="text-4xl lg:text-5xl"
         >
           See what others are saying
         </h2>
@@ -281,6 +278,7 @@ const TestimonialCarousel = () => {
             textAlign: "center",
             margin: "0 auto",
             maxWidth: "24rem",
+            textWrap: "nowrap",
           }}
         >
           Top World Wide Review About ExamPrince.com
@@ -304,7 +302,10 @@ const TestimonialCarousel = () => {
                       }}
                     >
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <div key={i} style={{ width: "auto", padding: "0.125rem" }}>
+                        <div
+                          key={i}
+                          style={{ width: "auto", padding: "0.125rem" }}
+                        >
                           <svg
                             width="19"
                             height="18"
