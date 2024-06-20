@@ -183,20 +183,6 @@ const ScPriceCard = ({ data }) => {
             <div className="rounded-2xl bg-transparent py-2 text-center  lg:flex lg:flex-col lg:justify-center lg:py-6">
               <div className="mx-auto max-w-xs">
                 <img src="/video-file-formats.png" alt="video-file-formats" />
-                {/* <p className="text-base font-semibold text-white">
-                  Pay once, own it forever
-                </p>
-                <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                  <span className="text-5xl font-bold tracking-tight text-white">
-                    ${data?.price}
-                  </span>
-                  <span className="text-2xl  font-semibold leading-6 tracking-wide ">
-                    /
-                    <span className="line-through text-2xl text-red-600">
-                      {data?.full_price}
-                    </span>
-                  </span>
-                </p> */}
                 <a
                   href="#"
                   className="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
