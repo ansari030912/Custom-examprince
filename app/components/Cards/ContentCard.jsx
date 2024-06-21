@@ -16,10 +16,7 @@ import React, { useEffect, useState } from "react";
 
 export default function ContentCard({ data, referral }) {
   const [expanded, setExpanded] = useState(null);
-  const [value, setValue] = useState(
-    // data?.exam_article ? "article" :
-    "faqs"
-  );
+  const [value, setValue] = useState(data?.exam_faqs ? "faqs" : "article");
   const [decodedHtml, setDecodedHtml] = useState("");
   const router = useRouter();
 
@@ -116,6 +113,16 @@ export default function ContentCard({ data, referral }) {
     p: {
       fontSize: "1.2rem",
     },
+    ul: {
+      margin: "8px",
+      padding: "10px",
+      fontSize: "0.8rem",
+    },
+    ol: {
+      margin: "8px",
+      padding: "10px",
+      fontSize: "0.8rem",
+    },
   };
 
   const handlePageChange = (event, newValue) => {
@@ -136,17 +143,17 @@ export default function ContentCard({ data, referral }) {
         }}
       >
         <Tabs value={value} onChange={handlePageChange}>
-          {/* {data?.exam_article && (
+          {data?.exam_faqs && (
+            <Tab
+            value="faqs"
+            label="Faqs"
+            className="text-gray-600 text-md font-bold"
+            />
+          )}
+          {data?.exam_article && (
             <Tab
               value="article"
               label="Article"
-              className="text-gray-600 text-md font-bold"
-            />
-          )} */}
-          {data?.exam_faqs && (
-            <Tab
-              value="faqs"
-              label="Faqs"
               className="text-gray-600 text-md font-bold"
             />
           )}
@@ -159,7 +166,7 @@ export default function ContentCard({ data, referral }) {
           )}
         </Tabs>
       </Card>
-      {/* <div>
+      <div>
         {value === "article" && (
           <Card
             sx={{
@@ -174,7 +181,7 @@ export default function ContentCard({ data, referral }) {
             />
           </Card>
         )}
-      </div> */}
+      </div>
       {value === "faqs" && (
         <Card
           className="text-white "
