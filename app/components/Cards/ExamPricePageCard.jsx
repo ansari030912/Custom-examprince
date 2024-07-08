@@ -266,7 +266,6 @@ const ExamPricePageCard = ({ data }) => {
                     display: "flex",
                     justifyContent: "space-between",
                     padding: "10px",
-
                     border: "1px solid white",
                     borderRadius: "0px",
                     mb: "4px",
