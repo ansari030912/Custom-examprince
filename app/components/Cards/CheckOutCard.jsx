@@ -385,67 +385,71 @@ const CheckOutCard = () => {
           </section>
         </Grid>
         <Grid item sm={12} md={4}>
-          <div className="p-6 border my-3 border-blue-100 bg-white md:p-8">
-            <h2 className="mb-8 text-3xl font-bold text-gray-700">
-              Order Summary
-            </h2>
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300">
-              <span className="text-gray-700">Subtotal</span>
-              <span className="text-xl font-bold text-gray-700">
-                ${cartResponse?.full_price}
-              </span>
+          {!examData ? (
+            ""
+          ) : (
+            <div className="p-6 border my-3 border-blue-100 bg-white md:p-8">
+              <h2 className="mb-8 text-3xl font-bold text-gray-700">
+                Order Summary
+              </h2>
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300">
+                <span className="text-gray-700">Subtotal</span>
+                <span className="text-xl font-bold text-gray-700">
+                  ${cartResponse?.full_price}
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4">
+                <span className="text-gray-700">Off</span>
+                <span className="text-xl font-bold text-gray-700">
+                  {cartResponse?.off}%
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4">
+                <span className="text-gray-700">Discount</span>
+                <span className="text-xl font-bold text-green-500">
+                  - ${discountAmount}
+                </span>
+              </div>
+              <div className="flex items-center justify-between pb-4 mb-4">
+                <span className="text-gray-700">Order Total</span>
+                <span className="text-xl font-bold text-gray-700">
+                  ${cartResponse?.price}
+                </span>
+              </div>
+              <h2 className="text-lg text-gray-500">We offer:</h2>
+              <div className="flex items-center gap-2 mb-4">
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+                <a href="#">
+                  <img
+                    src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </a>
+              </div>
+              <div className="flex items-center justify-between">
+                <button
+                  onClick={handleSubmit}
+                  className="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600"
+                >
+                  Checkout
+                </button>
+              </div>
             </div>
-            <div className="flex items-center justify-between pb-4 mb-4">
-              <span className="text-gray-700">Off</span>
-              <span className="text-xl font-bold text-gray-700">
-                {cartResponse?.off}%
-              </span>
-            </div>
-            <div className="flex items-center justify-between pb-4 mb-4">
-              <span className="text-gray-700">Discount</span>
-              <span className="text-xl font-bold text-green-500">
-                - ${discountAmount}
-              </span>
-            </div>
-            <div className="flex items-center justify-between pb-4 mb-4">
-              <span className="text-gray-700">Order Total</span>
-              <span className="text-xl font-bold text-gray-700">
-                ${cartResponse?.price}
-              </span>
-            </div>
-            <h2 className="text-lg text-gray-500">We offer:</h2>
-            <div className="flex items-center gap-2 mb-4">
-              <a href="#">
-                <img
-                  src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
-                  alt=""
-                  className="object-cover h-16 w-26"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
-                  alt=""
-                  className="object-cover h-16 w-26"
-                />
-              </a>
-              <a href="#">
-                <img
-                  src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
-                  alt=""
-                  className="object-cover h-16 w-26"
-                />
-              </a>
-            </div>
-            <div className="flex items-center justify-between">
-              <button
-                onClick={handleSubmit}
-                className="block w-full py-4 font-bold text-center text-gray-100 uppercase bg-blue-500 rounded-md hover:bg-blue-600"
-              >
-                Checkout
-              </button>
-            </div>
-          </div>
+          )}
           <RefundPolicy />
           <SafeCheckOut />
 
