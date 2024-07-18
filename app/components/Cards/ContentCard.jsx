@@ -11,11 +11,9 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ContentCard({ data, referral }) {
-  const [expanded, setExpanded] = useState(null);
   const [value, setValue] = useState(data?.exam_faqs ? "faqs" : "article");
   const [decodedHtml, setDecodedHtml] = useState("");
   const router = useRouter();
@@ -39,6 +37,7 @@ export default function ContentCard({ data, referral }) {
     txt.innerHTML = html;
     return txt.value;
   };
+
   useEffect(() => {
     if (
       data?.is_disabled ||
@@ -48,6 +47,7 @@ export default function ContentCard({ data, referral }) {
       router.push("/");
     }
   }, [data]);
+
   const parseHtmlWithStyles = (html) => {
     if (
       typeof window !== "undefined" &&
@@ -129,10 +129,6 @@ export default function ContentCard({ data, referral }) {
     setValue(newValue);
   };
 
-  const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : null);
-  };
-
   return (
     <>
       <Card
@@ -145,9 +141,9 @@ export default function ContentCard({ data, referral }) {
         <Tabs value={value} onChange={handlePageChange}>
           {data?.exam_faqs && (
             <Tab
-            value="faqs"
-            label="Faqs"
-            className="text-gray-600 text-md font-bold"
+              value="faqs"
+              label="Faqs"
+              className="text-gray-600 text-md font-bold"
             />
           )}
           {data?.exam_article && (
@@ -202,26 +198,10 @@ export default function ContentCard({ data, referral }) {
           {data?.exam_faqs?.map((faq, index) => (
             <Accordion
               key={index}
-              expanded={expanded === `panel${index}`}
-              onChange={handleChange(`panel${index}`)}
-              sx={{ marginBottom: "10px", border: "1px solid white" }} // Use sx prop for inline styling
+              sx={{ marginBottom: "10px", border: "1px solid white" }}
+              defaultExpanded
             >
-              <AccordionSummary
-                sx={{ bgcolor: "white" }}
-                aria-controls={`panel${index}d-content`}
-                id={`panel${index}d-header`}
-              >
-                <div>
-                  <svg
-                    color="white"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M7 10l5 5 5-5z" />
-                  </svg>
-                </div>
+              <AccordionSummary sx={{ bgcolor: "white" }}>
                 <Typography
                   sx={{ textAlign: "justify" }}
                   variant="h3"
@@ -230,7 +210,8 @@ export default function ContentCard({ data, referral }) {
                   {faq.faq_q}
                 </Typography>
               </AccordionSummary>
-              <AccordionDetails sx={{ bgcolor: "#111827", color: "white" }}>
+              <hr />
+              <AccordionDetails>
                 <Typography sx={{ textAlign: "justify" }}>
                   {faq.faq_a}
                 </Typography>
