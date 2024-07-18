@@ -1,6 +1,6 @@
-"use client";
 /* eslint-disable @next/next/no-img-element */
 // pages/SignIn.js
+"use client";
 import { Container, Grid } from "@mui/material";
 import loginAuth from "../auth/LoginAuth";
 import SignUpForm from "../components/Form/SignUpForm";

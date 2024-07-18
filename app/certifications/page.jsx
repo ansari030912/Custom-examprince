@@ -46,7 +46,6 @@ const AllCertificaesPage = ({ searchParams }) => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>
-            
             <AllCertificates referral={referral} />
             <WindowsDataCard />
           </Grid>

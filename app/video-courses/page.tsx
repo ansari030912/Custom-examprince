@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Button, Card, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
+import { RefundPolicy, SafeCheckOut } from "../components/Cards";
 import AllVideoCourses from "../components/Tables/AllVideoCourses";
 import HotExamsMW from "../components/Tables/HotExamsData";
-import { RefundPolicy, SafeCheckOut } from "../components/Cards";
 
 export async function generateMetadata() {
   return {

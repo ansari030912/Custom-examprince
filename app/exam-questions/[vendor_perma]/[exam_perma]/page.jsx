@@ -89,7 +89,6 @@ const AllVendorsPerma = async ({ params, searchParams }) => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} lg={8}>
-            
             <ExamPriceCard data={data} />
             {data?.exam_topics?.length > 0 && (
               <div className="max-w-full mx-auto bg-white shadow-md overflow-hidden mt-4">

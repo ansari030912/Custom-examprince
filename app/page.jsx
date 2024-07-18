@@ -6,9 +6,9 @@ import CardSliderVendor from "./components/CardSlider/CardSliderVendor";
 import { RefundPolicy, SafeCheckOut } from "./components/Cards";
 import MainPageCard from "./components/Cards/MainPageCard";
 import WindowsCard from "./components/Cards/WindowsCard";
+import TestimonialCarousel from "./components/MainPageReviews/MainReviews";
 import HotExamsData from "./components/Tables/HotExamsData";
 import RecentlyUpdatedTable from "./components/Tables/RecentlyUpdatedTable";
-import TestimonialCarousel from "./components/MainPageReviews/MainReviews";
 
 const Home = () => {
   const randomReviewCount = Math.floor(Math.random() * (999 - 700 + 1)) + 700;
@@ -84,6 +84,7 @@ const Home = () => {
 
 export default Home;
 export async function generateMetadata() {
+  
   return {
     title: `Updated Exam Questions and Answers by Tech Professionals`,
     description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of  IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,

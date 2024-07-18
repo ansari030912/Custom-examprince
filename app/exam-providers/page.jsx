@@ -1,16 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
-import Link from "next/link";
+import { Container, Grid } from "@mui/material";
 import {
   RefundPolicy,
   SafeCheckOut,

@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
+/* eslint-disable @next/next/no-img-element */
 import { Icon } from "@iconify/react";
 import { Container } from "@mui/material";
 import axios from "axios";
@@ -422,7 +422,7 @@ const NavbarList = () => {
                   style={{ marginRight: "4px" }}
                 />
                 Unlimited Access
-              </Link>             
+              </Link>
               <Link
                 href="/check-out"
                 className="text-white hover:bg-gradient-to-l hover:from-blue-400  hover:to-gray-800 rounded-md px-3 py-2 text-base font-medium flex"
@@ -440,7 +440,12 @@ const NavbarList = () => {
                   />
                 </svg>
                 Cart{" "}
-                <span style={{paddingTop:'2px'}} className="text-gray-600 ml-2 font-bold rounded-md text-sm bg-white px-2">{!cartResponce ? "" : "1"}</span>
+                <span
+                  style={{ paddingTop: "2px" }}
+                  className="text-gray-600 ml-2 font-bold rounded-md text-sm bg-white px-2"
+                >
+                  {!cartResponce ? "" : "1"}
+                </span>
               </Link>
             </div>
           </div>

@@ -4,7 +4,6 @@ import { Card, Container, Grid } from "@mui/material";
 import SafeCheckOutCard from "../components/Cards/SafeCheckOutCard";
 import WindowsCard from "../components/Cards/WindowsCard";
 import HotExamsData from "../components/Tables/HotExamsData";
-import Link from "next/link";
 
 export async function generateMetadata() {
   return {

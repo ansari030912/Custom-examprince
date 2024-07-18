@@ -1,6 +1,6 @@
-"use client";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import loginAuth from "../auth/LoginAuth";

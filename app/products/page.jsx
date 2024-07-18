@@ -1,6 +1,6 @@
-"use client";
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
+"use client";
 import { Container, Grid } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";

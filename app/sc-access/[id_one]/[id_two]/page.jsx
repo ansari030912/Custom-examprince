@@ -1,18 +1,18 @@
 /* eslint-disable @next/next/no-async-client-component */
-"use client";
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { Container, Grid, Typography } from "@mui/material";
 import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { X_API_Key } from "../../../AllUrls/ApiKey";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
 import withAuth from "../../../auth/RouterAuth";
 import ScAccessAccordian from "../../../components/Cards/ScAccessAccordian";
 import ScPriceCard from "../../../components/Cards/ScPriceCard";
 import { HotExam } from "../../../components/Tables";
-import { BaseUrl } from "../../../AllUrls/BaseUrl";
-import { X_API_Key } from "../../../AllUrls/ApiKey";
 
 const ScAccess = async ({ params }) => {
   const [data, setData] = useState(null);

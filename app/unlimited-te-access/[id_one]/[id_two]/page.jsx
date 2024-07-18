@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unescaped-entities */
-"use client";
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import { Icon } from "@iconify/react";
 import {
   Box,
@@ -23,9 +23,9 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import withAuth from "../../../auth/RouterAuth";
-import { BaseUrl } from "../../../AllUrls/BaseUrl";
 import { X_API_Key } from "../../../AllUrls/ApiKey";
+import { BaseUrl } from "../../../AllUrls/BaseUrl";
+import withAuth from "../../../auth/RouterAuth";
 
 const UnlimitedTeAccessPage = ({ params }) => {
   const router = useRouter();

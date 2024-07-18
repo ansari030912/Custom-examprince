@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import { Container, Grid, Typography } from "@mui/material";
-import Link from "next/link";
+import { Container, Grid } from "@mui/material";
+import { X_API_Key } from "../AllUrls/ApiKey";
+import { BaseUrl } from "../AllUrls/BaseUrl";
 import {
   RefundPolicy,
   SafeCheckOut,
@@ -9,8 +10,6 @@ import {
   WindowsDataCard,
 } from "../components/Cards";
 import { HotExam } from "../components/Tables";
-import { BaseUrl } from "../AllUrls/BaseUrl";
-import { X_API_Key } from "../AllUrls/ApiKey";
 
 export async function generateMetadata() {
   return {
@@ -74,7 +73,6 @@ const UnlimitedAccessPage = async () => {
         <Grid container spacing={2}>
           <Grid item xs={12}></Grid>
           <Grid item xs={12} md={8}>
-            
             <UnlimitedAccess data={data} />
             <WindowsDataCard />
           </Grid>
