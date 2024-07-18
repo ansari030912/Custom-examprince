@@ -481,7 +481,7 @@ const CheckOutCard = () => {
                     variant="body1"
                     className="text-gray-700 text-center mb-2"
                   >
-                    Use FREE ExamPrinceTest Engine player to open .dumpsarena
+                    Use FREE ExamPrinceTest Engine player to open .examprince
                     files
                   </Typography>
                 </div>

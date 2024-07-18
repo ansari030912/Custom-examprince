@@ -106,7 +106,7 @@ const NavbarList = () => {
                     height={"150px"}
                     width={"150px"}
                     src="/img/examprince_white_svg.svg"
-                    alt="dumpsarena"
+                    alt="examprince.com"
                   />
                 </Link>
               </div>
