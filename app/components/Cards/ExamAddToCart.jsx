@@ -13,10 +13,12 @@ import React, { useState } from "react";
 const ExamAddToCart = ({ data }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const handleBoxClick = (item) => {
-    localStorage.removeItem("ExamData");
-    localStorage.setItem("ExamData", JSON.stringify(data));
+    const cartData = {
+      cart: item.cart,
+      saveExam: true,
+    };
     localStorage.removeItem("CartProducts");
-    localStorage.setItem("CartProducts", JSON.stringify(item));
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
     setSnackbarOpen(true);
   };
 

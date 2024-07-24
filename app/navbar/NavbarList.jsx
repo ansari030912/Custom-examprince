@@ -12,7 +12,7 @@ const NavbarList = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [profileToggles, setProfileToggles] = useState(false);
   const [loginResponse, setLoginResponse] = useState(null);
-  const [cartResponce, setCartResponce] = useState(null);
+  const [cartResponse, setCartResponse] = useState(null);
 
   const handleSignOut = () => {
     localStorage.removeItem("loginResponse");
@@ -40,16 +40,26 @@ const NavbarList = () => {
     if (typeof localStorage !== "undefined") {
       const storedLoginResponse = localStorage.getItem("loginResponse");
       if (storedLoginResponse) {
-        setLoginResponse(JSON.parse(storedLoginResponse));
+        try {
+          setLoginResponse(JSON.parse(storedLoginResponse));
+        } catch (error) {
+          console.error("Error parsing loginResponse:", error);
+        }
       }
     }
+
     if (typeof localStorage !== "undefined") {
-      const storedLoginResponse = localStorage.getItem("CartProducts");
-      if (storedLoginResponse) {
-        setCartResponce(JSON.parse(storedLoginResponse));
+      const storedCartResponse = localStorage.getItem("CartProducts");
+      if (storedCartResponse) {
+        try {
+          setCartResponse(JSON.parse(storedCartResponse));
+        } catch (error) {
+          console.error("Error parsing CartProducts:", error);
+        }
       }
     }
   }, []);
+
   return (
     <nav
       style={{ zIndex: 1 }}
@@ -71,13 +81,13 @@ const NavbarList = () => {
                     className="block h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
                     aria-hidden="true"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
                     />
                   </svg>
@@ -99,7 +109,7 @@ const NavbarList = () => {
                 )}
               </button>
             </div>
-            <div className="flex flex-1 items-center  ms-11 lg:-m-5 justify-start  lg:items-stretch lg:justify-start">
+            <div className="flex flex-1 items-center ms-11 lg:-m-5 justify-start lg:items-stretch lg:justify-start">
               <div className="flex flex-shrink-0 items-center">
                 <Link href="/">
                   <img
@@ -160,7 +170,7 @@ const NavbarList = () => {
                       height="1.2rem"
                       style={{ marginRight: "4px" }}
                     />
-                    Video Cources
+                    Video Courses
                   </Link>
                   <Link
                     href="/unlimited-access"
@@ -200,7 +210,7 @@ const NavbarList = () => {
                     </div>
                     <div>
                       <span className="text-white ">
-                        {!cartResponce ? "" : "1"}
+                        {!cartResponse ? "" : "1"}
                       </span>
                     </div>
                   </div>
@@ -241,7 +251,7 @@ const NavbarList = () => {
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="user-menu-button"
-                      tabindex="-1"
+                      tabIndex="-1"
                     >
                       <div className="p-2">
                         <div className="text-gray-600 flex">
@@ -268,7 +278,7 @@ const NavbarList = () => {
                         href="/products"
                         className="px-4 py-2 text-sm text-gray-700 flex hover:bg-gray-100"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-0"
                       >
                         <Icon
@@ -284,7 +294,7 @@ const NavbarList = () => {
                         href="/setting"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-1"
                       >
                         <Icon
@@ -299,7 +309,7 @@ const NavbarList = () => {
                         href="/invoices"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-1"
                       >
                         <Icon
@@ -311,10 +321,10 @@ const NavbarList = () => {
                         Invoices
                       </Link>
                       <Link
-                        href="download-history"
+                        href="/download-history"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-1"
                       >
                         <Icon
@@ -326,10 +336,10 @@ const NavbarList = () => {
                         Download History
                       </Link>
                       <Link
-                        href="login-history"
+                        href="/login-history"
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-1"
                       >
                         <Icon
@@ -345,7 +355,7 @@ const NavbarList = () => {
                         onClick={handleSignOut}
                         className="flex px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
                         role="menuitem"
-                        tabindex="-1"
+                        tabIndex="-1"
                         id="user-menu-item-1"
                       >
                         <Icon
@@ -409,7 +419,7 @@ const NavbarList = () => {
                   height="1.2rem"
                   style={{ marginRight: "4px" }}
                 />
-                Video Cources
+                Video Courses
               </Link>
               <Link
                 href="/unlimited-access"
@@ -444,7 +454,7 @@ const NavbarList = () => {
                   style={{ paddingTop: "2px" }}
                   className="text-gray-600 ml-2 font-bold rounded-md text-sm bg-white px-2"
                 >
-                  {!cartResponce ? "" : "1"}
+                  {!cartResponse ? "" : "1"}
                 </span>
               </Link>
             </div>

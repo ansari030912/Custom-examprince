@@ -5,55 +5,45 @@
 import {
   Button,
   Card,
+  Checkbox,
+  CircularProgress,
   Container,
+  FormControlLabel,
   Grid,
   IconButton,
   TextField,
   Typography,
-  CircularProgress,
-  Checkbox,
-  FormControlLabel,
 } from "@mui/material";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import { RefundPolicy, SafeCheckOut } from ".";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
 import { X_API_Key } from "../../AllUrls/ApiKey";
+import { BaseUrl } from "../../AllUrls/BaseUrl";
 
-const PROMO_SUFFIX = "-30";
-
-const CheckOutCard = () => {
+const CustomInvoiceCheckOut = ({ data }) => {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [promoCode, setPromoCode] = useState(`MEGASALE${PROMO_SUFFIX}`);
-  const [apiPromoCode, setApiPromoCode] = useState(`MEGASALE${PROMO_SUFFIX}`);
   const [errors, setErrors] = useState({});
-  const [cartResponse, setCartResponse] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [redirectingMessage, setRedirectingMessage] = useState("");
   const [ipAddress, setIpAddress] = useState("");
-  console.log("🚀 ~ CheckOutCard ~ ipAddress:", ipAddress);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
-  const searchParams = useSearchParams();
-  const queryEmail = searchParams.get("referralCode");
-
-  const fetchIpAddress = async () => {
-    try {
-      const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
-        headers: {
-          "x-api-key": X_API_Key,
-        },
-      });
-      setIpAddress(response.data);
-    } catch (error) {
-      console.error("Error fetching IP address:", error);
-    }
-  };
 
   useEffect(() => {
+    const fetchIpAddress = async () => {
+      try {
+        const response = await axios.get(`${BaseUrl}/v1/my-ip`, {
+          headers: {
+            "x-api-key": X_API_Key,
+          },
+        });
+        setIpAddress(response.data);
+      } catch (error) {
+        console.error("Error fetching IP address:", error);
+      }
+    };
     fetchIpAddress();
   }, []);
 
@@ -74,9 +64,6 @@ const CheckOutCard = () => {
       case "email":
         setEmail(value);
         break;
-      case "promoCode":
-        setPromoCode(`${value}${PROMO_SUFFIX}`);
-        break;
       default:
         break;
     }
@@ -96,42 +83,6 @@ const CheckOutCard = () => {
     }
   };
 
-  const handlePromoSubmit = (event) => {
-    event.preventDefault();
-    if (cartResponse) {
-      axios
-        .post(
-          `${BaseUrl}/v1/update-cart`,
-          {
-            coupon: promoCode,
-            cart_items: [cartResponse.cart],
-          },
-          {
-            headers: {
-              "x-api-key": X_API_Key,
-            },
-          }
-        )
-        .then((response) => {
-          if (
-            response.data &&
-            response.data.length > 0 &&
-            response.data[0].exam_code
-          ) {
-            setCartResponse(response.data[0]);
-            setApiPromoCode(promoCode);
-            setErrorMessage("");
-          } else {
-            setErrorMessage("Coupon not found");
-          }
-        })
-        .catch((error) => {
-          console.error("Error updating cart with promo code:", error);
-          setErrorMessage("Invalid Promo Code");
-        });
-    }
-  };
-
   const handleCheckout = async () => {
     if (!validate() || !acceptedTerms) return;
     setLoading(true);
@@ -144,10 +95,10 @@ const CheckOutCard = () => {
             name: fullName,
             email: email,
             ip: ipAddress,
-            coupon: apiPromoCode,
-            IsInvoice: false,
-            invoice_perma: "",
-            cart_items: [cartResponse.cart],
+            coupon: "",
+            IsInvoice: true,
+            invoice_perma: data.invoice_perma,
+            cart_items: data.invoice_items.map((item) => item.cart),
           },
           {
             headers: {
@@ -167,41 +118,8 @@ const CheckOutCard = () => {
         setErrorMessage("An error occurred. Please try again.");
         setLoading(false);
       }
-    }, 2000); // 5 seconds delay
+    }, 2000);
   };
-
-  const discountAmount =
-    Math.floor(cartResponse?.full_price) - Math.floor(cartResponse?.price);
-
-  useEffect(() => {
-    if (typeof localStorage !== "undefined") {
-      const storedCartResponse = localStorage.getItem("CartProducts");
-      if (storedCartResponse) {
-        const cartProducts = JSON.parse(storedCartResponse);
-        if (cartProducts.saveExam) {
-          axios
-            .post(
-              `${BaseUrl}/v1/update-cart`,
-              {
-                coupon: promoCode,
-                cart_items: [cartProducts.cart],
-              },
-              {
-                headers: {
-                  "x-api-key": X_API_Key,
-                },
-              }
-            )
-            .then((response) => {
-              setCartResponse(response.data[0]);
-            })
-            .catch((error) => {
-              console.error("Error updating cart:", error);
-            });
-        }
-      }
-    }
-  }, []);
 
   const handleRemoveData = () => {
     localStorage.removeItem("CartProducts");
@@ -216,116 +134,62 @@ const CheckOutCard = () => {
           <section className="bg-gray-100 font-poppins mt-3">
             <div className="px-4 py-2 mx-auto max-w-7xl lg:py-4 md:px-6">
               <div>
-                <h2 className="mb-8 text-4xl font-bold">Your Cart</h2>
-                {!cartResponse ? (
+                <h2 className="mb-8 text-4xl font-bold">Your Invoice</h2>
+                {!data ? (
                   <div className="p-6 mb-8 border bg-gray-50">
                     <h4 className="font-bold text-2xl text-gray-500 text-center">
-                      Nothing is in your Cart please add product in your cart
-                      first.
+                      Loading invoice data, please wait...
                     </h4>
                   </div>
                 ) : (
                   <>
                     <div className="p-6 mb-8 border bg-gray-50">
-                      <div className="flex-wrap items-center hidden mb-6 -mx-4 md:flex md:mb-8">
-                        <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                          <h2 className="font-bold text-gray-500">
-                            Product name
-                          </h2>
-                        </div>
-                        <div className="w-auto px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                          <h2 className="font-bold text-gray-500">Price</h2>
-                          <h2 className="font-bold text-gray-500">
-                            Clear Cart
-                          </h2>
-                        </div>
-                      </div>
                       <div className="py-4 mb-8 border-t border-b border-gray-200">
-                        <div className="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
-                          <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                            <div className="flex flex-wrap items-center -mx-4">
-                              <div className="w-full px-4">
-                                <h2 className="mb-1 text-lg font-bold text-gray-700">
-                                  {cartResponse?.exam_vendor_title}{" "}
-                                  {cartResponse?.exam_code}
-                                </h2>
-                                <p className="text-blue-500 text-xl mb-1 font-bold">
-                                  {cartResponse?.title}
-                                </p>
-                                <p className="text-gray-500 text-sm font-bold">
-                                  {cartResponse?.exam_title}
-                                </p>
+                        {data.invoice_items && data.invoice_items.length > 0 ? (
+                          <div className="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
+                            <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
+                              <div className="flex flex-wrap items-center -mx-4">
+                                <div className="w-full px-4">
+                                  <h2 className="mb-1 text-lg font-bold text-gray-700">
+                                    {data.invoice_items[0].title}{" "}
+                                    {data.invoice_items[0].type}
+                                  </h2>
+                                  <p className="text-blue-500 text-xl mb-1 font-bold">
+                                    {data.invoice_items[0].sub_title}
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div className="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                            <div>
-                              <p className="text-xl font-bold text-blue-500">
-                                $ {cartResponse?.price}
-                              </p>
-                              <span className="text-lg text-red-500 line-through">
-                                $ {cartResponse?.full_price}
-                              </span>
+                            <div className="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
+                              <div>
+                                <p className="text-xl font-bold text-blue-500">
+                                  $ {data.invoice_items[0].price}
+                                </p>
+                                <span className="text-lg text-red-500 line-through">
+                                  $ {data.invoice_items[0].full_price}
+                                </span>
+                              </div>
+                              <IconButton onClick={handleRemoveData}>
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="1em"
+                                  height="1em"
+                                  viewBox="0 0 15 15"
+                                >
+                                  <path
+                                    fill="RED"
+                                    d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"
+                                  />
+                                </svg>
+                              </IconButton>
                             </div>
-                            <IconButton onClick={handleRemoveData}>
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="1em"
-                                height="1em"
-                                viewBox="0 0 15 15"
-                              >
-                                <path
-                                  fill="RED"
-                                  d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"
-                                />
-                              </svg>
-                            </IconButton>
                           </div>
-                          <div className="w-auto px-4 text-right md:w-1/6 lg:w-2/12">
-                            <p className="text-lg font-bold text-blue-500 "></p>
-                          </div>
-                        </div>
+                        ) : (
+                          <p>No invoice items found.</p>
+                        )}
                       </div>
                     </div>
                     <div className="flex flex-wrap justify-between">
-                      <div className="w-full mb-4 lg:w-1/2 ">
-                        <form onSubmit={handlePromoSubmit}>
-                          <div className="flex flex-nowrap items-center gap-4">
-                            <input
-                              type="text"
-                              className="w-full px-8 py-4 font-normal placeholder-gray-400 border lg:flex-1  dark:placeholder-gray-500  "
-                              placeholder="Promo code"
-                              name="promoCode"
-                              value={promoCode.replace(PROMO_SUFFIX, "")}
-                              onChange={handleChange}
-                              required
-                            />
-                            <span className="pr-1">
-                              <button
-                                type="submit"
-                                className="inline-block w-full px-8 py-4 font-bold text-center text-gray-100 bg-blue-500 rounded-md lg:w-32 hover:bg-blue-600"
-                              >
-                                Apply
-                              </button>
-                            </span>
-                          </div>
-                        </form>
-                        <div className="space-y-4 mt-8">
-                          <div className="text-center text-base font-bold text-green-400">
-                            "{" "}
-                            <span className="text-red-500">{apiPromoCode}</span>{" "}
-                            " COUPON 40-70% OFF IS ACTIVE
-                          </div>
-                        </div>
-                        {errorMessage ===
-                        "Payment failed. Please try again." ? (
-                          ""
-                        ) : (
-                          <div className="mt-2 text-center bg-transparent text-red-500">
-                            {errorMessage}
-                          </div>
-                        )}
-                      </div>
                       <div className="w-full mb-4 px-3 lg:w-1/2 ">
                         <Grid container spacing={2}>
                           <Grid item xs={12} md={12}>
@@ -365,7 +229,7 @@ const CheckOutCard = () => {
           </section>
         </Grid>
         <Grid item sm={12} md={4}>
-          {!cartResponse ? (
+          {!data ? (
             ""
           ) : (
             <div className="p-6 border my-3 border-blue-100 bg-white md:p-8">
@@ -375,50 +239,26 @@ const CheckOutCard = () => {
               <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-300">
                 <span className="text-gray-700">Subtotal</span>
                 <span className="text-xl font-bold text-gray-700">
-                  ${cartResponse?.full_price}
-                </span>
-              </div>
-              <div className="flex items-center justify-between pb-4 mb-4">
-                <span className="text-gray-700">Off</span>
-                <span className="text-xl font-bold text-gray-700">
-                  {cartResponse?.off}%
+                  ${data.invoice_sub_total}
                 </span>
               </div>
               <div className="flex items-center justify-between pb-4 mb-4">
                 <span className="text-gray-700">Discount</span>
                 <span className="text-xl font-bold text-green-500">
-                  - ${discountAmount}
+                  - ${data.invoice_discount}
                 </span>
               </div>
               <div className="flex items-center justify-between pb-4 mb-4">
                 <span className="text-gray-700">Order Total</span>
                 <span className="text-xl font-bold text-gray-700">
-                  ${cartResponse?.price}
+                  ${data.invoice_total}
                 </span>
               </div>
-              <h2 className="text-lg text-gray-500">We offer:</h2>
-              <div className="flex items-center gap-2 mb-4">
-                <a href="#">
-                  <img
-                    src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
-                    alt=""
-                    className="object-cover h-16 w-26"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
-                    alt=""
-                    className="object-cover h-16 w-26"
-                  />
-                </a>
-                <a href="#">
-                  <img
-                    src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
-                    alt=""
-                    className="object-cover h-16 w-26"
-                  />
-                </a>
+              <div className="flex items-center justify-between pb-4 mb-4">
+                <span className="text-gray-700">Invoice Paid</span>
+                <span className="text-xl font-bold text-gray-700">
+                  {data.invoice_paid ? "Yes" : "No"}
+                </span>
               </div>
               <FormControlLabel
                 control={
@@ -430,10 +270,7 @@ const CheckOutCard = () => {
                 label={
                   <Typography>
                     I agree to the{" "}
-                    <Link
-                      className="text-blue-400"
-                      href="/terms-and-conditions"
-                    >
+                    <Link className="text-blue-400" href="/terms-and-conditions">
                       terms and conditions
                     </Link>
                   </Typography>
@@ -460,7 +297,7 @@ const CheckOutCard = () => {
               </div>
               {!loading && (
                 <span>
-                  {errorMessage === "Payment failed. Please try again." && (
+                  {errorMessage && (
                     <div className="mt-4 text-center text-red-700">
                       {errorMessage}
                     </div>
@@ -581,4 +418,4 @@ const CheckOutCard = () => {
   );
 };
 
-export default CheckOutCard;
+export default CustomInvoiceCheckOut;

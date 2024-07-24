@@ -6,40 +6,29 @@ import React, { useEffect, useState } from "react";
 const VideoExamAddToCart = ({ data }) => {
   const [addCart, setAddCart] = useState({
     cart: "",
-    full_price: "165.97",
-    off: "70",
-    price: "69.99",
-    title: "Full Premium Bundle",
-    type: 6,
-  });
-  const [productData, setProductData] = useState({
-    exam_title: "",
   });
   const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   useEffect(() => {
     setAddCart({
       cart: data.cart,
-      full_price: data.full_price,
-      off: "40",
-      price: data.price,
-      title: data.title,
     });
-
-    setProductData({ exam_title: data.title });
   }, [data]);
 
   const handleBoxClick = () => {
-    localStorage.removeItem("ExamData");
-    localStorage.setItem("ExamData", JSON.stringify(productData));
+    const cartData = {
+      cart: addCart.cart,
+      saveExam: true,
+    };
     localStorage.removeItem("CartProducts");
-    localStorage.setItem("CartProducts", JSON.stringify(addCart));
+    localStorage.setItem("CartProducts", JSON.stringify(cartData));
     setSnackbarOpen(true);
   };
 
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
+
   return (
     <>
       <Snackbar
