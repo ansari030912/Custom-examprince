@@ -1,7 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-"use client";
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import {
   Button,
   Card,
@@ -21,12 +19,14 @@ import { RefundPolicy, SafeCheckOut } from ".";
 import { X_API_Key } from "../../AllUrls/ApiKey";
 import { BaseUrl } from "../../AllUrls/BaseUrl";
 
-const CustomInvoiceCheckOut = ({ data }) => {
+const CustomInvoiceCheckOut = ({ params }) => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  const [loading, setLoading] = useState(false);
   const [redirectingMessage, setRedirectingMessage] = useState("");
   const [ipAddress, setIpAddress] = useState("");
   const [acceptedTerms, setAcceptedTerms] = useState(false);
@@ -46,6 +46,30 @@ const CustomInvoiceCheckOut = ({ data }) => {
     };
     fetchIpAddress();
   }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await axios.get(
+          `${BaseUrl}/v1/invoice/${params.invoice_perma}`,
+          {
+            headers: {
+              "x-api-key": X_API_Key,
+            },
+          }
+        );
+        setData(response.data);
+      } catch (error) {
+        setError("Invoice Expired or Not Available At The Moment...");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [params.invoice_perma]);
 
   const validate = () => {
     let tempErrors = {};
@@ -77,7 +101,6 @@ const CustomInvoiceCheckOut = ({ data }) => {
         email,
       };
       localStorage.setItem("userData", JSON.stringify(userData));
-      console.log("Data saved:", userData);
       setFullName("");
       setEmail("");
     }
@@ -86,7 +109,9 @@ const CustomInvoiceCheckOut = ({ data }) => {
   const handleCheckout = async () => {
     if (!validate() || !acceptedTerms) return;
     setLoading(true);
-    setRedirectingMessage("We are redirecting to Prepway...");
+    setRedirectingMessage(
+      "We are Redirecting to You For Payment on PREPWISE..."
+    );
     setTimeout(async () => {
       try {
         const response = await axios.post(
@@ -114,7 +139,6 @@ const CustomInvoiceCheckOut = ({ data }) => {
           setLoading(false);
         }
       } catch (error) {
-        console.error("Error during checkout:", error);
         setErrorMessage("An error occurred. Please try again.");
         setLoading(false);
       }
@@ -137,62 +161,63 @@ const CustomInvoiceCheckOut = ({ data }) => {
                 <h2 className="mb-8 text-4xl font-bold">Your Invoice</h2>
                 {!data ? (
                   <div className="p-6 mb-8 border bg-gray-50">
-                    <h4 className="font-bold text-2xl text-gray-500 text-center">
-                      Loading invoice data, please wait...
+                    <h4 className="font-bold text-2xl text-red-500 text-center">
+                      {error ? (
+                        error
+                      ) : (
+                        <div className="font-bold text-2xl text-gray-500 text-center">Loading invoice data, please wait...</div>
+                      )}
                     </h4>
                   </div>
                 ) : (
                   <>
                     <div className="p-6 mb-8 border bg-gray-50">
-                      <div className="py-4 mb-8 border-t border-b border-gray-200">
+                      <div className="py-4 border-t border-b border-gray-200">
                         {data.invoice_items && data.invoice_items.length > 0 ? (
-                          <div className="flex flex-wrap items-center mb-6 -mx-4 md:mb-8">
-                            <div className="w-full px-4 mb-6 md:w-6/12 lg:w-6/12 md:mb-0">
-                              <div className="flex flex-wrap items-center -mx-4">
-                                <div className="w-full px-4">
-                                  <h2 className="mb-1 text-lg font-bold text-gray-700">
-                                    {data.invoice_items[0].title}{" "}
-                                    {data.invoice_items[0].type}
-                                  </h2>
-                                  <p className="text-blue-500 text-xl mb-1 font-bold">
-                                    {data.invoice_items[0].sub_title}
-                                  </p>
+                          data.invoice_items.map((item, index) => (
+                            <div key={index}>
+                              <div className="flex mt-3 flex-wrap items-center-mx-4 ">
+                                <div className="w-full px-4 mb-6  lg:w-9/12 md:mb-0">
+                                  <div className="flex flex-wrap items-center -mx-4">
+                                    <div className="w-full px-4">
+                                      <h2 className="mb-1 text-lg font-bold text-blue-700">
+                                        {item.title}
+                                      </h2>
+                                      <p className="text-gray-700 text-base mb-1 font-bold">
+                                        {item.type}
+                                      </p>
+                                      <p className="text-gray-500 text-sm mb-1 font-bold">
+                                        {item.sub_title}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="w-full px-4 text-right lg:w-3/12 flex justify-between">
+                                  <div>
+                                    <p className="text-xl font-bold text-blue-500">
+                                      $ {item.price}
+                                    </p>
+                                    <span className="text-lg text-red-500 line-through">
+                                      $ {item.full_price}
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
+                              {index < data.invoice_items.length - 1 && (
+                                <hr className="h-2 mt-6" />
+                              )}
                             </div>
-                            <div className="w-full px-4 text-right md:w-6/12 lg:w-6/12 flex justify-between">
-                              <div>
-                                <p className="text-xl font-bold text-blue-500">
-                                  $ {data.invoice_items[0].price}
-                                </p>
-                                <span className="text-lg text-red-500 line-through">
-                                  $ {data.invoice_items[0].full_price}
-                                </span>
-                              </div>
-                              <IconButton onClick={handleRemoveData}>
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="1em"
-                                  height="1em"
-                                  viewBox="0 0 15 15"
-                                >
-                                  <path
-                                    fill="RED"
-                                    d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"
-                                  />
-                                </svg>
-                              </IconButton>
-                            </div>
-                          </div>
+                          ))
                         ) : (
                           <p>No invoice items found.</p>
                         )}
                       </div>
                     </div>
-                    <div className="flex flex-wrap justify-between">
-                      <div className="w-full mb-4 px-3 lg:w-1/2 ">
+
+                    <div className="flex bg-white rounded-lg flex-wrap justify-between">
+                      <div className="w-full py-3 px-3 ">
                         <Grid container spacing={2}>
-                          <Grid item xs={12} md={12}>
+                          <Grid item xs={12} md={6}>
                             <TextField
                               label="Full Name"
                               variant="outlined"
@@ -205,7 +230,7 @@ const CustomInvoiceCheckOut = ({ data }) => {
                               className="bg-white"
                             />
                           </Grid>
-                          <Grid item xs={12} md={12}>
+                          <Grid item xs={12} md={6}>
                             <TextField
                               label="Email"
                               variant="outlined"
@@ -256,11 +281,39 @@ const CustomInvoiceCheckOut = ({ data }) => {
               </div>
               <div className="flex items-center justify-between pb-4 mb-4">
                 <span className="text-gray-700">Invoice Paid</span>
-                <span className="text-xl font-bold text-gray-700">
+                <span
+                  style={{ color: data.invoice_paid ? "green" : "red" }}
+                  className="text-xl font-bold text-gray-700"
+                >
                   {data.invoice_paid ? "Yes" : "No"}
                 </span>
               </div>
+              <hr />
+              <div className="flex items-center gap-2 mb-4">
+                <span>
+                  <img
+                    src="https://i.postimg.cc/g22HQhX0/70599-visa-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </span>
+                <span>
+                  <img
+                    src="https://i.postimg.cc/HW38JkkG/38602-mastercard-curved-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </span>
+                <span>
+                  <img
+                    src="https://i.postimg.cc/HL57j0V3/38605-paypal-straight-icon.png"
+                    alt=""
+                    className="object-cover h-16 w-26"
+                  />
+                </span>
+              </div>
               <FormControlLabel
+                sx={{ mt: "-20px" }}
                 control={
                   <Checkbox
                     checked={acceptedTerms}
@@ -270,7 +323,10 @@ const CustomInvoiceCheckOut = ({ data }) => {
                 label={
                   <Typography>
                     I agree to the{" "}
-                    <Link className="text-blue-400" href="/terms-and-conditions">
+                    <Link
+                      className="text-blue-400"
+                      href="/terms-and-conditions"
+                    >
                       terms and conditions
                     </Link>
                   </Typography>
@@ -308,7 +364,7 @@ const CustomInvoiceCheckOut = ({ data }) => {
               {loading && (
                 <span>
                   {redirectingMessage && (
-                    <div className="mt-4 text-center text-gray-700">
+                    <div className="mt-4 text-center text-red-500">
                       {redirectingMessage}
                     </div>
                   )}
@@ -319,7 +375,7 @@ const CustomInvoiceCheckOut = ({ data }) => {
           <RefundPolicy />
           <SafeCheckOut />
 
-          <Card
+          {/* <Card
             sx={{
               bgcolor: "white",
               padding: "10px",
@@ -411,7 +467,7 @@ const CustomInvoiceCheckOut = ({ data }) => {
                 </Link>
               </Grid>
             </Grid>
-          </Card>
+          </Card> */}
         </Grid>
       </Grid>
     </Container>

@@ -396,7 +396,7 @@ const CheckOutCard = () => {
                   ${cartResponse?.price}
                 </span>
               </div>
-              <h2 className="text-lg text-gray-500">We offer:</h2>
+              <hr />
               <div className="flex items-center gap-2 mb-4">
                 <a href="#">
                   <img
@@ -421,6 +421,7 @@ const CheckOutCard = () => {
                 </a>
               </div>
               <FormControlLabel
+                sx={{ mt: "-20px" }}
                 control={
                   <Checkbox
                     checked={acceptedTerms}

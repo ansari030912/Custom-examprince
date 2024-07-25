@@ -1,44 +1,27 @@
-"use client";
-import axios from "axios";
-import { useState } from "react";
-import { X_API_Key } from "../../AllUrls/ApiKey";
-import { BaseUrl } from "../../AllUrls/BaseUrl";
+import React from "react";
+import CustomInvoiceCheckOut from "../../components/Cards/CustomInvoiceCheckOut";
 
-const CustomInvoice = ({ params }) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  const fetchData = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await axios.get(
-        `${BaseUrl}/v1/invoice/${params.invoice_perma}`,
+export async function generateMetadata({ params }) {
+  return {
+    title: `Updated Certificates Exam Question and Answers by Tech Professionals`,
+    description: `Examprince is a premium provider of Real and Valid Exam Question and Answers of IT certification Exams. Pass your certification exam easily with pdf and test engine dumps in 2024.`,
+    referrer: "no-referrer",
+    robots: {
+      index: false,
+    },
+    icons: {
+      other: [
         {
-          headers: {
-            "x-api-key": X_API_Key,
-          },
-        }
-      );
-      setData(response.data);
-    } catch (error) {
-      console.error("Error fetching the invoice data:", error);
-      setError("Error fetching the invoice data: " + error.message);
-    } finally {
-      setLoading(false);
-    }
+          rel: "canonical",
+          url: `https://examprince.com/custom-invoice/${params.invoice_perma}`,
+        },
+      ],
+    },
   };
+}
 
-  return (
-    <div>
-      <button onClick={fetchData} disabled={loading}>
-        {loading ? "Loading..." : "Fetch Data"}
-      </button>
-      {error && <div>{error}</div>}
-      {data && <div>{JSON.stringify(data)}</div>}
-    </div>
-  );
+const page = ({ params }) => {
+  return <CustomInvoiceCheckOut params={params} />;
 };
 
-export default CustomInvoice;
+export default page;
