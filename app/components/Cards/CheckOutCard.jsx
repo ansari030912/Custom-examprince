@@ -397,6 +397,7 @@ const CheckOutCard = () => {
                 </span>
               </div>
               <hr />
+              
               <div className="flex items-center gap-2 mb-4">
                 <a href="#">
                   <img
